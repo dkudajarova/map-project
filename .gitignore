@@ -40,6 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# data directories
+# Raw GIS data stays local
 /data/raw/
-/data/processed/
+
+# Keep processed data exports in version control
+!data/processed/
+!data/processed/**
+
