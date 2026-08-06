@@ -43,6 +43,9 @@ next-env.d.ts
 # Raw GIS data stays local
 /data/raw/
 
+# Cambridge gis data stays local
+/cambridge-gis-data/
+
 # Keep processed data exports in version control
 !data/processed/
 !data/processed/**

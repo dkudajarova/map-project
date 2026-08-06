@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pre-1780",
+    "label": "pre 1780",
+    "minYear": null,
+    "maxYear": 1779
+  },
+  {
+    "id": "1780_1820",
+    "label": "1780-1820",
+    "minYear": 1780,
+    "maxYear": 1819
+  },
+  {
+    "id": "1820_1850",
+    "label": "1820-1850",
+    "minYear": 1820,
+    "maxYear": 1849
+  },
+  {
+    "id": "1850_1880",
+    "label": "1850-1880",
+    "minYear": 1850,
+    "maxYear": 1879
+  },
+  {
+    "id": "1880-1900",
+    "label": "1880-1900",
+    "minYear": 1880,
+    "maxYear": 1899
+  },
+    {
+    "id": "1900-1930",
+    "label": "1900-1930",
+    "minYear": 1900,
+    "maxYear": 1929
+  },
+    {
+    "id": "1930-1980",
+    "label": "1930-1980",
+    "minYear": 1930,
+    "maxYear": 1979
+  },
+    {
+    "id": "1980-present",
+    "label": "1980-present",
+    "minYear": 1980,
+    "maxYear": null
+  },
+  {
+    "id": "unknown",
+    "label": "Unknown",
+    "minYear": null,
+    "maxYear": null,
+    "isUnknown": true
+  }
+]
