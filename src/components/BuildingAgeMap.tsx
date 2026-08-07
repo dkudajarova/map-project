@@ -70,23 +70,15 @@ export default function BuildingAgeMap() {
   useEffect(() => {
     if (mapRef.current || !mapContainerRef.current) return
 
-        const map = new maplibregl.Map({
+    // Next.js can rewrite MapLibre's automatically resolved module-worker URL.
+    // Serve the matching worker bundle directly so GeoJSON processing completes.
+    maplibregl.setWorkerUrl("/maplibre-gl-worker.mjs")
+
+    const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: {
-  version: 8,
-  sources: {},
-  layers: [
-    {
-      id: "background",
-      type: "background",
-      paint: {
-        "background-color": "#e8e8e8",
-      },
-    },
-  ],
-},
-      center: [-71.09405, 42.37396],
-zoom: 19,
+      style: "https://tiles.openfreemap.org/styles/positron",
+      center: [-71.1056, 42.3736],
+      zoom: 13,
     })
 
     mapRef.current = map
@@ -95,17 +87,13 @@ zoom: 19,
       new maplibregl.NavigationControl({ showCompass: true }),
       "top-right",
     )
-
-
     const sourceId = "cambridge-buildings"
     const fillLayerId = "building-age-fill"
     const outlineLayerId = "building-age-outline"
 
-map.on("error", (event) => {
-  console.error("MapLibre error:", event.error)
-  setError(event.error?.message ?? "The map failed to load")
-  setLoading(false)
-})
+    map.on("error", (event) => {
+      console.error("MapLibre error:", event.error)
+    })
 
     map.on("load", async () => {
       try {
@@ -119,31 +107,25 @@ map.on("error", (event) => {
         const data = (await response.json()) as BuildingFeatureCollection
         setCoverage(getValidConstructionYearCoverage(data))
 
-       if (!map.getSource(sourceId)) {
-  map.addSource(sourceId, {
-    type: "geojson",
-    data: {
-      type: "FeatureCollection",
-      features: [data.features[0]],
-    },
-  })
-}
+        if (!map.getSource(sourceId)) {
+          map.addSource(sourceId, {
+            type: "geojson",
+            data,
+          })
+        }
 
-       if (!map.getLayer(fillLayerId)) {
-  map.addLayer({
-    id: fillLayerId,
-    type: "fill",
-    source: sourceId,
-    paint: {
-      "fill-color": "#e63946",
-      "fill-opacity": 0.8,
-    },
-  })
-
-  console.log("Source added:", map.getSource(sourceId))
-  console.log("Fill layer added:", map.getLayer(fillLayerId))
-  console.log("Feature count:", data.features.length)
-}
+        if (!map.getLayer(fillLayerId)) {
+          map.addLayer({
+            id: fillLayerId,
+            type: "fill",
+            source: sourceId,
+            paint: {
+              "fill-color":
+                fillColorExpression as unknown as maplibregl.ExpressionSpecification,
+              "fill-opacity": 0.72,
+            },
+          })
+        }
 
         if (!map.getLayer(outlineLayerId)) {
           map.addLayer({
@@ -152,8 +134,8 @@ map.on("error", (event) => {
             source: sourceId,
             paint: {
               "line-color": "#000000",
-              "line-opacity": 1,
-              "line-width": 4,
+              "line-opacity": 0.35,
+              "line-width": 1,
             },
           })
         }
