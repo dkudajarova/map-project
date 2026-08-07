@@ -4,56 +4,56 @@
     "label": "pre 1780",
     "minYear": null,
     "maxYear": 1779,
-    "color": "#c45161"
+    "color": "#c32b1d"
   },
   {
     "id": "1780_1820",
     "label": "1780-1820",
     "minYear": 1780,
     "maxYear": 1819,
-    "color": "#e094a0"
+    "color": "#f15027"
   },
   {
     "id": "1820_1850",
     "label": "1820-1850",
     "minYear": 1820,
     "maxYear": 1849,
-    "color": "#f2b6c0"
+    "color": "#ff882d"
   },
   {
     "id": "1850_1880",
     "label": "1850-1880",
     "minYear": 1850,
     "maxYear": 1879,
-    "color": "#f2dde1"
+    "color": "#ffab58"
   },
   {
     "id": "1880-1900",
     "label": "1880-1900",
     "minYear": 1880,
     "maxYear": 1899,
-    "color": "#cbc7d8"
+    "color": "#238b47"
   },
     {
     "id": "1900-1930",
     "label": "1900-1930",
     "minYear": 1900,
     "maxYear": 1929,
-    "color": "#8db7d2"
+    "color": "#6fda6d"
   },
     {
     "id": "1930-1980",
     "label": "1930-1980",
     "minYear": 1930,
     "maxYear": 1979,
-    "color": "#5e62a9"
+    "color": "#8564db"
   },
     {
     "id": "1980-present",
     "label": "1980-present",
     "minYear": 1980,
     "maxYear": null,
-    "color": "#434279"
+    "color": "#5429b7"
   },
   {
     "id": "unknown",

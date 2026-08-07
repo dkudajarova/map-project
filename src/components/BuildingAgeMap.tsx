@@ -146,6 +146,15 @@ export default function BuildingAgeMap() {
       new maplibregl.NavigationControl({ showCompass: true }),
       "top-right",
     )
+    map.addControl(
+      new maplibregl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+        },
+        trackUserLocation: true,
+      }),
+      "top-right",
+    )
     const handleMapError = (event: maplibregl.ErrorEvent) => {
       console.error("MapLibre error:", event.error)
     }
