@@ -59,6 +59,21 @@ function assignAgeBand(bands, year) {
   return 'unknown';
 }
 
+function roundCoordinates(coordinates) {
+  if (!Array.isArray(coordinates)) return coordinates;
+  return coordinates.map(value =>
+    Array.isArray(value) ? roundCoordinates(value) : Number(value.toFixed(6))
+  );
+}
+
+function roundGeometryCoordinates(geometry) {
+  if (!geometry || !Array.isArray(geometry.coordinates)) return geometry;
+  return {
+    ...geometry,
+    coordinates: roundCoordinates(geometry.coordinates)
+  };
+}
+
 function buildAddressPointIndex(points) {
   const index = new Map();
   for (const pt of points) {
@@ -256,12 +271,16 @@ async function main() {
         join_ambiguous: !!join_ambiguous
       };
 
-      outFeatures.push({ type: 'Feature', geometry: building.geometry, properties: outProps });
+      outFeatures.push({
+        type: 'Feature',
+        geometry: roundGeometryCoordinates(building.geometry),
+        properties: outProps
+      });
     }
 
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     const outGeo = { type: 'FeatureCollection', features: outFeatures };
-    await fs.writeFile(outPath, JSON.stringify(outGeo, null, 2), 'utf8');
+    await fs.writeFile(outPath, JSON.stringify(outGeo), 'utf8');
 
     const total = stats.total;
     const matched = stats.matched;

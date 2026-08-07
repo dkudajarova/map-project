@@ -1,8 +1,8 @@
-import BuildingAgeMap from "../components/BuildingAgeMap"
+import BuildingAgeMap from "@/components/BuildingAgeMap"
 
 export default function Page() {
   return (
-    <main style={{ minHeight: "100vh", margin: 0 }}>
+    <main className="app-layout">
       <BuildingAgeMap />
     </main>
   )
