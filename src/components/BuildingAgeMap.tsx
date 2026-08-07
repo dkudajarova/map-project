@@ -1,6 +1,7 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react"
 import * as maplibregl from "maplibre-gl"
-import { NavigationControl, Expression } from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
 import ageBands from "../data/Age_bands.json"
 import type { FeatureCollection, Polygon, MultiPolygon } from "geojson"
@@ -71,7 +72,7 @@ export default function BuildingAgeMap() {
 
         const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: "https://tiles.openfreemap.org/styles/positron",
+      style: "https://demotiles.maplibre.org/style.json",
       center: [-71.1056, 42.3736],
       zoom: 13,
     })
@@ -83,13 +84,16 @@ export default function BuildingAgeMap() {
       "top-right",
     )
 
-    mapRef.current = map
-
-    map.addControl(new NavigationControl({ showCompass: true }), "top-right")
 
     const sourceId = "cambridge-buildings"
     const fillLayerId = "building-age-fill"
     const outlineLayerId = "building-age-outline"
+
+map.on("error", (event) => {
+  console.error("MapLibre error:", event.error)
+  setError(event.error?.message ?? "The map failed to load")
+  setLoading(false)
+})
 
     map.on("load", async () => {
       try {

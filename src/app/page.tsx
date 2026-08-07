@@ -1,4 +1,4 @@
-import BuildingAgeMap from "../src/components/BuildingAgeMap"
+import BuildingAgeMap from "../components/BuildingAgeMap"
 
 export default function Page() {
   return (
