@@ -8,7 +8,7 @@ import type { FeatureCollection, Polygon, MultiPolygon } from "geojson"
 
 type BuildingProperties = {
   age_band?: string
-  construction_year?: number | string
+  Condition_YearBuilt?: number | string
   [key: string]: unknown
 }
 
@@ -47,7 +47,7 @@ function getValidConstructionYearCoverage(
   if (total === 0) return 0
 
   const validCount = featureCollection.features.filter((feature) => {
-    const year = feature.properties?.construction_year
+    const year = feature.properties?.Condition_YearBuilt
     if (typeof year === "number") {
       return Number.isFinite(year)
     }
@@ -72,9 +72,21 @@ export default function BuildingAgeMap() {
 
         const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: "https://demotiles.maplibre.org/style.json",
-      center: [-71.1056, 42.3736],
-      zoom: 13,
+      style: {
+  version: 8,
+  sources: {},
+  layers: [
+    {
+      id: "background",
+      type: "background",
+      paint: {
+        "background-color": "#e8e8e8",
+      },
+    },
+  ],
+},
+      center: [-71.09405, 42.37396],
+zoom: 19,
     })
 
     mapRef.current = map
@@ -107,26 +119,31 @@ map.on("error", (event) => {
         const data = (await response.json()) as BuildingFeatureCollection
         setCoverage(getValidConstructionYearCoverage(data))
 
-        if (map.getSource(sourceId)) {
-          ;(map.getSource(sourceId) as maplibregl.GeoJSONSource).setData(data)
-        } else {
-          map.addSource(sourceId, {
-            type: "geojson",
-            data,
-          })
-        }
+       if (!map.getSource(sourceId)) {
+  map.addSource(sourceId, {
+    type: "geojson",
+    data: {
+      type: "FeatureCollection",
+      features: [data.features[0]],
+    },
+  })
+}
 
-        if (!map.getLayer(fillLayerId)) {
-          map.addLayer({
-            id: fillLayerId,
-            type: "fill",
-            source: sourceId,
-            paint: {
-            "fill-color": fillColorExpression as unknown as maplibregl.ExpressionSpecification,
-              "fill-opacity": 0.72,
-            },
-          })
-        }
+       if (!map.getLayer(fillLayerId)) {
+  map.addLayer({
+    id: fillLayerId,
+    type: "fill",
+    source: sourceId,
+    paint: {
+      "fill-color": "#e63946",
+      "fill-opacity": 0.8,
+    },
+  })
+
+  console.log("Source added:", map.getSource(sourceId))
+  console.log("Fill layer added:", map.getLayer(fillLayerId))
+  console.log("Feature count:", data.features.length)
+}
 
         if (!map.getLayer(outlineLayerId)) {
           map.addLayer({
@@ -135,8 +152,8 @@ map.on("error", (event) => {
             source: sourceId,
             paint: {
               "line-color": "#000000",
-              "line-opacity": 0.35,
-              "line-width": 1,
+              "line-opacity": 1,
+              "line-width": 4,
             },
           })
         }
