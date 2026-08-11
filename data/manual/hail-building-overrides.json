@@ -1,0 +1,518 @@
+{
+  "version": 1,
+  "overrides": [
+    {
+      "building_id": "agassiz-st_32",
+      "decision": "matched",
+      "bldgid": "152-2",
+      "street_name": "Agassiz Street",
+      "hail_address": "32 Agassiz Street",
+      "note": "Matches historic address",
+      "reviewed_at": "2026-08-11T17:10:11.272Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "152-2"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allen-st_14-20",
+      "decision": "matched",
+      "bldgid": "101-1",
+      "street_name": "Allen Street",
+      "hail_address": "14-20 Allen Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:31:49.656Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "101-1",
+        "91-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allen-st_15-17",
+      "decision": "matched",
+      "bldgid": "91-9",
+      "street_name": "Allen Street",
+      "hail_address": "15-17 Allen Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:32:01.825Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "101-1",
+        "91-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allen-st_7-13",
+      "decision": "matched",
+      "bldgid": "91-11",
+      "street_name": "Allen Street",
+      "hail_address": "7-13 Allen Street",
+      "note": "Verified via google map street view",
+      "reviewed_at": "2026-08-11T16:30:01.393Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "101-3",
+        "91-11"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allen-st_8-10",
+      "decision": "matched",
+      "bldgid": "101-3",
+      "street_name": "Allen Street",
+      "hail_address": "8-10 Allen Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:30:24.588Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "101-3",
+        "91-11"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_146-148",
+      "decision": "matched",
+      "bldgid": "719-12",
+      "street_name": "Allston Street",
+      "hail_address": "146-148 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:47:05.717Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "713-28",
+        "719-12"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_150-152",
+      "decision": "matched",
+      "bldgid": "719-13",
+      "street_name": "Allston Street",
+      "hail_address": "150-152 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:47:51.687Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "713-24",
+        "719-13"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_151-157",
+      "decision": "matched",
+      "bldgid": "713-24",
+      "street_name": "Allston Street",
+      "hail_address": "151-157 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:48:08.886Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "713-24",
+        "719-10",
+        "719-13"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_156-160",
+      "decision": "matched",
+      "bldgid": "719-10",
+      "street_name": "Allston Street",
+      "hail_address": "156-160 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:48:25.402Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "713-24",
+        "713-7",
+        "719-10"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_164-170",
+      "decision": "matched",
+      "bldgid": "719-5",
+      "street_name": "Allston Street",
+      "hail_address": "164-170 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:48:38.586Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "713-18",
+        "719-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_215-217",
+      "decision": "matched",
+      "bldgid": "704-30",
+      "street_name": "Allston Street",
+      "hail_address": "215-217 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:50:22.137Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "704-30",
+        "711-6"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_57-59",
+      "decision": "matched",
+      "bldgid": "724-18",
+      "street_name": "Allston Street",
+      "hail_address": "57-59 Allston Street",
+      "note": "the building is on the odd side of the street.",
+      "reviewed_at": "2026-08-11T16:39:10.661Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "724-18",
+        "732-10"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_58-62",
+      "decision": "matched",
+      "bldgid": "732-10",
+      "street_name": "Allston Street",
+      "hail_address": "58-62 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:39:21.894Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "724-18",
+        "724-2",
+        "732-10"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_61-63",
+      "decision": "matched",
+      "bldgid": "724-2",
+      "street_name": "Allston Street",
+      "hail_address": "61-63 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:46:20.917Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "724-2",
+        "732-10"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_64-66",
+      "decision": "matched",
+      "bldgid": "732-9",
+      "street_name": "Allston Street",
+      "hail_address": "64-66 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:46:31.394Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "724-1",
+        "732-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_65-67",
+      "decision": "matched",
+      "bldgid": "724-1",
+      "street_name": "Allston Street",
+      "hail_address": "65-67 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:46:41.997Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "724-1",
+        "732-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_72-74",
+      "decision": "matched",
+      "bldgid": "732-7",
+      "street_name": "Allston Street",
+      "hail_address": "72-74 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:46:55.980Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "724-17",
+        "732-7"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "allston-st_88-90",
+      "decision": "matched",
+      "bldgid": "729-1",
+      "street_name": "Allston Street",
+      "hail_address": "88-90 Allston Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:47:00.242Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "724-13",
+        "729-1"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "appian-way_9-13",
+      "decision": "matched",
+      "bldgid": "307-14",
+      "street_name": "Appian Way",
+      "hail_address": "9-13 Appian Way",
+      "note": "",
+      "reviewed_at": "2026-08-11T16:33:30.177Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "307-14",
+        "319-3",
+        "319-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "huron-ave_161-171",
+      "decision": "matched",
+      "bldgid": "209-23",
+      "street_name": "Huron Avenue",
+      "hail_address": "161-171 Huron Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:14:29.578Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "209-23",
+        "209-7"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "linnaean-st_48-54",
+      "decision": "matched",
+      "bldgid": "206-5",
+      "street_name": "Linnaean Street",
+      "hail_address": "48-54 Linnaean Street",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:11:35.353Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "206-1",
+        "206-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_105r",
+      "decision": "matched",
+      "bldgid": "668-13",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "105r Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:23:17.419Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "668-13",
+        "668-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_415-429",
+      "decision": "matched",
+      "bldgid": "632-10",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "415-429 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:23:55.831Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "632-10",
+        "632-6"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_46-52",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "46-52 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:20:45.100Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "708-12",
+        "708-13"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_460-464",
+      "decision": "matched",
+      "bldgid": "644-1",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "460-464 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:26:52.900Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "644-1",
+        "644-3"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_48r",
+      "decision": "matched",
+      "bldgid": "708-12",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "48r Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:21:15.626Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "708-12",
+        "708-13"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_493-507",
+      "decision": "matched",
+      "bldgid": "616-10",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "493-507 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:28:17.838Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "616-10",
+        "616-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_579-591",
+      "decision": "matched",
+      "bldgid": "605-1",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "579-591 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:28:34.059Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "605-1",
+        "605-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_615-629",
+      "decision": "matched",
+      "bldgid": "596-2",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "615-629 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:28:52.385Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "596-2",
+        "596-3"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_77r",
+      "decision": "matched",
+      "bldgid": "668-11",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "77r Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-11T17:22:39.493Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "668-11",
+        "668-7"
+      ],
+      "selected_was_proposed": true
+    }
+  ]
+}

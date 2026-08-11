@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "data:build": "python3 scripts/build_building_database.py"
+    "data:build": "python3 scripts/build_building_database.py",
+    "overrides:analyze": "python3 scripts/analyze_manual_overrides.py"
   },
   "dependencies": {
     "maplibre-gl": "^6.1.0",

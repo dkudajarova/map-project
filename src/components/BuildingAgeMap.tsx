@@ -380,6 +380,9 @@ export default function BuildingAgeMap() {
               Clear all
             </button>
           </div>
+          <a className="map-legend__review-link" href="/review">
+            Open manual review
+          </a>
           <ul className="map-legend__items">
             {orderedAgeBands.map((band) => (
               <li key={band.id} className="map-legend__item">

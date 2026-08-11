@@ -25,10 +25,14 @@ ASSESSOR_PATH = ROOT / "data/processed/Cambridge_Property_Database_FY2016-FY2026
 ADDRESS_POINTS_PATH = ROOT / "cambridgegis_data/Address/Address_Points/ADDRESS_AddressPoints.geojson"
 FOOTPRINTS_PATH = ROOT / "cambridgegis_data/Basemap/Buildings/BASEMAP_Buildings.geojson"
 AGE_BANDS_PATH = ROOT / "src/data/Age_bands.json"
+STREET_ALIASES_PATH = ROOT / "data/config/hail-street-aliases.json"
+MANUAL_OVERRIDES_PATH = ROOT / "data/manual/hail-building-overrides.json"
 PROCESSED_OUT = ROOT / "data/processed/cambridge-buildings-enriched.geojson"
 PUBLIC_OUT = ROOT / "public/data/cambridge-buildings.geojson"
 MATCH_AUDIT_OUT = ROOT / "data/processed/hail-address-matches.csv"
 REVIEW_OUT = ROOT / "data/processed/hail-address-review.csv"
+REVIEW_SUMMARY_OUT = ROOT / "data/processed/hail-address-review-summary.md"
+REVIEW_BUNDLE_OUT = ROOT / "data/processed/hail-manual-review.json"
 
 STREET_SUFFIXES = {
     "avenue": "ave",
@@ -55,6 +59,7 @@ CLASS_PRIORITY = {
 MATCH_COLUMNS = [
     "building_id",
     "hail_address",
+    "hail_street_name",
     "classification",
     "construction_year",
     "match_stage",
@@ -64,8 +69,18 @@ MATCH_COLUMNS = [
     "candidate_bldgid_count",
     "candidate_bldgids",
     "candidate_addresses",
+    "candidate_street_names",
     "matched_bldgid",
     "match_reason",
+    "review_reason_category",
+    "review_reason_summary",
+    "override_decision",
+    "override_note",
+    "override_reviewed_at",
+    "pre_override_match_stage",
+    "pre_override_match_status",
+    "pre_override_matched_bldgid",
+    "pre_override_candidate_bldgids",
 ]
 
 
@@ -126,6 +141,27 @@ def parse_house(value: Any) -> HouseParts:
     suffix_match = re.match(r"^0*\d+([a-z]+)", normalized)
     suffix = suffix_match.group(1) if suffix_match else ""
     return HouseParts(min(first, maximum), max(first, maximum), suffix, bool(range_match))
+
+
+def address_numbers(parts: HouseParts) -> set[int]:
+    """Return only street numbers that an address or range can represent.
+
+    Cambridge odd and even numbers are on opposite sides of a street. Normal
+    ranges whose endpoints have the same parity therefore advance by two:
+    215-217 represents 215 and 217, never 216. A malformed/mixed-parity range
+    is kept conservative by admitting only its explicitly written endpoints.
+    """
+    if parts.minimum is None or parts.maximum is None:
+        return set()
+    if not parts.is_range or parts.minimum == parts.maximum:
+        return {parts.minimum}
+    if parts.minimum % 2 != parts.maximum % 2:
+        return {parts.minimum, parts.maximum}
+    return set(range(parts.minimum, parts.maximum + 1, 2))
+
+
+def house_numbers_overlap(left: HouseParts, right: HouseParts) -> bool:
+    return bool(address_numbers(left) & address_numbers(right))
 
 
 def complete_year(value: Any) -> int | None:
@@ -193,6 +229,7 @@ def point_record(feature: dict[str, Any], feature_index: int) -> dict[str, Any]:
         "feature_index": feature_index,
         "address_id": text(props.get("address_id")),
         "address": text(props.get("Full_Addr")),
+        "street_name": text(props.get("StName")),
         "street": street,
         "house": house,
         "house_parts": parse_house(props.get("StNm")),
@@ -239,9 +276,40 @@ def build_match_result(
     bldgids: list[str],
     reason: str,
 ) -> dict[str, Any]:
+    review_category = ""
+    review_summary = ""
+    if status == "review":
+        if stage in {4, 6} and len(bldgids) > 1:
+            review_category = "multiple_footprint_candidates"
+            review_summary = (
+                "The street and base number agree, but suffix, rear, or range differences "
+                "leave more than one plausible footprint."
+            )
+        elif hail.get("classification") == "Building complex":
+            review_category = "building_complex_geometry_uncertain"
+            review_summary = (
+                "The address resolves, but the Hail entry is a building complex and may "
+                "represent more than one footprint."
+            )
+        elif stage == 5:
+            review_category = "historical_address_or_alias"
+            review_summary = (
+                "A historical address or street alias produced candidates, but the alias "
+                "has not yet been proven for automatic matching."
+            )
+        elif stage == 6:
+            review_category = "street_spelling_difference"
+            review_summary = (
+                "The number is compatible and the street spelling is close, but fuzzy "
+                "street-name matches require manual confirmation."
+            )
+        else:
+            review_category = "other_manual_review"
+            review_summary = "The deterministic evidence is insufficient for automatic acceptance."
     return {
         "building_id": hail["building_id"],
         "hail_address": f"{hail['address_raw']} {hail['street_name']}".strip(),
+        "hail_street_name": hail["street_name"],
         "classification": hail.get("classification", ""),
         "construction_year": hail.get("construction_year", ""),
         "match_stage": str(stage),
@@ -251,8 +319,20 @@ def build_match_result(
         "candidate_bldgid_count": len(bldgids),
         "candidate_bldgids": "|".join(bldgids),
         "candidate_addresses": "|".join(sorted({point["address"] for point in candidates if point["address"]})),
+        "candidate_street_names": "|".join(
+            sorted({point["street_name"] for point in candidates if point["street_name"]})
+        ),
         "matched_bldgid": bldgids[0] if status == "accepted" and len(bldgids) == 1 else "",
         "match_reason": reason,
+        "review_reason_category": review_category,
+        "review_reason_summary": review_summary,
+        "override_decision": "",
+        "override_note": "",
+        "override_reviewed_at": "",
+        "pre_override_match_stage": "",
+        "pre_override_match_status": "",
+        "pre_override_matched_bldgid": "",
+        "pre_override_candidate_bldgids": "",
     }
 
 
@@ -262,6 +342,8 @@ def match_hail_record(
     points_by_street: dict[str, list[dict[str, Any]]],
     points_by_number: dict[int, list[dict[str, Any]]],
     valid_bldgids: set[str],
+    confirmed_street_aliases: set[tuple[str, str]],
+    manual_street_aliases: set[tuple[str, str]],
 ) -> dict[str, Any]:
     classification = hail.get("classification", "")
     if hail.get("razed", "").strip().casefold() == "true" or classification == "Razed":
@@ -285,8 +367,7 @@ def match_hail_record(
         range_points = [
             point
             for point in points_by_street.get(street, [])
-            if point["house_parts"].minimum is not None
-            and hail_parts.minimum <= point["house_parts"].minimum <= hail_parts.maximum
+            if house_numbers_overlap(hail_parts, point["house_parts"])
         ]
         range_points, range_bldgids = unique_candidates(range_points, valid_bldgids)
         if len(range_bldgids) == 1:
@@ -309,8 +390,7 @@ def match_hail_record(
             point_parts = point["house_parts"]
             if point_parts.minimum is None or point_parts.maximum is None or hail_parts.maximum is None:
                 continue
-            overlaps = point_parts.minimum <= hail_parts.maximum and hail_parts.minimum <= point_parts.maximum
-            if overlaps:
+            if house_numbers_overlap(hail_parts, point_parts):
                 stage4_points.append(point)
     stage4_points, stage4_bldgids = unique_candidates(stage4_points, valid_bldgids)
     if stage4_bldgids:
@@ -342,9 +422,29 @@ def match_hail_record(
                 spelling_points.append(point)
     spelling_points, spelling_bldgids = unique_candidates(spelling_points, valid_bldgids)
     if spelling_bldgids:
+        street_pairs = {
+            (street, point["street"])
+            for point in spelling_points
+            if point["street"]
+        }
+        aliases_confirmed = bool(street_pairs) and street_pairs <= confirmed_street_aliases
+        aliases_manual = bool(street_pairs & manual_street_aliases)
+        if aliases_confirmed and len(spelling_bldgids) == 1 and classification != "Building complex":
+            return build_match_result(
+                hail, 6, "accepted", "confirmed_alias", spelling_points, spelling_bldgids,
+                "Confirmed street-name alias with compatible number and one footprint",
+            )
+        if aliases_manual:
+            reason = "Street-name pair is explicitly reserved for manual review"
+        elif aliases_confirmed and len(spelling_bldgids) > 1:
+            reason = "Confirmed street-name alias, but the address has multiple plausible footprints"
+        elif classification == "Building complex":
+            reason = "Street-name candidate is a building complex that may span footprints"
+        else:
+            reason = "Unconfirmed small street-name spelling difference with compatible number"
         return build_match_result(
             hail, 6, "review", "manual_review", spelling_points, spelling_bldgids,
-            "Small street-name spelling difference with compatible number",
+            reason,
         )
 
     return build_match_result(hail, 7, "unmatched", "leave_unmatched", [], [], "No credible address candidate")
@@ -379,8 +479,76 @@ def choose_hail_record(records: list[tuple[dict[str, str], dict[str, Any]]]) -> 
     return min(records, key=key)
 
 
+def apply_manual_overrides(
+    match_rows: list[dict[str, Any]],
+    override_records: list[dict[str, Any]],
+    points_by_bldgid: dict[str, list[dict[str, Any]]],
+    valid_bldgids: set[str],
+) -> None:
+    """Layer reviewer decisions over generated matches without changing sources."""
+    matches_by_hail_id = {row["building_id"]: row for row in match_rows}
+    for override in override_records:
+        building_id = text(override.get("building_id"))
+        decision = text(override.get("decision"))
+        match = matches_by_hail_id.get(building_id)
+        if match is None:
+            continue
+        match["pre_override_match_stage"] = match["match_stage"]
+        match["pre_override_match_status"] = match["match_status"]
+        match["pre_override_matched_bldgid"] = match["matched_bldgid"]
+        match["pre_override_candidate_bldgids"] = match["candidate_bldgids"]
+        match["match_stage"] = "8"
+        match["treatment"] = "manual_override"
+        match["override_decision"] = decision
+        match["override_note"] = text(override.get("note"))
+        match["override_reviewed_at"] = text(override.get("reviewed_at"))
+        match["review_reason_category"] = ""
+        match["review_reason_summary"] = ""
+        if decision == "matched":
+            bldgid = normalize_id(override.get("bldgid"))
+            if bldgid not in valid_bldgids:
+                raise ValueError(f"Manual override for {building_id} has invalid BldgID {bldgid!r}")
+            candidate_points = points_by_bldgid.get(bldgid, [])
+            match.update(
+                {
+                    "match_status": "accepted",
+                    "candidate_address_point_count": len(candidate_points),
+                    "candidate_bldgid_count": 1,
+                    "candidate_bldgids": bldgid,
+                    "candidate_addresses": "|".join(
+                        sorted({point["address"] for point in candidate_points if point["address"]})
+                    ),
+                    "candidate_street_names": "|".join(
+                        sorted({point["street_name"] for point in candidate_points if point["street_name"]})
+                    ),
+                    "matched_bldgid": bldgid,
+                    "match_reason": "Reviewer selected this footprint",
+                }
+            )
+        elif decision == "no_map_match":
+            match.update(
+                {
+                    "match_status": "unmatched",
+                    "candidate_bldgid_count": 0,
+                    "candidate_bldgids": "",
+                    "matched_bldgid": "",
+                    "match_reason": "Reviewer determined there is no map match",
+                }
+            )
+        else:
+            raise ValueError(f"Manual override for {building_id} has unknown decision {decision!r}")
+
+
 def main() -> None:
-    for source in (HAIL_PATH, ASSESSOR_PATH, ADDRESS_POINTS_PATH, FOOTPRINTS_PATH, AGE_BANDS_PATH):
+    for source in (
+        HAIL_PATH,
+        ASSESSOR_PATH,
+        ADDRESS_POINTS_PATH,
+        FOOTPRINTS_PATH,
+        AGE_BANDS_PATH,
+        STREET_ALIASES_PATH,
+        MANUAL_OVERRIDES_PATH,
+    ):
         if not source.exists():
             raise FileNotFoundError(source)
 
@@ -391,6 +559,18 @@ def main() -> None:
         hail_rows = list(csv.DictReader(handle))
     with AGE_BANDS_PATH.open(encoding="utf-8-sig") as handle:
         age_bands = json.load(handle)
+    with STREET_ALIASES_PATH.open(encoding="utf-8-sig") as handle:
+        street_alias_config = json.load(handle)
+    with MANUAL_OVERRIDES_PATH.open(encoding="utf-8-sig") as handle:
+        override_data = json.load(handle)
+    confirmed_street_aliases = {
+        (normalize_street(pair[0]), normalize_street(pair[1]))
+        for pair in street_alias_config.get("confirmed", [])
+    }
+    manual_street_aliases = {
+        (normalize_street(pair[0]), normalize_street(pair[1]))
+        for pair in street_alias_config.get("manual_review", [])
+    }
 
     valid_bldgids = {
         normalize_id(feature.get("properties", {}).get("BldgID"))
@@ -412,9 +592,23 @@ def main() -> None:
             points_by_bldgid[point["bldgid"]].append(point)
 
     match_rows = [
-        match_hail_record(row, exact_index, points_by_street, points_by_number, valid_bldgids)
+        match_hail_record(
+            row,
+            exact_index,
+            points_by_street,
+            points_by_number,
+            valid_bldgids,
+            confirmed_street_aliases,
+            manual_street_aliases,
+        )
         for row in hail_rows
     ]
+    apply_manual_overrides(
+        match_rows,
+        override_data.get("overrides", []),
+        points_by_bldgid,
+        valid_bldgids,
+    )
     hail_by_id = {row["building_id"]: row for row in hail_rows}
     accepted_hail_by_bldgid: dict[str, list[tuple[dict[str, str], dict[str, Any]]]] = defaultdict(list)
     for match in match_rows:
@@ -535,6 +729,117 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(row for row in match_rows if row["match_status"] == "review")
 
+    review_rows = [row for row in match_rows if row["match_status"] == "review"]
+    review_hail_fields = [
+        "building_id",
+        "street_name",
+        "address_raw",
+        "normalized_address",
+        "historic_address",
+        "building_type",
+        "stories",
+        "construction_year",
+        "architect",
+        "builder",
+        "owner_at_construction",
+        "classification",
+        "summary_raw",
+        "source_page",
+    ]
+    review_bundle_records = []
+    for match in review_rows:
+        hail = hail_by_id[match["building_id"]]
+        review_bundle_records.append(
+            {
+                **match,
+                "hail": {field: hail.get(field, "") for field in review_hail_fields},
+            }
+        )
+    review_bundle = {
+        "generated_at": date.today().isoformat(),
+        "record_count": len(review_bundle_records),
+        "records": review_bundle_records,
+    }
+    REVIEW_BUNDLE_OUT.write_text(
+        json.dumps(review_bundle, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    review_categories = Counter(row["review_reason_category"] for row in review_rows)
+    review_descriptions = {
+        row["review_reason_category"]: row["review_reason_summary"]
+        for row in review_rows
+        if row["review_reason_category"]
+    }
+    category_labels = {
+        "multiple_footprint_candidates": "Multiple plausible footprints",
+        "building_complex_geometry_uncertain": "Building complex may span footprints",
+        "historical_address_or_alias": "Unproven historical address or alias",
+        "street_spelling_difference": "Small street-name spelling difference",
+        "other_manual_review": "Other manual review",
+    }
+    summary_lines = [
+        "# Hail address manual-review summary",
+        "",
+        f"Generated: {date.today().isoformat()}",
+        "",
+        f"The review queue contains **{len(review_rows):,}** Hail records that were not confidently auto-matched.",
+        "",
+        "| Reason | Records | Share | Explanation |",
+        "|---|---:|---:|---|",
+    ]
+    for category, count in review_categories.most_common():
+        share = count / len(review_rows) * 100 if review_rows else 0
+        summary_lines.append(
+            f"| {category_labels.get(category, category)} | {count:,} | {share:.1f}% | "
+            f"{review_descriptions.get(category, '')} |"
+        )
+    summary_lines.extend(
+        [
+            "",
+            "## Street-name spelling differences",
+            "",
+            "These Stage 6 review rows share a compatible house number but use a different street spelling. "
+            "A confirmed alias can still appear here when a separate footprint or building-complex ambiguity remains.",
+            "",
+            "| Hail street name | Address Point street name | Review records | Review basis |",
+            "|---|---|---:|---|",
+        ]
+    )
+    spelling_pairs: Counter[tuple[str, str]] = Counter()
+    spelling_pair_reasons: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for row in review_rows:
+        if row["match_stage"] != "6":
+            continue
+        alternatives = [value for value in row["candidate_street_names"].split("|") if value]
+        for alternative in alternatives:
+            pair = (row["hail_street_name"], alternative)
+            spelling_pairs[pair] += 1
+            spelling_pair_reasons[pair].add(row["review_reason_category"])
+    for (hail_street, candidate_street), count in sorted(
+        spelling_pairs.items(), key=lambda item: (-item[1], item[0][0].casefold(), item[0][1].casefold())
+    ):
+        pair = (hail_street, candidate_street)
+        basis = "; ".join(
+            category_labels.get(category, category)
+            for category in sorted(spelling_pair_reasons[pair])
+        )
+        summary_lines.append(f"| {hail_street} | {candidate_street} | {count:,} | {basis} |")
+    summary_lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            "- A review row is a candidate set, not a rejected match. `candidate_bldgids` and "
+            "`candidate_addresses` contain the evidence to inspect.",
+            "- Multiple-footprint cases should be resolved using rear/suffix/range context and spatial evidence.",
+            "- Building-complex cases need a decision about whether one Hail entry applies to one footprint or several.",
+            "- Historical aliases should become automatic only after an explicit alias is validated and documented.",
+            "- Spelling-difference candidates must remain manual until the spelling correspondence is proven.",
+            "",
+        ]
+    )
+    REVIEW_SUMMARY_OUT.write_text("\n".join(summary_lines), encoding="utf-8")
+
     match_counts = Counter((row["match_stage"], row["match_status"]) for row in match_rows)
     print(f"Footprint master records: {len(output_features):,}")
     print(f"Address Points: {len(points):,}")
@@ -550,6 +855,8 @@ def main() -> None:
     print(f"Wrote {PUBLIC_OUT}")
     print(f"Wrote {MATCH_AUDIT_OUT}")
     print(f"Wrote {REVIEW_OUT}")
+    print(f"Wrote {REVIEW_SUMMARY_OUT}")
+    print(f"Wrote {REVIEW_BUNDLE_OUT}")
 
 
 if __name__ == "__main__":

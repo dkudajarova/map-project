@@ -16,6 +16,30 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Manual Hail review
+
+Open [http://localhost:3000/review](http://localhost:3000/review) while the
+development server is running. Choose a street, then review its Hail records
+one at a time. Proposed footprints are orange, the selected footprint is blue,
+and any visible neighboring footprint can be selected directly on the map.
+You can also record **No map match**.
+
+The review API writes decisions only to
+`data/manual/hail-building-overrides.json`; it does not edit any source
+dataset. To layer saved decisions onto the generated Cambridge footprint map
+and then summarize the review evidence, run:
+
+```bash
+npm run data:build
+npm run overrides:analyze
+```
+
+The analysis is written to `reports/manual-override-analysis.md`. It reports
+how often proposed candidates, neighboring footprints, and no-match decisions
+were selected, and identifies repeated outcomes that may justify a future
+deterministic rule. File writes are intended for a local Node server; a
+read-only or ephemeral deployment will not persist review decisions.
+
 ## Building data
 
 Rebuild the footprint-master map database with Cambridge Address Points,
