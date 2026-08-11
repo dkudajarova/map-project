@@ -16,6 +16,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Building data
+
+Rebuild the footprint-master map database with Cambridge Address Points,
+assessor records, and staged Hail matches:
+
+```bash
+npm run data:build
+```
+
+The map reads `public/data/cambridge-buildings.geojson`. The canonical processed
+copy, complete Hail match audit, and manual-review queue are written under
+`data/processed/`. See
+[`reports/building-database-methodology.md`](reports/building-database-methodology.md)
+for matching stages, year-selection rules, output fields, and current counts.
+
 You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "data:build": "node scripts/build-data.mjs"
+    "data:build": "python3 scripts/build_building_database.py"
   },
   "dependencies": {
     "maplibre-gl": "^6.1.0",

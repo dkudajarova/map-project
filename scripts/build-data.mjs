@@ -177,7 +177,6 @@ async function main() {
       const pointGroup = addressPointsByML.get(masterML) || [];
       if (pointGroup.length === 0) continue;
 
-      const pointAddresses = pointGroup.map(pt => pt.properties && pt.properties.Full_Addr).filter(Boolean);
       const pointBldgIDs = pointGroup.map(pt => normalizeId(pt.properties && pt.properties.BldgID)).filter(Boolean);
       const uniqueBldgIDs = Array.from(new Set(pointBldgIDs)).filter(Boolean);
       const joinAmbiguous = uniqueBldgIDs.length > 1;

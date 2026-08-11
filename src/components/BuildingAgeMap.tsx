@@ -101,12 +101,45 @@ function getBuildingPopupHtml(properties: BuildingProperties): string {
     properties.year_built ?? properties.Condition_YearBuilt ?? null
   const age = properties.age ?? null
 
+  const rows: Array<[string, unknown]> = [
+    ["Address", address],
+    ["Year built", yearBuilt],
+    ["Year source", properties.year_built_source],
+    ["Age", age],
+    ["Hail year", properties.hail_year_built],
+    ["Assessor year", properties.assessor_year_built],
+    ["Building type", properties.hail_building_type],
+    ["Architect", properties.hail_architect],
+    ["Builder", properties.hail_builder],
+    ["Owner at construction", properties.hail_owner_at_construction],
+    ["Property class", properties.PropertyClass],
+    ["Zoning", properties.Zoning],
+    ["Hail match stage", properties.hail_match_stage],
+    ["Hail details", properties.hail_summary],
+  ]
+
+  const visibleRows = rows
+    .filter(([, value]) => {
+      if (value === null || value === undefined) return false
+      if (typeof value === "string" && value.trim() === "") return false
+      if (typeof value === "number" && !Number.isFinite(value)) return false
+      return true
+    })
+    .map(
+      ([label, value]) =>
+        `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`,
+    )
+    .join("")
+
+  const reviewNotice = properties.year_needs_review
+    ? '<p class="building-popup__notice">Construction years differ substantially or Hail records conflict; the displayed year needs review.</p>'
+    : ""
+
   return `
     <dl class="building-popup">
-      <div><dt>Address</dt><dd>${escapeHtml(address)}</dd></div>
-      <div><dt>Year built</dt><dd>${escapeHtml(yearBuilt)}</dd></div>
-      <div><dt>Age</dt><dd>${escapeHtml(age)}</dd></div>
+      ${visibleRows}
     </dl>
+    ${reviewNotice}
   `
 }
 

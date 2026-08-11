@@ -51,3 +51,6 @@ next-env.d.ts
 !data/processed/**
 
 cambridgegis_data/
+
+# Local data exploration notebooks
+/notebooks/
