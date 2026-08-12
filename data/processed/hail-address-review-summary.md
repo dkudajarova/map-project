@@ -1,14 +1,14 @@
 # Hail address manual-review summary
 
-Generated: 2026-08-11
+Generated: 2026-08-12
 
-The review queue contains **956** Hail records that were not confidently auto-matched.
+The review queue contains **944** Hail records that were not confidently auto-matched.
 
 | Reason | Records | Share | Explanation |
 |---|---:|---:|---|
-| Multiple plausible footprints | 696 | 72.8% | The street and base number agree, but suffix, rear, or range differences leave more than one plausible footprint. |
-| Building complex may span footprints | 173 | 18.1% | The address resolves, but the Hail entry is a building complex and may represent more than one footprint. |
-| Unproven historical address or alias | 74 | 7.7% | A historical address or street alias produced candidates, but the alias has not yet been proven for automatic matching. |
+| Multiple plausible footprints | 685 | 72.6% | The street and base number agree, but suffix, rear, or range differences leave more than one plausible footprint. |
+| Building complex may span footprints | 173 | 18.3% | The address resolves, but the Hail entry is a building complex and may represent more than one footprint. |
+| Unproven historical address or alias | 73 | 7.7% | A historical address or street alias produced candidates, but the alias has not yet been proven for automatic matching. |
 | Small street-name spelling difference | 13 | 1.4% | The number is compatible and the street spelling is close, but fuzzy street-name matches require manual confirmation. |
 
 ## Street-name spelling differences

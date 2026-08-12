@@ -654,8 +654,8 @@ def main() -> None:
             if unambiguous_hail_year is not None and assessor_year is not None
             else None
         )
-        year_needs_review = len(hail_years) > 1 or (year_difference is not None and year_difference >= 50)
-        if unambiguous_hail_year is not None and (assessor_year is None or (year_difference is not None and year_difference < 50)):
+        year_needs_review = len(hail_years) > 1 or (year_difference is not None and year_difference > 50)
+        if unambiguous_hail_year is not None and (assessor_year is None or (year_difference is not None and year_difference <= 50)):
             year_built = unambiguous_hail_year
             year_source = "Hail"
         elif assessor_year is not None:
@@ -692,6 +692,7 @@ def main() -> None:
             "hail_primary_building_id": primary_hail.get("building_id") if primary_hail else None,
             "hail_match_stage": int(primary_hail_match["match_stage"]) if primary_hail_match else None,
             "hail_classification": primary_hail.get("classification") if primary_hail else None,
+            "hail_building_name": primary_hail.get("building_type") if primary_hail else None,
             "hail_building_type": primary_hail.get("building_type") if primary_hail else None,
             "hail_architect": primary_hail.get("architect") if primary_hail else None,
             "hail_builder": primary_hail.get("builder") if primary_hail else None,

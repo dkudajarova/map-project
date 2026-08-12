@@ -95,27 +95,46 @@ function escapeHtml(value: unknown): string {
   )
 }
 
+function validYear(value: unknown): number | null {
+  const year =
+    typeof value === "number"
+      ? value
+      : typeof value === "string" && value.trim() !== ""
+        ? Number(value)
+        : Number.NaN
+
+  return Number.isInteger(year) && year >= 1600 && year <= new Date().getFullYear()
+    ? year
+    : null
+}
+
+function getPopupYearBuilt(properties: BuildingProperties): number | "Unknown" {
+  const hailYear = validYear(properties.hail_year_built)
+  const assessorYear = validYear(
+    properties.assessor_year_built ?? properties.Condition_YearBuilt,
+  )
+
+  if (
+    hailYear !== null &&
+    (assessorYear === null || Math.abs(hailYear - assessorYear) <= 50)
+  ) {
+    return hailYear
+  }
+
+  return assessorYear ?? "Unknown"
+}
+
 function getBuildingPopupHtml(properties: BuildingProperties): string {
-  const address = properties.address ?? properties.Address
-  const yearBuilt =
-    properties.year_built ?? properties.Condition_YearBuilt ?? null
-  const age = properties.age ?? null
+  const address = properties.address ?? properties.Address ?? "Unknown"
+  const buildingName =
+    properties.hail_building_name ?? properties.hail_building_type
 
   const rows: Array<[string, unknown]> = [
     ["Address", address],
-    ["Year built", yearBuilt],
-    ["Year source", properties.year_built_source],
-    ["Age", age],
-    ["Hail year", properties.hail_year_built],
-    ["Assessor year", properties.assessor_year_built],
-    ["Building type", properties.hail_building_type],
+    ["Building name", buildingName],
+    ["Year built", getPopupYearBuilt(properties)],
     ["Architect", properties.hail_architect],
     ["Builder", properties.hail_builder],
-    ["Owner at construction", properties.hail_owner_at_construction],
-    ["Property class", properties.PropertyClass],
-    ["Zoning", properties.Zoning],
-    ["Hail match stage", properties.hail_match_stage],
-    ["Hail details", properties.hail_summary],
   ]
 
   const visibleRows = rows
@@ -131,15 +150,10 @@ function getBuildingPopupHtml(properties: BuildingProperties): string {
     )
     .join("")
 
-  const reviewNotice = properties.year_needs_review
-    ? '<p class="building-popup__notice">Construction years differ substantially or Hail records conflict; the displayed year needs review.</p>'
-    : ""
-
   return `
     <dl class="building-popup">
       ${visibleRows}
     </dl>
-    ${reviewNotice}
   `
 }
 
@@ -150,6 +164,15 @@ export default function BuildingAgeMap() {
   const [error, setError] = useState<string | null>(null)
   const [coverage, setCoverage] = useState<number | null>(null)
   const [selectedBands, setSelectedBands] = useState<string[]>(allAgeBandIds)
+  const [legendCollapsed, setLegendCollapsed] = useState(false)
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setLegendCollapsed(window.matchMedia("(max-width: 640px)").matches)
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [])
 
   useEffect(() => {
     if (mapRef.current || !mapContainerRef.current) return
@@ -356,53 +379,69 @@ export default function BuildingAgeMap() {
         </div>
       )}
       {!loading && !error && coverage !== null && (
-        <aside className="map-legend" aria-labelledby="map-legend-title">
-          <h2 id="map-legend-title" className="map-legend__title">
-            Building age
-          </h2>
-          <p className="map-legend__coverage">
-            Construction year available for {coverage.toFixed(1)}% of mapped
-            buildings
-          </p>
-          <div className="map-legend__actions">
+        <aside
+          className={`map-legend${legendCollapsed ? " map-legend--collapsed" : ""}`}
+          aria-labelledby="map-legend-title"
+        >
+          <div className="map-legend__header">
+            <h2 id="map-legend-title" className="map-legend__title">
+              Building age
+            </h2>
             <button
+              className="map-legend__toggle"
               type="button"
-              onClick={() => setSelectedBands(allAgeBandIds)}
-              disabled={selectedBands.length === allAgeBandIds.length}
+              aria-expanded={!legendCollapsed}
+              aria-controls="map-legend-content"
+              onClick={() => setLegendCollapsed((collapsed) => !collapsed)}
             >
-              Select all
-            </button>
-            <button
-              type="button"
-              onClick={() => setSelectedBands([])}
-              disabled={selectedBands.length === 0}
-            >
-              Clear all
+              {legendCollapsed ? "Show" : "Hide"}
             </button>
           </div>
-          <a className="map-legend__review-link" href="/review">
-            Open manual review
-          </a>
-          <ul className="map-legend__items">
-            {orderedAgeBands.map((band) => (
-              <li key={band.id} className="map-legend__item">
-                <input
-                  id={`age-band-${band.id}`}
-                  type="checkbox"
-                  checked={selectedBands.includes(band.id)}
-                  onChange={() => toggleAgeBand(band.id)}
-                />
-                <label htmlFor={`age-band-${band.id}`}>
-                  <span
-                    className="map-legend__swatch"
-                    style={{ backgroundColor: band.color }}
-                    aria-hidden="true"
+          <div id="map-legend-content" hidden={legendCollapsed}>
+            <p className="map-legend__coverage">
+              Construction year available for {coverage.toFixed(1)}% of mapped
+              buildings
+            </p>
+            <div className="map-legend__actions">
+              <button
+                type="button"
+                onClick={() => setSelectedBands(allAgeBandIds)}
+                disabled={selectedBands.length === allAgeBandIds.length}
+              >
+                Select all
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedBands([])}
+                disabled={selectedBands.length === 0}
+              >
+                Clear all
+              </button>
+            </div>
+            <a className="map-legend__review-link" href="/review">
+              Open manual review
+            </a>
+            <ul className="map-legend__items">
+              {orderedAgeBands.map((band) => (
+                <li key={band.id} className="map-legend__item">
+                  <input
+                    id={`age-band-${band.id}`}
+                    type="checkbox"
+                    checked={selectedBands.includes(band.id)}
+                    onChange={() => toggleAgeBand(band.id)}
                   />
-                  <span>{band.label}</span>
-                </label>
-              </li>
-            ))}
-          </ul>
+                  <label htmlFor={`age-band-${band.id}`}>
+                    <span
+                      className="map-legend__swatch"
+                      style={{ backgroundColor: band.color }}
+                      aria-hidden="true"
+                    />
+                    <span>{band.label}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
         </aside>
       )}
     </div>

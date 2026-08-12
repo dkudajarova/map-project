@@ -379,6 +379,20 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "massachusetts-ave_1553_3",
+      "decision": "matched",
+      "bldgid": "266-11",
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1553 Massachusetts Avenue",
+      "note": "Harvard Epworth Methodist Church; current Cambridge GIS canonical address is 1555 Massachusetts Ave",
+      "reviewed_at": "2026-08-12T14:00:29Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "massachusetts-ave_415-429",
       "decision": "matched",
       "bldgid": "632-10",
