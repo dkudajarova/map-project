@@ -7,20 +7,23 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test:wikipedia-popup": "node --test tests/frontend/wikipediaArticles.test.mjs",
+    "qa:wikipedia-popup": "node scripts/visual_qa_wikipedia_popups.mjs",
     "data:build": "python3 scripts/build_building_database.py",
     "wikipedia:update": "python3 scripts/update_wikipedia_articles.py",
     "wikipedia:match": "python3 scripts/match_wikipedia_buildings.py",
+    "wikipedia:enrich": "python3 scripts/enrich_wikipedia_buildings.py",
     "overrides:analyze": "python3 scripts/analyze_manual_overrides.py"
   },
   "dependencies": {
+    "@turf/boolean-point-in-polygon": "^6.5.0",
     "maplibre-gl": "^6.1.0",
     "next": "16.3.0",
+    "proj4": "^2.8.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "shapefile": "^0.6.6",
-    "@turf/boolean-point-in-polygon": "^6.5.0",
-    "proj4": "^2.8.1"
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -29,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
+    "playwright-core": "^1.62.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

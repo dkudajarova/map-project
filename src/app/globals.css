@@ -276,6 +276,40 @@ body {
   overflow-wrap: anywhere;
 }
 
+.building-popup__wikipedia {
+  margin-top: 0.75rem;
+  padding-top: 0.625rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.building-popup__wikipedia-heading {
+  margin: 0 0 0.25rem !important;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.building-popup__wikipedia ul {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.building-popup__wikipedia a {
+  color: #1d4ed8;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.building-popup__wikipedia a:hover {
+  color: #1e40af;
+}
+
 .building-popup__notice {
   margin-top: 0.75rem !important;
   padding: 0.5rem 0.625rem;

@@ -33,6 +33,7 @@ MATCH_AUDIT_OUT = ROOT / "data/processed/hail-address-matches.csv"
 REVIEW_OUT = ROOT / "data/processed/hail-address-review.csv"
 REVIEW_SUMMARY_OUT = ROOT / "data/processed/hail-address-review-summary.md"
 REVIEW_BUNDLE_OUT = ROOT / "data/processed/hail-manual-review.json"
+WIKIPEDIA_MATCHES_PATH = ROOT / "data/processed/wikipedia-building-candidates.csv"
 
 STREET_SUFFIXES = {
     "avenue": "ave",
@@ -92,6 +93,37 @@ def load_geojson(path: Path) -> dict[str, Any]:
     if data.get("type") != "FeatureCollection" or not isinstance(data.get("features"), list):
         raise ValueError(f"Expected a GeoJSON FeatureCollection: {path}")
     return data
+
+
+def load_approved_wikipedia_matches(
+    path: Path,
+) -> dict[str, list[dict[str, Any]]]:
+    """Load explicit, current Wikipedia approvals grouped by footprint BldgID."""
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        rows = list(csv.DictReader(handle))
+    approved_by_bldgid: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    seen_page_ids: set[int] = set()
+    for row in rows:
+        if row.get("decision_status") != "approved":
+            continue
+        page_id_text = text(row.get("wikipedia_page_id"))
+        bldgid = normalize_id(row.get("matched_bldgid"))
+        title = text(row.get("wikipedia_title"))
+        url = text(row.get("wikipedia_url"))
+        if not page_id_text.isdigit() or int(page_id_text) <= 0:
+            raise ValueError(f"Approved Wikipedia row has invalid page ID: {page_id_text!r}")
+        page_id = int(page_id_text)
+        if page_id in seen_page_ids:
+            raise ValueError(f"Duplicate approved Wikipedia page ID: {page_id}")
+        if not bldgid or not title or not url.startswith("https://en.wikipedia.org/wiki/"):
+            raise ValueError(f"Approved Wikipedia page {page_id} has incomplete metadata")
+        seen_page_ids.add(page_id)
+        approved_by_bldgid[bldgid].append(
+            {"page_id": page_id, "title": title, "url": url}
+        )
+    for articles in approved_by_bldgid.values():
+        articles.sort(key=lambda article: (article["title"].casefold(), article["page_id"]))
+    return approved_by_bldgid
 
 
 def text(value: Any) -> str:
@@ -638,6 +670,7 @@ def main() -> None:
         AGE_BANDS_PATH,
         STREET_ALIASES_PATH,
         MANUAL_OVERRIDES_PATH,
+        WIKIPEDIA_MATCHES_PATH,
     ):
         if not source.exists():
             raise FileNotFoundError(source)
@@ -653,6 +686,7 @@ def main() -> None:
         street_alias_config = json.load(handle)
     with MANUAL_OVERRIDES_PATH.open(encoding="utf-8-sig") as handle:
         override_data = json.load(handle)
+    approved_wikipedia_by_bldgid = load_approved_wikipedia_matches(WIKIPEDIA_MATCHES_PATH)
     confirmed_street_aliases = {
         (normalize_street(pair[0]), normalize_street(pair[1]))
         for pair in street_alias_config.get("confirmed", [])
@@ -730,6 +764,7 @@ def main() -> None:
         assessor_year = complete_year(selected_assessor.get("condition_yearbuilt")) if selected_assessor else None
 
         accepted_hail = accepted_hail_by_bldgid.get(bldgid, [])
+        wikipedia_articles = approved_wikipedia_by_bldgid.get(bldgid, [])
         primary_hail_pair = choose_hail_record(accepted_hail)
         primary_hail = primary_hail_pair[0] if primary_hail_pair else None
         primary_hail_match = primary_hail_pair[1] if primary_hail_pair else None
@@ -798,6 +833,12 @@ def main() -> None:
             "age_band": assign_age_band(age_bands, year_built),
             "join_status": "matched" if selected_assessor else "unmatched",
             "join_ambiguous": len(gisids) > 1,
+            "wikipedia_article_count": len(wikipedia_articles),
+            "wikipedia_articles_json": (
+                json.dumps(wikipedia_articles, ensure_ascii=False, separators=(",", ":"))
+                if wikipedia_articles
+                else None
+            ),
         }
         output_features.append(
             {
@@ -944,6 +985,8 @@ def main() -> None:
     for source, count in year_source_counts.items():
         print(f"  {source}: {count:,}")
     print(f"Year-review flags: {year_review_count:,}")
+    print(f"Approved Wikipedia articles: {sum(len(items) for items in approved_wikipedia_by_bldgid.values()):,}")
+    print(f"Buildings with Wikipedia articles: {len(approved_wikipedia_by_bldgid):,}")
     print(f"Wrote {PROCESSED_OUT}")
     print(f"Wrote {PUBLIC_OUT}")
     print(f"Wrote {MATCH_AUDIT_OUT}")

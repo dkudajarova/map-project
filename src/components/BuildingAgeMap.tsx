@@ -4,12 +4,15 @@ import React, { useEffect, useRef, useState } from "react"
 import * as maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
 import ageBands from "@/data/Age_bands.json"
+import { parseWikipediaArticles } from "@/lib/wikipediaArticles.mjs"
 import type { FeatureCollection, Polygon, MultiPolygon } from "geojson"
 
 type BuildingProperties = {
   age_band?: string
   year_built?: number | string | null
   Condition_YearBuilt?: number | string
+  wikipedia_article_count?: number
+  wikipedia_articles_json?: string | null
   [key: string]: unknown
 }
 
@@ -64,35 +67,12 @@ function getValidConstructionYearCoverage(
   return (validCount / total) * 100
 }
 
-function escapeHtml(value: unknown): string {
-  if (
-    value === null ||
-    value === undefined ||
-    (typeof value === "string" && value.trim() === "") ||
-    (typeof value === "number" && !Number.isFinite(value))
-  ) {
-    return "Unknown"
-  }
-
-  if (
-    typeof value !== "string" &&
-    typeof value !== "number" &&
-    typeof value !== "boolean"
-  ) {
-    return "Unknown"
-  }
-
-  return String(value).replace(
-    /[&<>'"]/g,
-    (character) =>
-      ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        "'": "&#39;",
-        '"': "&quot;",
-      })[character] ?? character,
-  )
+function displayValue(value: unknown): string | null {
+  if (value === null || value === undefined) return null
+  if (typeof value === "string") return value.trim() || null
+  if (typeof value === "number") return Number.isFinite(value) ? String(value) : null
+  if (typeof value === "boolean") return String(value)
+  return null
 }
 
 function validYear(value: unknown): number | null {
@@ -124,7 +104,7 @@ function getPopupYearBuilt(properties: BuildingProperties): number | "Unknown" {
   return assessorYear ?? "Unknown"
 }
 
-function getBuildingPopupHtml(properties: BuildingProperties): string {
+function getBuildingPopupContent(properties: BuildingProperties): HTMLElement {
   const address = properties.address ?? properties.Address ?? "Unknown"
   const buildingName =
     properties.hail_building_name ?? properties.hail_building_type
@@ -137,24 +117,44 @@ function getBuildingPopupHtml(properties: BuildingProperties): string {
     ["Builder", properties.hail_builder],
   ]
 
-  const visibleRows = rows
-    .filter(([, value]) => {
-      if (value === null || value === undefined) return false
-      if (typeof value === "string" && value.trim() === "") return false
-      if (typeof value === "number" && !Number.isFinite(value)) return false
-      return true
-    })
-    .map(
-      ([label, value]) =>
-        `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`,
-    )
-    .join("")
+  const container = document.createElement("div")
+  const details = document.createElement("dl")
+  details.className = "building-popup"
+  for (const [label, value] of rows) {
+    const displayed = displayValue(value)
+    if (!displayed) continue
+    const row = document.createElement("div")
+    const term = document.createElement("dt")
+    const description = document.createElement("dd")
+    term.textContent = label
+    description.textContent = displayed
+    row.append(term, description)
+    details.append(row)
+  }
+  container.append(details)
 
-  return `
-    <dl class="building-popup">
-      ${visibleRows}
-    </dl>
-  `
+  const articles = parseWikipediaArticles(properties.wikipedia_articles_json)
+  if (articles.length) {
+    const section = document.createElement("section")
+    section.className = "building-popup__wikipedia"
+    const heading = document.createElement("p")
+    heading.className = "building-popup__wikipedia-heading"
+    heading.textContent = articles.length === 1 ? "Wikipedia article" : "Wikipedia articles"
+    const list = document.createElement("ul")
+    for (const article of articles) {
+      const item = document.createElement("li")
+      const link = document.createElement("a")
+      link.href = article.url
+      link.target = "_blank"
+      link.rel = "noopener noreferrer"
+      link.textContent = article.title
+      item.append(link)
+      list.append(item)
+    }
+    section.append(heading, list)
+    container.append(section)
+  }
+  return container
 }
 
 export default function BuildingAgeMap() {
@@ -227,7 +227,7 @@ export default function BuildingAgeMap() {
 
       popup
         .setLngLat(event.lngLat)
-        .setHTML(getBuildingPopupHtml(properties))
+        .setDOMContent(getBuildingPopupContent(properties))
         .addTo(map)
     }
 

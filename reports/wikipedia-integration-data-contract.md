@@ -136,6 +136,28 @@ integration after verifying how MapLibre 6 exposes nested GeoJSON properties.
 Regardless of encoding, it must preserve page ID, title, and URL for every
 approved article and must support multiple articles per footprint.
 
+The map-ready encoding uses `wikipedia_article_count` as an integer and
+`wikipedia_articles_json` as a compact JSON string containing an array of
+`page_id`, `title`, and `url` objects. Pending, rejected, and stale records must
+not appear in either property.
+
+`npm run wikipedia:enrich` refreshes only these two properties in the existing
+canonical building GeoJSON and its public copy. This is the safe command for
+scheduled Wikipedia updates: it does not rebuild unrelated assessor or Hail
+data and fails if an approved `BldgID` is absent from the canonical dataset.
+
+## Scheduled update
+
+`.github/workflows/update-wikipedia.yml` runs monthly and on manual dispatch.
+It checks out this repository plus the public `dkudajarova/cambridgegis_data`
+fork, refreshes and matches the Wikipedia snapshot, enriches the existing
+building outputs, validates the result, and opens or updates one automation
+pull request. The workflow never rewrites the manual decision file.
+
+The repository must allow GitHub Actions to create pull requests under
+**Settings → Actions → General → Workflow permissions**. The first run should
+be launched manually and reviewed before relying on the monthly schedule.
+
 ## Fixtures
 
 Representative version-1 fixtures live in `tests/fixtures/wikipedia/`. They

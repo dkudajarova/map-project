@@ -1,0 +1,84 @@
+name: Update Wikipedia building links
+
+on:
+  schedule:
+    - cron: "23 8 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: wikipedia-building-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out map project
+        uses: actions/checkout@v6
+
+      - name: Check out Cambridge GIS fork
+        uses: actions/checkout@v6
+        with:
+          repository: dkudajarova/cambridgegis_data
+          ref: main
+          path: cambridgegis_data
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install JavaScript dependencies
+        run: npm ci
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Retrieve current Wikipedia articles
+        env:
+          WIKIMEDIA_USER_AGENT: CambridgeBuildingMapWikipediaBot/1.0 (https://map-project-mauve.vercel.app/)
+        run: npm run wikipedia:update
+
+      - name: Match articles and apply saved decisions
+        run: npm run wikipedia:match
+
+      - name: Refresh published Wikipedia properties
+        run: npm run wikipedia:enrich
+
+      - name: Run Python tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Run popup parser tests
+        run: npm run test:wikipedia-popup
+
+      - name: Lint application
+        run: npm run lint
+
+      - name: Build application
+        run: npm run build -- --webpack
+
+      - name: Open or update the data pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: automation/update-wikipedia-building-links
+          delete-branch: true
+          commit-message: Update Wikipedia building links
+          title: Update Wikipedia building links
+          body: |
+            Automated monthly refresh of Cambridge Wikipedia building links.
+
+            This pull request includes the latest complete article snapshot,
+            regenerated candidates and review queue, and publication-approved
+            links in the map GeoJSON. Manual review decisions are read but are
+            never changed by the workflow.
