@@ -194,6 +194,9 @@ export default function BuildingAgeMap() {
     })
     const abortController = new AbortController()
     let popupPinned = false
+    let hoveredBuildingKey: string | null = null
+    let popupElement: HTMLElement | null = null
+    let popupCloseTimer: number | null = null
     let interactionListenersAttached = false
 
     mapRef.current = map
@@ -215,8 +218,42 @@ export default function BuildingAgeMap() {
       console.error("MapLibre error:", event.error)
     }
 
+    const cancelPopupClose = () => {
+      if (popupCloseTimer === null) return
+      window.clearTimeout(popupCloseTimer)
+      popupCloseTimer = null
+    }
+
+    const schedulePopupClose = () => {
+      cancelPopupClose()
+      popupCloseTimer = window.setTimeout(() => {
+        popupCloseTimer = null
+        if (!popupPinned) popup.remove()
+      }, 250)
+    }
+
+    const handlePopupMouseEnter = () => {
+      cancelPopupClose()
+    }
+
+    const handlePopupMouseLeave = () => {
+      if (!popupPinned) schedulePopupClose()
+    }
+
+    const attachPopupInteractionListeners = () => {
+      const element = popup.getElement()
+      if (popupElement === element) return
+      popupElement?.removeEventListener("mouseenter", handlePopupMouseEnter)
+      popupElement?.removeEventListener("mouseleave", handlePopupMouseLeave)
+      popupElement = element
+      popupElement.addEventListener("mouseenter", handlePopupMouseEnter)
+      popupElement.addEventListener("mouseleave", handlePopupMouseLeave)
+    }
+
     const handlePopupClose = () => {
+      cancelPopupClose()
       popupPinned = false
+      hoveredBuildingKey = null
     }
 
     const showBuildingPopup = (event: maplibregl.MapLayerMouseEvent) => {
@@ -225,26 +262,50 @@ export default function BuildingAgeMap() {
         | undefined
       if (!properties) return
 
+      cancelPopupClose()
       popup
         .setLngLat(event.lngLat)
         .setDOMContent(getBuildingPopupContent(properties))
         .addTo(map)
+      attachPopupInteractionListeners()
     }
 
-    const handleBuildingMouseEnter = () => {
+    const getBuildingKey = (event: maplibregl.MapLayerMouseEvent) => {
+      const feature = event.features?.[0]
+      const properties = feature?.properties as BuildingProperties | undefined
+      return String(
+        feature?.id ??
+          properties?.bldgid ??
+          properties?.address ??
+          properties?.Address ??
+          "building",
+      )
+    }
+
+    const handleBuildingMouseEnter = (event: maplibregl.MapLayerMouseEvent) => {
       map.getCanvas().style.cursor = "pointer"
+      if (!popupPinned) {
+        hoveredBuildingKey = getBuildingKey(event)
+        showBuildingPopup(event)
+      }
     }
 
     const handleBuildingMouseMove = (event: maplibregl.MapLayerMouseEvent) => {
-      if (!popupPinned) showBuildingPopup(event)
+      if (popupPinned) return
+      const buildingKey = getBuildingKey(event)
+      if (buildingKey === hoveredBuildingKey) return
+      hoveredBuildingKey = buildingKey
+      showBuildingPopup(event)
     }
 
     const handleBuildingMouseLeave = () => {
       map.getCanvas().style.cursor = ""
-      if (!popupPinned) popup.remove()
+      hoveredBuildingKey = null
+      if (!popupPinned) schedulePopupClose()
     }
 
     const handleBuildingClick = (event: maplibregl.MapLayerMouseEvent) => {
+      cancelPopupClose()
       popupPinned = true
       showBuildingPopup(event)
     }
@@ -331,6 +392,9 @@ export default function BuildingAgeMap() {
         map.off("mouseleave", fillLayerId, handleBuildingMouseLeave)
         map.off("click", fillLayerId, handleBuildingClick)
       }
+      cancelPopupClose()
+      popupElement?.removeEventListener("mouseenter", handlePopupMouseEnter)
+      popupElement?.removeEventListener("mouseleave", handlePopupMouseLeave)
       popup.off("close", handlePopupClose)
       popup.remove()
       map.getCanvas().style.cursor = ""
