@@ -20,7 +20,7 @@ Razed Hail records are excluded from matching. Cross-reference and unclear Hail 
 | 2 | Hail numeric range contains Address Point number(s) and all valid candidates resolve to one `BldgID` | Usually auto-accept; complexes review |
 | 3 | Exact Hail address matches multiple Address Points whose valid IDs all resolve to one `BldgID` | Auto-accept; complexes review |
 | 4 | Street and number overlap, while rear/suffix/range representation differs | Auto-accept only one plausible footprint; otherwise review |
-| 5 | Hail `historic_address` produces candidate(s) on a current Address Point street/address | Review |
+| 5 | An address in Hail `historic_address` or the parsed detail/body exactly equals a current canonical Address Point address | Auto-accept one valid footprint; ambiguous matches and complexes review; broader historic aliases review |
 | 6 | Street edit distance is small and the house number is compatible | Auto-accept a configured confirmed alias with one footprint; configured exceptions, multiple footprints, complexes, and unknown pairs review |
 | 7 | No valid footprint candidate, or record classification is cross-reference/unclear | Leave unmatched |
 | 8 | A reviewer explicitly selects a valid footprint from the manual-review workspace | Accept the override; a reviewer can instead preserve an explicit `no_map_match` decision |
@@ -39,20 +39,22 @@ Stage 2 range containment and Stage 4 number/range overlap.
 |---:|---|---:|
 | 0 | Excluded as razed | 5,451 |
 | 1 | Accepted | 6,672 |
-| 1 | Review | 32 |
+| 1 | Review | 29 |
 | 2 | Accepted | 3,097 |
-| 2 | Review | 130 |
+| 2 | Review | 125 |
 | 3 | Accepted | 20 |
 | 3 | Review | 2 |
 | 4 | Accepted | 144 |
-| 4 | Review | 693 |
-| 5 | Review | 76 |
-| 6 | Accepted confirmed aliases | 253 |
-| 6 | Review | 23 |
-| 7 | Unmatched | 2,173 |
-| 8 | Accepted manual overrides | 18 |
+| 4 | Review | 643 |
+| 5 | Accepted exact historic/detail addresses | 100 |
+| 5 | Review | 21 |
+| 6 | Accepted confirmed aliases | 252 |
+| 6 | Review | 21 |
+| 7 | Unmatched | 2,120 |
+| 8 | Accepted manual overrides | 86 |
+| 8 | Explicit no-map-match overrides | 1 |
 
-Totals: 10,204 accepted Hail records, 956 review records, 2,173 unmatched records, and 5,451 excluded records.
+Totals: 10,371 accepted Hail records, 841 review records, 2,121 unmatched/no-map-match records, and 5,451 excluded records.
 
 ## Displayed construction year
 
@@ -68,11 +70,11 @@ Current footprint results:
 
 | Display source | Footprints |
 |---|---:|
-| Hail | 8,830 |
-| Assessor | 4,015 |
-| Unknown | 5,391 |
+| Hail | 9,005 |
+| Assessor | 3,846 |
+| Unknown | 5,385 |
 
-There are 996 footprint records flagged for construction-year review because Hail records conflict or Hail and assessor differ by at least 50 years.
+There are 1,012 footprint records flagged for construction-year review because Hail records conflict or Hail and assessor differ by at least 50 years.
 
 ## Output files
 
@@ -104,15 +106,20 @@ bundle. Run `npm run overrides:analyze` after reviewing a street.
 
 ## Review workflow
 
-Use `/review` on the local application. The left panel shows the Hail record,
-its original stage, review reason, and proposed candidates. The right panel
+Use `/review` on the local application. Records form one global priority queue:
+the oldest complete construction years come first, records without complete
+years come last, and ties favor entries with more populated building type/name,
+architect, builder, owner, historic address, stories, and summary fields. The
+left panel shows the Hail record, its original stage, review reason, and proposed candidates. The right panel
 shows all Cambridge footprints; proposed candidates are highlighted, and any
-neighboring footprint can be selected even if it was not proposed. A reviewer
-can also record `no_map_match` and add a note.
+number of proposed or neighboring footprints can be selected, including
+footprints that were not proposed. A reviewer can also record `no_map_match`
+and add a note.
 
 Each saved decision is written atomically to the separate manual-override JSON.
 For later rule analysis it retains the original stage, reason, proposed
-`BldgID` list, and whether the selected footprint was proposed or neighboring.
+`BldgID` list, the selected `bldgids` array (with legacy `bldgid` retaining the
+first selection), and whether every selected footprint was proposed.
 The data build applies matched decisions as Stage 8 and removes explicit
 no-map-match decisions from the active review queue without modifying the Hail,
 Address Points, assessor, or footprint sources. Clearing a decision restores

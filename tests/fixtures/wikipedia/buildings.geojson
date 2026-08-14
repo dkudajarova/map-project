@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-71.1098, 42.3735], [-71.1096, 42.3735], [-71.1096, 42.3737], [-71.1098, 42.3737], [-71.1098, 42.3735]]]
+      },
+      "properties": {
+        "BldgID": "fixture-1",
+        "Address": "1 Example Street"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [[[[-71.1091, 42.3739], [-71.1089, 42.3739], [-71.1089, 42.3741], [-71.1091, 42.3741], [-71.1091, 42.3739]]]]
+      },
+      "properties": {
+        "BldgID": "fixture-2",
+        "Address": "2 Example Street"
+      }
+    }
+  ]
+}

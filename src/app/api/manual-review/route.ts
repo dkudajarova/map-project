@@ -10,6 +10,7 @@ type ManualOverride = {
   building_id: string
   decision: OverrideDecision
   bldgid: string | null
+  bldgids?: string[]
   street_name: string
   hail_address: string
   note: string
@@ -27,6 +28,7 @@ type ReviewRecord = {
   hail_street_name: string
   candidate_bldgids: string
   candidate_addresses: string
+  hail?: Record<string, unknown>
   [key: string]: unknown
 }
 
@@ -66,7 +68,7 @@ async function readOverrides(): Promise<OverrideFile> {
     return await readJson<OverrideFile>(overridePath)
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error
-    return { version: 1, overrides: [] }
+    return { version: 2, overrides: [] }
   }
 }
 
@@ -97,53 +99,75 @@ function cleanString(value: unknown, maximumLength: number): string {
   return typeof value === "string" ? value.trim().slice(0, maximumLength) : ""
 }
 
-export async function GET(request: Request) {
+function cleanBuildingIds(value: unknown): string[] {
+  if (!Array.isArray(value)) return []
+  return [...new Set(value.map((item) => cleanString(item, 100)).filter(Boolean))]
+}
+
+function overrideBuildingIds(override: ManualOverride | undefined): string[] {
+  if (!override || override.decision !== "matched") return []
+  const ids = cleanBuildingIds(override.bldgids)
+  return ids.length ? ids : override.bldgid ? [override.bldgid] : []
+}
+
+const priorityMetadataFields = [
+  "building_type",
+  "architect",
+  "builder",
+  "owner_at_construction",
+  "historic_address",
+  "stories",
+  "summary_raw",
+] as const
+
+function reviewPriority(record: ReviewRecord) {
+  const hail = record.hail ?? {}
+  const yearText = String(hail.construction_year ?? record.construction_year ?? "")
+  const year = /^\d{4}$/.test(yearText) ? Number(yearText) : null
+  const metadataCount = priorityMetadataFields.filter(
+    (field) => String(hail[field] ?? "").trim().length > 0,
+  ).length
+  return { year, metadataCount }
+}
+
+export async function GET() {
   try {
     const [bundle, overrideFile] = await Promise.all([
       readJson<ReviewBundle>(reviewBundlePath),
       readOverrides(),
     ])
     const overrideById = new Map(
-      overrideFile.overrides.map((override) => [override.building_id, override]),
+      overrideFile.overrides.map((override) => [
+        override.building_id,
+        { ...override, bldgids: overrideBuildingIds(override) },
+      ]),
     )
-    const streetCounts = new Map<
-      string,
-      { name: string; total: number; reviewed: number }
-    >()
-    for (const record of bundle.records) {
-      const street = String(record.hail_street_name ?? "").trim()
-      const current = streetCounts.get(street) ?? {
-        name: street,
-        total: 0,
-        reviewed: 0,
-      }
-      current.total += 1
-      current.reviewed += Number(overrideById.has(record.building_id))
-      streetCounts.set(street, current)
-    }
-    const streets = [...streetCounts.values()]
-      .map((street) => ({
-        ...street,
-        pending: street.total - street.reviewed,
-      }))
-      .sort((left, right) => left.name.localeCompare(right.name))
-
-    const url = new URL(request.url)
-    const requestedStreet = url.searchParams.get("street")?.trim() ?? ""
-    const records = requestedStreet
-      ? bundle.records
-          .filter((record) => record.hail_street_name === requestedStreet)
-          .map((record) => ({
-            ...record,
-            override: overrideById.get(record.building_id) ?? null,
-          }))
-      : []
+    const records = bundle.records
+      .map((record) => {
+        const priority = reviewPriority(record)
+        return {
+          ...record,
+          override: overrideById.get(record.building_id) ?? null,
+          priority_year: priority.year,
+          priority_metadata_count: priority.metadataCount,
+        }
+      })
+      .sort((left, right) => {
+        if (left.priority_year === null && right.priority_year !== null) return 1
+        if (left.priority_year !== null && right.priority_year === null) return -1
+        if (left.priority_year !== right.priority_year) {
+          return (left.priority_year ?? 0) - (right.priority_year ?? 0)
+        }
+        if (left.priority_metadata_count !== right.priority_metadata_count) {
+          return right.priority_metadata_count - left.priority_metadata_count
+        }
+        return left.hail_address.localeCompare(right.hail_address)
+      })
 
     return Response.json({
       generated_at: bundle.generated_at,
       total_review_records: bundle.record_count,
       override_count: overrideFile.overrides.length,
-      streets,
       records,
     })
   } catch (error) {
@@ -159,7 +183,13 @@ export async function POST(request: Request) {
     const body = (await request.json()) as Record<string, unknown>
     const buildingId = cleanString(body.building_id, 200)
     const decision = cleanString(body.decision, 30) as OverrideDecision
-    const bldgid = cleanString(body.bldgid, 100)
+    const requestedBuildingIds = cleanBuildingIds(body.bldgids)
+    const legacyBuildingId = cleanString(body.bldgid, 100)
+    const bldgids = requestedBuildingIds.length
+      ? requestedBuildingIds
+      : legacyBuildingId
+        ? [legacyBuildingId]
+        : []
     const note = cleanString(body.note, 2000)
     if (!buildingId || !["matched", "no_map_match"].includes(decision)) {
       return Response.json({ error: "Invalid building_id or decision" }, { status: 400 })
@@ -179,15 +209,17 @@ export async function POST(request: Request) {
       return Response.json({ error: "Hail record is not in the review queue" }, { status: 404 })
     }
     if (decision === "matched") {
-      if (!bldgid || !(await validBuildingIds()).has(bldgid)) {
-        return Response.json({ error: "Select a valid footprint BldgID" }, { status: 400 })
+      const validIds = await validBuildingIds()
+      if (!bldgids.length || bldgids.some((id) => !validIds.has(id))) {
+        return Response.json({ error: "Select one or more valid footprint BldgIDs" }, { status: 400 })
       }
     }
 
     const override: ManualOverride = {
       building_id: buildingId,
       decision,
-      bldgid: decision === "matched" ? bldgid : null,
+      bldgid: decision === "matched" ? bldgids[0] : null,
+      bldgids: decision === "matched" ? bldgids : [],
       street_name:
         String(reviewRecord?.hail_street_name ?? existing?.street_name ?? ""),
       hail_address: String(
@@ -215,9 +247,11 @@ export async function POST(request: Request) {
       selected_was_proposed:
         decision === "matched"
           ? reviewRecord
-            ? String(reviewRecord.candidate_bldgids ?? "")
-                .split("|")
-                .includes(bldgid)
+            ? bldgids.every((id) =>
+                String(reviewRecord.candidate_bldgids ?? "")
+                  .split("|")
+                  .includes(id),
+              )
             : (existing?.selected_was_proposed ?? null)
           : null,
     }
@@ -230,8 +264,12 @@ export async function POST(request: Request) {
         `${right.street_name}\u0000${right.hail_address}\u0000${right.building_id}`,
       ),
     )
-    await writeOverrides({ version: 1, overrides })
-    return Response.json({ ok: true, override, override_count: overrides.length })
+    await writeOverrides({ version: Math.max(overrideFile.version, 2), overrides })
+    return Response.json({
+      ok: true,
+      override: { ...override, bldgids: overrideBuildingIds(override) },
+      override_count: overrides.length,
+    })
   } catch (error) {
     return Response.json(
       { error: error instanceof Error ? error.message : String(error) },
@@ -251,7 +289,7 @@ export async function DELETE(request: Request) {
     const overrides = overrideFile.overrides.filter(
       (item) => item.building_id !== buildingId,
     )
-    await writeOverrides({ version: 1, overrides })
+    await writeOverrides({ version: Math.max(overrideFile.version, 2), overrides })
     return Response.json({ ok: true, override_count: overrides.length })
   } catch (error) {
     return Response.json(

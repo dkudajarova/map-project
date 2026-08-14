@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "data:build": "python3 scripts/build_building_database.py",
+    "wikipedia:update": "python3 scripts/update_wikipedia_articles.py",
+    "wikipedia:match": "python3 scripts/match_wikipedia_buildings.py",
     "overrides:analyze": "python3 scripts/analyze_manual_overrides.py"
   },
   "dependencies": {

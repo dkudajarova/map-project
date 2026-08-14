@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "decisions": [
+    {
+      "wikipedia_page_id": 123456,
+      "decision": "approved",
+      "bldgid": "fixture-1",
+      "wikipedia_title": "Example Cambridge House",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Example_Cambridge_House",
+      "latitude": 42.3736,
+      "longitude": -71.1097,
+      "review_note": "Coordinate falls within the correct building footprint.",
+      "reviewed_at": "2026-08-13T12:30:00Z"
+    },
+    {
+      "wikipedia_page_id": 234567,
+      "decision": "rejected",
+      "bldgid": null,
+      "wikipedia_title": "Example Cambridge Institution",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Example_Cambridge_Institution",
+      "latitude": 42.374,
+      "longitude": -71.1089,
+      "review_note": "Article describes an institution rather than a building.",
+      "reviewed_at": "2026-08-13T12:35:00Z"
+    }
+  ]
+}

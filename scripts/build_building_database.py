@@ -71,6 +71,7 @@ MATCH_COLUMNS = [
     "candidate_addresses",
     "candidate_street_names",
     "matched_bldgid",
+    "matched_bldgids",
     "match_reason",
     "review_reason_category",
     "review_reason_summary",
@@ -80,6 +81,7 @@ MATCH_COLUMNS = [
     "pre_override_match_stage",
     "pre_override_match_status",
     "pre_override_matched_bldgid",
+    "pre_override_matched_bldgids",
     "pre_override_candidate_bldgids",
 ]
 
@@ -267,6 +269,61 @@ def historical_candidates(
     return candidates
 
 
+def exact_embedded_address_candidates(
+    value: str,
+    points_by_street: dict[str, list[dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    """Find canonical addresses written verbatim in either address word order."""
+    normalized = " ".join(ascii_words(value))
+    if not normalized:
+        return []
+    padded_normalized = f" {normalized} "
+    candidates: list[dict[str, Any]] = []
+    for street, points in points_by_street.items():
+        street_text = " ".join(ascii_words(street))
+        if not street_text or f" {street_text} " not in padded_normalized:
+            continue
+        for point in points:
+            house_text = " ".join(ascii_words(point["house"]))
+            if not house_text:
+                continue
+            forward = f" {house_text} {street_text} "
+            reverse = f" {street_text} {house_text} "
+            if forward in padded_normalized or reverse in padded_normalized:
+                candidates.append(point)
+    return candidates
+
+
+def exact_historic_candidates(
+    hail: dict[str, str],
+    exact_index: dict[tuple[str, str], list[dict[str, Any]]],
+    points_by_street: dict[str, list[dict[str, Any]]],
+) -> tuple[list[dict[str, Any]], str]:
+    historic_address = text(hail.get("historic_address"))
+    candidates = exact_embedded_address_candidates(historic_address, points_by_street)
+
+    # Parenthetical historic addresses frequently omit the street when it is
+    # unchanged, e.g. `50 (40) warehouse`. Treat only a complete house token as
+    # an exact same-street address; prose and directional fragments remain out.
+    normalized_historic_house = normalize_house(historic_address)
+    if historic_address and re.fullmatch(r"(?:r)?\d+[a-z]?(?:-\d+[a-z]?)?(?:1/2)?", normalized_historic_house):
+        current_street = normalize_street(hail.get("street_name"))
+        candidates.extend(exact_index.get((current_street, normalized_historic_house), []))
+
+    if candidates:
+        return list({point["feature_index"]: point for point in candidates}.values()), "historic_address"
+
+    # `building_type` is the parsed Hail detail/body field. Some records contain
+    # a second parenthetical address there rather than in `historic_address`.
+    detail_candidates = exact_embedded_address_candidates(
+        text(hail.get("building_type")), points_by_street
+    )
+    return (
+        list({point["feature_index"]: point for point in detail_candidates}.values()),
+        "detail",
+    )
+
+
 def build_match_result(
     hail: dict[str, str],
     stage: int,
@@ -323,6 +380,7 @@ def build_match_result(
             sorted({point["street_name"] for point in candidates if point["street_name"]})
         ),
         "matched_bldgid": bldgids[0] if status == "accepted" and len(bldgids) == 1 else "",
+        "matched_bldgids": bldgids[0] if status == "accepted" and len(bldgids) == 1 else "",
         "match_reason": reason,
         "review_reason_category": review_category,
         "review_reason_summary": review_summary,
@@ -332,6 +390,7 @@ def build_match_result(
         "pre_override_match_stage": "",
         "pre_override_match_status": "",
         "pre_override_matched_bldgid": "",
+        "pre_override_matched_bldgids": "",
         "pre_override_candidate_bldgids": "",
     }
 
@@ -402,6 +461,25 @@ def match_hail_record(
         return build_match_result(
             hail, 4, "review", "manual_review", stage4_points, stage4_bldgids,
             "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+        )
+
+    exact_historic_points, exact_historic_source = exact_historic_candidates(
+        hail, exact_index, points_by_street
+    )
+    exact_historic_points, exact_historic_bldgids = unique_candidates(
+        exact_historic_points, valid_bldgids
+    )
+    if exact_historic_bldgids:
+        if len(exact_historic_bldgids) == 1 and classification != "Building complex":
+            return build_match_result(
+                hail, 5, "accepted", "auto_accept_exact_historic",
+                exact_historic_points, exact_historic_bldgids,
+                f"Exact canonical address found in Hail {exact_historic_source}",
+            )
+        return build_match_result(
+            hail, 5, "review", "manual_review", exact_historic_points,
+            exact_historic_bldgids,
+            f"Exact canonical address in Hail {exact_historic_source} has multiple or complex candidates",
         )
 
     alias_points = historical_candidates(hail.get("historic_address", ""), points_by_street)
@@ -496,6 +574,7 @@ def apply_manual_overrides(
         match["pre_override_match_stage"] = match["match_stage"]
         match["pre_override_match_status"] = match["match_status"]
         match["pre_override_matched_bldgid"] = match["matched_bldgid"]
+        match["pre_override_matched_bldgids"] = match["matched_bldgids"]
         match["pre_override_candidate_bldgids"] = match["candidate_bldgids"]
         match["match_stage"] = "8"
         match["treatment"] = "manual_override"
@@ -505,24 +584,34 @@ def apply_manual_overrides(
         match["review_reason_category"] = ""
         match["review_reason_summary"] = ""
         if decision == "matched":
-            bldgid = normalize_id(override.get("bldgid"))
-            if bldgid not in valid_bldgids:
-                raise ValueError(f"Manual override for {building_id} has invalid BldgID {bldgid!r}")
-            candidate_points = points_by_bldgid.get(bldgid, [])
+            raw_bldgids = override.get("bldgids")
+            bldgids = (
+                list(dict.fromkeys(normalize_id(value) for value in raw_bldgids if normalize_id(value)))
+                if isinstance(raw_bldgids, list)
+                else [normalize_id(override.get("bldgid"))]
+            )
+            if not bldgids or any(bldgid not in valid_bldgids for bldgid in bldgids):
+                raise ValueError(f"Manual override for {building_id} has invalid BldgIDs {bldgids!r}")
+            candidate_points = [
+                point
+                for bldgid in bldgids
+                for point in points_by_bldgid.get(bldgid, [])
+            ]
             match.update(
                 {
                     "match_status": "accepted",
                     "candidate_address_point_count": len(candidate_points),
-                    "candidate_bldgid_count": 1,
-                    "candidate_bldgids": bldgid,
+                    "candidate_bldgid_count": len(bldgids),
+                    "candidate_bldgids": "|".join(bldgids),
                     "candidate_addresses": "|".join(
                         sorted({point["address"] for point in candidate_points if point["address"]})
                     ),
                     "candidate_street_names": "|".join(
                         sorted({point["street_name"] for point in candidate_points if point["street_name"]})
                     ),
-                    "matched_bldgid": bldgid,
-                    "match_reason": "Reviewer selected this footprint",
+                    "matched_bldgid": bldgids[0],
+                    "matched_bldgids": "|".join(bldgids),
+                    "match_reason": "Reviewer selected these footprints",
                 }
             )
         elif decision == "no_map_match":
@@ -532,6 +621,7 @@ def apply_manual_overrides(
                     "candidate_bldgid_count": 0,
                     "candidate_bldgids": "",
                     "matched_bldgid": "",
+                    "matched_bldgids": "",
                     "match_reason": "Reviewer determined there is no map match",
                 }
             )
@@ -612,8 +702,10 @@ def main() -> None:
     hail_by_id = {row["building_id"]: row for row in hail_rows}
     accepted_hail_by_bldgid: dict[str, list[tuple[dict[str, str], dict[str, Any]]]] = defaultdict(list)
     for match in match_rows:
-        if match["match_status"] == "accepted" and match["matched_bldgid"]:
-            accepted_hail_by_bldgid[match["matched_bldgid"]].append((hail_by_id[match["building_id"]], match))
+        if match["match_status"] == "accepted":
+            for bldgid in text(match.get("matched_bldgids") or match.get("matched_bldgid")).split("|"):
+                if bldgid:
+                    accepted_hail_by_bldgid[bldgid].append((hail_by_id[match["building_id"]], match))
 
     assessor_by_gisid = {
         normalize_id(feature.get("properties", {}).get("gisid")): feature.get("properties") or {}
@@ -722,11 +814,11 @@ def main() -> None:
 
     MATCH_AUDIT_OUT.parent.mkdir(parents=True, exist_ok=True)
     with MATCH_AUDIT_OUT.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=MATCH_COLUMNS)
+        writer = csv.DictWriter(handle, fieldnames=MATCH_COLUMNS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(match_rows)
     with REVIEW_OUT.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=MATCH_COLUMNS)
+        writer = csv.DictWriter(handle, fieldnames=MATCH_COLUMNS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(row for row in match_rows if row["match_status"] == "review")
 

@@ -2,14 +2,14 @@
 
 Generated: 2026-08-12
 
-The review queue contains **944** Hail records that were not confidently auto-matched.
+The review queue contains **841** Hail records that were not confidently auto-matched.
 
 | Reason | Records | Share | Explanation |
 |---|---:|---:|---|
-| Multiple plausible footprints | 685 | 72.6% | The street and base number agree, but suffix, rear, or range differences leave more than one plausible footprint. |
-| Building complex may span footprints | 173 | 18.3% | The address resolves, but the Hail entry is a building complex and may represent more than one footprint. |
-| Unproven historical address or alias | 73 | 7.7% | A historical address or street alias produced candidates, but the alias has not yet been proven for automatic matching. |
-| Small street-name spelling difference | 13 | 1.4% | The number is compatible and the street spelling is close, but fuzzy street-name matches require manual confirmation. |
+| Multiple plausible footprints | 646 | 76.8% | The street and base number agree, but suffix, rear, or range differences leave more than one plausible footprint. |
+| Building complex may span footprints | 166 | 19.7% | The address resolves, but the Hail entry is a building complex and may represent more than one footprint. |
+| Unproven historical address or alias | 18 | 2.1% | A historical address or street alias produced candidates, but the alias has not yet been proven for automatic matching. |
+| Small street-name spelling difference | 11 | 1.3% | The number is compatible and the street spelling is close, but fuzzy street-name matches require manual confirmation. |
 
 ## Street-name spelling differences
 
@@ -17,13 +17,12 @@ These Stage 6 review rows share a compatible house number but use a different st
 
 | Hail street name | Address Point street name | Review records | Review basis |
 |---|---|---:|---|
-| Kennedy Street | Tenney St | 3 | Small street-name spelling difference |
 | Cutler Avenue | Muller Ave | 2 | Small street-name spelling difference |
 | Gerry'S Landing Road | Gerrys Landing Rd | 2 | Multiple plausible footprints |
+| Kennedy Street | Tenney St | 2 | Small street-name spelling difference |
 | Buckingham Street | Buckingham Pl | 1 | Small street-name spelling difference |
 | Columbia Terrace | Columbia Ter | 1 | Building complex may span footprints |
 | Fayette Park | Fayette Pk | 1 | Building complex may span footprints |
-| Fresh Pond Lane | Fresh Pond Pl | 1 | Small street-name spelling difference |
 | Garden Street | Garden Ct | 1 | Small street-name spelling difference |
 | Hayward Street | Howard St | 1 | Small street-name spelling difference |
 | Lake View Avenue | Lakeview Ave | 1 | Multiple plausible footprints |

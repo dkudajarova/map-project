@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-08-13T12:00:00Z",
+  "source": {
+    "api": "https://en.wikipedia.org/w/api.php",
+    "language": "en",
+    "query": "geosearch"
+  },
+  "articles": [
+    {
+      "page_id": 123456,
+      "title": "Example Cambridge House",
+      "url": "https://en.wikipedia.org/wiki/Example_Cambridge_House",
+      "latitude": 42.3736,
+      "longitude": -71.1097
+    },
+    {
+      "page_id": 234567,
+      "title": "Example Cambridge Institution",
+      "url": "https://en.wikipedia.org/wiki/Example_Cambridge_Institution",
+      "latitude": 42.374,
+      "longitude": -71.1089
+    }
+  ]
+}

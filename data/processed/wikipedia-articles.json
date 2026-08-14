@@ -1,0 +1,3597 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-08-13T15:20:00Z",
+  "source": {
+    "api": "https://en.wikipedia.org/w/api.php",
+    "language": "en",
+    "query": "geosearch",
+    "search_center": {
+      "latitude": 42.3781453,
+      "longitude": -71.1122173
+    },
+    "search_radius_meters": 4463,
+    "search_tile_size_meters": 1000,
+    "search_tile_count": 48,
+    "retrieved_count": 829,
+    "cambridge_count": 511
+  },
+  "articles": [
+    {
+      "page_id": 5685,
+      "title": "Cambridge, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/Cambridge,_Massachusetts",
+      "latitude": 42.37361111111111,
+      "longitude": -71.11055555555555
+    },
+    {
+      "page_id": 18879,
+      "title": "Massachusetts Institute of Technology",
+      "url": "https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology",
+      "latitude": 42.3597,
+      "longitude": -71.0919
+    },
+    {
+      "page_id": 33149,
+      "title": "World Wide Web Consortium",
+      "url": "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium",
+      "latitude": 42.36194444444445,
+      "longitude": -71.09055555555555
+    },
+    {
+      "page_id": 78027,
+      "title": "Whirlwind I",
+      "url": "https://en.wikipedia.org/wiki/Whirlwind_I",
+      "latitude": 42.361666666666665,
+      "longitude": -71.09666666666666
+    },
+    {
+      "page_id": 102602,
+      "title": "Harvard Bridge",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Bridge",
+      "latitude": 42.35457,
+      "longitude": -71.09132
+    },
+    {
+      "page_id": 145664,
+      "title": "Stata Center",
+      "url": "https://en.wikipedia.org/wiki/Stata_Center",
+      "latitude": 42.36164,
+      "longitude": -71.090255
+    },
+    {
+      "page_id": 152738,
+      "title": "Infinite Corridor",
+      "url": "https://en.wikipedia.org/wiki/Infinite_Corridor",
+      "latitude": 42.3594,
+      "longitude": -71.0925
+    },
+    {
+      "page_id": 206795,
+      "title": "The Rowland Institute at Harvard",
+      "url": "https://en.wikipedia.org/wiki/The_Rowland_Institute_at_Harvard",
+      "latitude": 42.3637,
+      "longitude": -71.0779
+    },
+    {
+      "page_id": 231988,
+      "title": "MIT Sloan School of Management",
+      "url": "https://en.wikipedia.org/wiki/MIT_Sloan_School_of_Management",
+      "latitude": 42.360732,
+      "longitude": -71.083774
+    },
+    {
+      "page_id": 242977,
+      "title": "Radcliffe College",
+      "url": "https://en.wikipedia.org/wiki/Radcliffe_College",
+      "latitude": 42.38194444444444,
+      "longitude": -71.12472222222222
+    },
+    {
+      "page_id": 260879,
+      "title": "Harvard College",
+      "url": "https://en.wikipedia.org/wiki/Harvard_College",
+      "latitude": 42.374,
+      "longitude": -71.117
+    },
+    {
+      "page_id": 320200,
+      "title": "Harvard Yard",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Yard",
+      "latitude": 42.37447,
+      "longitude": -71.11719
+    },
+    {
+      "page_id": 345924,
+      "title": "Carpenter Center for the Visual Arts",
+      "url": "https://en.wikipedia.org/wiki/Carpenter_Center_for_the_Visual_Arts",
+      "latitude": 42.37361111111111,
+      "longitude": -71.11430555555555
+    },
+    {
+      "page_id": 360816,
+      "title": "Harvard Kennedy School",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Kennedy_School",
+      "latitude": 42.37138888888889,
+      "longitude": -71.12194444444444
+    },
+    {
+      "page_id": 378554,
+      "title": "Whitehead Institute",
+      "url": "https://en.wikipedia.org/wiki/Whitehead_Institute",
+      "latitude": 42.363471,
+      "longitude": -71.089361
+    },
+    {
+      "page_id": 380532,
+      "title": "Biogen",
+      "url": "https://en.wikipedia.org/wiki/Biogen",
+      "latitude": 42.366194444444446,
+      "longitude": -71.08699999999999
+    },
+    {
+      "page_id": 380649,
+      "title": "Kendall Square",
+      "url": "https://en.wikipedia.org/wiki/Kendall_Square",
+      "latitude": 42.36222222222222,
+      "longitude": -71.08416666666666
+    },
+    {
+      "page_id": 386540,
+      "title": "MIT Media Lab",
+      "url": "https://en.wikipedia.org/wiki/MIT_Media_Lab",
+      "latitude": 42.36045,
+      "longitude": -71.08737
+    },
+    {
+      "page_id": 391882,
+      "title": "American Academy of Arts and Sciences",
+      "url": "https://en.wikipedia.org/wiki/American_Academy_of_Arts_and_Sciences",
+      "latitude": 42.380833333333335,
+      "longitude": -71.11027777777777
+    },
+    {
+      "page_id": 414193,
+      "title": "Harvard Radcliffe Institute",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Radcliffe_Institute",
+      "latitude": 42.37581,
+      "longitude": -71.12233
+    },
+    {
+      "page_id": 417027,
+      "title": "American Repertory Theater",
+      "url": "https://en.wikipedia.org/wiki/American_Repertory_Theater",
+      "latitude": 42.37495555555556,
+      "longitude": -71.12265
+    },
+    {
+      "page_id": 593247,
+      "title": "Harvard Square",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Square",
+      "latitude": 42.37361111111111,
+      "longitude": -71.11888888888888
+    },
+    {
+      "page_id": 594169,
+      "title": "Harvard College Observatory",
+      "url": "https://en.wikipedia.org/wiki/Harvard_College_Observatory",
+      "latitude": 42.3815,
+      "longitude": -71.1284
+    },
+    {
+      "page_id": 598285,
+      "title": "Wiesner Building",
+      "url": "https://en.wikipedia.org/wiki/Wiesner_Building",
+      "latitude": 42.36086111111111,
+      "longitude": -71.08772222222221
+    },
+    {
+      "page_id": 650179,
+      "title": "Porter Square",
+      "url": "https://en.wikipedia.org/wiki/Porter_Square",
+      "latitude": 42.3886,
+      "longitude": -71.1194
+    },
+    {
+      "page_id": 678794,
+      "title": "Widener Library",
+      "url": "https://en.wikipedia.org/wiki/Widener_Library",
+      "latitude": 42.373444444444445,
+      "longitude": -71.11649999999999
+    },
+    {
+      "page_id": 719601,
+      "title": "MIT Press",
+      "url": "https://en.wikipedia.org/wiki/MIT_Press",
+      "latitude": 42.36213888888889,
+      "longitude": -71.08555555555554
+    },
+    {
+      "page_id": 743808,
+      "title": "Longfellow Bridge",
+      "url": "https://en.wikipedia.org/wiki/Longfellow_Bridge",
+      "latitude": 42.361635,
+      "longitude": -71.07541
+    },
+    {
+      "page_id": 840573,
+      "title": "Inman Square",
+      "url": "https://en.wikipedia.org/wiki/Inman_Square",
+      "latitude": 42.37372222222222,
+      "longitude": -71.10083333333333
+    },
+    {
+      "page_id": 895905,
+      "title": "Dunster House",
+      "url": "https://en.wikipedia.org/wiki/Dunster_House",
+      "latitude": 42.3686,
+      "longitude": -71.1162
+    },
+    {
+      "page_id": 897777,
+      "title": "National Bureau of Economic Research",
+      "url": "https://en.wikipedia.org/wiki/National_Bureau_of_Economic_Research",
+      "latitude": 42.3697,
+      "longitude": -71.1127
+    },
+    {
+      "page_id": 966229,
+      "title": "Alewife station",
+      "url": "https://en.wikipedia.org/wiki/Alewife_station",
+      "latitude": 42.3961,
+      "longitude": -71.1413
+    },
+    {
+      "page_id": 966261,
+      "title": "Harvard station",
+      "url": "https://en.wikipedia.org/wiki/Harvard_station",
+      "latitude": 42.3735,
+      "longitude": -71.1191
+    },
+    {
+      "page_id": 966328,
+      "title": "Porter station",
+      "url": "https://en.wikipedia.org/wiki/Porter_station",
+      "latitude": 42.388333333333335,
+      "longitude": -71.11902777777777
+    },
+    {
+      "page_id": 966450,
+      "title": "Central station (MBTA)",
+      "url": "https://en.wikipedia.org/wiki/Central_station_(MBTA)",
+      "latitude": 42.3653,
+      "longitude": -71.1036
+    },
+    {
+      "page_id": 966483,
+      "title": "Kendall/MIT station",
+      "url": "https://en.wikipedia.org/wiki/Kendall/MIT_station",
+      "latitude": 42.3624,
+      "longitude": -71.0857
+    },
+    {
+      "page_id": 983950,
+      "title": "Central Square, Cambridge",
+      "url": "https://en.wikipedia.org/wiki/Central_Square,_Cambridge",
+      "latitude": 42.365,
+      "longitude": -71.1036111111111
+    },
+    {
+      "page_id": 1014446,
+      "title": "Lechmere Square",
+      "url": "https://en.wikipedia.org/wiki/Lechmere_Square",
+      "latitude": 42.37083333333334,
+      "longitude": -71.07666666666667
+    },
+    {
+      "page_id": 1074613,
+      "title": "Harvard Divinity School",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Divinity_School",
+      "latitude": 42.37972222222222,
+      "longitude": -71.11305555555555
+    },
+    {
+      "page_id": 1159376,
+      "title": "Riverside Boat Club",
+      "url": "https://en.wikipedia.org/wiki/Riverside_Boat_Club",
+      "latitude": 42.35808333333333,
+      "longitude": -71.1158611111111
+    },
+    {
+      "page_id": 1251937,
+      "title": "Harvard University Press",
+      "url": "https://en.wikipedia.org/wiki/Harvard_University_Press",
+      "latitude": 42.383,
+      "longitude": -71.12702777777777
+    },
+    {
+      "page_id": 1274446,
+      "title": "Harvard Kenneth C. Griffin Graduate School of Arts and Sciences",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Kenneth_C._Griffin_Graduate_School_of_Arts_and_Sciences",
+      "latitude": 42.37363888888889,
+      "longitude": -71.11841666666666
+    },
+    {
+      "page_id": 1277059,
+      "title": "Museum of Science (Boston)",
+      "url": "https://en.wikipedia.org/wiki/Museum_of_Science_(Boston)",
+      "latitude": 42.3675,
+      "longitude": -71.07111111111111
+    },
+    {
+      "page_id": 1286088,
+      "title": "Zimmer Hall",
+      "url": "https://en.wikipedia.org/wiki/Zimmer_Hall",
+      "latitude": 42.3764,
+      "longitude": -71.1166
+    },
+    {
+      "page_id": 1334374,
+      "title": "Harvard Extension School",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Extension_School",
+      "latitude": 42.3743,
+      "longitude": -71.1216
+    },
+    {
+      "page_id": 1389867,
+      "title": "Smithsonian Astrophysical Observatory",
+      "url": "https://en.wikipedia.org/wiki/Smithsonian_Astrophysical_Observatory",
+      "latitude": 42.38146,
+      "longitude": -71.12837
+    },
+    {
+      "page_id": 1417402,
+      "title": "WMBR",
+      "url": "https://en.wikipedia.org/wiki/WMBR",
+      "latitude": 42.36222222222222,
+      "longitude": -71.08388888888888
+    },
+    {
+      "page_id": 1446327,
+      "title": "Hasty Pudding Club",
+      "url": "https://en.wikipedia.org/wiki/Hasty_Pudding_Club",
+      "latitude": 42.371944444444445,
+      "longitude": -71.11944444444444
+    },
+    {
+      "page_id": 1503200,
+      "title": "Hasty Pudding Theatricals",
+      "url": "https://en.wikipedia.org/wiki/Hasty_Pudding_Theatricals",
+      "latitude": 42.37255555555556,
+      "longitude": -71.1181111111111
+    },
+    {
+      "page_id": 1505128,
+      "title": "Harvard–Smithsonian Center for Astrophysics",
+      "url": "https://en.wikipedia.org/wiki/Harvard%E2%80%93Smithsonian_Center_for_Astrophysics",
+      "latitude": 42.38146,
+      "longitude": -71.12837
+    },
+    {
+      "page_id": 1526346,
+      "title": "Longy School of Music of Bard College",
+      "url": "https://en.wikipedia.org/wiki/Longy_School_of_Music_of_Bard_College",
+      "latitude": 42.37846,
+      "longitude": -71.12335
+    },
+    {
+      "page_id": 1528987,
+      "title": "CfA 1.2 m Millimeter-Wave Telescope",
+      "url": "https://en.wikipedia.org/wiki/CfA_1.2_m_Millimeter-Wave_Telescope",
+      "latitude": 42.38167,
+      "longitude": -71.12853
+    },
+    {
+      "page_id": 1563010,
+      "title": "Harvard Graduate School of Design",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Graduate_School_of_Design",
+      "latitude": 42.3758,
+      "longitude": -71.1139
+    },
+    {
+      "page_id": 1563021,
+      "title": "Harvard Graduate School of Education",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Graduate_School_of_Education",
+      "latitude": 42.37542,
+      "longitude": -71.12177
+    },
+    {
+      "page_id": 1575662,
+      "title": "Porcellian Club",
+      "url": "https://en.wikipedia.org/wiki/Porcellian_Club",
+      "latitude": 42.372930555555556,
+      "longitude": -71.11780555555555
+    },
+    {
+      "page_id": 1578416,
+      "title": "Pforzheimer House",
+      "url": "https://en.wikipedia.org/wiki/Pforzheimer_House",
+      "latitude": 42.38195,
+      "longitude": -71.12467
+    },
+    {
+      "page_id": 1591937,
+      "title": "Lechmere station",
+      "url": "https://en.wikipedia.org/wiki/Lechmere_station",
+      "latitude": 42.37125,
+      "longitude": -71.0761
+    },
+    {
+      "page_id": 1636859,
+      "title": "Mather House (Harvard College)",
+      "url": "https://en.wikipedia.org/wiki/Mather_House_(Harvard_College)",
+      "latitude": 42.3682,
+      "longitude": -71.1154
+    },
+    {
+      "page_id": 1658385,
+      "title": "Berkman Klein Center for Internet & Society",
+      "url": "https://en.wikipedia.org/wiki/Berkman_Klein_Center_for_Internet_%26_Society",
+      "latitude": 42.37955,
+      "longitude": -71.11957
+    },
+    {
+      "page_id": 1694353,
+      "title": "Radcliffe Quadrangle (Harvard)",
+      "url": "https://en.wikipedia.org/wiki/Radcliffe_Quadrangle_(Harvard)",
+      "latitude": 42.3814,
+      "longitude": -71.12424
+    },
+    {
+      "page_id": 1750628,
+      "title": "Fresh Pond (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Fresh_Pond_(Cambridge,_Massachusetts)",
+      "latitude": 42.38333333333333,
+      "longitude": -71.15
+    },
+    {
+      "page_id": 1828266,
+      "title": "Harvard Library",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Library",
+      "latitude": 42.3733923,
+      "longitude": -71.1186862
+    },
+    {
+      "page_id": 1852841,
+      "title": "Meigs Elevated Railway",
+      "url": "https://en.wikipedia.org/wiki/Meigs_Elevated_Railway",
+      "latitude": 42.37294444444444,
+      "longitude": -71.07997222222222
+    },
+    {
+      "page_id": 1865654,
+      "title": "Great Bridge (Cambridge)",
+      "url": "https://en.wikipedia.org/wiki/Great_Bridge_(Cambridge)",
+      "latitude": 42.369,
+      "longitude": -71.123
+    },
+    {
+      "page_id": 1887587,
+      "title": "Eliot House",
+      "url": "https://en.wikipedia.org/wiki/Eliot_House",
+      "latitude": 42.37022,
+      "longitude": -71.12082
+    },
+    {
+      "page_id": 1892262,
+      "title": "Leverett House",
+      "url": "https://en.wikipedia.org/wiki/Leverett_House",
+      "latitude": 42.3701,
+      "longitude": -71.1174
+    },
+    {
+      "page_id": 1907855,
+      "title": "Winthrop House",
+      "url": "https://en.wikipedia.org/wiki/Winthrop_House",
+      "latitude": 42.3702,
+      "longitude": -71.1192
+    },
+    {
+      "page_id": 1907859,
+      "title": "Cabot House",
+      "url": "https://en.wikipedia.org/wiki/Cabot_House",
+      "latitude": 42.3814,
+      "longitude": -71.1242
+    },
+    {
+      "page_id": 1947549,
+      "title": "Charles River Dam Bridge",
+      "url": "https://en.wikipedia.org/wiki/Charles_River_Dam_Bridge",
+      "latitude": 42.368,
+      "longitude": -71.0708
+    },
+    {
+      "page_id": 1951546,
+      "title": "Prospect Hill Academy Charter School",
+      "url": "https://en.wikipedia.org/wiki/Prospect_Hill_Academy_Charter_School",
+      "latitude": 42.367075,
+      "longitude": -71.10068333333332
+    },
+    {
+      "page_id": 1983910,
+      "title": "Cambridgeport, Cambridge, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/Cambridgeport,_Cambridge,_Massachusetts",
+      "latitude": 42.36,
+      "longitude": -71.1075
+    },
+    {
+      "page_id": 2004698,
+      "title": "Cambridge Rindge and Latin School",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Rindge_and_Latin_School",
+      "latitude": 42.37416666666667,
+      "longitude": -71.11194444444443
+    },
+    {
+      "page_id": 2083771,
+      "title": "Buckingham Browne & Nichols School",
+      "url": "https://en.wikipedia.org/wiki/Buckingham_Browne_%26_Nichols_School",
+      "latitude": 42.3791,
+      "longitude": -71.1296
+    },
+    {
+      "page_id": 2155384,
+      "title": "Currier House (Harvard College)",
+      "url": "https://en.wikipedia.org/wiki/Currier_House_(Harvard_College)",
+      "latitude": 42.38169166666667,
+      "longitude": -71.12577222222221
+    },
+    {
+      "page_id": 2167652,
+      "title": "Divinity Hall, Harvard Divinity School",
+      "url": "https://en.wikipedia.org/wiki/Divinity_Hall,_Harvard_Divinity_School",
+      "latitude": 42.3786,
+      "longitude": -71.1143
+    },
+    {
+      "page_id": 2182062,
+      "title": "Tasty Sandwich Shop",
+      "url": "https://en.wikipedia.org/wiki/Tasty_Sandwich_Shop",
+      "latitude": 42.37339,
+      "longitude": -71.11938
+    },
+    {
+      "page_id": 2208221,
+      "title": "Longfellow House–Washington's Headquarters National Historic Site",
+      "url": "https://en.wikipedia.org/wiki/Longfellow_House%E2%80%93Washington%27s_Headquarters_National_Historic_Site",
+      "latitude": 42.376666666666665,
+      "longitude": -71.12638888888888
+    },
+    {
+      "page_id": 2226387,
+      "title": "Lowell House",
+      "url": "https://en.wikipedia.org/wiki/Lowell_House",
+      "latitude": 42.37078,
+      "longitude": -71.11818
+    },
+    {
+      "page_id": 2338242,
+      "title": "Adolphus Busch Hall",
+      "url": "https://en.wikipedia.org/wiki/Adolphus_Busch_Hall",
+      "latitude": 42.376805555555556,
+      "longitude": -71.11413888888889
+    },
+    {
+      "page_id": 2373670,
+      "title": "Grolier Poetry Bookshop",
+      "url": "https://en.wikipedia.org/wiki/Grolier_Poetry_Bookshop",
+      "latitude": 42.37232,
+      "longitude": -71.11656
+    },
+    {
+      "page_id": 2374643,
+      "title": "Café Pamplona",
+      "url": "https://en.wikipedia.org/wiki/Caf%C3%A9_Pamplona",
+      "latitude": 42.3717,
+      "longitude": -71.1155
+    },
+    {
+      "page_id": 2401057,
+      "title": "Kresge Auditorium",
+      "url": "https://en.wikipedia.org/wiki/Kresge_Auditorium",
+      "latitude": 42.35812,
+      "longitude": -71.09507
+    },
+    {
+      "page_id": 2408383,
+      "title": "John A. Volpe National Transportation Systems Center",
+      "url": "https://en.wikipedia.org/wiki/John_A._Volpe_National_Transportation_Systems_Center",
+      "latitude": 42.364075,
+      "longitude": -71.0856
+    },
+    {
+      "page_id": 2444826,
+      "title": "Electronics Research Center",
+      "url": "https://en.wikipedia.org/wiki/Electronics_Research_Center",
+      "latitude": 42.364075,
+      "longitude": -71.0856
+    },
+    {
+      "page_id": 2447768,
+      "title": "Broad Institute",
+      "url": "https://en.wikipedia.org/wiki/Broad_Institute",
+      "latitude": 42.36805555555556,
+      "longitude": -71.08694444444444
+    },
+    {
+      "page_id": 2520054,
+      "title": "McGovern Institute for Brain Research",
+      "url": "https://en.wikipedia.org/wiki/McGovern_Institute_for_Brain_Research",
+      "latitude": 42.362258,
+      "longitude": -71.091652
+    },
+    {
+      "page_id": 2577343,
+      "title": "Cooper–Frost–Austin House",
+      "url": "https://en.wikipedia.org/wiki/Cooper%E2%80%93Frost%E2%80%93Austin_House",
+      "latitude": 42.38449,
+      "longitude": -71.12184
+    },
+    {
+      "page_id": 2614585,
+      "title": "Holworthy Hall",
+      "url": "https://en.wikipedia.org/wiki/Holworthy_Hall",
+      "latitude": 42.37549,
+      "longitude": -71.11726
+    },
+    {
+      "page_id": 2614601,
+      "title": "Massachusetts Hall (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/Massachusetts_Hall_(Harvard_University)",
+      "latitude": 42.37443888888889,
+      "longitude": -71.11828333333332
+    },
+    {
+      "page_id": 2620952,
+      "title": "MIT Chapel",
+      "url": "https://en.wikipedia.org/wiki/MIT_Chapel",
+      "latitude": 42.358333333333334,
+      "longitude": -71.09416666666667
+    },
+    {
+      "page_id": 2621195,
+      "title": "Hooper–Lee–Nichols House",
+      "url": "https://en.wikipedia.org/wiki/Hooper%E2%80%93Lee%E2%80%93Nichols_House",
+      "latitude": 42.377583333333334,
+      "longitude": -71.13422222222223
+    },
+    {
+      "page_id": 2621447,
+      "title": "Elmwood (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Elmwood_(Cambridge,_Massachusetts)",
+      "latitude": 42.37547222222222,
+      "longitude": -71.1383888888889
+    },
+    {
+      "page_id": 2621926,
+      "title": "Green Building (MIT)",
+      "url": "https://en.wikipedia.org/wiki/Green_Building_(MIT)",
+      "latitude": 42.3603,
+      "longitude": -71.0893
+    },
+    {
+      "page_id": 2657253,
+      "title": "Manray",
+      "url": "https://en.wikipedia.org/wiki/Manray",
+      "latitude": 42.3633,
+      "longitude": -71.1022
+    },
+    {
+      "page_id": 2685492,
+      "title": "Alewife Brook Reservation",
+      "url": "https://en.wikipedia.org/wiki/Alewife_Brook_Reservation",
+      "latitude": 42.3973186,
+      "longitude": -71.1422757
+    },
+    {
+      "page_id": 2852088,
+      "title": "East Cambridge, Cambridge, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/East_Cambridge,_Cambridge,_Massachusetts",
+      "latitude": 42.36666666666667,
+      "longitude": -71.08
+    },
+    {
+      "page_id": 2997438,
+      "title": "Club Passim",
+      "url": "https://en.wikipedia.org/wiki/Club_Passim",
+      "latitude": 42.37388888888889,
+      "longitude": -71.11999999999999
+    },
+    {
+      "page_id": 3285045,
+      "title": "Schlesinger Library",
+      "url": "https://en.wikipedia.org/wiki/Schlesinger_Library",
+      "latitude": 42.375750000000004,
+      "longitude": -71.1231111111111
+    },
+    {
+      "page_id": 3372668,
+      "title": "Cambridge College",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_College",
+      "latitude": 42.36888888888889,
+      "longitude": -71.11088888888888
+    },
+    {
+      "page_id": 3372715,
+      "title": "Lesley University",
+      "url": "https://en.wikipedia.org/wiki/Lesley_University",
+      "latitude": 42.37999444444444,
+      "longitude": -71.11711944444444
+    },
+    {
+      "page_id": 3473567,
+      "title": "Adams House (Harvard College)",
+      "url": "https://en.wikipedia.org/wiki/Adams_House_(Harvard_College)",
+      "latitude": 42.3717,
+      "longitude": -71.1164
+    },
+    {
+      "page_id": 3494688,
+      "title": "MIT Science Fiction Society",
+      "url": "https://en.wikipedia.org/wiki/MIT_Science_Fiction_Society",
+      "latitude": 42.35916666666667,
+      "longitude": -71.09444444444443
+    },
+    {
+      "page_id": 3514644,
+      "title": "CambridgeSide",
+      "url": "https://en.wikipedia.org/wiki/CambridgeSide",
+      "latitude": 42.3675,
+      "longitude": -71.0761111111111
+    },
+    {
+      "page_id": 3571478,
+      "title": "Brattle Theatre",
+      "url": "https://en.wikipedia.org/wiki/Brattle_Theatre",
+      "latitude": 42.37361111111111,
+      "longitude": -71.12138888888889
+    },
+    {
+      "page_id": 3789783,
+      "title": "WNTN",
+      "url": "https://en.wikipedia.org/wiki/WNTN",
+      "latitude": 42.38704166666667,
+      "longitude": -71.1386638888889
+    },
+    {
+      "page_id": 4027302,
+      "title": "Mary Prentiss Inn",
+      "url": "https://en.wikipedia.org/wiki/Mary_Prentiss_Inn",
+      "latitude": 42.38431,
+      "longitude": -71.11885
+    },
+    {
+      "page_id": 4109017,
+      "title": "Cambridge Common",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Common",
+      "latitude": 42.37651,
+      "longitude": -71.12049
+    },
+    {
+      "page_id": 4125254,
+      "title": "Memorial Drive (Cambridge)",
+      "url": "https://en.wikipedia.org/wiki/Memorial_Drive_(Cambridge)",
+      "latitude": 42.363055555555555,
+      "longitude": -71.11611111111111
+    },
+    {
+      "page_id": 4132949,
+      "title": "Asa Gray House",
+      "url": "https://en.wikipedia.org/wiki/Asa_Gray_House",
+      "latitude": 42.38297222222222,
+      "longitude": -71.128
+    },
+    {
+      "page_id": 4223459,
+      "title": "Harvard–Yenching Institute",
+      "url": "https://en.wikipedia.org/wiki/Harvard%E2%80%93Yenching_Institute",
+      "latitude": 42.377552,
+      "longitude": -71.113923
+    },
+    {
+      "page_id": 4391324,
+      "title": "Cambridge Center",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Center",
+      "latitude": 42.363,
+      "longitude": -71.08661111111111
+    },
+    {
+      "page_id": 4391692,
+      "title": "Harvard–MIT Program in Health Sciences and Technology",
+      "url": "https://en.wikipedia.org/wiki/Harvard%E2%80%93MIT_Program_in_Health_Sciences_and_Technology",
+      "latitude": 42.36169,
+      "longitude": -71.08694
+    },
+    {
+      "page_id": 4529075,
+      "title": "First Parish in Cambridge",
+      "url": "https://en.wikipedia.org/wiki/First_Parish_in_Cambridge",
+      "latitude": 42.374583333333334,
+      "longitude": -71.11925
+    },
+    {
+      "page_id": 4888799,
+      "title": "MIT Plasma Science and Fusion Center",
+      "url": "https://en.wikipedia.org/wiki/MIT_Plasma_Science_and_Fusion_Center",
+      "latitude": 42.359944444444444,
+      "longitude": -71.09844444444444
+    },
+    {
+      "page_id": 4895598,
+      "title": "ImprovBoston",
+      "url": "https://en.wikipedia.org/wiki/ImprovBoston",
+      "latitude": 42.366083333333336,
+      "longitude": -71.1033611111111
+    },
+    {
+      "page_id": 4972477,
+      "title": "Harvard Art Museums",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Art_Museums",
+      "latitude": 42.3742,
+      "longitude": -71.1147
+    },
+    {
+      "page_id": 5135489,
+      "title": "City Hall (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/City_Hall_(Cambridge,_Massachusetts)",
+      "latitude": 42.36712,
+      "longitude": -71.10563
+    },
+    {
+      "page_id": 5235054,
+      "title": "Christ Church (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Christ_Church_(Cambridge,_Massachusetts)",
+      "latitude": 42.375277777777775,
+      "longitude": -71.12055555555555
+    },
+    {
+      "page_id": 5536866,
+      "title": "Alvan Clark & Sons",
+      "url": "https://en.wikipedia.org/wiki/Alvan_Clark_%26_Sons",
+      "latitude": 42.35528,
+      "longitude": -71.10927
+    },
+    {
+      "page_id": 5616612,
+      "title": "Joint Center for Housing Studies",
+      "url": "https://en.wikipedia.org/wiki/Joint_Center_for_Housing_Studies",
+      "latitude": 42.37,
+      "longitude": -71.12
+    },
+    {
+      "page_id": 5756234,
+      "title": "MIT Museum",
+      "url": "https://en.wikipedia.org/wiki/MIT_Museum",
+      "latitude": 42.362119444444446,
+      "longitude": -71.08665833333333
+    },
+    {
+      "page_id": 5774724,
+      "title": "Charles River Reservation",
+      "url": "https://en.wikipedia.org/wiki/Charles_River_Reservation",
+      "latitude": 42.3539862,
+      "longitude": -71.1119968
+    },
+    {
+      "page_id": 6029406,
+      "title": "Institute of Politics at Harvard Kennedy School",
+      "url": "https://en.wikipedia.org/wiki/Institute_of_Politics_at_Harvard_Kennedy_School",
+      "latitude": 42.37145,
+      "longitude": -71.1221
+    },
+    {
+      "page_id": 6046830,
+      "title": "University Park at MIT",
+      "url": "https://en.wikipedia.org/wiki/University_Park_at_MIT",
+      "latitude": 42.3618,
+      "longitude": -71.1008
+    },
+    {
+      "page_id": 6098995,
+      "title": "Lumen Eclipse",
+      "url": "https://en.wikipedia.org/wiki/Lumen_Eclipse",
+      "latitude": 42.3734,
+      "longitude": -71.1191
+    },
+    {
+      "page_id": 6200247,
+      "title": "The Port, Cambridge",
+      "url": "https://en.wikipedia.org/wiki/The_Port,_Cambridge",
+      "latitude": 42.36694444444444,
+      "longitude": -71.09777777777778
+    },
+    {
+      "page_id": 6222330,
+      "title": "Harvard Book Store",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Book_Store",
+      "latitude": 42.3725,
+      "longitude": -71.1164
+    },
+    {
+      "page_id": 6250722,
+      "title": "MIT Department of Physics",
+      "url": "https://en.wikipedia.org/wiki/MIT_Department_of_Physics",
+      "latitude": 42.3597177,
+      "longitude": -71.0908492
+    },
+    {
+      "page_id": 6315034,
+      "title": "Kerry Corner",
+      "url": "https://en.wikipedia.org/wiki/Kerry_Corner",
+      "latitude": 42.36833333333333,
+      "longitude": -71.11472222222221
+    },
+    {
+      "page_id": 6326343,
+      "title": "Picower Institute for Learning and Memory",
+      "url": "https://en.wikipedia.org/wiki/Picower_Institute_for_Learning_and_Memory",
+      "latitude": 42.362294,
+      "longitude": -71.091626
+    },
+    {
+      "page_id": 6473235,
+      "title": "Orson Welles Cinema",
+      "url": "https://en.wikipedia.org/wiki/Orson_Welles_Cinema",
+      "latitude": 42.36972222222222,
+      "longitude": -71.11138888888888
+    },
+    {
+      "page_id": 6719465,
+      "title": "Schoenhof's Foreign Books",
+      "url": "https://en.wikipedia.org/wiki/Schoenhof%27s_Foreign_Books",
+      "latitude": 42.372,
+      "longitude": -71.11894444444444
+    },
+    {
+      "page_id": 6908619,
+      "title": "Museum of Comparative Zoology",
+      "url": "https://en.wikipedia.org/wiki/Museum_of_Comparative_Zoology",
+      "latitude": 42.37847222222222,
+      "longitude": -71.11555555555555
+    },
+    {
+      "page_id": 7341483,
+      "title": "Housing at the Massachusetts Institute of Technology",
+      "url": "https://en.wikipedia.org/wiki/Housing_at_the_Massachusetts_Institute_of_Technology",
+      "latitude": 42.35804,
+      "longitude": -71.0995
+    },
+    {
+      "page_id": 7586188,
+      "title": "North Point (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/North_Point_(Cambridge,_Massachusetts)",
+      "latitude": 42.37238888888889,
+      "longitude": -71.07505555555555
+    },
+    {
+      "page_id": 7742379,
+      "title": "Holden Chapel",
+      "url": "https://en.wikipedia.org/wiki/Holden_Chapel",
+      "latitude": 42.37524,
+      "longitude": -71.118
+    },
+    {
+      "page_id": 8071866,
+      "title": "Campus of the Massachusetts Institute of Technology",
+      "url": "https://en.wikipedia.org/wiki/Campus_of_the_Massachusetts_Institute_of_Technology",
+      "latitude": 42.3591,
+      "longitude": -71.0934
+    },
+    {
+      "page_id": 8099878,
+      "title": "Harvard Film Archive",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Film_Archive",
+      "latitude": 42.37365277777778,
+      "longitude": -71.11473888888888
+    },
+    {
+      "page_id": 8218664,
+      "title": "Zesiger Sports and Fitness Center",
+      "url": "https://en.wikipedia.org/wiki/Zesiger_Sports_and_Fitness_Center",
+      "latitude": 42.3587,
+      "longitude": -71.0957
+    },
+    {
+      "page_id": 8259851,
+      "title": "Weld Boathouse",
+      "url": "https://en.wikipedia.org/wiki/Weld_Boathouse",
+      "latitude": 42.3694,
+      "longitude": -71.1221
+    },
+    {
+      "page_id": 8370206,
+      "title": "Harvard Museum of Natural History",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Museum_of_Natural_History",
+      "latitude": 42.378413888888886,
+      "longitude": -71.11555277777778
+    },
+    {
+      "page_id": 8370551,
+      "title": "Harvard University Herbaria",
+      "url": "https://en.wikipedia.org/wiki/Harvard_University_Herbaria",
+      "latitude": 42.378819444444446,
+      "longitude": -71.11458888888889
+    },
+    {
+      "page_id": 8370901,
+      "title": "Harvard Mineralogical Museum",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Mineralogical_Museum",
+      "latitude": 42.37831944444444,
+      "longitude": -71.11556944444443
+    },
+    {
+      "page_id": 8455460,
+      "title": "Cambridge School of Culinary Arts",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_School_of_Culinary_Arts",
+      "latitude": 42.3907,
+      "longitude": -71.1217
+    },
+    {
+      "page_id": 8489044,
+      "title": "The Middle East (nightclub)",
+      "url": "https://en.wikipedia.org/wiki/The_Middle_East_(nightclub)",
+      "latitude": 42.363835,
+      "longitude": -71.10142
+    },
+    {
+      "page_id": 8716125,
+      "title": "President's House (Harvard)",
+      "url": "https://en.wikipedia.org/wiki/President%27s_House_(Harvard)",
+      "latitude": 42.373416666666664,
+      "longitude": -71.11530555555555
+    },
+    {
+      "page_id": 8815249,
+      "title": "Lechmere Canal",
+      "url": "https://en.wikipedia.org/wiki/Lechmere_Canal",
+      "latitude": 42.36888888888889,
+      "longitude": -71.07444444444444
+    },
+    {
+      "page_id": 8815819,
+      "title": "Broad Canal",
+      "url": "https://en.wikipedia.org/wiki/Broad_Canal",
+      "latitude": 42.362511,
+      "longitude": -71.079211
+    },
+    {
+      "page_id": 8881290,
+      "title": "Toscanini's",
+      "url": "https://en.wikipedia.org/wiki/Toscanini%27s",
+      "latitude": 42.3635,
+      "longitude": -71.09930555555555
+    },
+    {
+      "page_id": 8977608,
+      "title": "Amigos School",
+      "url": "https://en.wikipedia.org/wiki/Amigos_School",
+      "latitude": 42.363,
+      "longitude": -71.1083
+    },
+    {
+      "page_id": 9115050,
+      "title": "MIT Department of Electrical Engineering and Computer Science",
+      "url": "https://en.wikipedia.org/wiki/MIT_Department_of_Electrical_Engineering_and_Computer_Science",
+      "latitude": 42.36116666666667,
+      "longitude": -71.0923611111111
+    },
+    {
+      "page_id": 9454178,
+      "title": "Murder of Yngve Raustein",
+      "url": "https://en.wikipedia.org/wiki/Murder_of_Yngve_Raustein",
+      "latitude": 42.35868055555556,
+      "longitude": -71.08931666666666
+    },
+    {
+      "page_id": 9462579,
+      "title": "St. Paul's Choir School",
+      "url": "https://en.wikipedia.org/wiki/St._Paul%27s_Choir_School",
+      "latitude": 42.3708,
+      "longitude": -71.1154
+    },
+    {
+      "page_id": 9768381,
+      "title": "Harvard Museum of the Ancient Near East",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Museum_of_the_Ancient_Near_East",
+      "latitude": 42.378055555555555,
+      "longitude": -71.11388888888888
+    },
+    {
+      "page_id": 9968010,
+      "title": "Harvard Asia Pacific Review",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Asia_Pacific_Review",
+      "latitude": 42.377833333333335,
+      "longitude": -71.11319444444445
+    },
+    {
+      "page_id": 10306321,
+      "title": "Harvard John A. Paulson School of Engineering and Applied Sciences",
+      "url": "https://en.wikipedia.org/wiki/Harvard_John_A._Paulson_School_of_Engineering_and_Applied_Sciences",
+      "latitude": 42.372686111111115,
+      "longitude": -71.1185361111111
+    },
+    {
+      "page_id": 10394308,
+      "title": "George D. Birkhoff House",
+      "url": "https://en.wikipedia.org/wiki/George_D._Birkhoff_House",
+      "latitude": 42.378194444444446,
+      "longitude": -71.1286111111111
+    },
+    {
+      "page_id": 10402984,
+      "title": "Percy W. Bridgman House",
+      "url": "https://en.wikipedia.org/wiki/Percy_W._Bridgman_House",
+      "latitude": 42.379080555555554,
+      "longitude": -71.12897777777778
+    },
+    {
+      "page_id": 10410693,
+      "title": "Sever Hall",
+      "url": "https://en.wikipedia.org/wiki/Sever_Hall",
+      "latitude": 42.374361111111114,
+      "longitude": -71.11547222222222
+    },
+    {
+      "page_id": 10411034,
+      "title": "Margaret Fuller House",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Fuller_House",
+      "latitude": 42.36461111111111,
+      "longitude": -71.09741666666666
+    },
+    {
+      "page_id": 10436279,
+      "title": "Reginald A. Daly House",
+      "url": "https://en.wikipedia.org/wiki/Reginald_A._Daly_House",
+      "latitude": 42.37538888888889,
+      "longitude": -71.12627777777777
+    },
+    {
+      "page_id": 10436889,
+      "title": "Memorial Hall (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/Memorial_Hall_(Harvard_University)",
+      "latitude": 42.37588888888889,
+      "longitude": -71.11491666666666
+    },
+    {
+      "page_id": 10448220,
+      "title": "University Hall (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/University_Hall_(Harvard_University)",
+      "latitude": 42.37444444444444,
+      "longitude": -71.11705555555555
+    },
+    {
+      "page_id": 10454810,
+      "title": "Oliver Hastings House",
+      "url": "https://en.wikipedia.org/wiki/Oliver_Hastings_House",
+      "latitude": 42.376666666666665,
+      "longitude": -71.12666666666667
+    },
+    {
+      "page_id": 10505967,
+      "title": "Maria Baldwin House",
+      "url": "https://en.wikipedia.org/wiki/Maria_Baldwin_House",
+      "latitude": 42.37016666666667,
+      "longitude": -71.10016666666667
+    },
+    {
+      "page_id": 10840089,
+      "title": "Austin Hall (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/Austin_Hall_(Harvard_University)",
+      "latitude": 42.37705555555556,
+      "longitude": -71.11877777777777
+    },
+    {
+      "page_id": 10988118,
+      "title": "Washington Elm",
+      "url": "https://en.wikipedia.org/wiki/Washington_Elm",
+      "latitude": 42.37657222222222,
+      "longitude": -71.12222222222222
+    },
+    {
+      "page_id": 10997087,
+      "title": "Memorial Church of Harvard University",
+      "url": "https://en.wikipedia.org/wiki/Memorial_Church_of_Harvard_University",
+      "latitude": 42.3749095,
+      "longitude": -71.1161574
+    },
+    {
+      "page_id": 11212102,
+      "title": "William Dean Howells House (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/William_Dean_Howells_House_(Cambridge,_Massachusetts)",
+      "latitude": 42.380250000000004,
+      "longitude": -71.12666666666667
+    },
+    {
+      "page_id": 11689168,
+      "title": "St. Paul Church (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/St._Paul_Church_(Cambridge,_Massachusetts)",
+      "latitude": 42.3712,
+      "longitude": -71.1156
+    },
+    {
+      "page_id": 12297557,
+      "title": "Houghton Library",
+      "url": "https://en.wikipedia.org/wiki/Houghton_Library",
+      "latitude": 42.373194444444444,
+      "longitude": -71.11594444444444
+    },
+    {
+      "page_id": 12638003,
+      "title": "Globe Corner Bookstore",
+      "url": "https://en.wikipedia.org/wiki/Globe_Corner_Bookstore",
+      "latitude": 42.37236111111111,
+      "longitude": -71.1198611111111
+    },
+    {
+      "page_id": 12751706,
+      "title": "MIT School of Engineering",
+      "url": "https://en.wikipedia.org/wiki/MIT_School_of_Engineering",
+      "latitude": 42.35896,
+      "longitude": -71.09244
+    },
+    {
+      "page_id": 12756612,
+      "title": "MIT School of Science",
+      "url": "https://en.wikipedia.org/wiki/MIT_School_of_Science",
+      "latitude": 42.3596,
+      "longitude": -71.09048
+    },
+    {
+      "page_id": 12758967,
+      "title": "MIT School of Humanities, Arts, and Social Sciences",
+      "url": "https://en.wikipedia.org/wiki/MIT_School_of_Humanities,_Arts,_and_Social_Sciences",
+      "latitude": 42.3597,
+      "longitude": -71.0919
+    },
+    {
+      "page_id": 12759325,
+      "title": "MIT School of Architecture and Planning",
+      "url": "https://en.wikipedia.org/wiki/MIT_School_of_Architecture_and_Planning",
+      "latitude": 42.3593,
+      "longitude": -71.09331
+    },
+    {
+      "page_id": 12801530,
+      "title": "Mugar Omni Theater",
+      "url": "https://en.wikipedia.org/wiki/Mugar_Omni_Theater",
+      "latitude": 42.36869166666667,
+      "longitude": -71.06986944444444
+    },
+    {
+      "page_id": 12850553,
+      "title": "Cambridge Health Alliance",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Health_Alliance",
+      "latitude": 42.3748,
+      "longitude": -71.1048
+    },
+    {
+      "page_id": 12890732,
+      "title": "Cambridge Hospital (Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Hospital_(Massachusetts)",
+      "latitude": 42.3748,
+      "longitude": -71.1048
+    },
+    {
+      "page_id": 12897075,
+      "title": "Langdell Hall",
+      "url": "https://en.wikipedia.org/wiki/Langdell_Hall",
+      "latitude": 42.377942,
+      "longitude": -71.118439
+    },
+    {
+      "page_id": 12900074,
+      "title": "Fox Club",
+      "url": "https://en.wikipedia.org/wiki/Fox_Club",
+      "latitude": 42.37236111111111,
+      "longitude": -71.12008333333333
+    },
+    {
+      "page_id": 13419807,
+      "title": "MIT Nuclear Research Reactor",
+      "url": "https://en.wikipedia.org/wiki/MIT_Nuclear_Research_Reactor",
+      "latitude": 42.36027777777778,
+      "longitude": -71.09638888888888
+    },
+    {
+      "page_id": 13555391,
+      "title": "Massachusetts Institute of Technology Libraries",
+      "url": "https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology_Libraries",
+      "latitude": 42.359,
+      "longitude": -71.0891
+    },
+    {
+      "page_id": 13727927,
+      "title": "Franklin Street Park",
+      "url": "https://en.wikipedia.org/wiki/Franklin_Street_Park",
+      "latitude": 42.367575,
+      "longitude": -71.11055277777777
+    },
+    {
+      "page_id": 14527661,
+      "title": "Harvard/MIT Cooperative Society",
+      "url": "https://en.wikipedia.org/wiki/Harvard/MIT_Cooperative_Society",
+      "latitude": 42.3737,
+      "longitude": -71.1196
+    },
+    {
+      "page_id": 14852205,
+      "title": "Middlesex County Courthouse (Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Middlesex_County_Courthouse_(Massachusetts)",
+      "latitude": 42.3699,
+      "longitude": -71.0797
+    },
+    {
+      "page_id": 14886117,
+      "title": "Leverett Circle Connector Bridge",
+      "url": "https://en.wikipedia.org/wiki/Leverett_Circle_Connector_Bridge",
+      "latitude": 42.36909,
+      "longitude": -71.06459
+    },
+    {
+      "page_id": 15005459,
+      "title": "Kirkland House",
+      "url": "https://en.wikipedia.org/wiki/Kirkland_House",
+      "latitude": 42.3709,
+      "longitude": -71.1204
+    },
+    {
+      "page_id": 15020534,
+      "title": "Cambridge Zen Center",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Zen_Center",
+      "latitude": 42.364468,
+      "longitude": -71.106019
+    },
+    {
+      "page_id": 15854895,
+      "title": "Odd Fellows Hall (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Odd_Fellows_Hall_(Cambridge,_Massachusetts)",
+      "latitude": 42.364222222222224,
+      "longitude": -71.10222222222221
+    },
+    {
+      "page_id": 16658131,
+      "title": "Le Cordon Bleu College of Culinary Arts in Boston",
+      "url": "https://en.wikipedia.org/wiki/Le_Cordon_Bleu_College_of_Culinary_Arts_in_Boston",
+      "latitude": 42.367041666666665,
+      "longitude": -71.07931111111111
+    },
+    {
+      "page_id": 17192481,
+      "title": "Building 20",
+      "url": "https://en.wikipedia.org/wiki/Building_20",
+      "latitude": 42.3619,
+      "longitude": -71.0905
+    },
+    {
+      "page_id": 17483820,
+      "title": "Richard McKinnon State Park",
+      "url": "https://en.wikipedia.org/wiki/Richard_McKinnon_State_Park",
+      "latitude": 42.369166666666665,
+      "longitude": -71.06952777777778
+    },
+    {
+      "page_id": 17501782,
+      "title": "William M. Davis House",
+      "url": "https://en.wikipedia.org/wiki/William_M._Davis_House",
+      "latitude": 42.378416666666666,
+      "longitude": -71.11222222222221
+    },
+    {
+      "page_id": 17518237,
+      "title": "Mary Fiske Stoughton House",
+      "url": "https://en.wikipedia.org/wiki/Mary_Fiske_Stoughton_House",
+      "latitude": 42.37583333333333,
+      "longitude": -71.125
+    },
+    {
+      "page_id": 17537761,
+      "title": "Theodore W. Richards House",
+      "url": "https://en.wikipedia.org/wiki/Theodore_W._Richards_House",
+      "latitude": 42.37877777777778,
+      "longitude": -71.12211111111111
+    },
+    {
+      "page_id": 17538105,
+      "title": "Arthur D. Little Inc., Building",
+      "url": "https://en.wikipedia.org/wiki/Arthur_D._Little_Inc.,_Building",
+      "latitude": 42.36113888888889,
+      "longitude": -71.08219444444444
+    },
+    {
+      "page_id": 17601836,
+      "title": "Grace Hopkinson Eliot Hall",
+      "url": "https://en.wikipedia.org/wiki/Grace_Hopkinson_Eliot_Hall",
+      "latitude": 42.381055555555555,
+      "longitude": -71.12347222222222
+    },
+    {
+      "page_id": 17647608,
+      "title": "Edwin Abbot House",
+      "url": "https://en.wikipedia.org/wiki/Edwin_Abbot_House",
+      "latitude": 42.37861111111111,
+      "longitude": -71.12347222222222
+    },
+    {
+      "page_id": 17647630,
+      "title": "John Aborn House",
+      "url": "https://en.wikipedia.org/wiki/John_Aborn_House",
+      "latitude": 42.39158333333333,
+      "longitude": -71.12038888888888
+    },
+    {
+      "page_id": 17647662,
+      "title": "Almshouse (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Almshouse_(Cambridge,_Massachusetts)",
+      "latitude": 42.40222222222222,
+      "longitude": -71.1325
+    },
+    {
+      "page_id": 17647686,
+      "title": "American Net and Twine Company Factory",
+      "url": "https://en.wikipedia.org/wiki/American_Net_and_Twine_Company_Factory",
+      "latitude": 42.36708333333333,
+      "longitude": -71.08055555555555
+    },
+    {
+      "page_id": 17647709,
+      "title": "Ash Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Ash_Street_Historic_District",
+      "latitude": 42.38305555555556,
+      "longitude": -71.1261111111111
+    },
+    {
+      "page_id": 17647764,
+      "title": "Athenaeum Press",
+      "url": "https://en.wikipedia.org/wiki/Athenaeum_Press",
+      "latitude": 42.3642,
+      "longitude": -71.0793
+    },
+    {
+      "page_id": 17647830,
+      "title": "Ephraim Atwood House",
+      "url": "https://en.wikipedia.org/wiki/Ephraim_Atwood_House",
+      "latitude": 42.369194444444446,
+      "longitude": -71.10752777777778
+    },
+    {
+      "page_id": 17647933,
+      "title": "Avon Hill Historic District",
+      "url": "https://en.wikipedia.org/wiki/Avon_Hill_Historic_District",
+      "latitude": 42.38583333333333,
+      "longitude": -71.12249999999999
+    },
+    {
+      "page_id": 17647962,
+      "title": "B B Chemical Company",
+      "url": "https://en.wikipedia.org/wiki/B_B_Chemical_Company",
+      "latitude": 42.359722222222224,
+      "longitude": -71.11527777777778
+    },
+    {
+      "page_id": 17647978,
+      "title": "James B. Barnes House",
+      "url": "https://en.wikipedia.org/wiki/James_B._Barnes_House",
+      "latitude": 42.36972222222222,
+      "longitude": -71.09566666666666
+    },
+    {
+      "page_id": 17648004,
+      "title": "Beck-Warren House",
+      "url": "https://en.wikipedia.org/wiki/Beck-Warren_House",
+      "latitude": 42.37294444444444,
+      "longitude": -71.11422222222221
+    },
+    {
+      "page_id": 17648032,
+      "title": "Bennink-Douglas Cottages",
+      "url": "https://en.wikipedia.org/wiki/Bennink-Douglas_Cottages",
+      "latitude": 42.38,
+      "longitude": -71.12302777777776
+    },
+    {
+      "page_id": 17648064,
+      "title": "Berkeley Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Berkeley_Street_Historic_District",
+      "latitude": 42.37777777777778,
+      "longitude": -71.12555555555555
+    },
+    {
+      "page_id": 17648089,
+      "title": "Bertram Hall (Radcliffe College)",
+      "url": "https://en.wikipedia.org/wiki/Bertram_Hall_(Radcliffe_College)",
+      "latitude": 42.3808,
+      "longitude": -71.1241
+    },
+    {
+      "page_id": 17648104,
+      "title": "Beth Israel Synagogue (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Beth_Israel_Synagogue_(Cambridge,_Massachusetts)",
+      "latitude": 42.369166666666665,
+      "longitude": -71.0961111111111
+    },
+    {
+      "page_id": 17648132,
+      "title": "Bigelow Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Bigelow_Street_Historic_District",
+      "latitude": 42.36833333333333,
+      "longitude": -71.10555555555555
+    },
+    {
+      "page_id": 17648165,
+      "title": "Frederick Billings House",
+      "url": "https://en.wikipedia.org/wiki/Frederick_Billings_House",
+      "latitude": 42.39169444444445,
+      "longitude": -71.12049999999999
+    },
+    {
+      "page_id": 17687172,
+      "title": "Harvard Square Subway Kiosk",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Square_Subway_Kiosk",
+      "latitude": 42.37358,
+      "longitude": -71.11896
+    },
+    {
+      "page_id": 17687695,
+      "title": "Cambridge Common Historic District",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Common_Historic_District",
+      "latitude": 42.37638888888889,
+      "longitude": -71.12083333333332
+    },
+    {
+      "page_id": 17696201,
+      "title": "Brattle Hall",
+      "url": "https://en.wikipedia.org/wiki/Brattle_Hall",
+      "latitude": 42.37352777777778,
+      "longitude": -71.12152777777777
+    },
+    {
+      "page_id": 17696220,
+      "title": "Cambridge Public Library",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Public_Library",
+      "latitude": 42.37411111111111,
+      "longitude": -71.11080555555554
+    },
+    {
+      "page_id": 17696241,
+      "title": "Cambridge Home for the Aged and Infirm",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Home_for_the_Aged_and_Infirm",
+      "latitude": 42.38847222222222,
+      "longitude": -71.14877777777778
+    },
+    {
+      "page_id": 17696254,
+      "title": "Francis J. Child House",
+      "url": "https://en.wikipedia.org/wiki/Francis_J._Child_House",
+      "latitude": 42.37801,
+      "longitude": -71.10965
+    },
+    {
+      "page_id": 17696275,
+      "title": "Church of the New Jerusalem (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Church_of_the_New_Jerusalem_(Cambridge,_Massachusetts)",
+      "latitude": 42.376472222222226,
+      "longitude": -71.11352777777778
+    },
+    {
+      "page_id": 17696301,
+      "title": "Conventual Church of St. Mary and St. John",
+      "url": "https://en.wikipedia.org/wiki/Conventual_Church_of_St._Mary_and_St._John",
+      "latitude": 42.37222222222222,
+      "longitude": -71.12472222222222
+    },
+    {
+      "page_id": 17696318,
+      "title": "First Baptist Church (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/First_Baptist_Church_(Cambridge,_Massachusetts)",
+      "latitude": 42.36486111111111,
+      "longitude": -71.10499999999999
+    },
+    {
+      "page_id": 17696341,
+      "title": "North Avenue Congregational Church",
+      "url": "https://en.wikipedia.org/wiki/North_Avenue_Congregational_Church",
+      "latitude": 42.38638888888889,
+      "longitude": -71.11861111111111
+    },
+    {
+      "page_id": 17696354,
+      "title": "Old Cambridge Baptist Church",
+      "url": "https://en.wikipedia.org/wiki/Old_Cambridge_Baptist_Church",
+      "latitude": 42.37166666666667,
+      "longitude": -71.11422222222221
+    },
+    {
+      "page_id": 17696372,
+      "title": "Christ the King Presbyterian Church",
+      "url": "https://en.wikipedia.org/wiki/Christ_the_King_Presbyterian_Church",
+      "latitude": 42.36783333333334,
+      "longitude": -71.10266666666666
+    },
+    {
+      "page_id": 17696397,
+      "title": "St. James Episcopal Church (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/St._James_Episcopal_Church_(Cambridge,_Massachusetts)",
+      "latitude": 42.39066666666667,
+      "longitude": -71.12094444444443
+    },
+    {
+      "page_id": 17696418,
+      "title": "Sacred Heart Church, Rectory, School and Convent (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Sacred_Heart_Church,_Rectory,_School_and_Convent_(Cambridge,_Massachusetts)",
+      "latitude": 42.370694444444446,
+      "longitude": -71.08541666666666
+    },
+    {
+      "page_id": 17696442,
+      "title": "St. John the Evangelist Church (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/St._John_the_Evangelist_Church_(Cambridge,_Massachusetts)",
+      "latitude": 42.394444444444446,
+      "longitude": -71.12722222222222
+    },
+    {
+      "page_id": 17696477,
+      "title": "Robert Frost House",
+      "url": "https://en.wikipedia.org/wiki/Robert_Frost_House",
+      "latitude": 42.37872222222222,
+      "longitude": -71.13222222222221
+    },
+    {
+      "page_id": 17696503,
+      "title": "Mount Auburn Cemetery Reception House (1870)",
+      "url": "https://en.wikipedia.org/wiki/Mount_Auburn_Cemetery_Reception_House_(1870)",
+      "latitude": 42.37555555555556,
+      "longitude": -71.14583333333334
+    },
+    {
+      "page_id": 17696546,
+      "title": "Blake and Knowles Steam Pump Company National Register District",
+      "url": "https://en.wikipedia.org/wiki/Blake_and_Knowles_Steam_Pump_Company_National_Register_District",
+      "latitude": 42.36611111111111,
+      "longitude": -71.08388888888888
+    },
+    {
+      "page_id": 17696568,
+      "title": "Bottle House Block",
+      "url": "https://en.wikipedia.org/wiki/Bottle_House_Block",
+      "latitude": 42.367472222222226,
+      "longitude": -71.08116666666666
+    },
+    {
+      "page_id": 17696594,
+      "title": "William Brattle House",
+      "url": "https://en.wikipedia.org/wiki/William_Brattle_House",
+      "latitude": 42.373694444444446,
+      "longitude": -71.12155555555555
+    },
+    {
+      "page_id": 17696623,
+      "title": "William F. Bradbury House",
+      "url": "https://en.wikipedia.org/wiki/William_F._Bradbury_House",
+      "latitude": 42.37155555555555,
+      "longitude": -71.11166666666666
+    },
+    {
+      "page_id": 17696664,
+      "title": "Luther Brooks House",
+      "url": "https://en.wikipedia.org/wiki/Luther_Brooks_House",
+      "latitude": 42.376583333333336,
+      "longitude": -71.11308333333332
+    },
+    {
+      "page_id": 17696693,
+      "title": "Building at 1707–1709 Cambridge Street",
+      "url": "https://en.wikipedia.org/wiki/Building_at_1707%E2%80%931709_Cambridge_Street",
+      "latitude": 42.37538888888889,
+      "longitude": -71.11213888888888
+    },
+    {
+      "page_id": 17696707,
+      "title": "Building at 42 Edward J. Lopez Avenue",
+      "url": "https://en.wikipedia.org/wiki/Building_at_42_Edward_J._Lopez_Avenue",
+      "latitude": 42.367805555555556,
+      "longitude": -71.07983333333333
+    },
+    {
+      "page_id": 17696723,
+      "title": "Building at 1715–1717 Cambridge Street",
+      "url": "https://en.wikipedia.org/wiki/Building_at_1715%E2%80%931717_Cambridge_Street",
+      "latitude": 42.375416666666666,
+      "longitude": -71.11247222222222
+    },
+    {
+      "page_id": 17696749,
+      "title": "Building at 102–104 Inman Street",
+      "url": "https://en.wikipedia.org/wiki/Building_at_102%E2%80%93104_Inman_Street",
+      "latitude": 42.371972222222226,
+      "longitude": -71.10133333333333
+    },
+    {
+      "page_id": 17696779,
+      "title": "Building at 10 Follen Street",
+      "url": "https://en.wikipedia.org/wiki/Building_at_10_Follen_Street",
+      "latitude": 42.378416666666666,
+      "longitude": -71.12194444444444
+    },
+    {
+      "page_id": 17696810,
+      "title": "Building at 104–106 Hancock Street",
+      "url": "https://en.wikipedia.org/wiki/Building_at_104%E2%80%93106_Hancock_Street",
+      "latitude": 42.36911111111111,
+      "longitude": -71.10763888888889
+    },
+    {
+      "page_id": 17696832,
+      "title": "Building at 106–108 Inman Street",
+      "url": "https://en.wikipedia.org/wiki/Building_at_106%E2%80%93108_Inman_Street",
+      "latitude": 42.37222222222222,
+      "longitude": -71.10111111111111
+    },
+    {
+      "page_id": 17696859,
+      "title": "Buildings at 110–112 Inman Street",
+      "url": "https://en.wikipedia.org/wiki/Buildings_at_110%E2%80%93112_Inman_Street",
+      "latitude": 42.37247222222222,
+      "longitude": -71.101
+    },
+    {
+      "page_id": 17696882,
+      "title": "Buildings at 15–17 Lee Street",
+      "url": "https://en.wikipedia.org/wiki/Buildings_at_15%E2%80%9317_Lee_Street",
+      "latitude": 42.36863888888889,
+      "longitude": -71.10716666666666
+    },
+    {
+      "page_id": 17696908,
+      "title": "City Hall Historic District (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/City_Hall_Historic_District_(Cambridge,_Massachusetts)",
+      "latitude": 42.36666666666667,
+      "longitude": -71.10555555555555
+    },
+    {
+      "page_id": 17697091,
+      "title": "Cloverden",
+      "url": "https://en.wikipedia.org/wiki/Cloverden",
+      "latitude": 42.37905555555555,
+      "longitude": -71.1211111111111
+    },
+    {
+      "page_id": 17697125,
+      "title": "Sara Foster Colburn House",
+      "url": "https://en.wikipedia.org/wiki/Sara_Foster_Colburn_House",
+      "latitude": 42.37005555555556,
+      "longitude": -71.11033333333333
+    },
+    {
+      "page_id": 17697141,
+      "title": "William Cook House (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/William_Cook_House_(Cambridge,_Massachusetts)",
+      "latitude": 42.37916666666667,
+      "longitude": -71.13472222222222
+    },
+    {
+      "page_id": 17697153,
+      "title": "Josiah Coolidge House",
+      "url": "https://en.wikipedia.org/wiki/Josiah_Coolidge_House",
+      "latitude": 42.37416666666667,
+      "longitude": -71.13833333333334
+    },
+    {
+      "page_id": 17697159,
+      "title": "Craigie Arms",
+      "url": "https://en.wikipedia.org/wiki/Craigie_Arms",
+      "latitude": 42.373,
+      "longitude": -71.12291666666665
+    },
+    {
+      "page_id": 17697204,
+      "title": "E. E. Cummings House",
+      "url": "https://en.wikipedia.org/wiki/E._E._Cummings_House",
+      "latitude": 42.37877777777778,
+      "longitude": -71.11069444444443
+    },
+    {
+      "page_id": 17697247,
+      "title": "Anna Day House",
+      "url": "https://en.wikipedia.org/wiki/Anna_Day_House",
+      "latitude": 42.37861111111111,
+      "longitude": -71.15222222222222
+    },
+    {
+      "page_id": 17697281,
+      "title": "Building at 259 Mount Auburn Street",
+      "url": "https://en.wikipedia.org/wiki/Building_at_259_Mount_Auburn_Street",
+      "latitude": 42.37493055555556,
+      "longitude": -71.13202777777776
+    },
+    {
+      "page_id": 17697307,
+      "title": "Dana-Palmer House",
+      "url": "https://en.wikipedia.org/wiki/Dana-Palmer_House",
+      "latitude": 42.373,
+      "longitude": -71.11466666666666
+    },
+    {
+      "page_id": 17697339,
+      "title": "Deane-Williams House",
+      "url": "https://en.wikipedia.org/wiki/Deane-Williams_House",
+      "latitude": 42.37222222222222,
+      "longitude": -71.10377777777778
+    },
+    {
+      "page_id": 17697369,
+      "title": "DeRosay-McNamee House",
+      "url": "https://en.wikipedia.org/wiki/DeRosay-McNamee_House",
+      "latitude": 42.387277777777776,
+      "longitude": -71.12163888888888
+    },
+    {
+      "page_id": 17697397,
+      "title": "Edward Dodge House (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Edward_Dodge_House_(Cambridge,_Massachusetts)",
+      "latitude": 42.37972222222222,
+      "longitude": -71.13138888888888
+    },
+    {
+      "page_id": 17697420,
+      "title": "The Dunvegan",
+      "url": "https://en.wikipedia.org/wiki/The_Dunvegan",
+      "latitude": 42.38161111111111,
+      "longitude": -71.12002777777776
+    },
+    {
+      "page_id": 17697439,
+      "title": "East Cambridge Historic District",
+      "url": "https://en.wikipedia.org/wiki/East_Cambridge_Historic_District",
+      "latitude": 42.37,
+      "longitude": -71.08083333333333
+    },
+    {
+      "page_id": 17697464,
+      "title": "East Cambridge Savings Bank",
+      "url": "https://en.wikipedia.org/wiki/East_Cambridge_Savings_Bank",
+      "latitude": 42.37097222222222,
+      "longitude": -71.08097222222221
+    },
+    {
+      "page_id": 17697481,
+      "title": "Asa Ellis House",
+      "url": "https://en.wikipedia.org/wiki/Asa_Ellis_House",
+      "latitude": 42.36338888888889,
+      "longitude": -71.10499999999999
+    },
+    {
+      "page_id": 17697501,
+      "title": "R.H. Farwell House",
+      "url": "https://en.wikipedia.org/wiki/R.H._Farwell_House",
+      "latitude": 42.39344444444444,
+      "longitude": -71.12630555555555
+    },
+    {
+      "page_id": 17697563,
+      "title": "Isaac Fay House",
+      "url": "https://en.wikipedia.org/wiki/Isaac_Fay_House",
+      "latitude": 42.373222222222225,
+      "longitude": -71.10194444444444
+    },
+    {
+      "page_id": 17697585,
+      "title": "Ernst Flentje House",
+      "url": "https://en.wikipedia.org/wiki/Ernst_Flentje_House",
+      "latitude": 42.35911111111111,
+      "longitude": -71.11144444444444
+    },
+    {
+      "page_id": 17697608,
+      "title": "Follen Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Follen_Street_Historic_District",
+      "latitude": 42.37861111111111,
+      "longitude": -71.12333333333332
+    },
+    {
+      "page_id": 17697654,
+      "title": "Fort Washington (Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Fort_Washington_(Massachusetts)",
+      "latitude": 42.35655555555556,
+      "longitude": -71.10427777777777
+    },
+    {
+      "page_id": 17697667,
+      "title": "Fresh Pond Hotel",
+      "url": "https://en.wikipedia.org/wiki/Fresh_Pond_Hotel",
+      "latitude": 42.38291666666667,
+      "longitude": -71.14102777777778
+    },
+    {
+      "page_id": 17697694,
+      "title": "David Frost House",
+      "url": "https://en.wikipedia.org/wiki/David_Frost_House",
+      "latitude": 42.383361111111114,
+      "longitude": -71.12213888888888
+    },
+    {
+      "page_id": 17697716,
+      "title": "Elizabeth Frost Tenanthouse",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Frost_Tenanthouse",
+      "latitude": 42.383583333333334,
+      "longitude": -71.12172222222222
+    },
+    {
+      "page_id": 17697742,
+      "title": "Walter Frost House",
+      "url": "https://en.wikipedia.org/wiki/Walter_Frost_House",
+      "latitude": 42.38602777777778,
+      "longitude": -71.11722222222221
+    },
+    {
+      "page_id": 17703988,
+      "title": "George Gale House (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/George_Gale_House_(Cambridge,_Massachusetts)",
+      "latitude": 42.36841666666667,
+      "longitude": -71.10577777777777
+    },
+    {
+      "page_id": 17704015,
+      "title": "Garfield Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Garfield_Street_Historic_District",
+      "latitude": 42.38388888888889,
+      "longitude": -71.11833333333333
+    },
+    {
+      "page_id": 17704027,
+      "title": "Gray Gardens East and West Historic District",
+      "url": "https://en.wikipedia.org/wiki/Gray_Gardens_East_and_West_Historic_District",
+      "latitude": 42.38361111111111,
+      "longitude": -71.1286111111111
+    },
+    {
+      "page_id": 17704037,
+      "title": "Greek Revival Cottage (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Greek_Revival_Cottage_(Cambridge,_Massachusetts)",
+      "latitude": 42.39438888888889,
+      "longitude": -71.12983333333332
+    },
+    {
+      "page_id": 17704054,
+      "title": "Hall Tavern",
+      "url": "https://en.wikipedia.org/wiki/Hall_Tavern",
+      "latitude": 42.38308333333333,
+      "longitude": -71.12938888888888
+    },
+    {
+      "page_id": 17704077,
+      "title": "Richard Hapgood House",
+      "url": "https://en.wikipedia.org/wiki/Richard_Hapgood_House",
+      "latitude": 42.37166666666667,
+      "longitude": -71.11333333333333
+    },
+    {
+      "page_id": 17704096,
+      "title": "Harvard Houses Historic District",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Houses_Historic_District",
+      "latitude": 42.37,
+      "longitude": -71.11805555555554
+    },
+    {
+      "page_id": 17704109,
+      "title": "Harvard Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Street_Historic_District",
+      "latitude": 42.37075,
+      "longitude": -71.1093611111111
+    },
+    {
+      "page_id": 17704131,
+      "title": "Harvard Union",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Union",
+      "latitude": 42.37258333333333,
+      "longitude": -71.11455555555555
+    },
+    {
+      "page_id": 17704147,
+      "title": "Hastings Square Historic District",
+      "url": "https://en.wikipedia.org/wiki/Hastings_Square_Historic_District",
+      "latitude": 42.35638888888889,
+      "longitude": -71.11
+    },
+    {
+      "page_id": 17704171,
+      "title": "Col. Thomas Wentworth Higginson House",
+      "url": "https://en.wikipedia.org/wiki/Col._Thomas_Wentworth_Higginson_House",
+      "latitude": 42.38027777777778,
+      "longitude": -71.13055555555555
+    },
+    {
+      "page_id": 17704196,
+      "title": "Henderson Carriage Repository",
+      "url": "https://en.wikipedia.org/wiki/Henderson_Carriage_Repository",
+      "latitude": 42.391555555555556,
+      "longitude": -71.12305555555555
+    },
+    {
+      "page_id": 17704244,
+      "title": "Aaron Hill House",
+      "url": "https://en.wikipedia.org/wiki/Aaron_Hill_House",
+      "latitude": 42.37616666666667,
+      "longitude": -71.12899999999999
+    },
+    {
+      "page_id": 17704326,
+      "title": "Joseph Holmes House",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Holmes_House",
+      "latitude": 42.37166666666667,
+      "longitude": -71.14
+    },
+    {
+      "page_id": 17704352,
+      "title": "Homer-Lovell House",
+      "url": "https://en.wikipedia.org/wiki/Homer-Lovell_House",
+      "latitude": 42.38547222222222,
+      "longitude": -71.11774999999999
+    },
+    {
+      "page_id": 17704381,
+      "title": "Hooper-Eliot House",
+      "url": "https://en.wikipedia.org/wiki/Hooper-Eliot_House",
+      "latitude": 42.379194444444444,
+      "longitude": -71.13672222222223
+    },
+    {
+      "page_id": 17704397,
+      "title": "Howe House (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Howe_House_(Cambridge,_Massachusetts)",
+      "latitude": 42.377944444444445,
+      "longitude": -71.13327777777778
+    },
+    {
+      "page_id": 17704432,
+      "title": "F. A. Kennedy Steam Bakery",
+      "url": "https://en.wikipedia.org/wiki/F._A._Kennedy_Steam_Bakery",
+      "latitude": 42.36277777777778,
+      "longitude": -71.10138888888888
+    },
+    {
+      "page_id": 17704467,
+      "title": "Lawrence Soule House",
+      "url": "https://en.wikipedia.org/wiki/Lawrence_Soule_House",
+      "latitude": 42.39248611111111,
+      "longitude": -71.12320833333332
+    },
+    {
+      "page_id": 17704493,
+      "title": "Wyeth Brickyard Superintendent's House",
+      "url": "https://en.wikipedia.org/wiki/Wyeth_Brickyard_Superintendent%27s_House",
+      "latitude": 42.39361111111111,
+      "longitude": -71.13722222222223
+    },
+    {
+      "page_id": 17704537,
+      "title": "H. Langford Warren House",
+      "url": "https://en.wikipedia.org/wiki/H._Langford_Warren_House",
+      "latitude": 42.38777777777778,
+      "longitude": -71.12833333333333
+    },
+    {
+      "page_id": 17704595,
+      "title": "Clifton Merriman Post Office Building",
+      "url": "https://en.wikipedia.org/wiki/Clifton_Merriman_Post_Office_Building",
+      "latitude": 42.36633333333334,
+      "longitude": -71.10602777777777
+    },
+    {
+      "page_id": 17704656,
+      "title": "Benjamin Hoyt House",
+      "url": "https://en.wikipedia.org/wiki/Benjamin_Hoyt_House",
+      "latitude": 42.370777777777775,
+      "longitude": -71.08452777777778
+    },
+    {
+      "page_id": 17704690,
+      "title": "Hubbard Park Historic District",
+      "url": "https://en.wikipedia.org/wiki/Hubbard_Park_Historic_District",
+      "latitude": 42.376666666666665,
+      "longitude": -71.13166666666666
+    },
+    {
+      "page_id": 17704730,
+      "title": "The Jarvis",
+      "url": "https://en.wikipedia.org/wiki/The_Jarvis",
+      "latitude": 42.38011111111111,
+      "longitude": -71.11758333333333
+    },
+    {
+      "page_id": 17704758,
+      "title": "William R. Jones House",
+      "url": "https://en.wikipedia.org/wiki/William_R._Jones_House",
+      "latitude": 42.37008333333333,
+      "longitude": -71.1063611111111
+    },
+    {
+      "page_id": 17704777,
+      "title": "Kidder–Sargent–McCrehan House",
+      "url": "https://en.wikipedia.org/wiki/Kidder%E2%80%93Sargent%E2%80%93McCrehan_House",
+      "latitude": 42.39319444444445,
+      "longitude": -71.13055555555555
+    },
+    {
+      "page_id": 17704806,
+      "title": "Chester Kingsley House",
+      "url": "https://en.wikipedia.org/wiki/Chester_Kingsley_House",
+      "latitude": 42.39341666666667,
+      "longitude": -71.1243611111111
+    },
+    {
+      "page_id": 17704834,
+      "title": "Lechmere Point Corporation Houses",
+      "url": "https://en.wikipedia.org/wiki/Lechmere_Point_Corporation_Houses",
+      "latitude": 42.37166666666667,
+      "longitude": -71.08027777777778
+    },
+    {
+      "page_id": 17704869,
+      "title": "Rufus Lamson House",
+      "url": "https://en.wikipedia.org/wiki/Rufus_Lamson_House",
+      "latitude": 42.367777777777775,
+      "longitude": -71.09383333333332
+    },
+    {
+      "page_id": 17704882,
+      "title": "Kirkland Place Historic District",
+      "url": "https://en.wikipedia.org/wiki/Kirkland_Place_Historic_District",
+      "latitude": 42.378055555555555,
+      "longitude": -71.11416666666666
+    },
+    {
+      "page_id": 17704906,
+      "title": "The Larches (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/The_Larches_(Cambridge,_Massachusetts)",
+      "latitude": 42.376583333333336,
+      "longitude": -71.14241666666668
+    },
+    {
+      "page_id": 17704921,
+      "title": "Littlefield-Roberts House",
+      "url": "https://en.wikipedia.org/wiki/Littlefield-Roberts_House",
+      "latitude": 42.37305555555555,
+      "longitude": -71.11388888888888
+    },
+    {
+      "page_id": 17704939,
+      "title": "Lowell School (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Lowell_School_(Cambridge,_Massachusetts)",
+      "latitude": 42.375416666666666,
+      "longitude": -71.13347222222222
+    },
+    {
+      "page_id": 17704949,
+      "title": "Joseph Lovering House",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Lovering_House",
+      "latitude": 42.376666666666665,
+      "longitude": -71.11261111111111
+    },
+    {
+      "page_id": 17704970,
+      "title": "Lovell Block",
+      "url": "https://en.wikipedia.org/wiki/Lovell_Block",
+      "latitude": 42.38780555555555,
+      "longitude": -71.119
+    },
+    {
+      "page_id": 17704987,
+      "title": "Memorial Drive Apartments Historic District",
+      "url": "https://en.wikipedia.org/wiki/Memorial_Drive_Apartments_Historic_District",
+      "latitude": 42.37277777777778,
+      "longitude": -71.12583333333333
+    },
+    {
+      "page_id": 17705003,
+      "title": "Josiah Mason Jr. House",
+      "url": "https://en.wikipedia.org/wiki/Josiah_Mason_Jr._House",
+      "latitude": 42.367111111111114,
+      "longitude": -71.09394444444445
+    },
+    {
+      "page_id": 17705020,
+      "title": "W. A. Mason House",
+      "url": "https://en.wikipedia.org/wiki/W._A._Mason_House",
+      "latitude": 42.38583333333333,
+      "longitude": -71.12638888888888
+    },
+    {
+      "page_id": 17705036,
+      "title": "Maple Avenue Historic District (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Maple_Avenue_Historic_District_(Cambridge,_Massachusetts)",
+      "latitude": 42.37222222222222,
+      "longitude": -71.10499999999999
+    },
+    {
+      "page_id": 17705056,
+      "title": "The Lowell",
+      "url": "https://en.wikipedia.org/wiki/The_Lowell",
+      "latitude": 42.37716666666667,
+      "longitude": -71.13969444444444
+    },
+    {
+      "page_id": 17705068,
+      "title": "The Montrose",
+      "url": "https://en.wikipedia.org/wiki/The_Montrose",
+      "latitude": 42.38136111111111,
+      "longitude": -71.12008333333333
+    },
+    {
+      "page_id": 17705087,
+      "title": "Wyeth-Smith House",
+      "url": "https://en.wikipedia.org/wiki/Wyeth-Smith_House",
+      "latitude": 42.38355555555555,
+      "longitude": -71.13891666666667
+    },
+    {
+      "page_id": 17705115,
+      "title": "John Wyeth House",
+      "url": "https://en.wikipedia.org/wiki/John_Wyeth_House",
+      "latitude": 42.376694444444446,
+      "longitude": -71.14680555555556
+    },
+    {
+      "page_id": 17705132,
+      "title": "Upper Magazine Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Upper_Magazine_Street_Historic_District",
+      "latitude": 42.363055555555555,
+      "longitude": -71.10694444444444
+    },
+    {
+      "page_id": 17710052,
+      "title": "Isaac McLean House",
+      "url": "https://en.wikipedia.org/wiki/Isaac_McLean_House",
+      "latitude": 42.393299999999996,
+      "longitude": -71.12618888888888
+    },
+    {
+      "page_id": 17710074,
+      "title": "Alpheus Mead House",
+      "url": "https://en.wikipedia.org/wiki/Alpheus_Mead_House",
+      "latitude": 42.39296944444445,
+      "longitude": -71.12576944444444
+    },
+    {
+      "page_id": 17710086,
+      "title": "Isaac Melvin House",
+      "url": "https://en.wikipedia.org/wiki/Isaac_Melvin_House",
+      "latitude": 42.36991666666667,
+      "longitude": -71.10930555555555
+    },
+    {
+      "page_id": 17710107,
+      "title": "New England Confectionery Company Factory",
+      "url": "https://en.wikipedia.org/wiki/New_England_Confectionery_Company_Factory",
+      "latitude": 42.361111111111114,
+      "longitude": -71.09777777777778
+    },
+    {
+      "page_id": 17710127,
+      "title": "Andrew Newman House",
+      "url": "https://en.wikipedia.org/wiki/Andrew_Newman_House",
+      "latitude": 42.3615,
+      "longitude": -71.11030555555556
+    },
+    {
+      "page_id": 17710140,
+      "title": "Norfolk Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Norfolk_Street_Historic_District",
+      "latitude": 42.365833333333335,
+      "longitude": -71.10111111111111
+    },
+    {
+      "page_id": 17710156,
+      "title": "J.A. Noyes House",
+      "url": "https://en.wikipedia.org/wiki/J.A._Noyes_House",
+      "latitude": 42.379666666666665,
+      "longitude": -71.13166666666666
+    },
+    {
+      "page_id": 17710174,
+      "title": "Old Cambridge Historic District",
+      "url": "https://en.wikipedia.org/wiki/Old_Cambridge_Historic_District",
+      "latitude": 42.37694444444445,
+      "longitude": -71.14027777777778
+    },
+    {
+      "page_id": 17710188,
+      "title": "Old Cambridgeport Historic District",
+      "url": "https://en.wikipedia.org/wiki/Old_Cambridgeport_Historic_District",
+      "latitude": 42.365833333333335,
+      "longitude": -71.09722222222221
+    },
+    {
+      "page_id": 17710206,
+      "title": "Opposition House",
+      "url": "https://en.wikipedia.org/wiki/Opposition_House",
+      "latitude": 42.369514,
+      "longitude": -71.1068103
+    },
+    {
+      "page_id": 17710227,
+      "title": "Peabody Court Apartments",
+      "url": "https://en.wikipedia.org/wiki/Peabody_Court_Apartments",
+      "latitude": 42.38361111111111,
+      "longitude": -71.12416666666665
+    },
+    {
+      "page_id": 17710244,
+      "title": "Sarah Orne House",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Orne_House",
+      "latitude": 42.37405555555556,
+      "longitude": -71.13816666666668
+    },
+    {
+      "page_id": 17710265,
+      "title": "Dexter Pratt House",
+      "url": "https://en.wikipedia.org/wiki/Dexter_Pratt_House",
+      "latitude": 42.37444444444444,
+      "longitude": -71.12230555555554
+    },
+    {
+      "page_id": 17710280,
+      "title": "Cheney Read House",
+      "url": "https://en.wikipedia.org/wiki/Cheney_Read_House",
+      "latitude": 42.36513888888889,
+      "longitude": -71.10852777777777
+    },
+    {
+      "page_id": 17710310,
+      "title": "J. A. Wood House",
+      "url": "https://en.wikipedia.org/wiki/J._A._Wood_House",
+      "latitude": 42.382777777777775,
+      "longitude": -71.11916666666666
+    },
+    {
+      "page_id": 17710326,
+      "title": "S. B. Withey House",
+      "url": "https://en.wikipedia.org/wiki/S._B._Withey_House",
+      "latitude": 42.375305555555556,
+      "longitude": -71.12158333333333
+    },
+    {
+      "page_id": 17710346,
+      "title": "Winter Street Historic District",
+      "url": "https://en.wikipedia.org/wiki/Winter_Street_Historic_District",
+      "latitude": 42.37277777777778,
+      "longitude": -71.08166666666666
+    },
+    {
+      "page_id": 17710356,
+      "title": "Stillman Willis House",
+      "url": "https://en.wikipedia.org/wiki/Stillman_Willis_House",
+      "latitude": 42.38444444444444,
+      "longitude": -71.12083333333332
+    },
+    {
+      "page_id": 17710370,
+      "title": "Abraham Watson House",
+      "url": "https://en.wikipedia.org/wiki/Abraham_Watson_House",
+      "latitude": 42.392472222222224,
+      "longitude": -71.13294444444443
+    },
+    {
+      "page_id": 17710385,
+      "title": "Patrick Slowey House",
+      "url": "https://en.wikipedia.org/wiki/Patrick_Slowey_House",
+      "latitude": 42.39025,
+      "longitude": -71.13194444444444
+    },
+    {
+      "page_id": 17710395,
+      "title": "Shady Hill Historic District",
+      "url": "https://en.wikipedia.org/wiki/Shady_Hill_Historic_District",
+      "latitude": 42.37916666666667,
+      "longitude": -71.11138888888888
+    },
+    {
+      "page_id": 17710414,
+      "title": "Shell Oil Company \"Spectacular\" Sign",
+      "url": "https://en.wikipedia.org/wiki/Shell_Oil_Company_%22Spectacular%22_Sign",
+      "latitude": 42.35680555555556,
+      "longitude": -71.11441666666666
+    },
+    {
+      "page_id": 17710431,
+      "title": "Edmund Reardon House",
+      "url": "https://en.wikipedia.org/wiki/Edmund_Reardon_House",
+      "latitude": 42.36036111111111,
+      "longitude": -71.10780555555554
+    },
+    {
+      "page_id": 17710460,
+      "title": "River Street Firehouse",
+      "url": "https://en.wikipedia.org/wiki/River_Street_Firehouse",
+      "latitude": 42.36327777777778,
+      "longitude": -71.11
+    },
+    {
+      "page_id": 17710485,
+      "title": "Ware Hall",
+      "url": "https://en.wikipedia.org/wiki/Ware_Hall",
+      "latitude": 42.371944444444445,
+      "longitude": -71.11305555555555
+    },
+    {
+      "page_id": 17710508,
+      "title": "Walden Street Cattle Pass",
+      "url": "https://en.wikipedia.org/wiki/Walden_Street_Cattle_Pass",
+      "latitude": 42.38941666666667,
+      "longitude": -71.12466666666666
+    },
+    {
+      "page_id": 17710533,
+      "title": "Albert Vinal House",
+      "url": "https://en.wikipedia.org/wiki/Albert_Vinal_House",
+      "latitude": 42.37052777777778,
+      "longitude": -71.10775
+    },
+    {
+      "page_id": 17710548,
+      "title": "Valentine Soap Workers Cottages",
+      "url": "https://en.wikipedia.org/wiki/Valentine_Soap_Workers_Cottages",
+      "latitude": 42.36244444444445,
+      "longitude": -71.10538888888888
+    },
+    {
+      "page_id": 17710565,
+      "title": "Reversible Collar Company Building",
+      "url": "https://en.wikipedia.org/wiki/Reversible_Collar_Company_Building",
+      "latitude": 42.37083333333334,
+      "longitude": -71.11486111111111
+    },
+    {
+      "page_id": 17710590,
+      "title": "William Saunders House",
+      "url": "https://en.wikipedia.org/wiki/William_Saunders_House",
+      "latitude": 42.384277777777775,
+      "longitude": -71.11883333333333
+    },
+    {
+      "page_id": 17710614,
+      "title": "Urban Rowhouse (40–48 Pearl Street, Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Urban_Rowhouse_(40%E2%80%9348_Pearl_Street,_Cambridge,_Massachusetts)",
+      "latitude": 42.36372222222222,
+      "longitude": -71.10341666666666
+    },
+    {
+      "page_id": 17710645,
+      "title": "University Museum (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/University_Museum_(Harvard_University)",
+      "latitude": 42.37847222222222,
+      "longitude": -71.11552777777777
+    },
+    {
+      "page_id": 17710666,
+      "title": "Union Railway Car Barn",
+      "url": "https://en.wikipedia.org/wiki/Union_Railway_Car_Barn",
+      "latitude": 42.372055555555555,
+      "longitude": -71.08641666666666
+    },
+    {
+      "page_id": 17710686,
+      "title": "Taylor Square Firehouse",
+      "url": "https://en.wikipedia.org/wiki/Taylor_Square_Firehouse",
+      "latitude": 42.38425,
+      "longitude": -71.12988888888889
+    },
+    {
+      "page_id": 17710700,
+      "title": "Treadwell-Sparks House",
+      "url": "https://en.wikipedia.org/wiki/Treadwell-Sparks_House",
+      "latitude": 42.376666666666665,
+      "longitude": -71.11555555555555
+    },
+    {
+      "page_id": 17710714,
+      "title": "Stickney-Shepard House",
+      "url": "https://en.wikipedia.org/wiki/Stickney-Shepard_House",
+      "latitude": 42.37133333333333,
+      "longitude": -71.11344444444444
+    },
+    {
+      "page_id": 17710743,
+      "title": "The Stanstead",
+      "url": "https://en.wikipedia.org/wiki/The_Stanstead",
+      "latitude": 42.37388888888889,
+      "longitude": -71.11444444444444
+    },
+    {
+      "page_id": 17710762,
+      "title": "Second Waterhouse House",
+      "url": "https://en.wikipedia.org/wiki/Second_Waterhouse_House",
+      "latitude": 42.378680555555555,
+      "longitude": -71.12245833333333
+    },
+    {
+      "page_id": 17710795,
+      "title": "Salem–Auburn Streets Historic District",
+      "url": "https://en.wikipedia.org/wiki/Salem%E2%80%93Auburn_Streets_Historic_District",
+      "latitude": 42.36277777777778,
+      "longitude": -71.10388888888889
+    },
+    {
+      "page_id": 17710815,
+      "title": "Second Cambridge Savings Bank Building",
+      "url": "https://en.wikipedia.org/wiki/Second_Cambridge_Savings_Bank_Building",
+      "latitude": 42.37288888888889,
+      "longitude": -71.11916666666666
+    },
+    {
+      "page_id": 17710839,
+      "title": "Sears Tower – Harvard Observatory",
+      "url": "https://en.wikipedia.org/wiki/Sears_Tower_%E2%80%93_Harvard_Observatory",
+      "latitude": 42.381461111111115,
+      "longitude": -71.12836944444443
+    },
+    {
+      "page_id": 17710856,
+      "title": "Ivory Sands House",
+      "url": "https://en.wikipedia.org/wiki/Ivory_Sands_House",
+      "latitude": 42.370444444444445,
+      "longitude": -71.09702777777777
+    },
+    {
+      "page_id": 17710874,
+      "title": "Hiram Sands House",
+      "url": "https://en.wikipedia.org/wiki/Hiram_Sands_House",
+      "latitude": 42.369416666666666,
+      "longitude": -71.11319444444445
+    },
+    {
+      "page_id": 18426501,
+      "title": "Harvard University",
+      "url": "https://en.wikipedia.org/wiki/Harvard_University",
+      "latitude": 42.37444444444444,
+      "longitude": -71.11694444444444
+    },
+    {
+      "page_id": 18568871,
+      "title": "List Visual Arts Center",
+      "url": "https://en.wikipedia.org/wiki/List_Visual_Arts_Center",
+      "latitude": 42.3608,
+      "longitude": -71.0877
+    },
+    {
+      "page_id": 19227918,
+      "title": "Harvard University Police Department",
+      "url": "https://en.wikipedia.org/wiki/Harvard_University_Police_Department",
+      "latitude": 42.368944444444445,
+      "longitude": -71.11218333333333
+    },
+    {
+      "page_id": 19412748,
+      "title": "Center for Bits and Atoms",
+      "url": "https://en.wikipedia.org/wiki/Center_for_Bits_and_Atoms",
+      "latitude": 42.3604,
+      "longitude": -71.087
+    },
+    {
+      "page_id": 19837711,
+      "title": "River Street Bridge (Charles River)",
+      "url": "https://en.wikipedia.org/wiki/River_Street_Bridge_(Charles_River)",
+      "latitude": 42.36123,
+      "longitude": -71.1167
+    },
+    {
+      "page_id": 19837806,
+      "title": "Western Avenue Bridge",
+      "url": "https://en.wikipedia.org/wiki/Western_Avenue_Bridge",
+      "latitude": 42.36422,
+      "longitude": -71.1169
+    },
+    {
+      "page_id": 19841643,
+      "title": "John W. Weeks Bridge",
+      "url": "https://en.wikipedia.org/wiki/John_W._Weeks_Bridge",
+      "latitude": 42.36853,
+      "longitude": -71.11807
+    },
+    {
+      "page_id": 21333050,
+      "title": "Quincy House (Harvard College)",
+      "url": "https://en.wikipedia.org/wiki/Quincy_House_(Harvard_College)",
+      "latitude": 42.3705,
+      "longitude": -71.1171
+    },
+    {
+      "page_id": 21396514,
+      "title": "Ragon Institute",
+      "url": "https://en.wikipedia.org/wiki/Ragon_Institute",
+      "latitude": 42.364,
+      "longitude": -71.092
+    },
+    {
+      "page_id": 21427054,
+      "title": "MIT Campus (Area 2), Cambridge, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/MIT_Campus_(Area_2),_Cambridge,_Massachusetts",
+      "latitude": 42.35975,
+      "longitude": -71.09205555555555
+    },
+    {
+      "page_id": 21427114,
+      "title": "Wellington-Harrington",
+      "url": "https://en.wikipedia.org/wiki/Wellington-Harrington",
+      "latitude": 42.3725,
+      "longitude": -71.09194444444444
+    },
+    {
+      "page_id": 21427284,
+      "title": "Mid-Cambridge",
+      "url": "https://en.wikipedia.org/wiki/Mid-Cambridge",
+      "latitude": 42.372638888888886,
+      "longitude": -71.10965277777777
+    },
+    {
+      "page_id": 21427333,
+      "title": "Riverside, Cambridge",
+      "url": "https://en.wikipedia.org/wiki/Riverside,_Cambridge",
+      "latitude": 42.367777777777775,
+      "longitude": -71.11472222222221
+    },
+    {
+      "page_id": 21427437,
+      "title": "Baldwin, Cambridge, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/Baldwin,_Cambridge,_Massachusetts",
+      "latitude": 42.38361111111111,
+      "longitude": -71.11611111111111
+    },
+    {
+      "page_id": 21427610,
+      "title": "West Cambridge (neighborhood)",
+      "url": "https://en.wikipedia.org/wiki/West_Cambridge_(neighborhood)",
+      "latitude": 42.37777777777778,
+      "longitude": -71.13027777777778
+    },
+    {
+      "page_id": 21427761,
+      "title": "North Cambridge, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/North_Cambridge,_Massachusetts",
+      "latitude": 42.395833333333336,
+      "longitude": -71.13
+    },
+    {
+      "page_id": 21427816,
+      "title": "Cambridge Highlands",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Highlands",
+      "latitude": 42.390277777777776,
+      "longitude": -71.15083333333334
+    },
+    {
+      "page_id": 21427840,
+      "title": "Strawberry Hill, Cambridge",
+      "url": "https://en.wikipedia.org/wiki/Strawberry_Hill,_Cambridge",
+      "latitude": 42.37777777777778,
+      "longitude": -71.15194444444445
+    },
+    {
+      "page_id": 21464432,
+      "title": "Koch Institute for Integrative Cancer Research",
+      "url": "https://en.wikipedia.org/wiki/Koch_Institute_for_Integrative_Cancer_Research",
+      "latitude": 42.36222222222222,
+      "longitude": -71.0886111111111
+    },
+    {
+      "page_id": 21709445,
+      "title": "Rappaport Institute for Greater Boston",
+      "url": "https://en.wikipedia.org/wiki/Rappaport_Institute_for_Greater_Boston",
+      "latitude": 42.371,
+      "longitude": -71.122
+    },
+    {
+      "page_id": 21733950,
+      "title": "Xmortis",
+      "url": "https://en.wikipedia.org/wiki/Xmortis",
+      "latitude": 42.3638,
+      "longitude": -71.1015
+    },
+    {
+      "page_id": 22371972,
+      "title": "Owl Club (Harvard)",
+      "url": "https://en.wikipedia.org/wiki/Owl_Club_(Harvard)",
+      "latitude": 42.3715,
+      "longitude": -71.1187
+    },
+    {
+      "page_id": 22711896,
+      "title": "Urban Rowhouse (30–38 Pearl Street, Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Urban_Rowhouse_(30%E2%80%9338_Pearl_Street,_Cambridge,_Massachusetts)",
+      "latitude": 42.36394444444445,
+      "longitude": -71.10316666666667
+    },
+    {
+      "page_id": 22711934,
+      "title": "Urban Rowhouse (26–32 River Street, Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Urban_Rowhouse_(26%E2%80%9332_River_Street,_Cambridge,_Massachusetts)",
+      "latitude": 42.364666666666665,
+      "longitude": -71.10586111111111
+    },
+    {
+      "page_id": 22790984,
+      "title": "Nameless Coffeehouse",
+      "url": "https://en.wikipedia.org/wiki/Nameless_Coffeehouse",
+      "latitude": 42.37453611111111,
+      "longitude": -71.11928055555555
+    },
+    {
+      "page_id": 22794033,
+      "title": "Shady Hill School",
+      "url": "https://en.wikipedia.org/wiki/Shady_Hill_School",
+      "latitude": 42.371,
+      "longitude": -71.138
+    },
+    {
+      "page_id": 22856069,
+      "title": "Harvard–Yenching Library",
+      "url": "https://en.wikipedia.org/wiki/Harvard%E2%80%93Yenching_Library",
+      "latitude": 42.37745833333334,
+      "longitude": -71.11425555555554
+    },
+    {
+      "page_id": 23784296,
+      "title": "MIT Radiation Laboratory",
+      "url": "https://en.wikipedia.org/wiki/MIT_Radiation_Laboratory",
+      "latitude": 42.3608,
+      "longitude": -71.0917
+    },
+    {
+      "page_id": 23809874,
+      "title": "Cambridge Police Department (Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Police_Department_(Massachusetts)",
+      "latitude": 42.3675,
+      "longitude": -71.0858
+    },
+    {
+      "page_id": 24259132,
+      "title": "Abdul Latif Jameel Poverty Action Lab",
+      "url": "https://en.wikipedia.org/wiki/Abdul_Latif_Jameel_Poverty_Action_Lab",
+      "latitude": 42.362500000000004,
+      "longitude": -71.08777777777777
+    },
+    {
+      "page_id": 24402716,
+      "title": "Harvard Cyclotron Laboratory",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Cyclotron_Laboratory",
+      "latitude": 42.38,
+      "longitude": -71.116
+    },
+    {
+      "page_id": 24445086,
+      "title": "St. Hedwig Parish, Cambridge",
+      "url": "https://en.wikipedia.org/wiki/St._Hedwig_Parish,_Cambridge",
+      "latitude": 42.370694444444446,
+      "longitude": -71.08258333333333
+    },
+    {
+      "page_id": 25009206,
+      "title": "Hult International Business School",
+      "url": "https://en.wikipedia.org/wiki/Hult_International_Business_School",
+      "latitude": 42.36944444444445,
+      "longitude": -71.0736111111111
+    },
+    {
+      "page_id": 25052083,
+      "title": "First Church of Christ, Scientist (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/First_Church_of_Christ,_Scientist_(Cambridge,_Massachusetts)",
+      "latitude": 42.378242,
+      "longitude": -71.120898
+    },
+    {
+      "page_id": 25258269,
+      "title": "Watson's Corner",
+      "url": "https://en.wikipedia.org/wiki/Watson%27s_Corner",
+      "latitude": 42.39266666666666,
+      "longitude": -71.12497222222221
+    },
+    {
+      "page_id": 25282404,
+      "title": "The Plough and Stars",
+      "url": "https://en.wikipedia.org/wiki/The_Plough_and_Stars",
+      "latitude": 42.36830555555556,
+      "longitude": -71.10872222222221
+    },
+    {
+      "page_id": 27292446,
+      "title": "Kendall Band",
+      "url": "https://en.wikipedia.org/wiki/Kendall_Band",
+      "latitude": 42.3623,
+      "longitude": -71.0862
+    },
+    {
+      "page_id": 28490481,
+      "title": "Millers River (Middlesex)",
+      "url": "https://en.wikipedia.org/wiki/Millers_River_(Middlesex)",
+      "latitude": 42.370555555555555,
+      "longitude": -71.06563888888888
+    },
+    {
+      "page_id": 28581521,
+      "title": "Community Charter School of Cambridge",
+      "url": "https://en.wikipedia.org/wiki/Community_Charter_School_of_Cambridge",
+      "latitude": 42.367425,
+      "longitude": -71.08451666666666
+    },
+    {
+      "page_id": 29172488,
+      "title": "Gift of the Wind",
+      "url": "https://en.wikipedia.org/wiki/Gift_of_the_Wind",
+      "latitude": 42.38851388888889,
+      "longitude": -71.11927777777777
+    },
+    {
+      "page_id": 29354120,
+      "title": "Harvard Bixi",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Bixi",
+      "latitude": 42.37361111111111,
+      "longitude": -71.11694444444444
+    },
+    {
+      "page_id": 29546700,
+      "title": "Charlie's Kitchen",
+      "url": "https://en.wikipedia.org/wiki/Charlie%27s_Kitchen",
+      "latitude": 42.37245,
+      "longitude": -71.1215
+    },
+    {
+      "page_id": 29926628,
+      "title": "Cambridge Montessori School",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Montessori_School",
+      "latitude": 42.3859,
+      "longitude": -71.1326
+    },
+    {
+      "page_id": 30369669,
+      "title": "Francis Russell Hart Nautical Museum",
+      "url": "https://en.wikipedia.org/wiki/Francis_Russell_Hart_Nautical_Museum",
+      "latitude": 42.35853888888889,
+      "longitude": -71.09315
+    },
+    {
+      "page_id": 30502543,
+      "title": "Tory Row",
+      "url": "https://en.wikipedia.org/wiki/Tory_Row",
+      "latitude": 42.376472222222226,
+      "longitude": -71.12658333333333
+    },
+    {
+      "page_id": 30516436,
+      "title": "Cambridge Center for Adult Education",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Center_for_Adult_Education",
+      "latitude": 42.373694444444446,
+      "longitude": -71.12155555555555
+    },
+    {
+      "page_id": 31094062,
+      "title": "Lizard Lounge",
+      "url": "https://en.wikipedia.org/wiki/Lizard_Lounge",
+      "latitude": 42.382111111111115,
+      "longitude": -71.11952777777778
+    },
+    {
+      "page_id": 31168577,
+      "title": "Grand Junction Railroad Bridge",
+      "url": "https://en.wikipedia.org/wiki/Grand_Junction_Railroad_Bridge",
+      "latitude": 42.352608333333336,
+      "longitude": -71.11034722222222
+    },
+    {
+      "page_id": 31631357,
+      "title": "Fairbank Center for Chinese Studies",
+      "url": "https://en.wikipedia.org/wiki/Fairbank_Center_for_Chinese_Studies",
+      "latitude": 42.375,
+      "longitude": -71.113
+    },
+    {
+      "page_id": 32025740,
+      "title": "Harvard Institute for International Development",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Institute_for_International_Development",
+      "latitude": 42.370956,
+      "longitude": -71.121997
+    },
+    {
+      "page_id": 32112813,
+      "title": "Mount Auburn Hospital",
+      "url": "https://en.wikipedia.org/wiki/Mount_Auburn_Hospital",
+      "latitude": 42.374414,
+      "longitude": -71.133776
+    },
+    {
+      "page_id": 32757155,
+      "title": "Timeline of Cambridge, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_Cambridge,_Massachusetts",
+      "latitude": 42.373611,
+      "longitude": -71.110556
+    },
+    {
+      "page_id": 32944279,
+      "title": "Ryles Jazz Club",
+      "url": "https://en.wikipedia.org/wiki/Ryles_Jazz_Club",
+      "latitude": 42.37305555555555,
+      "longitude": -71.10027777777778
+    },
+    {
+      "page_id": 33783205,
+      "title": "Lamont Library",
+      "url": "https://en.wikipedia.org/wiki/Lamont_Library",
+      "latitude": 42.37277,
+      "longitude": -71.11548
+    },
+    {
+      "page_id": 35803900,
+      "title": "Manter Hall School",
+      "url": "https://en.wikipedia.org/wiki/Manter_Hall_School",
+      "latitude": 42.372,
+      "longitude": -71.1182
+    },
+    {
+      "page_id": 36022193,
+      "title": "Glove Cycle",
+      "url": "https://en.wikipedia.org/wiki/Glove_Cycle",
+      "latitude": 42.38851388888889,
+      "longitude": -71.11927777777777
+    },
+    {
+      "page_id": 37024806,
+      "title": "Malkin Athletic Center",
+      "url": "https://en.wikipedia.org/wiki/Malkin_Athletic_Center",
+      "latitude": 42.3714,
+      "longitude": -71.1194
+    },
+    {
+      "page_id": 37304775,
+      "title": "Statue of John Harvard",
+      "url": "https://en.wikipedia.org/wiki/Statue_of_John_Harvard",
+      "latitude": 42.37447,
+      "longitude": -71.11719
+    },
+    {
+      "page_id": 37579425,
+      "title": "Hack/reduce",
+      "url": "https://en.wikipedia.org/wiki/Hack/reduce",
+      "latitude": 42.36611111111111,
+      "longitude": -71.08388888888888
+    },
+    {
+      "page_id": 37580059,
+      "title": "Kendall Boiler and Tank Company",
+      "url": "https://en.wikipedia.org/wiki/Kendall_Boiler_and_Tank_Company",
+      "latitude": 42.36611111111111,
+      "longitude": -71.08388888888888
+    },
+    {
+      "page_id": 37925252,
+      "title": "Kahal B'raira",
+      "url": "https://en.wikipedia.org/wiki/Kahal_B%27raira",
+      "latitude": 42.3914,
+      "longitude": -71.1542
+    },
+    {
+      "page_id": 38587084,
+      "title": "Cambridge Discovery Park",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Discovery_Park",
+      "latitude": 42.39819444444444,
+      "longitude": -71.14739722222222
+    },
+    {
+      "page_id": 38776131,
+      "title": "Untitled (Richard Fleischner artwork at Alewife station)",
+      "url": "https://en.wikipedia.org/wiki/Untitled_(Richard_Fleischner_artwork_at_Alewife_station)",
+      "latitude": 42.39564,
+      "longitude": -71.14092
+    },
+    {
+      "page_id": 38808105,
+      "title": "The End of the Red Line",
+      "url": "https://en.wikipedia.org/wiki/The_End_of_the_Red_Line",
+      "latitude": 42.39564,
+      "longitude": -71.14092
+    },
+    {
+      "page_id": 39228236,
+      "title": "Rindge Towers",
+      "url": "https://en.wikipedia.org/wiki/Rindge_Towers",
+      "latitude": 42.393,
+      "longitude": -71.13895
+    },
+    {
+      "page_id": 39743243,
+      "title": "Moderna",
+      "url": "https://en.wikipedia.org/wiki/Moderna",
+      "latitude": 42.3633,
+      "longitude": -71.091
+    },
+    {
+      "page_id": 40258362,
+      "title": "LabCentral",
+      "url": "https://en.wikipedia.org/wiki/LabCentral",
+      "latitude": 42.36213888888889,
+      "longitude": -71.09508333333333
+    },
+    {
+      "page_id": 40723753,
+      "title": "Camp Ellsworth",
+      "url": "https://en.wikipedia.org/wiki/Camp_Ellsworth",
+      "latitude": 42.384,
+      "longitude": -71.144
+    },
+    {
+      "page_id": 41133071,
+      "title": "MIT Center for Information Systems Research",
+      "url": "https://en.wikipedia.org/wiki/MIT_Center_for_Information_Systems_Research",
+      "latitude": 42.363518,
+      "longitude": -71.079037
+    },
+    {
+      "page_id": 41402512,
+      "title": "New Words Bookstore",
+      "url": "https://en.wikipedia.org/wiki/New_Words_Bookstore",
+      "latitude": 42.3725,
+      "longitude": -71.0995
+    },
+    {
+      "page_id": 41435365,
+      "title": "Cambridge Assembly",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Assembly",
+      "latitude": 42.35424722222222,
+      "longitude": -71.10976111111111
+    },
+    {
+      "page_id": 41473964,
+      "title": "Gore Hall",
+      "url": "https://en.wikipedia.org/wiki/Gore_Hall",
+      "latitude": 42.3738,
+      "longitude": -71.1164
+    },
+    {
+      "page_id": 41647414,
+      "title": "Central Square Theater",
+      "url": "https://en.wikipedia.org/wiki/Central_Square_Theater",
+      "latitude": 42.3636,
+      "longitude": -71.101
+    },
+    {
+      "page_id": 42186103,
+      "title": "Fay House",
+      "url": "https://en.wikipedia.org/wiki/Fay_House",
+      "latitude": 42.37620277777778,
+      "longitude": -71.12232222222221
+    },
+    {
+      "page_id": 42509882,
+      "title": "Nectow v. City of Cambridge",
+      "url": "https://en.wikipedia.org/wiki/Nectow_v._City_of_Cambridge",
+      "latitude": 42.35553,
+      "longitude": -71.10967
+    },
+    {
+      "page_id": 42685553,
+      "title": "Boylston Hall (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/Boylston_Hall_(Harvard_University)",
+      "latitude": 42.373332,
+      "longitude": -71.117327
+    },
+    {
+      "page_id": 42685568,
+      "title": "Harvard Hall",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Hall",
+      "latitude": 42.37486111111111,
+      "longitude": -71.11819444444444
+    },
+    {
+      "page_id": 43091425,
+      "title": "Kendall Cogeneration Station",
+      "url": "https://en.wikipedia.org/wiki/Kendall_Cogeneration_Station",
+      "latitude": 42.36313,
+      "longitude": -71.08011
+    },
+    {
+      "page_id": 43396930,
+      "title": "North Cambridge carhouse",
+      "url": "https://en.wikipedia.org/wiki/North_Cambridge_carhouse",
+      "latitude": 42.39722222222222,
+      "longitude": -71.12888888888888
+    },
+    {
+      "page_id": 43996120,
+      "title": "Farlow Herbarium of Cryptogamic Botany",
+      "url": "https://en.wikipedia.org/wiki/Farlow_Herbarium_of_Cryptogamic_Botany",
+      "latitude": 42.3791,
+      "longitude": -71.1146
+    },
+    {
+      "page_id": 44843466,
+      "title": "Peabody Terrace",
+      "url": "https://en.wikipedia.org/wiki/Peabody_Terrace",
+      "latitude": 42.36611111111111,
+      "longitude": -71.11555555555555
+    },
+    {
+      "page_id": 44849071,
+      "title": "Delphic Club",
+      "url": "https://en.wikipedia.org/wiki/Delphic_Club",
+      "latitude": 42.37238888888889,
+      "longitude": -71.11752777777777
+    },
+    {
+      "page_id": 46181426,
+      "title": "Institute for Medical Engineering and Science",
+      "url": "https://en.wikipedia.org/wiki/Institute_for_Medical_Engineering_and_Science",
+      "latitude": 42.3616667,
+      "longitude": -71.0866667
+    },
+    {
+      "page_id": 46760499,
+      "title": "T.T. the Bear's Place",
+      "url": "https://en.wikipedia.org/wiki/T.T._the_Bear%27s_Place",
+      "latitude": 42.3635,
+      "longitude": -71.10163888888889
+    },
+    {
+      "page_id": 46988301,
+      "title": "John M. Tobin Montessori School",
+      "url": "https://en.wikipedia.org/wiki/John_M._Tobin_Montessori_School",
+      "latitude": 42.3844,
+      "longitude": -71.1398
+    },
+    {
+      "page_id": 48444419,
+      "title": "Lynch Family Skatepark",
+      "url": "https://en.wikipedia.org/wiki/Lynch_Family_Skatepark",
+      "latitude": 42.37008333333333,
+      "longitude": -71.06793888888889
+    },
+    {
+      "page_id": 48547751,
+      "title": "Harvard Collection of Historical Scientific Instruments",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Collection_of_Historical_Scientific_Instruments",
+      "latitude": 42.3765,
+      "longitude": -71.1161
+    },
+    {
+      "page_id": 49943856,
+      "title": "Grossman Library",
+      "url": "https://en.wikipedia.org/wiki/Grossman_Library",
+      "latitude": 42.37438888888889,
+      "longitude": -71.11547222222222
+    },
+    {
+      "page_id": 50322911,
+      "title": "Conductor's Building",
+      "url": "https://en.wikipedia.org/wiki/Conductor%27s_Building",
+      "latitude": 42.372771,
+      "longitude": -71.122286
+    },
+    {
+      "page_id": 53006469,
+      "title": "Lyman Laboratory of Physics",
+      "url": "https://en.wikipedia.org/wiki/Lyman_Laboratory_of_Physics",
+      "latitude": 42.37753,
+      "longitude": -71.11713
+    },
+    {
+      "page_id": 53837172,
+      "title": "Statue of John Bridge",
+      "url": "https://en.wikipedia.org/wiki/Statue_of_John_Bridge",
+      "latitude": 42.377472,
+      "longitude": -71.120556
+    },
+    {
+      "page_id": 54424536,
+      "title": "Cabot Science Library",
+      "url": "https://en.wikipedia.org/wiki/Cabot_Science_Library",
+      "latitude": 42.3761145,
+      "longitude": -71.116359
+    },
+    {
+      "page_id": 55012112,
+      "title": "Conant Hall",
+      "url": "https://en.wikipedia.org/wiki/Conant_Hall",
+      "latitude": 42.37947,
+      "longitude": -71.11625
+    },
+    {
+      "page_id": 58463556,
+      "title": "Harvard Graduate Students Union",
+      "url": "https://en.wikipedia.org/wiki/Harvard_Graduate_Students_Union",
+      "latitude": 42.3643646,
+      "longitude": -71.1052512
+    },
+    {
+      "page_id": 59518036,
+      "title": "Murder of Jane Britton",
+      "url": "https://en.wikipedia.org/wiki/Murder_of_Jane_Britton",
+      "latitude": 42.373,
+      "longitude": -71.123
+    },
+    {
+      "page_id": 59908027,
+      "title": "Upstairs On the Square",
+      "url": "https://en.wikipedia.org/wiki/Upstairs_On_the_Square",
+      "latitude": 42.3725,
+      "longitude": -71.1209
+    },
+    {
+      "page_id": 60326497,
+      "title": "George Close Company Building",
+      "url": "https://en.wikipedia.org/wiki/George_Close_Company_Building",
+      "latitude": 42.367222222222225,
+      "longitude": -71.09555555555555
+    },
+    {
+      "page_id": 60376933,
+      "title": "MIT Department of Brain and Cognitive Sciences",
+      "url": "https://en.wikipedia.org/wiki/MIT_Department_of_Brain_and_Cognitive_Sciences",
+      "latitude": 42.362337,
+      "longitude": -71.091753
+    },
+    {
+      "page_id": 60663857,
+      "title": "Technology Square (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Technology_Square_(Cambridge,_Massachusetts)",
+      "latitude": 42.3635,
+      "longitude": -71.0926
+    },
+    {
+      "page_id": 62007302,
+      "title": "Statue of Charles Sumner (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Statue_of_Charles_Sumner_(Cambridge,_Massachusetts)",
+      "latitude": 42.37471,
+      "longitude": -71.11881
+    },
+    {
+      "page_id": 62034104,
+      "title": "Sean Collier Memorial",
+      "url": "https://en.wikipedia.org/wiki/Sean_Collier_Memorial",
+      "latitude": 42.36227,
+      "longitude": -71.09007
+    },
+    {
+      "page_id": 62350774,
+      "title": "Yume Wo Katare",
+      "url": "https://en.wikipedia.org/wiki/Yume_Wo_Katare",
+      "latitude": 42.3894,
+      "longitude": -71.1197
+    },
+    {
+      "page_id": 62369184,
+      "title": "Washington Gate",
+      "url": "https://en.wikipedia.org/wiki/Washington_Gate",
+      "latitude": 42.375671,
+      "longitude": -71.119676
+    },
+    {
+      "page_id": 62369243,
+      "title": "Flagstaff Park",
+      "url": "https://en.wikipedia.org/wiki/Flagstaff_Park",
+      "latitude": 42.375679,
+      "longitude": -71.118899
+    },
+    {
+      "page_id": 62369290,
+      "title": "Greene-Rose Heritage Park",
+      "url": "https://en.wikipedia.org/wiki/Greene-Rose_Heritage_Park",
+      "latitude": 42.36611,
+      "longitude": -71.09475
+    },
+    {
+      "page_id": 62369519,
+      "title": "General MacArthur Square",
+      "url": "https://en.wikipedia.org/wiki/General_MacArthur_Square",
+      "latitude": 42.37481,
+      "longitude": -71.11882
+    },
+    {
+      "page_id": 62369620,
+      "title": "Old Burying Ground (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Old_Burying_Ground_(Cambridge,_Massachusetts)",
+      "latitude": 42.3750137,
+      "longitude": -71.1198088
+    },
+    {
+      "page_id": 62371094,
+      "title": "Carl Barron Plaza",
+      "url": "https://en.wikipedia.org/wiki/Carl_Barron_Plaza",
+      "latitude": 42.36538,
+      "longitude": -71.10404
+    },
+    {
+      "page_id": 62371153,
+      "title": "Galaxy: Earth Sphere",
+      "url": "https://en.wikipedia.org/wiki/Galaxy:_Earth_Sphere",
+      "latitude": 42.362378,
+      "longitude": -71.084398
+    },
+    {
+      "page_id": 62371211,
+      "title": "Irish Famine Memorial",
+      "url": "https://en.wikipedia.org/wiki/Irish_Famine_Memorial",
+      "latitude": 42.375872,
+      "longitude": -71.120181
+    },
+    {
+      "page_id": 62371815,
+      "title": "Robert Stow Bradley Jr. Memorial",
+      "url": "https://en.wikipedia.org/wiki/Robert_Stow_Bradley_Jr._Memorial",
+      "latitude": 42.375704,
+      "longitude": -71.117056
+    },
+    {
+      "page_id": 62380167,
+      "title": "Aesop's Fables, II",
+      "url": "https://en.wikipedia.org/wiki/Aesop%27s_Fables,_II",
+      "latitude": 42.361330555555554,
+      "longitude": -71.08944722222222
+    },
+    {
+      "page_id": 62380191,
+      "title": "Alchemist (Plensa)",
+      "url": "https://en.wikipedia.org/wiki/Alchemist_(Plensa)",
+      "latitude": 42.35910555555556,
+      "longitude": -71.09402777777777
+    },
+    {
+      "page_id": 62380234,
+      "title": "Elmo-MIT",
+      "url": "https://en.wikipedia.org/wiki/Elmo-MIT",
+      "latitude": 42.359094444444445,
+      "longitude": -71.08969166666667
+    },
+    {
+      "page_id": 62384272,
+      "title": "Angola (Witkin)",
+      "url": "https://en.wikipedia.org/wiki/Angola_(Witkin)",
+      "latitude": 42.358811111111116,
+      "longitude": -71.08931944444444
+    },
+    {
+      "page_id": 62384360,
+      "title": "Guennette (Heizer)",
+      "url": "https://en.wikipedia.org/wiki/Guennette_(Heizer)",
+      "latitude": 42.358576,
+      "longitude": -71.090913
+    },
+    {
+      "page_id": 62384458,
+      "title": "TV Man or Five Piece Cube with Strange Hole",
+      "url": "https://en.wikipedia.org/wiki/TV_Man_or_Five_Piece_Cube_with_Strange_Hole",
+      "latitude": 42.358885,
+      "longitude": -71.089064
+    },
+    {
+      "page_id": 62384559,
+      "title": "La Grande Voile (The Big Sail)",
+      "url": "https://en.wikipedia.org/wiki/La_Grande_Voile_(The_Big_Sail)",
+      "latitude": 42.359734,
+      "longitude": -71.088975
+    },
+    {
+      "page_id": 62394623,
+      "title": "Transparent Horizon",
+      "url": "https://en.wikipedia.org/wiki/Transparent_Horizon",
+      "latitude": 42.360733,
+      "longitude": -71.088695
+    },
+    {
+      "page_id": 62397377,
+      "title": "Killian Court",
+      "url": "https://en.wikipedia.org/wiki/Killian_Court",
+      "latitude": 42.35877,
+      "longitude": -71.09148
+    },
+    {
+      "page_id": 62400197,
+      "title": "Invaders (Wiley)",
+      "url": "https://en.wikipedia.org/wiki/Invaders_(Wiley)",
+      "latitude": 42.36100277777778,
+      "longitude": -71.09035277777777
+    },
+    {
+      "page_id": 62537464,
+      "title": "North Bank Bridge",
+      "url": "https://en.wikipedia.org/wiki/North_Bank_Bridge",
+      "latitude": 42.3696,
+      "longitude": -71.0657
+    },
+    {
+      "page_id": 62547600,
+      "title": "Sennott Park",
+      "url": "https://en.wikipedia.org/wiki/Sennott_Park",
+      "latitude": 42.3684,
+      "longitude": -71.1
+    },
+    {
+      "page_id": 62670824,
+      "title": "Civil War Monument (Cambridge, Massachusetts)",
+      "url": "https://en.wikipedia.org/wiki/Civil_War_Monument_(Cambridge,_Massachusetts)",
+      "latitude": 42.37637,
+      "longitude": -71.12039
+    },
+    {
+      "page_id": 62692461,
+      "title": "Discobolus (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/Discobolus_(Harvard_University)",
+      "latitude": 42.37713,
+      "longitude": -71.11937
+    },
+    {
+      "page_id": 62692831,
+      "title": "Night Wall I",
+      "url": "https://en.wikipedia.org/wiki/Night_Wall_I",
+      "latitude": 42.37842,
+      "longitude": -71.11778
+    },
+    {
+      "page_id": 63063610,
+      "title": "Center for Research on Computation and Society",
+      "url": "https://en.wikipedia.org/wiki/Center_for_Research_on_Computation_and_Society",
+      "latitude": 42.37955,
+      "longitude": -71.11957
+    },
+    {
+      "page_id": 63517963,
+      "title": "Fo Guang Buddhist Temple Boston",
+      "url": "https://en.wikipedia.org/wiki/Fo_Guang_Buddhist_Temple_Boston",
+      "latitude": 42.391207,
+      "longitude": -71.150839
+    },
+    {
+      "page_id": 63685320,
+      "title": "Kendall Hotel",
+      "url": "https://en.wikipedia.org/wiki/Kendall_Hotel",
+      "latitude": 42.3622,
+      "longitude": -71.0873
+    },
+    {
+      "page_id": 64772113,
+      "title": "Paris-Saclay Faculty of Sciences",
+      "url": "https://en.wikipedia.org/wiki/Paris-Saclay_Faculty_of_Sciences",
+      "latitude": 42.372686111111115,
+      "longitude": -71.1185361111111
+    },
+    {
+      "page_id": 66031409,
+      "title": "Danehy Park",
+      "url": "https://en.wikipedia.org/wiki/Danehy_Park",
+      "latitude": 42.389,
+      "longitude": -71.136
+    },
+    {
+      "page_id": 66486330,
+      "title": "William James Hall (Harvard University)",
+      "url": "https://en.wikipedia.org/wiki/William_James_Hall_(Harvard_University)",
+      "latitude": 42.3771,
+      "longitude": -71.11345
+    },
+    {
+      "page_id": 66513595,
+      "title": "Magazine Beach",
+      "url": "https://en.wikipedia.org/wiki/Magazine_Beach",
+      "latitude": 42.35502777777778,
+      "longitude": -71.11361111111111
+    },
+    {
+      "page_id": 69170447,
+      "title": "Cambridge Boat Club",
+      "url": "https://en.wikipedia.org/wiki/Cambridge_Boat_Club",
+      "latitude": 42.372305555555556,
+      "longitude": -71.13380555555557
+    },
+    {
+      "page_id": 69843018,
+      "title": "Pusey Library",
+      "url": "https://en.wikipedia.org/wiki/Pusey_Library",
+      "latitude": 42.37305555555555,
+      "longitude": -71.11527777777778
+    },
+    {
+      "page_id": 70740162,
+      "title": "Wyss Institute for Biologically Inspired Engineering",
+      "url": "https://en.wikipedia.org/wiki/Wyss_Institute_for_Biologically_Inspired_Engineering",
+      "latitude": 42.38122,
+      "longitude": -71.11626
+    },
+    {
+      "page_id": 72474005,
+      "title": "Oleana (restaurant)",
+      "url": "https://en.wikipedia.org/wiki/Oleana_(restaurant)",
+      "latitude": 42.3705,
+      "longitude": -71.0972
+    },
+    {
+      "page_id": 72732931,
+      "title": "New England Intercollegiate Hockey League",
+      "url": "https://en.wikipedia.org/wiki/New_England_Intercollegiate_Hockey_League",
+      "latitude": 42.3597,
+      "longitude": -71.0919
+    },
+    {
+      "page_id": 72751090,
+      "title": "Mr. Bartley's Burger Cottage",
+      "url": "https://en.wikipedia.org/wiki/Mr._Bartley%27s_Burger_Cottage",
+      "latitude": 42.37246,
+      "longitude": -71.11615
+    },
+    {
+      "page_id": 73803379,
+      "title": "Harvest (Harvard Square)",
+      "url": "https://en.wikipedia.org/wiki/Harvest_(Harvard_Square)",
+      "latitude": 42.37373,
+      "longitude": -71.12187
+    },
+    {
+      "page_id": 74981050,
+      "title": "John Winthrop Chambers",
+      "url": "https://en.wikipedia.org/wiki/John_Winthrop_Chambers",
+      "latitude": 42.38972222222222,
+      "longitude": -71.1211111111111
+    },
+    {
+      "page_id": 75181463,
+      "title": "Jerry's Pond",
+      "url": "https://en.wikipedia.org/wiki/Jerry%27s_Pond",
+      "latitude": 42.3948,
+      "longitude": -71.1391
+    },
+    {
+      "page_id": 75676759,
+      "title": "Prince Hall Monument",
+      "url": "https://en.wikipedia.org/wiki/Prince_Hall_Monument",
+      "latitude": 42.37636111111111,
+      "longitude": -71.12124999999999
+    },
+    {
+      "page_id": 75680853,
+      "title": "Graham and Parks School",
+      "url": "https://en.wikipedia.org/wiki/Graham_and_Parks_School",
+      "latitude": 42.382777777777775,
+      "longitude": -71.12388888888889
+    },
+    {
+      "page_id": 75700032,
+      "title": "Neighborhood Nine",
+      "url": "https://en.wikipedia.org/wiki/Neighborhood_Nine",
+      "latitude": 42.38388888888889,
+      "longitude": -71.12916666666666
+    },
+    {
+      "page_id": 77229480,
+      "title": "Hungry Mother",
+      "url": "https://en.wikipedia.org/wiki/Hungry_Mother",
+      "latitude": 42.367707,
+      "longitude": -71.091125
+    },
+    {
+      "page_id": 77595038,
+      "title": "List of Owl Club members",
+      "url": "https://en.wikipedia.org/wiki/List_of_Owl_Club_members",
+      "latitude": 42.3715,
+      "longitude": -71.1187
+    },
+    {
+      "page_id": 79714345,
+      "title": "Middlesex South Registry of Deeds Building",
+      "url": "https://en.wikipedia.org/wiki/Middlesex_South_Registry_of_Deeds_Building",
+      "latitude": 42.37061,
+      "longitude": -71.07929
+    },
+    {
+      "page_id": 81336598,
+      "title": "Pro-Palestine protests at Massachusetts Institute of Technology",
+      "url": "https://en.wikipedia.org/wiki/Pro-Palestine_protests_at_Massachusetts_Institute_of_Technology",
+      "latitude": 42.3584,
+      "longitude": -71.0947
+    },
+    {
+      "page_id": 81866446,
+      "title": "MIT Kavli Institute",
+      "url": "https://en.wikipedia.org/wiki/MIT_Kavli_Institute",
+      "latitude": 42.360826,
+      "longitude": -71.093167
+    },
+    {
+      "page_id": 82130100,
+      "title": "Research Laboratory of Electronics",
+      "url": "https://en.wikipedia.org/wiki/Research_Laboratory_of_Electronics",
+      "latitude": 42.3614,
+      "longitude": -71.0916
+    }
+  ]
+}

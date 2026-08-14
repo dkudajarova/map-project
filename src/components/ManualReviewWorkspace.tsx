@@ -10,17 +10,11 @@ import type {
   Polygon,
 } from "geojson"
 
-type StreetSummary = {
-  name: string
-  total: number
-  reviewed: number
-  pending: number
-}
-
 type ManualOverride = {
   building_id: string
   decision: "matched" | "no_map_match"
   bldgid: string | null
+  bldgids?: string[]
   note: string
   reviewed_at: string
 }
@@ -54,6 +48,8 @@ type ReviewRecord = {
   candidate_street_names: string
   match_reason: string
   review_reason_summary: string
+  priority_year: number | null
+  priority_metadata_count: number
   hail: HailDetails
   override: ManualOverride | null
 }
@@ -62,7 +58,6 @@ type ReviewResponse = {
   generated_at: string
   total_review_records: number
   override_count: number
-  streets: StreetSummary[]
   records: ReviewRecord[]
   error?: string
 }
@@ -91,6 +86,15 @@ const svgMapHeight = 700
 
 function candidateIds(record: ReviewRecord | undefined): string[] {
   return record?.candidate_bldgids.split("|").filter(Boolean) ?? []
+}
+
+function overrideBuildingIds(override: ManualOverride | null | undefined): string[] {
+  if (!override || override.decision !== "matched") return []
+  return override.bldgids?.length
+    ? override.bldgids
+    : override.bldgid
+      ? [override.bldgid]
+      : []
 }
 
 function collectCoordinates(value: unknown, coordinates: Array<[number, number]>) {
@@ -171,7 +175,7 @@ function geometryPath(
 function FootprintFallbackMap({
   footprintById,
   proposedIds,
-  selectedBldgId,
+  selectedBldgIds,
   streetName,
   onSelect,
 }: {
@@ -180,13 +184,18 @@ function FootprintFallbackMap({
     Feature<Polygon | MultiPolygon, FootprintProperties>[]
   >
   proposedIds: string[]
-  selectedBldgId: string | null
+  selectedBldgIds: string[]
   streetName: string
   onSelect: (bldgid: string) => void
 }) {
   const [contextScale, setContextScale] = useState(1)
   const mapData = useMemo(() => {
-    const anchors = proposedIds.flatMap((id) => footprintById.get(id) ?? [])
+    const focusIds = selectedBldgIds.length
+      ? selectedBldgIds
+      : contextScale < 0.5
+        ? proposedIds.slice(0, 1)
+        : proposedIds
+    const anchors = focusIds.flatMap((id) => footprintById.get(id) ?? [])
     const anchorBounds = anchors.map(featureCoordinateBounds).filter(Boolean) as Array<
       [number, number, number, number]
     >
@@ -201,8 +210,8 @@ function FootprintFallbackMap({
     const latitudeFactor = Math.max(Math.cos((centerLatitude * Math.PI) / 180), 0.2)
     const candidateWidth = (anchorMaxLongitude - anchorMinLongitude) * latitudeFactor
     const candidateHeight = anchorMaxLatitude - anchorMinLatitude
-    let projectedWidth = Math.max(candidateWidth * 4, 0.0011) * contextScale
-    let projectedHeight = Math.max(candidateHeight * 4, 0.00075) * contextScale
+    let projectedWidth = Math.max(candidateWidth * 1.6, 0.00045) * contextScale
+    let projectedHeight = Math.max(candidateHeight * 1.6, 0.00032) * contextScale
     const targetAspect = svgMapWidth / svgMapHeight
     if (projectedWidth / projectedHeight < targetAspect) {
       projectedWidth = projectedHeight * targetAspect
@@ -233,7 +242,7 @@ function FootprintFallbackMap({
       }),
     )
     return { viewport, visible }
-  }, [contextScale, footprintById, proposedIds])
+  }, [contextScale, footprintById, proposedIds, selectedBldgIds])
 
   return (
     <div className="review-fallback-map" aria-label={`Building footprint map near ${streetName}`}>
@@ -245,14 +254,14 @@ function FootprintFallbackMap({
         <div className="review-fallback-map__controls" aria-label="Map zoom controls">
           <button
             type="button"
-            onClick={() => setContextScale((scale) => Math.min(scale * 1.5, 5))}
+            onClick={() => setContextScale((scale) => Math.min(scale * 1.5, 12))}
             aria-label="Show a wider area"
           >
             −
           </button>
           <button
             type="button"
-            onClick={() => setContextScale((scale) => Math.max(scale / 1.5, 0.5))}
+            onClick={() => setContextScale((scale) => Math.max(scale / 1.5, 0.04))}
             aria-label="Zoom in"
           >
             +
@@ -269,7 +278,7 @@ function FootprintFallbackMap({
           <rect width={svgMapWidth} height={svgMapHeight} className="review-fallback-map__ground" />
           {mapData.visible.map(({ bldgid, feature, bounds }, featureIndex) => {
             const proposed = proposedIds.includes(bldgid)
-            const selected = selectedBldgId === bldgid
+            const selected = selectedBldgIds.includes(bldgid)
             const centerX =
               (((bounds[0] + bounds[2]) / 2 - mapData.viewport.minLongitude) /
                 (mapData.viewport.maxLongitude - mapData.viewport.minLongitude)) *
@@ -301,11 +310,9 @@ function FootprintFallbackMap({
                 <text x={centerX} y={centerY} className="review-footprint__id">
                   {bldgid}
                 </text>
-                {(proposed || selected) && (
-                  <text x={centerX} y={centerY + 18} className="review-footprint__address">
-                    {String(address)}
-                  </text>
-                )}
+                <text x={centerX} y={centerY + 18} className="review-footprint__address">
+                  {String(address)}
+                </text>
               </g>
             )
           })}
@@ -315,7 +322,8 @@ function FootprintFallbackMap({
         <p className="review-fallback-map__empty">No candidate geometry is available.</p>
       )}
       <p className="review-fallback-map__hint">
-        Click any footprint to select it. Use − to show more neighboring buildings.
+        Canonical addresses are shown for proposed and neighboring buildings. Click any
+        footprint to select and focus it; use + to zoom in or − to show a wider area.
       </p>
     </div>
   )
@@ -328,11 +336,9 @@ export default function ManualReviewWorkspace() {
   const [footprintById, setFootprintById] = useState(
     new Map<string, Feature<Polygon | MultiPolygon, FootprintProperties>[]>(),
   )
-  const [streets, setStreets] = useState<StreetSummary[]>([])
-  const [selectedStreet, setSelectedStreet] = useState("")
   const [records, setRecords] = useState<ReviewRecord[]>([])
   const [recordIndex, setRecordIndex] = useState(0)
-  const [selectedBldgId, setSelectedBldgId] = useState<string | null>(null)
+  const [selectedBldgIds, setSelectedBldgIds] = useState<string[]>([])
   const [note, setNote] = useState("")
   const [loading, setLoading] = useState(true)
   const [footprintsLoaded, setFootprintsLoaded] = useState(false)
@@ -353,34 +359,35 @@ export default function ManualReviewWorkspace() {
   }
 
   const candidates = candidateIds(currentRecord).map(footprintSummary)
-  const selectedSummary = selectedBldgId
-    ? footprintSummary(selectedBldgId)
-    : null
-  const selectedIsNeighbor = Boolean(
-    selectedBldgId && !candidateIds(currentRecord).includes(selectedBldgId),
-  )
+  const selectedNeighbors = selectedBldgIds
+    .filter((id) => !candidateIds(currentRecord).includes(id))
+    .map(footprintSummary)
   const reviewedCount = records.filter((record) => record.override).length
 
-  async function fetchReviewData(street?: string) {
-    const query = street ? `?street=${encodeURIComponent(street)}` : ""
-    const response = await fetch(`/api/manual-review${query}`, {
+  function toggleBuildingSelection(bldgid: string) {
+    setSelectedBldgIds((current) =>
+      current.includes(bldgid)
+        ? current.filter((id) => id !== bldgid)
+        : [...current, bldgid],
+    )
+  }
+
+  async function fetchReviewData() {
+    const response = await fetch("/api/manual-review", {
       cache: "no-store",
     })
     const data = (await response.json()) as ReviewResponse
     if (!response.ok || data.error) {
       throw new Error(data.error || `Review API failed (${response.status})`)
     }
-    setStreets(data.streets)
-    if (street) {
-      setRecords(data.records)
-      const firstPending = data.records.findIndex((record) => !record.override)
-      const nextIndex = firstPending >= 0 ? firstPending : 0
-      const nextRecord = data.records[nextIndex]
-      setRecordIndex(nextIndex)
-      setSelectedBldgId(nextRecord?.override?.bldgid ?? null)
-      setNote(nextRecord?.override?.note ?? "")
-      setMessage(null)
-    }
+    setRecords(data.records)
+    const firstPending = data.records.findIndex((record) => !record.override)
+    const nextIndex = firstPending >= 0 ? firstPending : 0
+    const nextRecord = data.records[nextIndex]
+    setRecordIndex(nextIndex)
+    setSelectedBldgIds(overrideBuildingIds(nextRecord?.override))
+    setNote(nextRecord?.override?.note ?? "")
+    setMessage(null)
     return data
   }
 
@@ -389,7 +396,7 @@ export default function ManualReviewWorkspace() {
     async function load() {
       try {
         setLoading(true)
-        const [reviewData, footprintResponse] = await Promise.all([
+        const [, footprintResponse] = await Promise.all([
           fetchReviewData(),
           fetch("/data/cambridge-buildings.geojson"),
         ])
@@ -412,12 +419,6 @@ export default function ManualReviewWorkspace() {
         }
         setFootprintById(lookup)
         setFootprintsLoaded(true)
-        const firstStreet = reviewData.streets.find((street) => street.pending > 0)
-          ?.name ?? reviewData.streets[0]?.name
-        if (firstStreet) {
-          setSelectedStreet(firstStreet)
-          await fetchReviewData(firstStreet)
-        }
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : String(loadError))
@@ -492,7 +493,6 @@ export default function ManualReviewWorkspace() {
         id: labelId,
         type: "symbol",
         source: sourceId,
-        minzoom: 15,
         layout: {
           "text-field": [
             "format",
@@ -515,7 +515,7 @@ export default function ManualReviewWorkspace() {
       })
       map.on("click", baseFillId, (event) => {
         const id = String(event.features?.[0]?.properties?.BldgID ?? "").trim()
-        if (id) setSelectedBldgId(id)
+        if (id) toggleBuildingSelection(id)
       })
       map.on("mouseenter", baseFillId, () => {
         map.getCanvas().style.cursor = "pointer"
@@ -553,23 +553,11 @@ export default function ManualReviewWorkspace() {
     const map = mapRef.current
     if (!map?.isStyleLoaded() || !mapReady) return
     map.setFilter(selectedFillId, [
-      "==",
+      "in",
       ["get", "BldgID"],
-      selectedBldgId ?? "",
+      ["literal", selectedBldgIds],
     ])
-  }, [mapReady, selectedBldgId])
-
-  async function changeStreet(street: string) {
-    try {
-      setLoading(true)
-      setSelectedStreet(street)
-      await fetchReviewData(street)
-    } catch (streetError) {
-      setError(streetError instanceof Error ? streetError.message : String(streetError))
-    } finally {
-      setLoading(false)
-    }
-  }
+  }, [mapReady, selectedBldgIds])
 
   function advanceAfter(index: number, updatedRecords: ReviewRecord[]) {
     const nextPending = updatedRecords.findIndex(
@@ -582,7 +570,7 @@ export default function ManualReviewWorkspace() {
     const nextRecord = sourceRecords[index]
     if (!nextRecord) return
     setRecordIndex(index)
-    setSelectedBldgId(nextRecord.override?.bldgid ?? null)
+    setSelectedBldgIds(overrideBuildingIds(nextRecord.override))
     setNote(nextRecord.override?.note ?? "")
     setMessage(null)
     setError(null)
@@ -590,8 +578,8 @@ export default function ManualReviewWorkspace() {
 
   async function saveDecision(decision: "matched" | "no_map_match") {
     if (!currentRecord) return
-    if (decision === "matched" && !selectedBldgId) {
-      setError("Select a proposed or neighboring building first.")
+    if (decision === "matched" && !selectedBldgIds.length) {
+      setError("Select one or more proposed or neighboring buildings first.")
       return
     }
     try {
@@ -603,7 +591,7 @@ export default function ManualReviewWorkspace() {
         body: JSON.stringify({
           building_id: currentRecord.building_id,
           decision,
-          bldgid: decision === "matched" ? selectedBldgId : null,
+          bldgids: decision === "matched" ? selectedBldgIds : [],
           note,
         }),
       })
@@ -620,20 +608,9 @@ export default function ManualReviewWorkspace() {
           : record,
       )
       setRecords(updated)
-      setStreets((current) =>
-        current.map((street) =>
-          street.name === selectedStreet && !currentRecord.override
-            ? {
-                ...street,
-                reviewed: street.reviewed + 1,
-                pending: street.pending - 1,
-              }
-            : street,
-        ),
-      )
       setMessage(
         decision === "matched"
-          ? `Saved match to ${selectedBldgId}.`
+          ? `Saved match to ${selectedBldgIds.join(", ")}.`
           : "Saved no map match.",
       )
       advanceAfter(recordIndex, updated)
@@ -664,18 +641,7 @@ export default function ManualReviewWorkspace() {
             : record,
         ),
       )
-      setStreets((current) =>
-        current.map((street) =>
-          street.name === selectedStreet
-            ? {
-                ...street,
-                reviewed: street.reviewed - 1,
-                pending: street.pending + 1,
-              }
-            : street,
-        ),
-      )
-      setSelectedBldgId(null)
+      setSelectedBldgIds([])
       setNote("")
       setMessage("Cleared saved decision.")
     } catch (clearError) {
@@ -685,7 +651,7 @@ export default function ManualReviewWorkspace() {
     }
   }
 
-  if (error && !streets.length) {
+  if (error && !records.length) {
     return <div className="review-fatal">Error: {error}</div>
   }
 
@@ -693,27 +659,16 @@ export default function ManualReviewWorkspace() {
     <section className="review-workspace">
       <aside className="review-panel">
         <div className="review-street-picker">
-          <label htmlFor="review-street">Street to review</label>
-          <select
-            id="review-street"
-            value={selectedStreet}
-            onChange={(event) => changeStreet(event.target.value)}
-            disabled={loading || saving}
-          >
-            {streets.map((street) => (
-              <option key={street.name} value={street.name}>
-                {street.name} — {street.pending} pending
-              </option>
-            ))}
-          </select>
+          <strong>Priority review queue</strong>
           <p>
-            {reviewedCount} of {records.length} reviewed on this street
+            {reviewedCount} of {records.length} reviewed. Oldest dated records
+            appear first; ties favor richer metadata.
           </p>
         </div>
 
         {loading && <p className="review-status">Loading review data…</p>}
         {!loading && !currentRecord && (
-          <p className="review-status">No review records on this street.</p>
+          <p className="review-status">No records are pending manual review.</p>
         )}
         {currentRecord && (
           <>
@@ -740,7 +695,10 @@ export default function ManualReviewWorkspace() {
             <article className="hail-review-card">
               <div className="hail-review-card__heading">
                 <div>
-                  <p className="review-kicker">Hail entry</p>
+                  <p className="review-kicker">
+                    Priority {recordIndex + 1} · {currentRecord.priority_year ?? "year unknown"}
+                    {" · "}{currentRecord.priority_metadata_count}/7 metadata fields
+                  </p>
                   <h2>{currentRecord.hail_address}</h2>
                 </div>
                 {currentRecord.override && (
@@ -774,26 +732,29 @@ export default function ManualReviewWorkspace() {
                   type="button"
                   key={candidate.bldgid}
                   className={
-                    selectedBldgId === candidate.bldgid
+                    selectedBldgIds.includes(candidate.bldgid)
                       ? "candidate-card candidate-card--selected"
                       : "candidate-card"
                   }
-                  onClick={() => setSelectedBldgId(candidate.bldgid)}
+                  onClick={() => toggleBuildingSelection(candidate.bldgid)}
                 >
                   <strong>{candidate.bldgid}</strong>
                   <span>{candidate.address}</span>
                 </button>
               ))}
-              {selectedIsNeighbor && selectedSummary && (
-                <div className="candidate-card candidate-card--neighbor">
+              {selectedNeighbors.map((selectedSummary) => (
+                <div
+                  key={selectedSummary.bldgid}
+                  className="candidate-card candidate-card--neighbor"
+                >
                   <span className="candidate-card__tag">Neighbor selected from map</span>
                   <strong>{selectedSummary.bldgid}</strong>
                   <span>{selectedSummary.address}</span>
                 </div>
-              )}
+              ))}
               <p className="candidate-list__hint">
                 Orange buildings are proposed candidates. Click any gray neighboring
-                footprint on the map to select it instead. The selected footprint is blue.
+                footprint on the map to add or remove it. Selected footprints are blue.
               </p>
             </section>
 
@@ -814,10 +775,10 @@ export default function ManualReviewWorkspace() {
               <button
                 type="button"
                 className="review-action review-action--primary"
-                disabled={!selectedBldgId || saving}
+                disabled={!selectedBldgIds.length || saving}
                 onClick={() => saveDecision("matched")}
               >
-                {saving ? "Saving…" : "Save selected building"}
+                {saving ? "Saving…" : "Save selected buildings"}
               </button>
               <button
                 type="button"
@@ -847,9 +808,9 @@ export default function ManualReviewWorkspace() {
           key={currentRecord?.building_id ?? "empty"}
           footprintById={footprintById}
           proposedIds={candidateIds(currentRecord)}
-          selectedBldgId={selectedBldgId}
-          streetName={currentRecord?.hail_street_name ?? selectedStreet}
-          onSelect={setSelectedBldgId}
+          selectedBldgIds={selectedBldgIds}
+          streetName={currentRecord?.hail_street_name ?? "Priority review"}
+          onSelect={toggleBuildingSelection}
         />
         <div ref={mapContainerRef} className="review-map" />
         <div className="review-map-legend">

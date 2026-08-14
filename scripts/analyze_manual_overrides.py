@@ -25,6 +25,14 @@ def pct(count: int, total: int) -> str:
     return f"{100 * count / total:.1f}%" if total else "—"
 
 
+def selected_bldgids(override: dict) -> list[str]:
+    values = override.get("bldgids")
+    if isinstance(values, list) and values:
+        return [str(value) for value in values if str(value)]
+    legacy = str(override.get("bldgid") or "")
+    return [legacy] if legacy else []
+
+
 def table(headers: list[str], rows: list[list[object]]) -> list[str]:
     lines = [
         "| " + " | ".join(headers) + " |",
@@ -124,7 +132,8 @@ def main() -> None:
         audit = audit_by_id.get(str(override.get("building_id", "")), {})
         generated_status = audit.get("pre_override_match_status", "")
         generated_bldgid = audit.get("pre_override_matched_bldgid", "")
-        selected_bldgid = str(override.get("bldgid") or "")
+        selected_ids = selected_bldgids(override)
+        selected_bldgid = "|".join(selected_ids)
         if not generated_status:
             outcome = "not recorded"
         elif generated_status == "accepted" and generated_bldgid == selected_bldgid:
@@ -228,7 +237,7 @@ def main() -> None:
                 override.get("street_name", ""),
                 override.get("hail_address", ""),
                 override.get("decision", "").replace("_", " "),
-                override.get("bldgid") or "—",
+                ", ".join(selected_bldgids(override)) or "—",
                 ", ".join(value for value in candidate_ids if value) or "—",
                 "yes" if override.get("selected_was_proposed") is True else "no" if override.get("selected_was_proposed") is False else "—",
                 override.get("note", "") or "—",

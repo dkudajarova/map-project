@@ -19,9 +19,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Manual Hail review
 
 Open [http://localhost:3000/review](http://localhost:3000/review) while the
-development server is running. Choose a street, then review its Hail records
-one at a time. Proposed footprints are orange, the selected footprint is blue,
-and any visible neighboring footprint can be selected directly on the map.
+development server is running. Review records in the global priority queue,
+which orders the oldest known construction years first and breaks ties by
+metadata completeness. Proposed footprints are orange, selected footprints are blue,
+and any number of proposed or visible neighboring footprints can be toggled
+directly on the map and saved against the same Hail record.
 You can also record **No map match**.
 
 The review API writes decisions only to
@@ -39,6 +41,15 @@ how often proposed candidates, neighboring footprints, and no-match decisions
 were selected, and identifies repeated outcomes that may justify a future
 deterministic rule. File writes are intended for a local Node server; a
 read-only or ephemeral deployment will not persist review decisions.
+
+## Wikipedia review
+
+After running `npm run wikipedia:update` and `npm run wikipedia:match`, open
+[http://localhost:3000/wikipedia-review](http://localhost:3000/wikipedia-review).
+The workspace starts with a title-based historic-building shortlist and can be
+switched to all candidates. Decisions are written only to
+`data/manual/wikipedia-building-decisions.json`. Run `npm run wikipedia:match`
+again to apply saved decisions to the generated audit and review queue.
 
 ## Building data
 
