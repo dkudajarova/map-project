@@ -1495,6 +1495,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "cambridge-st_1610",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cambridge Street",
+      "hail_address": "1610 Cambridge Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:55:41.533Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "cambridge-st_251-253",
       "decision": "matched",
       "bldgid": "422-15",
@@ -1693,6 +1708,51 @@
         "493-3"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "dunster-st_34_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Dunster Street",
+      "hail_address": "34 Dunster Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:03:54.631Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "dunster-st_64_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Dunster Street",
+      "hail_address": "64 Dunster Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:01:23.775Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "farwell-pl_5",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Farwell Place",
+      "hail_address": "5 Farwell Place",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:10:01.632Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "franklin-st_198r",
@@ -1924,6 +1984,38 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "hawthorn-st_4",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Hawthorn Street",
+      "hail_address": "4 Hawthorn Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:58:11.365Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "hudson-st_46",
+      "decision": "matched",
+      "bldgid": "212-25",
+      "bldgids": [
+        "212-25"
+      ],
+      "street_name": "Hudson Street",
+      "hail_address": "46 Hudson Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:09:46.022Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "huron-ave_161-171",
       "decision": "matched",
       "bldgid": "209-23",
@@ -1939,6 +2031,23 @@
         "209-7"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "kennedy-st_64_2",
+      "decision": "matched",
+      "bldgid": "437-9",
+      "bldgids": [
+        "437-9"
+      ],
+      "street_name": "Kennedy Street",
+      "hail_address": "64 Kennedy Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:05:04.914Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "linnaean-st_48-54",
@@ -1975,6 +2084,104 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "massachusetts-ave_1301",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1301+ Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:08:45.901Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1445_2",
+      "decision": "matched",
+      "bldgid": "318-20",
+      "bldgids": [
+        "318-20"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1445 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:51:35.058Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1455_2",
+      "decision": "matched",
+      "bldgid": "318-14",
+      "bldgids": [
+        "318-14"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1455 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:08:23.222Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1460",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1460+ Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:44:28.234Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1465r",
+      "decision": "matched",
+      "bldgid": "318-12",
+      "bldgids": [
+        "318-12"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1465r Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:07:33.865Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1475",
+      "decision": "matched",
+      "bldgid": "318-3",
+      "bldgids": [
+        "318-3"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1475 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:57:13.738Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "massachusetts-ave_1553_3",
       "decision": "matched",
       "bldgid": "266-11",
@@ -1987,6 +2194,36 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1569",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1569 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:59:43.817Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_2131",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "2131 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:01:11.877Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "massachusetts-ave_415-429",
@@ -2145,6 +2382,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "mount-auburn-st_77_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Mount Auburn Street",
+      "hail_address": "77 Mount Auburn Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:05:40.694Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "otis-st_117r",
       "decision": "matched",
       "bldgid": "432-14",
@@ -2163,6 +2415,21 @@
         "432-15"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "palmer-st_8-10",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Palmer Street",
+      "hail_address": "8-10 Palmer Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:59:51.493Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "pleasant-st_15-17",
@@ -2186,6 +2453,21 @@
         "683-21"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "russell-st_5r",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Russell Street",
+      "hail_address": "5r Russell Street",
+      "note": "",
+      "reviewed_at": "2026-08-15T19:01:06.896Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "sciarappa-st_91-93",
@@ -2245,6 +2527,21 @@
         "559-1"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "thomas-pk_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Thomas Park",
+      "hail_address": "2 Thomas Park",
+      "note": "",
+      "reviewed_at": "2026-08-15T18:54:41.262Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "thorndike-st_111-113",

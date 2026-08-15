@@ -4409,16 +4409,16 @@
     {
       "wikipedia_page_id": 17710743,
       "decision": "approved",
-      "bldgid": "333-1",
+      "bldgid": "349-12",
       "wikipedia_title": "The Stanstead",
       "wikipedia_url": "https://en.wikipedia.org/wiki/The_Stanstead",
       "latitude": 42.37388888888889,
       "longitude": -71.11444444444444,
-      "selected_latitude": 42.37388888888889,
-      "selected_longitude": -71.11444444444444,
-      "selection_method": "generated_candidate",
+      "selected_latitude": 42.37336556300913,
+      "selected_longitude": -71.11297483290281,
+      "selection_method": "manual_marker",
       "review_note": "",
-      "reviewed_at": "2026-08-15T18:05:25.233Z"
+      "reviewed_at": "2026-08-15T19:26:02Z"
     },
     {
       "wikipedia_page_id": 17710762,

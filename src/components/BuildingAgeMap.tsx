@@ -193,10 +193,7 @@ export default function BuildingAgeMap() {
       maxWidth: "20rem",
     })
     const abortController = new AbortController()
-    let popupPinned = false
-    let hoveredBuildingKey: string | null = null
-    let popupElement: HTMLElement | null = null
-    let popupCloseTimer: number | null = null
+    let openBuildingKey: string | null = null
     let interactionListenersAttached = false
 
     mapRef.current = map
@@ -218,42 +215,8 @@ export default function BuildingAgeMap() {
       console.error("MapLibre error:", event.error)
     }
 
-    const cancelPopupClose = () => {
-      if (popupCloseTimer === null) return
-      window.clearTimeout(popupCloseTimer)
-      popupCloseTimer = null
-    }
-
-    const schedulePopupClose = () => {
-      cancelPopupClose()
-      popupCloseTimer = window.setTimeout(() => {
-        popupCloseTimer = null
-        if (!popupPinned) popup.remove()
-      }, 250)
-    }
-
-    const handlePopupMouseEnter = () => {
-      cancelPopupClose()
-    }
-
-    const handlePopupMouseLeave = () => {
-      if (!popupPinned) schedulePopupClose()
-    }
-
-    const attachPopupInteractionListeners = () => {
-      const element = popup.getElement()
-      if (popupElement === element) return
-      popupElement?.removeEventListener("mouseenter", handlePopupMouseEnter)
-      popupElement?.removeEventListener("mouseleave", handlePopupMouseLeave)
-      popupElement = element
-      popupElement.addEventListener("mouseenter", handlePopupMouseEnter)
-      popupElement.addEventListener("mouseleave", handlePopupMouseLeave)
-    }
-
     const handlePopupClose = () => {
-      cancelPopupClose()
-      popupPinned = false
-      hoveredBuildingKey = null
+      openBuildingKey = null
     }
 
     const showBuildingPopup = (event: maplibregl.MapLayerMouseEvent) => {
@@ -262,12 +225,10 @@ export default function BuildingAgeMap() {
         | undefined
       if (!properties) return
 
-      cancelPopupClose()
       popup
         .setLngLat(event.lngLat)
         .setDOMContent(getBuildingPopupContent(properties))
         .addTo(map)
-      attachPopupInteractionListeners()
     }
 
     const getBuildingKey = (event: maplibregl.MapLayerMouseEvent) => {
@@ -282,38 +243,28 @@ export default function BuildingAgeMap() {
       )
     }
 
-    const handleBuildingMouseEnter = (event: maplibregl.MapLayerMouseEvent) => {
+    const handleBuildingMouseEnter = () => {
       map.getCanvas().style.cursor = "pointer"
-      if (!popupPinned) {
-        hoveredBuildingKey = getBuildingKey(event)
-        showBuildingPopup(event)
-      }
-    }
-
-    const handleBuildingMouseMove = (event: maplibregl.MapLayerMouseEvent) => {
-      if (popupPinned) return
-      const buildingKey = getBuildingKey(event)
-      if (buildingKey === hoveredBuildingKey) return
-      hoveredBuildingKey = buildingKey
-      showBuildingPopup(event)
     }
 
     const handleBuildingMouseLeave = () => {
       map.getCanvas().style.cursor = ""
-      hoveredBuildingKey = null
-      if (!popupPinned) schedulePopupClose()
     }
 
     const handleBuildingClick = (event: maplibregl.MapLayerMouseEvent) => {
-      cancelPopupClose()
-      popupPinned = true
+      const buildingKey = getBuildingKey(event)
+      if (buildingKey === openBuildingKey) {
+        popup.remove()
+        return
+      }
+
+      openBuildingKey = buildingKey
       showBuildingPopup(event)
     }
 
     const attachInteractionListeners = () => {
       if (interactionListenersAttached) return
       map.on("mouseenter", fillLayerId, handleBuildingMouseEnter)
-      map.on("mousemove", fillLayerId, handleBuildingMouseMove)
       map.on("mouseleave", fillLayerId, handleBuildingMouseLeave)
       map.on("click", fillLayerId, handleBuildingClick)
       interactionListenersAttached = true
@@ -388,13 +339,9 @@ export default function BuildingAgeMap() {
       map.off("error", handleMapError)
       if (interactionListenersAttached) {
         map.off("mouseenter", fillLayerId, handleBuildingMouseEnter)
-        map.off("mousemove", fillLayerId, handleBuildingMouseMove)
         map.off("mouseleave", fillLayerId, handleBuildingMouseLeave)
         map.off("click", fillLayerId, handleBuildingClick)
       }
-      cancelPopupClose()
-      popupElement?.removeEventListener("mouseenter", handlePopupMouseEnter)
-      popupElement?.removeEventListener("mouseleave", handlePopupMouseLeave)
       popup.off("close", handlePopupClose)
       popup.remove()
       map.getCanvas().style.cursor = ""
