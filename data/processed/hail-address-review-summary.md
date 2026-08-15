@@ -1,6 +1,6 @@
 # Hail address manual-review summary
 
-Generated: 2026-08-14
+Generated: 2026-08-15
 
 The review queue contains **807** Hail records that were not confidently auto-matched.
 

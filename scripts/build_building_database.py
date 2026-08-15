@@ -33,6 +33,7 @@ MATCH_AUDIT_OUT = ROOT / "data/processed/hail-address-matches.csv"
 REVIEW_OUT = ROOT / "data/processed/hail-address-review.csv"
 REVIEW_SUMMARY_OUT = ROOT / "data/processed/hail-address-review-summary.md"
 REVIEW_BUNDLE_OUT = ROOT / "data/processed/hail-manual-review.json"
+UNMATCHED_REVIEW_BUNDLE_OUT = ROOT / "data/processed/hail-unmatched-review.json"
 WIKIPEDIA_MATCHES_PATH = ROOT / "data/processed/wikipedia-building-candidates.csv"
 
 STREET_SUFFIXES = {
@@ -880,24 +881,33 @@ def main() -> None:
         "summary_raw",
         "source_page",
     ]
-    review_bundle_records = []
-    for match in review_rows:
-        hail = hail_by_id[match["building_id"]]
-        review_bundle_records.append(
-            {
-                **match,
-                "hail": {field: hail.get(field, "") for field in review_hail_fields},
-            }
+    def write_review_bundle(destination: Path, rows: list[dict[str, Any]], queue_type: str) -> None:
+        records = []
+        for match in rows:
+            hail = hail_by_id[match["building_id"]]
+            records.append(
+                {
+                    **match,
+                    "queue_type": queue_type,
+                    "hail": {field: hail.get(field, "") for field in review_hail_fields},
+                }
+            )
+        destination.write_text(
+            json.dumps(
+                {
+                    "generated_at": date.today().isoformat(),
+                    "record_count": len(records),
+                    "records": records,
+                },
+                ensure_ascii=False,
+                separators=(",", ":"),
+            ),
+            encoding="utf-8",
         )
-    review_bundle = {
-        "generated_at": date.today().isoformat(),
-        "record_count": len(review_bundle_records),
-        "records": review_bundle_records,
-    }
-    REVIEW_BUNDLE_OUT.write_text(
-        json.dumps(review_bundle, ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
+
+    write_review_bundle(REVIEW_BUNDLE_OUT, review_rows, "ambiguous")
+    unmatched_rows = [row for row in match_rows if row["match_status"] == "unmatched"]
+    write_review_bundle(UNMATCHED_REVIEW_BUNDLE_OUT, unmatched_rows, "unmatched")
     review_categories = Counter(row["review_reason_category"] for row in review_rows)
     review_descriptions = {
         row["review_reason_category"]: row["review_reason_summary"]
@@ -993,6 +1003,7 @@ def main() -> None:
     print(f"Wrote {REVIEW_OUT}")
     print(f"Wrote {REVIEW_SUMMARY_OUT}")
     print(f"Wrote {REVIEW_BUNDLE_OUT}")
+    print(f"Wrote {UNMATCHED_REVIEW_BUNDLE_OUT}")
 
 
 if __name__ == "__main__":

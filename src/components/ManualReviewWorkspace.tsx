@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import * as maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
 import type {
@@ -58,6 +58,8 @@ type ReviewResponse = {
   generated_at: string
   total_review_records: number
   override_count: number
+  queue: "ambiguous" | "unmatched"
+  queue_counts: { ambiguous: number; unmatched: number }
   records: ReviewRecord[]
   error?: string
 }
@@ -337,6 +339,8 @@ export default function ManualReviewWorkspace() {
     new Map<string, Feature<Polygon | MultiPolygon, FootprintProperties>[]>(),
   )
   const [records, setRecords] = useState<ReviewRecord[]>([])
+  const [queueMode, setQueueMode] = useState<"ambiguous" | "unmatched">("ambiguous")
+  const [queueCounts, setQueueCounts] = useState({ ambiguous: 0, unmatched: 0 })
   const [recordIndex, setRecordIndex] = useState(0)
   const [selectedBldgIds, setSelectedBldgIds] = useState<string[]>([])
   const [note, setNote] = useState("")
@@ -346,6 +350,7 @@ export default function ManualReviewWorkspace() {
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [message, setMessage] = useState<string | null>(null)
+  const [addressQuery, setAddressQuery] = useState("")
   const currentRecord = records[recordIndex]
 
   const footprintSummary = (bldgid: string) => {
@@ -363,6 +368,22 @@ export default function ManualReviewWorkspace() {
     .filter((id) => !candidateIds(currentRecord).includes(id))
     .map(footprintSummary)
   const reviewedCount = records.filter((record) => record.override).length
+  const addressResults = useMemo(() => {
+    const query = addressQuery.trim().toLocaleLowerCase()
+    if (query.length < 2) return []
+    return [...footprintById.entries()]
+      .map(([bldgid, features]) => {
+        const properties = features[0]?.properties
+        const addresses = String(properties?.addresses || properties?.Address || "")
+        const canonical = addresses.split("|").map((value) => value.trim()).filter(Boolean)
+        const searchable = canonical.join(" | ").toLocaleLowerCase()
+        const rank = searchable === query ? 0 : searchable.startsWith(query) ? 1 : searchable.includes(query) ? 2 : 3
+        return { bldgid, address: canonical.join(" · ") || "No canonical address", rank }
+      })
+      .filter((result) => result.rank < 3)
+      .sort((left, right) => left.rank - right.rank || left.address.localeCompare(right.address))
+      .slice(0, 12)
+  }, [addressQuery, footprintById])
 
   function toggleBuildingSelection(bldgid: string) {
     setSelectedBldgIds((current) =>
@@ -372,8 +393,8 @@ export default function ManualReviewWorkspace() {
     )
   }
 
-  async function fetchReviewData() {
-    const response = await fetch("/api/manual-review", {
+  const fetchReviewData = useCallback(async (queue: "ambiguous" | "unmatched") => {
+    const response = await fetch(`/api/manual-review?queue=${queue}`, {
       cache: "no-store",
     })
     const data = (await response.json()) as ReviewResponse
@@ -381,6 +402,8 @@ export default function ManualReviewWorkspace() {
       throw new Error(data.error || `Review API failed (${response.status})`)
     }
     setRecords(data.records)
+    setQueueMode(data.queue)
+    setQueueCounts(data.queue_counts)
     const firstPending = data.records.findIndex((record) => !record.override)
     const nextIndex = firstPending >= 0 ? firstPending : 0
     const nextRecord = data.records[nextIndex]
@@ -389,6 +412,18 @@ export default function ManualReviewWorkspace() {
     setNote(nextRecord?.override?.note ?? "")
     setMessage(null)
     return data
+  }, [])
+
+  async function switchQueue(queue: "ambiguous" | "unmatched") {
+    if (queue === queueMode || loading) return
+    try {
+      setLoading(true); setError(null); setMessage(null); setAddressQuery("")
+      await fetchReviewData(queue)
+    } catch (loadError) {
+      setError(loadError instanceof Error ? loadError.message : String(loadError))
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -397,7 +432,7 @@ export default function ManualReviewWorkspace() {
       try {
         setLoading(true)
         const [, footprintResponse] = await Promise.all([
-          fetchReviewData(),
+          fetchReviewData("ambiguous"),
           fetch("/data/cambridge-buildings.geojson"),
         ])
         if (!footprintResponse.ok) {
@@ -431,7 +466,7 @@ export default function ManualReviewWorkspace() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [fetchReviewData])
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current || !footprintsRef.current) return
@@ -574,6 +609,18 @@ export default function ManualReviewWorkspace() {
     setNote(nextRecord.override?.note ?? "")
     setMessage(null)
     setError(null)
+    setAddressQuery("")
+  }
+
+  function selectAddressResult(bldgid: string) {
+    if (!selectedBldgIds.includes(bldgid)) {
+      setSelectedBldgIds((current) => [...current, bldgid])
+    }
+    const map = mapRef.current
+    const bounds = boundsForFeatures(footprintById.get(bldgid) ?? [])
+    if (map?.isStyleLoaded() && bounds) {
+      map.fitBounds(bounds, { padding: 100, maxZoom: 18, duration: 450 })
+    }
   }
 
   async function saveDecision(decision: "matched" | "no_map_match") {
@@ -664,6 +711,10 @@ export default function ManualReviewWorkspace() {
             {reviewedCount} of {records.length} reviewed. Oldest dated records
             appear first; ties favor richer metadata.
           </p>
+        </div>
+        <div className="review-queue-tabs" role="tablist" aria-label="Hail review queue">
+          <button type="button" role="tab" aria-selected={queueMode === "ambiguous"} onClick={() => switchQueue("ambiguous")}>Ambiguous <span>{queueCounts.ambiguous}</span></button>
+          <button type="button" role="tab" aria-selected={queueMode === "unmatched"} onClick={() => switchQueue("unmatched")}>Completely unmatched <span>{queueCounts.unmatched}</span></button>
         </div>
 
         {loading && <p className="review-status">Loading review data…</p>}
@@ -804,6 +855,14 @@ export default function ManualReviewWorkspace() {
       </aside>
 
       <div className="review-map-shell">
+        <div className="review-address-search">
+          <label htmlFor="canonical-address-search">Find footprint by canonical address</label>
+          <input id="canonical-address-search" type="search" value={addressQuery} onChange={(event) => setAddressQuery(event.target.value)} placeholder="e.g. 15 Brattle St" autoComplete="off" />
+          {addressQuery.trim().length >= 2 && <div className="review-address-results">
+            {addressResults.map((result) => <button type="button" key={result.bldgid} onClick={() => selectAddressResult(result.bldgid)}><span>{result.address}</span><small>{result.bldgid}{selectedBldgIds.includes(result.bldgid) ? " · selected" : ""}</small></button>)}
+            {!addressResults.length && <p>No canonical addresses match.</p>}
+          </div>}
+        </div>
         <FootprintFallbackMap
           key={currentRecord?.building_id ?? "empty"}
           footprintById={footprintById}

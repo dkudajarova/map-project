@@ -48,6 +48,10 @@ const reviewBundlePath = path.join(
   projectRoot,
   "data/processed/hail-manual-review.json",
 )
+const unmatchedReviewBundlePath = path.join(
+  projectRoot,
+  "data/processed/hail-unmatched-review.json",
+)
 const overridePath = path.join(
   projectRoot,
   "data/manual/hail-building-overrides.json",
@@ -130,12 +134,23 @@ function reviewPriority(record: ReviewRecord) {
   return { year, metadataCount }
 }
 
-export async function GET() {
+async function readReviewBundles(): Promise<ReviewBundle[]> {
+  return Promise.all([
+    readJson<ReviewBundle>(reviewBundlePath),
+    readJson<ReviewBundle>(unmatchedReviewBundlePath),
+  ])
+}
+
+export async function GET(request: Request) {
   try {
-    const [bundle, overrideFile] = await Promise.all([
-      readJson<ReviewBundle>(reviewBundlePath),
+    const queue = new URL(request.url).searchParams.get("queue") === "unmatched"
+      ? "unmatched"
+      : "ambiguous"
+    const [[ambiguousBundle, unmatchedBundle], overrideFile] = await Promise.all([
+      readReviewBundles(),
       readOverrides(),
     ])
+    const bundle = queue === "unmatched" ? unmatchedBundle : ambiguousBundle
     const overrideById = new Map(
       overrideFile.overrides.map((override) => [
         override.building_id,
@@ -167,6 +182,11 @@ export async function GET() {
     return Response.json({
       generated_at: bundle.generated_at,
       total_review_records: bundle.record_count,
+      queue,
+      queue_counts: {
+        ambiguous: ambiguousBundle.record_count,
+        unmatched: unmatchedBundle.record_count,
+      },
       override_count: overrideFile.overrides.length,
       records,
     })
@@ -195,11 +215,11 @@ export async function POST(request: Request) {
       return Response.json({ error: "Invalid building_id or decision" }, { status: 400 })
     }
 
-    const [bundle, overrideFile] = await Promise.all([
-      readJson<ReviewBundle>(reviewBundlePath),
+    const [bundles, overrideFile] = await Promise.all([
+      readReviewBundles(),
       readOverrides(),
     ])
-    const reviewRecord = bundle.records.find(
+    const reviewRecord = bundles.flatMap((bundle) => bundle.records).find(
       (record) => record.building_id === buildingId,
     )
     const existing = overrideFile.overrides.find(
