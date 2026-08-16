@@ -1,7 +1,10 @@
 import Link from "next/link"
 import ManualReviewWorkspace from "@/components/ManualReviewWorkspace"
+import { requireInternalTools } from "@/lib/internalTools"
 
 export default function ReviewPage() {
+  requireInternalTools()
+
   return (
     <main className="review-page">
       <header className="review-header">

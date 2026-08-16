@@ -157,7 +157,11 @@ function getBuildingPopupContent(properties: BuildingProperties): HTMLElement {
   return container
 }
 
-export default function BuildingAgeMap() {
+export default function BuildingAgeMap({
+  showInternalLinks = false,
+}: {
+  showInternalLinks?: boolean
+}) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
   const [loading, setLoading] = useState(true)
@@ -429,12 +433,16 @@ export default function BuildingAgeMap() {
                 Clear all
               </button>
             </div>
-            <a className="map-legend__review-link" href="/review">
-              Open manual review
-            </a>
-            <a className="map-legend__review-link" href="/quality-dashboard">
-              View enrichment quality
-            </a>
+            {showInternalLinks && (
+              <>
+                <a className="map-legend__review-link" href="/review">
+                  Open manual review
+                </a>
+                <a className="map-legend__review-link" href="/quality-dashboard">
+                  View enrichment quality
+                </a>
+              </>
+            )}
             <ul className="map-legend__items">
               {orderedAgeBands.map((band) => (
                 <li key={band.id} className="map-legend__item">

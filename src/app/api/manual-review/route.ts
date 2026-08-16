@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs"
 import path from "node:path"
+import { requireInternalTools } from "@/lib/internalTools"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -142,6 +143,8 @@ async function readReviewBundles(): Promise<ReviewBundle[]> {
 }
 
 export async function GET(request: Request) {
+  requireInternalTools()
+
   try {
     const queue = new URL(request.url).searchParams.get("queue") === "unmatched"
       ? "unmatched"
@@ -199,6 +202,8 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  requireInternalTools()
+
   try {
     const body = (await request.json()) as Record<string, unknown>
     const buildingId = cleanString(body.building_id, 200)
@@ -299,6 +304,8 @@ export async function POST(request: Request) {
 }
 
 export async function DELETE(request: Request) {
+  requireInternalTools()
+
   try {
     const body = (await request.json()) as Record<string, unknown>
     const buildingId = cleanString(body.building_id, 200)

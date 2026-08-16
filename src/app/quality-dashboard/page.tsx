@@ -1,12 +1,15 @@
 import type { CSSProperties } from "react"
 import Link from "next/link"
 import { getQualityDashboardData } from "@/lib/qualityDashboard"
+import { requireInternalTools } from "@/lib/internalTools"
 
 const METADATA_COLORS = ["#e7e3dc", "#b9d5ce", "#6ea99c", "#df9a55", "#b94f37"]
 const formatCount = (value: number) => new Intl.NumberFormat("en-US").format(value)
 const formatPercent = (value: number) => value === 0 ? "0%" : value < 0.1 ? "<0.1%" : `${value.toFixed(1)}%`
 
 export default function QualityDashboardPage() {
+  requireInternalTools()
+
   const data = getQualityDashboardData()
   const hailGradient = `conic-gradient(${data.hail.outcomes.map((item, index) => {
     const start = data.hail.outcomes.slice(0, index).reduce((sum, entry) => sum + entry.percent, 0)

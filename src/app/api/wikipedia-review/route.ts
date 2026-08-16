@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs"
 import path from "node:path"
+import { requireInternalTools } from "@/lib/internalTools"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -71,6 +72,8 @@ function validBuildingIds() {
 }
 
 export async function GET() {
+  requireInternalTools()
+
   try {
     const [csv, decisionFile] = await Promise.all([fs.readFile(reviewPath, "utf8"), readDecisions()])
     const decisionById = new Map(decisionFile.decisions.map((decision) => [decision.wikipedia_page_id, decision]))
@@ -97,6 +100,8 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  requireInternalTools()
+
   try {
     const body = await request.json() as Record<string, unknown>
     const pageId = Number(body.wikipedia_page_id)
