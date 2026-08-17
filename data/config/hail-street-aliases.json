@@ -46,7 +46,8 @@
     ["Sacramento Place", "Sacramento St"],
     ["Union Terrace", "Union Ter"],
     ["Walker Terrace", "Walker Ter"],
-    ["Washburn Terrace", "Washburn Ter"]
+    ["Washburn Terrace", "Washburn Ter"],
+    ["Allen Drive", "Bishop Allen Dr"]
   ],
   "manual_review": [
     ["Garden Street", "Garden Ct"],

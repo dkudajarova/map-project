@@ -1,15 +1,15 @@
 # Hail address manual-review summary
 
-Generated: 2026-08-15
+Generated: 2026-08-17
 
-The review queue contains **807** Hail records that were not confidently auto-matched.
+The review queue contains **714** Hail records that were not confidently auto-matched.
 
 | Reason | Records | Share | Explanation |
 |---|---:|---:|---|
-| Multiple plausible footprints | 616 | 76.3% | The street and base number agree, but suffix, rear, or range differences leave more than one plausible footprint. |
-| Building complex may span footprints | 162 | 20.1% | The address resolves, but the Hail entry is a building complex and may represent more than one footprint. |
-| Unproven historical address or alias | 18 | 2.2% | A historical address or street alias produced candidates, but the alias has not yet been proven for automatic matching. |
-| Small street-name spelling difference | 11 | 1.4% | The number is compatible and the street spelling is close, but fuzzy street-name matches require manual confirmation. |
+| Multiple plausible footprints | 509 | 71.3% | The street and base number agree, but suffix, rear, or range differences leave more than one plausible footprint. |
+| Building complex may span footprints | 179 | 25.1% | The address resolves, but the Hail entry is a building complex and may represent more than one footprint. |
+| Unproven historical address or alias | 18 | 2.5% | A historical address or street alias produced candidates, but the alias has not yet been proven for automatic matching. |
+| Small street-name spelling difference | 8 | 1.1% | The number is compatible and the street spelling is close, but fuzzy street-name matches require manual confirmation. |
 
 ## Street-name spelling differences
 
@@ -17,19 +17,23 @@ These Stage 6 review rows share a compatible house number but use a different st
 
 | Hail street name | Address Point street name | Review records | Review basis |
 |---|---|---:|---|
-| Cutler Avenue | Muller Ave | 2 | Small street-name spelling difference |
+| Allen Drive | Bishop Allen Dr | 4 | Building complex may span footprints |
+| Columbia Terrace | Columbia Ter | 2 | Building complex may span footprints |
 | Gerry'S Landing Road | Gerrys Landing Rd | 2 | Multiple plausible footprints |
-| Kennedy Street | Tenney St | 2 | Small street-name spelling difference |
+| Kennedy Street | Tenney St | 2 | Multiple plausible footprints; Small street-name spelling difference |
+| Lake View Avenue | Lakeview Ave | 2 | Multiple plausible footprints |
+| Broadway Terrace | Broadway Ter | 1 | Multiple plausible footprints |
 | Buckingham Street | Buckingham Pl | 1 | Small street-name spelling difference |
-| Columbia Terrace | Columbia Ter | 1 | Building complex may span footprints |
 | Fayette Park | Fayette Pk | 1 | Building complex may span footprints |
 | Garden Street | Garden Ct | 1 | Small street-name spelling difference |
 | Hayward Street | Howard St | 1 | Small street-name spelling difference |
-| Lake View Avenue | Lakeview Ave | 1 | Multiple plausible footprints |
+| Hilliard Street | Hilliard Pl | 1 | Multiple plausible footprints |
+| Hilliard Street | Willard St | 1 | Multiple plausible footprints |
+| Holworthy Terrace | Holworthy Ter | 1 | Multiple plausible footprints |
 | Longfellow Park | Longfellow Pk | 1 | Multiple plausible footprints |
 | Mason Street | Madison St | 1 | Small street-name spelling difference |
 | Moulton Street | Milton St | 1 | Small street-name spelling difference |
-| Mount Pleasant Street | Mt Pleasant St | 1 | Building complex may span footprints |
+| Mount Pleasant Street | Mt Pleasant St | 1 | Multiple plausible footprints |
 | Union Terrace | Union Ter | 1 | Building complex may span footprints |
 | Walker Terrace | Walker Ter | 1 | Building complex may span footprints |
 | Washburn Terrace | Washburn Ter | 1 | Building complex may span footprints |

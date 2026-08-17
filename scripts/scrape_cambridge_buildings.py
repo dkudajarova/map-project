@@ -147,12 +147,45 @@ def fetch(url: str, retries: int = 6) -> str:
 
 
 def street_names(records: Iterable[DD]) -> dict[str, str]:
+    """Return section-anchor street names from both navigation and headings.
+
+    The archive is inconsistent: some navigation labels contain mixed-case
+    qualifiers (for example, ``ELM STREET (Cambridgeport)``), and a few valid
+    street anchors are omitted from the navigation entirely. Section headings
+    are therefore the authoritative fallback; uppercase navigation is not a
+    requirement.
+    """
     names: dict[str, str] = {}
     for record in records:
         for href, label in record.links:
-            if href.startswith("#") and label and label.upper() == label:
-                names[href[1:]] = label.title()
+            if href.startswith("#") and label and re.search(
+                r"\b(?:avenue|court|drive|lane|park|parkway|place|plaza|road|square|street|terrace|turnpike|way)\b",
+                label,
+                re.I,
+            ):
+                names[href[1:]] = format_street_name(label)
+    heading_pattern = re.compile(
+        r"^(?P<name>.*?\b(?:AVENUE|COURT|DRIVE|LANE|PARK|PARKWAY|PLACE|PLAZA|ROAD|SQUARE|STREET|TERRACE|TURNPIKE|WAY)"
+        r"(?:\s*\([^)]*\))?)\s+(?:dead-end|through|private|former|street|laid\s+out|opened)\b",
+        re.I,
+    )
+    for record in records:
+        if not record.anchor or record.anchor in names:
+            continue
+        match = heading_pattern.match(record.text)
+        if match:
+            names[record.anchor] = format_street_name(match.group("name"))
     return names
+
+
+def format_street_name(value: str) -> str:
+    formatted = re.sub(
+        r"\s*\((?:Cambridgeport|North Cambridge)\)\s*$",
+        "",
+        normalize(value),
+        flags=re.I,
+    ).title()
+    return re.sub(r"\bMc([a-z])", lambda match: f"Mc{match.group(1).upper()}", formatted)
 
 
 def is_building_summary(text: str) -> bool:

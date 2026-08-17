@@ -13,6 +13,9 @@ type BuildingProperties = {
   Condition_YearBuilt?: number | string
   wikipedia_article_count?: number
   wikipedia_articles_json?: string | null
+  fun_fact?: string | null
+  fun_fact_source_label?: string | null
+  fun_fact_source_url?: string | null
   [key: string]: unknown
 }
 
@@ -104,6 +107,16 @@ function getPopupYearBuilt(properties: BuildingProperties): number | "Unknown" {
   return assessorYear ?? "Unknown"
 }
 
+function safeHttpUrl(value: unknown): string | null {
+  if (typeof value !== "string") return null
+  try {
+    const url = new URL(value)
+    return url.protocol === "http:" || url.protocol === "https:" ? url.href : null
+  } catch {
+    return null
+  }
+}
+
 function getBuildingPopupContent(properties: BuildingProperties): HTMLElement {
   const address = properties.address ?? properties.Address ?? "Unknown"
   const buildingName =
@@ -132,6 +145,39 @@ function getBuildingPopupContent(properties: BuildingProperties): HTMLElement {
     details.append(row)
   }
   container.append(details)
+
+  const funFact = displayValue(properties.fun_fact)
+  if (funFact) {
+    const section = document.createElement("section")
+    section.className = "building-popup__fun-fact"
+    const heading = document.createElement("p")
+    heading.className = "building-popup__section-heading"
+    heading.textContent = "Fun fact"
+    const copy = document.createElement("p")
+    copy.className = "building-popup__fun-fact-copy"
+    copy.textContent = funFact
+    section.append(heading, copy)
+
+    const sourceLabel = displayValue(properties.fun_fact_source_label)
+    const sourceUrl = safeHttpUrl(properties.fun_fact_source_url)
+    if (sourceLabel) {
+      const source = document.createElement("p")
+      source.className = "building-popup__fun-fact-source"
+      source.append("Source: ")
+      if (sourceUrl) {
+        const link = document.createElement("a")
+        link.href = sourceUrl
+        link.target = "_blank"
+        link.rel = "noopener noreferrer"
+        link.textContent = sourceLabel
+        source.append(link)
+      } else {
+        source.append(sourceLabel)
+      }
+      section.append(source)
+    }
+    container.append(section)
+  }
 
   const articles = parseWikipediaArticles(properties.wikipedia_articles_json)
   if (articles.length) {

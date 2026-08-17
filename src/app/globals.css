@@ -61,6 +61,22 @@ body:has(.quality-page) { overflow: auto; background: var(--quality-paper); }
 .quality-source-stat strong { font-family: var(--font-geist-mono), monospace; font-size: 1.55rem; }
 .quality-source-stat span { margin-top: 0.15rem; font-size: 0.82rem; font-weight: 650; }
 .quality-source-stat small, .quality-hail-stats small { margin-top: 0.2rem; color: var(--quality-muted); font-size: 0.72rem; }
+.quality-diagnostic-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; }
+.quality-diagnostic-grid article { display: flex; min-height: 9rem; flex-direction: column; padding: 1.15rem; border: 1px solid rgba(37, 51, 47, 0.13); border-radius: 0.65rem; background: rgba(255, 255, 255, 0.62); }
+.quality-diagnostic-grid article::before { width: 2rem; height: 0.22rem; margin-bottom: auto; border-radius: 999px; background: #4f9184; content: ""; }
+.quality-diagnostic-grid .quality-diagnostic-alert::before { background: #b9543c; }
+.quality-diagnostic-grid strong { margin-top: 1rem; font-family: var(--font-geist-mono), monospace; font-size: clamp(1.6rem, 3vw, 2.35rem); line-height: 1; }
+.quality-diagnostic-grid span { margin-top: 0.5rem; font-size: 0.78rem; font-weight: 650; line-height: 1.35; }
+.quality-diagnostic-grid small { margin-top: 0.35rem; color: var(--quality-muted); font-size: 0.68rem; }
+.quality-difference-chart { display: grid; gap: 0.5rem; max-width: 62rem; margin-top: 2rem; }
+.quality-difference-header, .quality-difference-row { display: grid; grid-template-columns: 7rem minmax(12rem, 1fr) 7.5rem; gap: 1rem; align-items: center; }
+.quality-difference-header { color: var(--quality-muted); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.quality-difference-header span { text-align: right; }
+.quality-difference-row > strong { font-size: 0.76rem; font-weight: 650; }
+.quality-difference-row > div { height: 1.4rem; overflow: hidden; border-radius: 0.25rem; background: #e7e3dc; }
+.quality-difference-row i { display: block; min-width: 1px; height: 100%; border-radius: 0.25rem; }
+.quality-difference-row > span { font-family: var(--font-geist-mono), monospace; font-size: 0.74rem; text-align: right; }
+.quality-difference-row small { color: var(--quality-muted); font-size: 0.65rem; }
 .quality-metadata-legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.9rem; margin: -0.8rem 0 1.25rem; color: var(--quality-muted); font-size: 0.72rem; }
 .quality-metadata-legend span { display: flex; align-items: center; gap: 0.35rem; }
 .quality-metadata-legend i { width: 0.65rem; height: 0.65rem; border-radius: 0.15rem; }
@@ -95,9 +111,16 @@ body:has(.quality-page) { overflow: auto; background: var(--quality-paper); }
   .quality-section-heading > p { text-align: left; }
   .quality-age-table { overflow-x: auto; }
   .quality-age-header, .quality-age-row { min-width: 39rem; }
+  .quality-diagnostic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quality-difference-chart { overflow-x: auto; }
+  .quality-difference-header, .quality-difference-row { min-width: 32rem; }
   .quality-hail-layout { grid-template-columns: 1fr; }
   .quality-hail-stats article { grid-template-columns: 0.75rem 1fr; }
   .quality-hail-stats small { grid-column: 2; text-align: left; }
+}
+
+@media (max-width: 480px) {
+  .quality-diagnostic-grid { grid-template-columns: 1fr; }
 }
 
 .app-layout,
@@ -347,12 +370,14 @@ body:has(.quality-page) { overflow: auto; background: var(--quality-paper); }
   overflow-wrap: anywhere;
 }
 
+.building-popup__fun-fact,
 .building-popup__wikipedia {
   margin-top: 0.75rem;
   padding-top: 0.625rem;
   border-top: 1px solid #e2e8f0;
 }
 
+.building-popup__section-heading,
 .building-popup__wikipedia-heading {
   margin: 0 0 0.25rem !important;
   color: #475569;
@@ -360,6 +385,23 @@ body:has(.quality-page) { overflow: auto; background: var(--quality-paper); }
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.building-popup__fun-fact-copy {
+  margin: 0 !important;
+  color: #172033;
+}
+
+.building-popup__fun-fact-source {
+  margin: 0.35rem 0 0 !important;
+  color: #64748b;
+  font-size: 0.6875rem;
+}
+
+.building-popup__fun-fact-source a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
 }
 
 .building-popup__wikipedia ul {

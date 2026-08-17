@@ -27,6 +27,7 @@ FOOTPRINTS_PATH = ROOT / "cambridgegis_data/Basemap/Buildings/BASEMAP_Buildings.
 AGE_BANDS_PATH = ROOT / "src/data/Age_bands.json"
 STREET_ALIASES_PATH = ROOT / "data/config/hail-street-aliases.json"
 MANUAL_OVERRIDES_PATH = ROOT / "data/manual/hail-building-overrides.json"
+FUN_FACTS_PATH = ROOT / "data/manual/building-fun-facts.json"
 PROCESSED_OUT = ROOT / "data/processed/cambridge-buildings-enriched.geojson"
 PUBLIC_OUT = ROOT / "public/data/cambridge-buildings.geojson"
 MATCH_AUDIT_OUT = ROOT / "data/processed/hail-address-matches.csv"
@@ -127,6 +128,56 @@ def load_approved_wikipedia_matches(
     return approved_by_bldgid
 
 
+def load_fun_facts(
+    path: Path,
+    valid_bldgids: set[str],
+) -> dict[str, dict[str, Any]]:
+    """Load admin-approved fun facts keyed by footprint BldgID.
+
+    Source types are deliberately extensible identifiers rather than a closed
+    enum so future datasets can participate without changing this loader.
+    """
+    with path.open(encoding="utf-8-sig") as handle:
+        data = json.load(handle)
+    if data.get("version") != 1 or not isinstance(data.get("facts"), list):
+        raise ValueError(f"Expected version 1 fun-fact file with a facts list: {path}")
+
+    facts_by_bldgid: dict[str, dict[str, Any]] = {}
+    for index, fact in enumerate(data["facts"]):
+        if not isinstance(fact, dict):
+            raise ValueError(f"Fun fact {index} must be an object")
+        bldgid = normalize_id(fact.get("bldgid"))
+        fact_text = text(fact.get("text"))
+        source = fact.get("source")
+        if not bldgid or bldgid not in valid_bldgids:
+            raise ValueError(f"Fun fact {index} has unknown BldgID: {bldgid!r}")
+        if bldgid in facts_by_bldgid:
+            raise ValueError(f"Duplicate fun fact for BldgID: {bldgid}")
+        if not fact_text or len(fact_text) > 280:
+            raise ValueError(f"Fun fact for {bldgid} must contain 1-280 characters")
+        if not isinstance(source, dict):
+            raise ValueError(f"Fun fact for {bldgid} must include source metadata")
+        source_type = text(source.get("type")).casefold()
+        source_label = text(source.get("label"))
+        source_url = text(source.get("url"))
+        source_record_id = text(source.get("record_id"))
+        if not re.fullmatch(r"[a-z][a-z0-9_-]{0,49}", source_type):
+            raise ValueError(f"Fun fact for {bldgid} has invalid source type")
+        if not source_label or len(source_label) > 200:
+            raise ValueError(f"Fun fact for {bldgid} must include a source label")
+        if source_url and not re.fullmatch(r"https?://[^\s]+", source_url):
+            raise ValueError(f"Fun fact for {bldgid} has invalid source URL")
+        facts_by_bldgid[bldgid] = {
+            "text": fact_text,
+            "source_type": source_type,
+            "source_label": source_label,
+            "source_url": source_url or None,
+            "source_record_id": source_record_id or None,
+            "reviewed_at": text(fact.get("reviewed_at")) or None,
+        }
+    return facts_by_bldgid
+
+
 def text(value: Any) -> str:
     if value is None:
         return ""
@@ -152,9 +203,20 @@ def normalize_street(value: Any) -> str:
 
 
 def normalize_house(value: Any) -> str:
-    value_text = unicodedata.normalize("NFKD", text(value)).encode("ascii", "ignore").decode().casefold()
-    value_text = value_text.replace("rear", "r").replace("½", "1/2")
-    return re.sub(r"[^a-z0-9/+-]", "", value_text)
+    value_text = text(value).replace("½", "1/2")
+    value_text = unicodedata.normalize("NFKD", value_text).encode("ascii", "ignore").decode().casefold()
+    value_text = value_text.replace("rear", "r")
+    normalized = re.sub(r"[^a-z0-9/+-]", "", value_text)
+    return re.sub(r"^(0*\d+)-1/2", r"\g<1>1/2", normalized)
+
+
+def references_move_to_another_location(value: Any) -> bool:
+    """Identify a detail clause saying the listed building moved elsewhere.
+
+    This includes wording such as "moved and joined to", while deliberately
+    excluding "moved from" records that describe arrival at the listed address.
+    """
+    return bool(re.search(r"\bmoved\b[^;\n]{0,40}\bto\b", text(value), re.IGNORECASE))
 
 
 @dataclass(frozen=True)
@@ -167,6 +229,10 @@ class HouseParts:
 
 def parse_house(value: Any) -> HouseParts:
     normalized = normalize_house(value)
+    fraction_match = re.match(r"^0*(\d+?)1/2(?:[a-z]*)$", normalized)
+    if fraction_match:
+        number = int(fraction_match.group(1))
+        return HouseParts(number, number, "1/2", False)
     numbers = [int(item) for item in re.findall(r"\d+", normalized)]
     if not numbers:
         return HouseParts(None, None, "", False)
@@ -197,6 +263,31 @@ def address_numbers(parts: HouseParts) -> set[int]:
 
 def house_numbers_overlap(left: HouseParts, right: HouseParts) -> bool:
     return bool(address_numbers(left) & address_numbers(right))
+
+
+def explicit_alias_candidates(
+    street: str,
+    hail_parts: HouseParts,
+    aliases: set[tuple[str, str]],
+    points_by_street: dict[str, list[dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    """Return number-compatible points for an explicitly configured alias.
+
+    Alias pairs are directional: the first value is the Hail/source street and
+    the second is the current Address Point street. Parsed point numbers keep
+    fractional addresses such as 15-1/2 distinct from numeric ranges.
+    """
+    hail_numbers = address_numbers(hail_parts)
+    if not hail_numbers:
+        return []
+    target_streets = {target for source, target in aliases if source == street}
+    candidates: list[dict[str, Any]] = []
+    for target_street in target_streets:
+        for point in points_by_street.get(target_street, []):
+            point_number = point["house_parts"].minimum
+            if point_number is not None and point_number in hail_numbers:
+                candidates.append(point)
+    return candidates
 
 
 def complete_year(value: Any) -> int | None:
@@ -523,6 +614,38 @@ def match_hail_record(
             "Historical address or street alias produces current-address candidate(s)",
         )
 
+    confirmed_alias_points = explicit_alias_candidates(
+        street, hail_parts, confirmed_street_aliases, points_by_street
+    )
+    confirmed_alias_points, confirmed_alias_bldgids = unique_candidates(
+        confirmed_alias_points, valid_bldgids
+    )
+    if confirmed_alias_bldgids:
+        if len(confirmed_alias_bldgids) == 1 and classification != "Building complex":
+            return build_match_result(
+                hail, 6, "accepted", "confirmed_alias", confirmed_alias_points,
+                confirmed_alias_bldgids,
+                "Explicit confirmed street-name alias with compatible number and one footprint",
+            )
+        return build_match_result(
+            hail, 6, "review", "manual_review", confirmed_alias_points,
+            confirmed_alias_bldgids,
+            "Explicit confirmed street-name alias has multiple or complex footprint candidates",
+        )
+
+    manual_alias_points = explicit_alias_candidates(
+        street, hail_parts, manual_street_aliases, points_by_street
+    )
+    manual_alias_points, manual_alias_bldgids = unique_candidates(
+        manual_alias_points, valid_bldgids
+    )
+    if manual_alias_bldgids:
+        return build_match_result(
+            hail, 6, "review", "manual_review", manual_alias_points,
+            manual_alias_bldgids,
+            "Street-name pair is explicitly reserved for manual review",
+        )
+
     spelling_points: list[dict[str, Any]] = []
     if hail_parts.minimum is not None:
         for point in points_by_number.get(hail_parts.minimum, []):
@@ -671,6 +794,7 @@ def main() -> None:
         AGE_BANDS_PATH,
         STREET_ALIASES_PATH,
         MANUAL_OVERRIDES_PATH,
+        FUN_FACTS_PATH,
         WIKIPEDIA_MATCHES_PATH,
     ):
         if not source.exists():
@@ -702,6 +826,7 @@ def main() -> None:
         for feature in footprints["features"]
         if normalize_id(feature.get("properties", {}).get("BldgID"))
     }
+    fun_facts_by_bldgid = load_fun_facts(FUN_FACTS_PATH, valid_bldgids)
 
     points = [point_record(feature, index) for index, feature in enumerate(address_points["features"])]
     exact_index: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
@@ -766,6 +891,7 @@ def main() -> None:
 
         accepted_hail = accepted_hail_by_bldgid.get(bldgid, [])
         wikipedia_articles = approved_wikipedia_by_bldgid.get(bldgid, [])
+        fun_fact = fun_facts_by_bldgid.get(bldgid)
         primary_hail_pair = choose_hail_record(accepted_hail)
         primary_hail = primary_hail_pair[0] if primary_hail_pair else None
         primary_hail_match = primary_hail_pair[1] if primary_hail_pair else None
@@ -840,6 +966,12 @@ def main() -> None:
                 if wikipedia_articles
                 else None
             ),
+            "fun_fact": fun_fact["text"] if fun_fact else None,
+            "fun_fact_source_type": fun_fact["source_type"] if fun_fact else None,
+            "fun_fact_source_label": fun_fact["source_label"] if fun_fact else None,
+            "fun_fact_source_url": fun_fact["source_url"] if fun_fact else None,
+            "fun_fact_source_record_id": fun_fact["source_record_id"] if fun_fact else None,
+            "fun_fact_reviewed_at": fun_fact["reviewed_at"] if fun_fact else None,
         }
         output_features.append(
             {
@@ -906,7 +1038,15 @@ def main() -> None:
         )
 
     write_review_bundle(REVIEW_BUNDLE_OUT, review_rows, "ambiguous")
-    unmatched_rows = [row for row in match_rows if row["match_status"] == "unmatched"]
+    unmatched_rows = [
+        row
+        for row in match_rows
+        if row["match_status"] == "unmatched"
+        and row["classification"] != "Cross reference to another address"
+        and not references_move_to_another_location(
+            hail_by_id[row["building_id"]].get("summary_raw")
+        )
+    ]
     write_review_bundle(UNMATCHED_REVIEW_BUNDLE_OUT, unmatched_rows, "unmatched")
     review_categories = Counter(row["review_reason_category"] for row in review_rows)
     review_descriptions = {

@@ -66,6 +66,33 @@ copy, complete Hail match audit, and manual-review queue are written under
 [`reports/building-database-methodology.md`](reports/building-database-methodology.md)
 for matching stages, year-selection rules, output fields, and current counts.
 
+## Admin-managed building fun facts
+
+Published fun facts live in `data/manual/building-fun-facts.json`, separately
+from source datasets and generated files. Each entry is keyed by footprint
+`bldgid` and contains the admin-approved text plus source provenance:
+
+```json
+{
+  "bldgid": "123-4",
+  "text": "A concise fact approved by the app administrator.",
+  "source": {
+    "type": "wikipedia",
+    "label": "Wikipedia: Example Building",
+    "record_id": "123456",
+    "url": "https://en.wikipedia.org/wiki/Example_Building"
+  },
+  "reviewed_at": "2026-08-17T12:00:00Z"
+}
+```
+
+`source.type` accepts stable lowercase identifiers such as `wikipedia`, `hail`,
+or a future dataset name. Suggested or AI-generated text should be added only
+after admin review. Run `npm run data:build` to validate the file and publish
+approved values to the footprint GeoJSON. Popups display the fact and its
+source; an invalid/duplicate footprint ID, oversized fact, malformed source,
+or unsafe source URL fails the build instead of publishing questionable data.
+
 You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

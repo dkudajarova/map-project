@@ -21,11 +21,16 @@ Razed Hail records are excluded from matching. Cross-reference and unclear Hail 
 | 3 | Exact Hail address matches multiple Address Points whose valid IDs all resolve to one `BldgID` | Auto-accept; complexes review |
 | 4 | Street and number overlap, while rear/suffix/range representation differs | Auto-accept only one plausible footprint; otherwise review |
 | 5 | An address in Hail `historic_address` or the parsed detail/body exactly equals a current canonical Address Point address | Auto-accept one valid footprint; ambiguous matches and complexes review; broader historic aliases review |
-| 6 | Street edit distance is small and the house number is compatible | Auto-accept a configured confirmed alias with one footprint; configured exceptions, multiple footprints, complexes, and unknown pairs review |
+| 6 | An explicit street alias or small street-name edit has a compatible house number | Auto-accept a configured confirmed alias with one footprint regardless of spelling distance; configured exceptions, multiple footprints, complexes, and unknown pairs review |
 | 7 | No valid footprint candidate, or record classification is cross-reference/unclear | Leave unmatched |
 | 8 | A reviewer explicitly selects a valid footprint from the manual-review workspace | Accept the override; a reviewer can instead preserve an explicit `no_map_match` decision |
 
 Standardization is deliberately conservative: Unicode/case/punctuation/spacing normalization, common street-suffix normalization, and preservation of rear, letter, fraction, plus, and range markers in the full house token.
+
+Explicit alias pairs are directional from the historical Hail street to the
+current Address Point street. They are evaluated directly rather than gated by
+edit distance, allowing documented renames such as `Allen Drive` →
+`Bishop Allen Dr` to participate in deterministic matching.
 
 Numeric address-range matching preserves street-side parity. A same-parity
 range advances by two (`215–217` represents `215` and `217`, not `216`). If the
@@ -91,6 +96,10 @@ There are 1,012 footprint records flagged for construction-year review because H
 - `data/manual/hail-building-overrides.json`: durable, separate reviewer
   decisions keyed by Hail `building_id`; this is an input layer, not generated
   source data.
+- `data/manual/building-fun-facts.json`: admin-approved popup copy keyed by
+  footprint `BldgID`, with extensible source type, label, record ID, URL, and
+  review timestamp provenance. Source datasets and generators may propose copy,
+  but this manual layer is the only publication path.
 - `reports/manual-override-analysis.md`: repeatable summary of reviewer choices
   and evidence for possible future rules.
 
@@ -103,6 +112,9 @@ bundle. Run `npm run overrides:analyze` after reviewing a street.
 - Assessor: `assessor_gisid`, `assessor_gisids`, `assessor_pid`, `assessor_address`, `assessor_year_built`, `PropertyClass`, `Zoning`.
 - Hail: `hail_match_count`, `hail_building_ids`, `hail_years`, `hail_year_built`, `hail_year_conflict`, `hail_primary_building_id`, `hail_match_stage`, `hail_classification`, `hail_building_type`, `hail_architect`, `hail_builder`, `hail_owner_at_construction`, `hail_summary`.
 - Display: `year_built`, `year_built_source`, `year_difference_hail_assessor`, `year_needs_review`, `age`, `age_band`.
+- Admin-curated fun fact: `fun_fact`, `fun_fact_source_type`,
+  `fun_fact_source_label`, `fun_fact_source_url`,
+  `fun_fact_source_record_id`, `fun_fact_reviewed_at`.
 
 ## Review workflow
 
