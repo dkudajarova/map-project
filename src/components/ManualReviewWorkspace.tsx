@@ -68,6 +68,7 @@ type FootprintProperties = {
   BldgID?: string | null
   Address?: string | null
   addresses?: string | null
+  hail_match_count?: number | null
   year_built?: number | null
   [key: string]: unknown
 }
@@ -281,6 +282,7 @@ function FootprintFallbackMap({
           {mapData.visible.map(({ bldgid, feature, bounds }, featureIndex) => {
             const proposed = proposedIds.includes(bldgid)
             const selected = selectedBldgIds.includes(bldgid)
+            const hasHailMatch = Number(feature.properties?.hail_match_count ?? 0) > 0
             const centerX =
               (((bounds[0] + bounds[2]) / 2 - mapData.viewport.minLongitude) /
                 (mapData.viewport.maxLongitude - mapData.viewport.minLongitude)) *
@@ -302,12 +304,14 @@ function FootprintFallbackMap({
                     ? "review-footprint review-footprint--selected"
                     : proposed
                       ? "review-footprint review-footprint--proposed"
-                      : "review-footprint"
+                      : hasHailMatch
+                        ? "review-footprint review-footprint--hail-matched"
+                        : "review-footprint review-footprint--hail-unmatched"
                 }
                 onClick={() => onSelect(bldgid)}
               >
                 <path d={geometryPath(feature.geometry, mapData.viewport)} fillRule="evenodd">
-                  <title>{`${bldgid} — ${address}`}</title>
+                  <title>{`${bldgid} — ${address} — ${hasHailMatch ? "HAIL matched" : "No HAIL match"}`}</title>
                 </path>
                 <text x={centerX} y={centerY} className="review-footprint__id">
                   {bldgid}
@@ -502,7 +506,20 @@ export default function ManualReviewWorkspace() {
         id: baseFillId,
         type: "fill",
         source: sourceId,
-        paint: { "fill-color": "#94a3b8", "fill-opacity": 0.22 },
+        paint: {
+          "fill-color": [
+            "case",
+            [">", ["coalesce", ["get", "hail_match_count"], 0], 0],
+            "#16a34a",
+            "#94a3b8",
+          ],
+          "fill-opacity": [
+            "case",
+            [">", ["coalesce", ["get", "hail_match_count"], 0], 0],
+            0.5,
+            0.22,
+          ],
+        },
       })
       map.addLayer({
         id: outlineId,
@@ -875,7 +892,8 @@ export default function ManualReviewWorkspace() {
         <div className="review-map-legend">
           <span><i className="review-swatch review-swatch--candidate" /> Proposed</span>
           <span><i className="review-swatch review-swatch--selected" /> Selected</span>
-          <span><i className="review-swatch review-swatch--neighbor" /> Neighbor</span>
+          <span><i className="review-swatch review-swatch--hail-matched" /> HAIL matched</span>
+          <span><i className="review-swatch review-swatch--hail-unmatched" /> No HAIL match</span>
         </div>
       </div>
     </section>

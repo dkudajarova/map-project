@@ -31,6 +31,16 @@ class ScrapeCambridgeBuildingsTests(unittest.TestCase):
         self.assertEqual(buildings[1]["street_name"], "Creighton Street")
         self.assertEqual(buildings[1]["building_id"], "creighton-st_2")
 
+    def test_north_cambridge_elm_section_keeps_directional_street_name(self):
+        html = """
+        <dd><a href="#elmst-nc">ELM STREET (North Cambridge)</a></dd>
+        <dd><a name="elmst-nc"></a><hr>ELM STREET (NORTH CAMBRIDGE) through street 1637</dd>
+        <dd>128 house 1988</dd>
+        """
+        buildings, _events = parse_page(html, "test")
+        self.assertEqual(buildings[0]["street_name"], "Elm Street N")
+        self.assertEqual(buildings[0]["building_id"], "elm-street-n_128")
+
     def test_preserves_mc_capitalization(self):
         html = """
         <dd><a href="#maynardpl">MAYNARD PLACE</a></dd>

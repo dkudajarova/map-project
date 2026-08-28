@@ -30,6 +30,16 @@ class HailAddressParsingTests(unittest.TestCase):
         self.assertEqual((parts.minimum, parts.maximum), (119, 121))
         self.assertTrue(parts.is_range)
 
+    def test_numeric_unit_suffix_is_not_a_range(self):
+        parts = parse_house("328-2")
+        self.assertEqual((parts.minimum, parts.maximum, parts.suffix), (328, 328, "2"))
+        self.assertFalse(parts.is_range)
+
+    def test_numeric_unit_suffix_does_not_overlap_unrelated_range(self):
+        self.assertFalse(
+            house_numbers_overlap(parse_house("174-176"), parse_house("328-2"))
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

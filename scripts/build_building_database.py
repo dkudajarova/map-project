@@ -233,6 +233,9 @@ def parse_house(value: Any) -> HouseParts:
     if fraction_match:
         number = int(fraction_match.group(1))
         return HouseParts(number, number, "1/2", False)
+    unit_match = re.fullmatch(r"0*(\d+)-0*(\d+)", normalized)
+    if unit_match and int(unit_match.group(2)) < int(unit_match.group(1)):
+        return HouseParts(int(unit_match.group(1)), int(unit_match.group(1)), unit_match.group(2), False)
     numbers = [int(item) for item in re.findall(r"\d+", normalized)]
     if not numbers:
         return HouseParts(None, None, "", False)
@@ -504,7 +507,7 @@ def build_match_result(
             sorted({point["street_name"] for point in candidates if point["street_name"]})
         ),
         "matched_bldgid": bldgids[0] if status == "accepted" and len(bldgids) == 1 else "",
-        "matched_bldgids": bldgids[0] if status == "accepted" and len(bldgids) == 1 else "",
+        "matched_bldgids": "|".join(bldgids) if status == "accepted" else "",
         "match_reason": reason,
         "review_reason_category": review_category,
         "review_reason_summary": review_summary,
@@ -542,8 +545,8 @@ def match_hail_record(
 
     exact_points, exact_bldgids = unique_candidates(exact_index.get((street, house), []), valid_bldgids)
     if len(exact_points) == 1 and len(exact_bldgids) == 1:
-        treatment = "review" if classification == "Building complex" else "auto_accept"
-        status = "review" if treatment == "review" else "accepted"
+        treatment = "auto_accept"
+        status = "accepted"
         return build_match_result(hail, 1, status, treatment, exact_points, exact_bldgids, "Exact standardized address")
 
     if hail_parts.is_range and hail_parts.minimum is not None and hail_parts.maximum is not None:
@@ -553,16 +556,16 @@ def match_hail_record(
             if house_numbers_overlap(hail_parts, point["house_parts"])
         ]
         range_points, range_bldgids = unique_candidates(range_points, valid_bldgids)
-        if len(range_bldgids) == 1:
-            treatment = "review" if classification == "Building complex" else "usually_auto_accept"
-            status = "review" if treatment == "review" else "accepted"
+        if range_bldgids and (len(range_bldgids) == 1 or classification == "Building complex"):
+            treatment = "usually_auto_accept"
+            status = "accepted"
             return build_match_result(
                 hail, 2, status, treatment, range_points, range_bldgids, "Hail range contains Address Point number(s)"
             )
 
     if len(exact_points) > 1 and len(exact_bldgids) == 1:
-        treatment = "review" if classification == "Building complex" else "auto_accept"
-        status = "review" if treatment == "review" else "accepted"
+        treatment = "auto_accept"
+        status = "accepted"
         return build_match_result(
             hail, 3, status, treatment, exact_points, exact_bldgids, "Multiple Address Points share one BLDGID"
         )
@@ -577,10 +580,15 @@ def match_hail_record(
                 stage4_points.append(point)
     stage4_points, stage4_bldgids = unique_candidates(stage4_points, valid_bldgids)
     if stage4_bldgids:
-        if len(stage4_bldgids) == 1 and classification != "Building complex":
+        if len(stage4_bldgids) == 1:
             return build_match_result(
                 hail, 4, "accepted", "auto_accept_unique", stage4_points, stage4_bldgids,
                 "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+            )
+        if classification == "Building complex":
+            return build_match_result(
+                hail, 4, "accepted", "usually_auto_accept", stage4_points, stage4_bldgids,
+                "Street and number agree; all address-compatible footprints match the building complex",
             )
         return build_match_result(
             hail, 4, "review", "manual_review", stage4_points, stage4_bldgids,
@@ -594,7 +602,7 @@ def match_hail_record(
         exact_historic_points, valid_bldgids
     )
     if exact_historic_bldgids:
-        if len(exact_historic_bldgids) == 1 and classification != "Building complex":
+        if len(exact_historic_bldgids) == 1 or classification == "Building complex":
             return build_match_result(
                 hail, 5, "accepted", "auto_accept_exact_historic",
                 exact_historic_points, exact_historic_bldgids,
@@ -621,7 +629,7 @@ def match_hail_record(
         confirmed_alias_points, valid_bldgids
     )
     if confirmed_alias_bldgids:
-        if len(confirmed_alias_bldgids) == 1 and classification != "Building complex":
+        if len(confirmed_alias_bldgids) == 1 or classification == "Building complex":
             return build_match_result(
                 hail, 6, "accepted", "confirmed_alias", confirmed_alias_points,
                 confirmed_alias_bldgids,
@@ -711,6 +719,10 @@ def choose_hail_record(records: list[tuple[dict[str, str], dict[str, Any]]]) -> 
         )
 
     return min(records, key=key)
+
+
+def assessor_year_takes_precedence(assessor_year: int | None) -> bool:
+    return assessor_year is not None and assessor_year >= 2003
 
 
 def apply_manual_overrides(
@@ -890,6 +902,8 @@ def main() -> None:
         assessor_year = complete_year(selected_assessor.get("condition_yearbuilt")) if selected_assessor else None
 
         accepted_hail = accepted_hail_by_bldgid.get(bldgid, [])
+        if assessor_year_takes_precedence(assessor_year):
+            accepted_hail = []
         wikipedia_articles = approved_wikipedia_by_bldgid.get(bldgid, [])
         fun_fact = fun_facts_by_bldgid.get(bldgid)
         primary_hail_pair = choose_hail_record(accepted_hail)

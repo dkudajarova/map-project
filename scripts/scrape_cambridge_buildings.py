@@ -179,6 +179,11 @@ def street_names(records: Iterable[DD]) -> dict[str, str]:
 
 
 def format_street_name(value: str) -> str:
+    north_cambridge_elm = re.search(
+        r"^elm street\s*\(north cambridge\)$", normalize(value), flags=re.I
+    )
+    if north_cambridge_elm:
+        return "Elm Street N"
     formatted = re.sub(
         r"\s*\((?:Cambridgeport|North Cambridge)\)\s*$",
         "",

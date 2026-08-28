@@ -58,15 +58,24 @@ class HailStreetAliasTests(unittest.TestCase):
         self.assertEqual(result["match_status"], "accepted")
         self.assertEqual(result["matched_bldgid"], "602-10")
 
-    def test_multiple_alias_footprints_require_review(self):
+    def test_multiple_alias_footprints_are_accepted_for_building_complex(self):
         result = match(hail("5-7"), [point("5", "one"), point("7", "two")])
         self.assertEqual(result["match_status"], "review")
         self.assertEqual(result["review_reason_category"], "multiple_footprint_candidates")
 
-    def test_building_complex_alias_requires_review(self):
+    def test_single_building_complex_alias_footprint_is_accepted(self):
         result = match(hail("46-50", "Building complex"), [point("48", "632-3")])
-        self.assertEqual(result["match_status"], "review")
-        self.assertEqual(result["review_reason_category"], "building_complex_geometry_uncertain")
+        self.assertEqual(result["match_status"], "accepted")
+        self.assertEqual(result["matched_bldgid"], "632-3")
+
+    def test_multiple_building_complex_alias_footprints_are_accepted(self):
+        result = match(
+            hail("46-50", "Building complex"),
+            [point("46", "one"), point("48", "two"), point("50", "three")],
+        )
+        self.assertEqual(result["match_status"], "accepted")
+        self.assertEqual(result["matched_bldgid"], "")
+        self.assertEqual(result["candidate_bldgids"], "one|three|two")
 
 
 if __name__ == "__main__":
