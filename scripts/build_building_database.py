@@ -207,6 +207,10 @@ def normalize_house(value: Any) -> str:
     value_text = unicodedata.normalize("NFKD", value_text).encode("ascii", "ignore").decode().casefold()
     value_text = value_text.replace("rear", "r")
     normalized = re.sub(r"[^a-z0-9/+-]", "", value_text)
+    # Address Points spell alphabetic modifiers with a separator (67-A,
+    # 328-R), while Hail commonly joins them to the number (67A, 328r).
+    # The punctuation is not semantically meaningful for these modifiers.
+    normalized = re.sub(r"^(0*\d+)-([a-z]+)$", r"\1\2", normalized)
     return re.sub(r"^(0*\d+)-1/2", r"\g<1>1/2", normalized)
 
 
@@ -372,6 +376,52 @@ def unique_candidates(points: Iterable[dict[str, Any]], valid_bldgids: set[str])
     point_list = list(points)
     bldgids = sorted({point["bldgid"] for point in point_list if point["bldgid"] in valid_bldgids})
     return point_list, bldgids
+
+
+def is_rear_or_secondary_designation(parts: HouseParts) -> bool:
+    """Treat lettered and half-number addresses as auxiliary building addresses."""
+    return parts.suffix == "1/2" or bool(re.fullmatch(r"[a-z]+", parts.suffix))
+
+
+def unique_secondary_modifier_candidates(
+    classification: str,
+    points: Iterable[dict[str, Any]],
+    valid_bldgids: set[str],
+) -> tuple[list[dict[str, Any]], list[str]] | None:
+    """Resolve a secondary Hail record to its sole modified address footprint."""
+    if classification != "Addition, rear, or secondary building":
+        return None
+    modified_points, modified_bldgids = unique_candidates(
+        (
+            point
+            for point in points
+            if is_rear_or_secondary_designation(point["house_parts"])
+        ),
+        valid_bldgids,
+    )
+    if len(modified_bldgids) != 1:
+        return None
+    return modified_points, modified_bldgids
+
+
+def prefer_unmodified_current_building_candidates(
+    classification: str,
+    points: Iterable[dict[str, Any]],
+    valid_bldgids: set[str],
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """Exclude A/B/R-style auxiliary addresses from a plain current building."""
+    point_list = list(points)
+    if classification != "Current building" or not any(
+        is_rear_or_secondary_designation(point["house_parts"])
+        for point in point_list
+    ):
+        return unique_candidates(point_list, valid_bldgids)
+    unmodified_points = [
+        point
+        for point in point_list
+        if not is_rear_or_secondary_designation(point["house_parts"])
+    ]
+    return unique_candidates(unmodified_points or point_list, valid_bldgids)
 
 
 def historical_candidates(
@@ -544,7 +594,20 @@ def match_hail_record(
     hail_parts = parse_house(hail.get("address_raw"))
 
     exact_points, exact_bldgids = unique_candidates(exact_index.get((street, house), []), valid_bldgids)
-    if len(exact_points) == 1 and len(exact_bldgids) == 1:
+    secondary_designation_exists = (
+        classification == "Addition, rear, or secondary building"
+        and not is_rear_or_secondary_designation(hail_parts)
+        and any(
+            house_numbers_overlap(hail_parts, point["house_parts"])
+            and is_rear_or_secondary_designation(point["house_parts"])
+            for point in points_by_street.get(street, [])
+        )
+    )
+    if (
+        len(exact_points) == 1
+        and len(exact_bldgids) == 1
+        and not secondary_designation_exists
+    ):
         treatment = "auto_accept"
         status = "accepted"
         return build_match_result(hail, 1, status, treatment, exact_points, exact_bldgids, "Exact standardized address")
@@ -578,7 +641,19 @@ def match_hail_record(
                 continue
             if house_numbers_overlap(hail_parts, point_parts):
                 stage4_points.append(point)
-    stage4_points, stage4_bldgids = unique_candidates(stage4_points, valid_bldgids)
+    stage4_points, stage4_bldgids = prefer_unmodified_current_building_candidates(
+        classification, stage4_points, valid_bldgids
+    )
+    secondary_candidates = unique_secondary_modifier_candidates(
+        classification, stage4_points, valid_bldgids
+    )
+    if secondary_candidates is not None:
+        modified_points, modified_bldgids = secondary_candidates
+        return build_match_result(
+            hail, 4, "accepted", "auto_accept_unique_modifier",
+            modified_points, modified_bldgids,
+            "Rear or secondary Hail record has one modified canonical address footprint",
+        )
     if stage4_bldgids:
         if len(stage4_bldgids) == 1:
             return build_match_result(
@@ -625,9 +700,21 @@ def match_hail_record(
     confirmed_alias_points = explicit_alias_candidates(
         street, hail_parts, confirmed_street_aliases, points_by_street
     )
-    confirmed_alias_points, confirmed_alias_bldgids = unique_candidates(
-        confirmed_alias_points, valid_bldgids
+    confirmed_alias_points, confirmed_alias_bldgids = (
+        prefer_unmodified_current_building_candidates(
+            classification, confirmed_alias_points, valid_bldgids
+        )
     )
+    secondary_candidates = unique_secondary_modifier_candidates(
+        classification, confirmed_alias_points, valid_bldgids
+    )
+    if secondary_candidates is not None:
+        modified_points, modified_bldgids = secondary_candidates
+        return build_match_result(
+            hail, 6, "accepted", "confirmed_alias_unique_modifier",
+            modified_points, modified_bldgids,
+            "Rear or secondary Hail record has one modified canonical address footprint on a confirmed street alias",
+        )
     if confirmed_alias_bldgids:
         if len(confirmed_alias_bldgids) == 1 or classification == "Building complex":
             return build_match_result(
@@ -690,6 +777,88 @@ def match_hail_record(
         )
 
     return build_match_result(hail, 7, "unmatched", "leave_unmatched", [], [], "No credible address candidate")
+
+
+def hail_describes_multiple_footprints(hail: dict[str, str]) -> bool:
+    """Recognize Hail descriptions that explicitly describe multiple buildings."""
+    description = text(hail.get("building_type")).casefold()
+    return bool(
+        re.search(r"\bblock\b", description)
+        or re.search(r"\b(?:buildings|dwellings|houses|stores)\b", description)
+    )
+
+
+def accept_unclaimed_multi_footprint_records(
+    match_rows: list[dict[str, Any]],
+    points_by_bldgid: dict[str, list[dict[str, Any]]],
+    hail_by_id: dict[str, dict[str, str]],
+) -> None:
+    """Accept eligible ambiguous footprints not claimed by another rule.
+
+    The occupied set is intentionally captured before applying this fallback:
+    matches created by this rule do not compete with one another, while matches
+    established by deterministic rules or manual overrides remain authoritative.
+    """
+    occupied_bldgids = {
+        bldgid
+        for row in match_rows
+        if row["match_status"] == "accepted"
+        for bldgid in text(row.get("matched_bldgids")).split("|")
+        if bldgid
+    }
+    for row in match_rows:
+        candidate_bldgids = [
+            bldgid for bldgid in text(row.get("candidate_bldgids")).split("|") if bldgid
+        ]
+        candidate_addresses = [
+            address for address in text(row.get("candidate_addresses")).split("|") if address
+        ]
+        hail = hail_by_id.get(row["building_id"], {})
+        is_shared_address = len(candidate_addresses) == 1
+        is_described_as_multiple = hail_describes_multiple_footprints(hail)
+        if (
+            row["match_status"] != "review"
+            or row.get("treatment") != "manual_review"
+            or len(candidate_bldgids) < 2
+            or not (is_shared_address or is_described_as_multiple)
+        ):
+            continue
+        available_bldgids = [
+            bldgid for bldgid in candidate_bldgids if bldgid not in occupied_bldgids
+        ]
+        if not available_bldgids:
+            continue
+        selected_points = [
+            point
+            for bldgid in available_bldgids
+            for point in points_by_bldgid.get(bldgid, [])
+            if point["address"] in candidate_addresses
+        ]
+        selected_addresses = sorted(
+            {point["address"] for point in selected_points if point["address"]}
+        )
+        selected_streets = sorted(
+            {point["street_name"] for point in selected_points if point.get("street_name")}
+        )
+        row.update(
+            {
+                "match_status": "accepted",
+                "treatment": "auto_accept_unclaimed_multi_footprint",
+                "candidate_address_point_count": len(selected_points),
+                "candidate_bldgid_count": len(available_bldgids),
+                "candidate_bldgids": "|".join(available_bldgids),
+                "candidate_addresses": "|".join(selected_addresses),
+                "candidate_street_names": "|".join(selected_streets),
+                "matched_bldgid": available_bldgids[0] if len(available_bldgids) == 1 else "",
+                "matched_bldgids": "|".join(available_bldgids),
+                "match_reason": (
+                    "Hail record describes multiple compatible footprints; accepted all "
+                    "footprints not already matched by another Hail rule"
+                ),
+                "review_reason_category": "",
+                "review_reason_summary": "",
+            }
+        )
 
 
 def select_assessor(records: list[dict[str, Any]], primary_address: str | None) -> dict[str, Any] | None:
@@ -865,13 +1034,14 @@ def main() -> None:
         )
         for row in hail_rows
     ]
+    hail_by_id = {row["building_id"]: row for row in hail_rows}
     apply_manual_overrides(
         match_rows,
         override_data.get("overrides", []),
         points_by_bldgid,
         valid_bldgids,
     )
-    hail_by_id = {row["building_id"]: row for row in hail_rows}
+    accept_unclaimed_multi_footprint_records(match_rows, points_by_bldgid, hail_by_id)
     accepted_hail_by_bldgid: dict[str, list[tuple[dict[str, str], dict[str, Any]]]] = defaultdict(list)
     for match in match_rows:
         if match["match_status"] == "accepted":

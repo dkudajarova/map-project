@@ -40,6 +40,14 @@ class HailAddressParsingTests(unittest.TestCase):
             house_numbers_overlap(parse_house("174-176"), parse_house("328-2"))
         )
 
+    def test_alphabetic_modifier_separator_is_not_significant(self):
+        self.assertEqual(normalize_house("67A"), normalize_house("67-A"))
+        self.assertEqual(parse_house("67-A").suffix, "a")
+
+    def test_rear_modifier_separator_is_not_significant(self):
+        self.assertEqual(normalize_house("328r"), normalize_house("328-R"))
+        self.assertEqual(parse_house("328-R").suffix, "r")
+
 
 if __name__ == "__main__":
     unittest.main()
