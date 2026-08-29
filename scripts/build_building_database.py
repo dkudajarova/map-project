@@ -894,6 +894,13 @@ def assessor_year_takes_precedence(assessor_year: int | None) -> bool:
     return assessor_year is not None and assessor_year >= 2003
 
 
+def hail_year_overrides_assessor_placeholder(
+    bldgid: str, assessor_year: int | None
+) -> bool:
+    """Recognize Harvard Yard's parcel-level 1850 assessor placeholder."""
+    return bldgid.startswith("318-") and assessor_year == 1850
+
+
 def apply_manual_overrides(
     match_rows: list[dict[str, Any]],
     override_records: list[dict[str, Any]],
@@ -1093,7 +1100,11 @@ def main() -> None:
             else None
         )
         year_needs_review = len(hail_years) > 1 or (year_difference is not None and year_difference > 50)
-        if unambiguous_hail_year is not None and (assessor_year is None or (year_difference is not None and year_difference <= 50)):
+        if unambiguous_hail_year is not None and (
+            assessor_year is None
+            or (year_difference is not None and year_difference <= 50)
+            or hail_year_overrides_assessor_placeholder(bldgid, assessor_year)
+        ):
             year_built = unambiguous_hail_year
             year_source = "Hail"
         elif assessor_year is not None:

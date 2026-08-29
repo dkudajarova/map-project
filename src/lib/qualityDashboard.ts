@@ -2,8 +2,12 @@ import "server-only"
 
 import { readFileSync } from "node:fs"
 import path from "node:path"
+import { hasCanonicalCambridgeAddress } from "@/lib/canonicalCambridgeAddress"
 
 type BuildingProperties = {
+  address?: string | null
+  Address?: string | null
+  address_count?: number | string | null
   assessor_record_count?: number | null
   hail_match_count?: number | null
   wikipedia_article_count?: number | null
@@ -19,7 +23,9 @@ export type DashboardDatum = { label: string; count: number; percent: number; co
 export type AgeMetadataRow = { label: string; total: number; counts: number[]; percents: number[] }
 export type QualityDashboardData = {
   generatedAt: string
+  sourceFootprintTotal: number
   footprintTotal: number
+  excludedNoCanonicalAddress: number
   sourceCoverage: DashboardDatum[]
   ageMetadata: AgeMetadataRow[]
   hail: {
@@ -84,13 +90,16 @@ export function getQualityDashboardData(): QualityDashboardData {
   const buildingsPath = path.join(root, "public/data/cambridge-buildings.geojson")
   const hailPath = path.join(root, "data/processed/hail-address-matches.csv")
   const buildings = JSON.parse(readFileSync(buildingsPath, "utf8")) as FeatureCollection
+  const mappedFeatures = buildings.features.filter((feature) =>
+    hasCanonicalCambridgeAddress(feature.properties),
+  )
   const sourceCounts = new Map<string, number>(); const ageCounts = new Map<string, number[]>()
   let multipleAssessorRecords = 0
   let multipleHailRecords = 0
   let multipleEitherSource = 0
   const constructionYearDifferences: number[] = []
 
-  for (const feature of buildings.features) {
+  for (const feature of mappedFeatures) {
     const properties = feature.properties ?? {}
     const assessorRecordCount = asCount(properties.assessor_record_count)
     const hailRecordCount = asCount(properties.hail_match_count)
@@ -119,7 +128,9 @@ export function getQualityDashboardData(): QualityDashboardData {
     distribution[metadataCount] += 1; ageCounts.set(ageBand, distribution)
   }
 
-  const footprintTotal = buildings.features.length
+  const sourceFootprintTotal = buildings.features.length
+  const footprintTotal = mappedFeatures.length
+  const excludedNoCanonicalAddress = sourceFootprintTotal - footprintTotal
   const sourceCoverage = ["No data source", "Assessor only", "Assessor + Hail", "Assessor + Wikipedia", "All three sources", "Other combinations"]
     .map((label) => ({ label, count: sourceCounts.get(label) ?? 0, percent: percent(sourceCounts.get(label) ?? 0, footprintTotal), color: SOURCE_COLORS[label] }))
     .filter((item) => item.count > 0)
@@ -149,7 +160,12 @@ export function getQualityDashboardData(): QualityDashboardData {
   const differencesOver50 = constructionYearDifferences.filter((difference) => difference > 50)
 
   return {
-    generatedAt: new Date().toISOString(), footprintTotal, sourceCoverage, ageMetadata,
+    generatedAt: new Date().toISOString(),
+    sourceFootprintTotal,
+    footprintTotal,
+    excludedNoCanonicalAddress,
+    sourceCoverage,
+    ageMetadata,
     hail: {
       eligibleTotal,
       excludedTotal: hailCounts.get("excluded") ?? 0,

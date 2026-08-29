@@ -23,14 +23,14 @@ export default function QualityDashboardPage() {
   return <main className="quality-page">
     <header className="quality-hero"><div>
       <p className="quality-eyebrow">Cambridge building database</p><h1>Map enrichment quality</h1>
-      <p className="quality-intro">Coverage and display-ready metadata across {formatCount(data.footprintTotal)} building footprints.</p>
+      <p className="quality-intro">Coverage and display-ready metadata across {formatCount(data.footprintTotal)} canonically addressed Cambridge building footprints.</p>
     </div><Link href="/" className="quality-back">Return to building map</Link></header>
 
     <section className="quality-card" aria-labelledby="source-heading">
-      <div className="quality-section-heading"><div><p className="quality-section-number">01</p><h2 id="source-heading">Footprint source coverage</h2></div><p>Share of all mapped footprints</p></div>
+      <div className="quality-section-heading"><div><p className="quality-section-number">01</p><h2 id="source-heading">Footprint source coverage</h2></div><p>Share of addressed map footprints</p></div>
       <div className="quality-source-bar" aria-label="Source coverage distribution">{data.sourceCoverage.map((item) => <span key={item.label} style={{ width: `${item.percent}%`, backgroundColor: item.color }} title={`${item.label}: ${formatPercent(item.percent)}`} />)}</div>
       <div className="quality-source-grid">{data.sourceCoverage.map((item) => <article key={item.label} className="quality-source-stat"><i style={{ backgroundColor: item.color }} /><div><strong>{formatPercent(item.percent)}</strong><span>{item.label}</span><small>{formatCount(item.count)} footprints</small></div></article>)}</div>
-      <p className="quality-method-note">“Other combinations” captures footprints with Wikipedia but no assessor record; it is shown so coverage totals remain complete.</p>
+      <p className="quality-method-note">The source contains {formatCount(data.sourceFootprintTotal)} polygons. This dashboard and the public map exclude {formatCount(data.excludedNoCanonicalAddress)} polygons without a canonical Cambridge address. “Other combinations” captures mapped footprints with Wikipedia but no assessor record.</p>
     </section>
 
     <section className="quality-card" aria-labelledby="diagnostics-heading">
@@ -60,8 +60,8 @@ export default function QualityDashboardPage() {
       <div className="quality-section-heading"><div><p className="quality-section-number">04</p><h2 id="hail-heading">Hail footprint mapping</h2></div><p>{formatCount(data.hail.eligibleTotal)} mapping-eligible records</p></div>
       <div className="quality-hail-layout"><div className="quality-donut" style={{ "--donut-gradient": hailGradient } as CSSProperties} role="img" aria-label={data.hail.outcomes.map((item) => `${item.label}: ${formatPercent(item.percent)}`).join(", ")}><div><strong>{formatCount(data.hail.eligibleTotal)}</strong><span>eligible records</span></div></div>
         <div className="quality-hail-stats">{data.hail.outcomes.map((item) => <article key={item.label}><i style={{ backgroundColor: item.color }} /><div><span>{item.label}</span><strong>{formatPercent(item.percent)}</strong></div><small>{formatCount(item.count)} records</small></article>)}</div>
-      </div><p className="quality-method-note">Mapping-eligible records exclude {formatCount(data.hail.excludedTotal)} razed Hail rows and {formatCount(data.hail.sourceArtifactTotal)} admin-reviewed source artifacts marked no map match. “No footprint” now includes only unresolved records still pending review.</p>
+      </div><p className="quality-method-note">This section audits the complete Hail dataset, independent of the addressed-footprint map denominator. Mapping-eligible records exclude {formatCount(data.hail.excludedTotal)} razed Hail rows and {formatCount(data.hail.sourceArtifactTotal)} admin-reviewed source artifacts marked no map match. “No footprint” now includes only unresolved records still pending review.</p>
     </section>
-    <footer className="quality-footer">Calculated from the current map GeoJSON and complete Hail match audit · {new Date(data.generatedAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</footer>
+    <footer className="quality-footer">Footprint metrics use canonically addressed Cambridge buildings; Hail metrics use the complete match audit · {new Date(data.generatedAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</footer>
   </main>
 }

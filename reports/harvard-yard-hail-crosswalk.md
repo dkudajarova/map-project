@@ -57,3 +57,8 @@ footprint matches were applied.
 
 After applying the crosswalk, all 32 `318-*` footprints have at least one
 accepted Hail association.
+
+The assessor assigns the same year, 1850, to every `318-*` footprint. The data
+build treats this as a parcel-level placeholder and uses each footprint's
+single accepted Hail construction year for display. The original assessor year,
+source difference, and review flag remain in the output for auditing.

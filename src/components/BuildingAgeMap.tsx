@@ -4,10 +4,14 @@ import React, { useEffect, useRef, useState } from "react"
 import * as maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
 import ageBands from "@/data/Age_bands.json"
+import { hasCanonicalCambridgeAddress } from "@/lib/canonicalCambridgeAddress"
 import { parseWikipediaArticles } from "@/lib/wikipediaArticles.mjs"
 import type { FeatureCollection, Polygon, MultiPolygon } from "geojson"
 
 type BuildingProperties = {
+  address?: string | null
+  Address?: string | null
+  address_count?: number | string | null
   age_band?: string
   year_built?: number | string | null
   Condition_YearBuilt?: number | string
@@ -92,6 +96,9 @@ function validYear(value: unknown): number | null {
 }
 
 function getPopupYearBuilt(properties: BuildingProperties): number | "Unknown" {
+  const canonicalYear = validYear(properties.year_built)
+  if (canonicalYear !== null) return canonicalYear
+
   const hailYear = validYear(properties.hail_year_built)
   const assessorYear = validYear(
     properties.assessor_year_built ?? properties.Condition_YearBuilt,
@@ -335,12 +342,18 @@ export default function BuildingAgeMap({
         }
 
         const data = (await response.json()) as BuildingFeatureCollection
-        setCoverage(getValidConstructionYearCoverage(data))
+        const addressedData: BuildingFeatureCollection = {
+          ...data,
+          features: data.features.filter((feature) =>
+            hasCanonicalCambridgeAddress(feature.properties),
+          ),
+        }
+        setCoverage(getValidConstructionYearCoverage(addressedData))
 
         if (!map.getSource(sourceId)) {
           map.addSource(sourceId, {
             type: "geojson",
-            data,
+            data: addressedData,
           })
         }
 

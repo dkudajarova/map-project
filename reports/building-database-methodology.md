@@ -67,9 +67,10 @@ Only accepted Hail matches participate in the displayed-year calculation.
 
 1. If accepted Hail records on a footprint contain more than one distinct complete construction year, flag `hail_year_conflict = true`, do not select a Hail year, and use the assessor year if available.
 2. If exactly one Hail year exists and the assessor year is missing, use Hail.
-3. If exactly one Hail year exists and its absolute difference from the assessor year is **less than 50 years**, use Hail.
-4. If the difference is **50 years or greater**, retain the assessor year and set `year_needs_review = true`.
-5. If neither source provides a valid complete year, leave `year_built` null.
+3. If exactly one Hail year exists and its absolute difference from the assessor year is **50 years or less**, use Hail.
+4. For Harvard Yard `318-*` footprints, treat the repeated assessor year 1850 as a parcel-level placeholder and use the single accepted Hail year regardless of the difference.
+5. Otherwise, if the difference is greater than 50 years, retain the assessor year and set `year_needs_review = true`.
+6. If neither source provides a valid complete year, leave `year_built` null.
 
 Current footprint results:
 
