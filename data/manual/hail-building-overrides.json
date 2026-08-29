@@ -120,6 +120,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "alewife-brook-pkwy_105",
+      "decision": "matched",
+      "bldgid": "35-1",
+      "bldgids": [
+        "35-1"
+      ],
+      "street_name": "Alewife Brook Parkway",
+      "hail_address": "105 Alewife Brook Parkway",
+      "note": "Historic address Cambridgepark dr 7 resolves to an addressed footprint with no other accepted Hail association.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "alewife-brook-pkwy_120r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -130,6 +147,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "alewife-brook-pkwy_150_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Alewife Brook Parkway",
+      "hail_address": "150 Alewife Brook Parkway",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -466,6 +498,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "allston-st_326_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Allston Street",
+      "hail_address": "326 Allston Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "allston-st_49",
       "decision": "no_map_match",
       "bldgid": null,
@@ -736,6 +783,23 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "amory-st_129",
+      "decision": "matched",
+      "bldgid": "374-42",
+      "bldgids": [
+        "374-42"
+      ],
+      "street_name": "Amory Street",
+      "hail_address": "129 Amory Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:43:18.023Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "amory-st_81-89",
       "decision": "matched",
       "bldgid": "374-5",
@@ -987,21 +1051,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "ash-street-pl_9",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Ash Street Place",
-      "hail_address": "9+ Ash Street Place",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "ash-st_22-24",
       "decision": "no_map_match",
       "bldgid": null,
@@ -1042,6 +1091,21 @@
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "ash-street-pl_9",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Ash Street Place",
+      "hail_address": "9+ Ash Street Place",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -1316,6 +1380,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "banks-st_143",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Banks Street",
+      "hail_address": "143 Banks Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "banks-st_145-147",
       "decision": "no_map_match",
       "bldgid": null,
@@ -1436,42 +1515,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "bay-state-rd_67",
-      "decision": "matched",
-      "bldgid": "89-11",
-      "bldgids": [
-        "89-11",
-        "89-5"
-      ],
-      "street_name": "Bay State Road",
-      "hail_address": "67 Bay State Road",
-      "note": "",
-      "reviewed_at": "2026-08-12T19:19:40.794Z",
-      "original_match_stage": "4",
-      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
-      "review_reason_category": "multiple_footprint_candidates",
-      "original_candidate_bldgids": [
-        "89-11",
-        "89-5"
-      ],
-      "selected_was_proposed": true
-    },
-    {
-      "building_id": "bay-state-rd_74",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Bay State Road",
-      "hail_address": "74 Bay State Road",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "bay-st_12-18",
       "decision": "matched",
       "bldgid": "545-2",
@@ -1514,6 +1557,42 @@
       "bldgids": [],
       "street_name": "Bay Street",
       "hail_address": "4-8r Bay Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "bay-state-rd_67",
+      "decision": "matched",
+      "bldgid": "89-11",
+      "bldgids": [
+        "89-11",
+        "89-5"
+      ],
+      "street_name": "Bay State Road",
+      "hail_address": "67 Bay State Road",
+      "note": "",
+      "reviewed_at": "2026-08-12T19:19:40.794Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "89-11",
+        "89-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "bay-state-rd_74",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Bay State Road",
+      "hail_address": "74 Bay State Road",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -2295,6 +2374,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "boardman-st_24_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Boardman Street",
+      "hail_address": "24 Boardman Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "bond-st_16-20",
       "decision": "no_map_match",
       "bldgid": null,
@@ -2576,6 +2670,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "brattle-st_139",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Brattle Street",
+      "hail_address": "139+ Brattle Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "brattle-st_141",
       "decision": "matched",
       "bldgid": "268-1",
@@ -2695,6 +2804,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "brattle-st_206-218",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Brattle Street",
+      "hail_address": "206-218 Brattle Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -2923,6 +3047,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "bristol-st_90_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Bristol Street",
+      "hail_address": "90 Bristol Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "broadway-terr_2-4",
       "decision": "matched",
       "bldgid": "473-2",
@@ -3116,6 +3255,30 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "broadway_272-312",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Broadway",
+      "hail_address": "272 - 312 Broadway",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:47:08.086Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "536-2",
+        "536-3",
+        "536-4",
+        "536-5",
+        "536-6",
+        "546-16",
+        "546-2",
+        "546-5"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "broadway_312_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -3186,6 +3349,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "broadway_360",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Broadway",
+      "hail_address": "360 Broadway",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:26:17.589Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "broadway_435",
       "decision": "no_map_match",
       "bldgid": null,
@@ -3196,6 +3374,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "broadway_435-449",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Broadway",
+      "hail_address": "435-449 Broadway",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -3351,6 +3544,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "brookline-st_405_3",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Brookline Street",
+      "hail_address": "405 Brookline Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "brown-st_10",
       "decision": "no_map_match",
       "bldgid": null,
@@ -3364,6 +3572,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "brown-st_21",
+      "decision": "matched",
+      "bldgid": "291-39",
+      "bldgids": [
+        "291-39"
+      ],
+      "street_name": "Brown Street",
+      "hail_address": "21 Brown Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:32:29.107Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "brown-st_6",
@@ -3488,6 +3713,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "cambridge-pkwy_65",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cambridge Parkway",
+      "hail_address": "65+ Cambridge Parkway",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "cambridge-st_1002r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -3552,6 +3792,21 @@
         "391-7"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "cambridge-st_108_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cambridge Street",
+      "hail_address": "108 Cambridge Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:54:31.661Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "cambridge-st_1092-1108",
@@ -3693,6 +3948,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "cambridge-st_1407",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cambridge Street",
+      "hail_address": "1407 Cambridge Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -3923,6 +4193,59 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "cambridge-st_1800_2",
+      "decision": "matched",
+      "bldgid": "318-1",
+      "bldgids": [
+        "318-1",
+        "318-9",
+        "318-10"
+      ],
+      "street_name": "Cambridge Street",
+      "hail_address": "1800 Cambridge Street",
+      "note": "Harvard Yard name crosswalk: Canaday Hall complex, 22 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "cambridge-st_1800_4",
+      "decision": "matched",
+      "bldgid": "318-13",
+      "bldgids": [
+        "318-13"
+      ],
+      "street_name": "Cambridge Street",
+      "hail_address": "1800 Cambridge Street",
+      "note": "Corrected scraper razed flag; Harvard Yard name crosswalk: Memorial Church, 23 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "cambridge-st_1820",
+      "decision": "matched",
+      "bldgid": "318-2",
+      "bldgids": [
+        "318-2"
+      ],
+      "street_name": "Cambridge Street",
+      "hail_address": "1820+ Cambridge Street",
+      "note": "Harvard Yard name crosswalk: Thayer Hall, 21 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "cambridge-st_1830",
@@ -4210,6 +4533,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "cambridge-st_790-890",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cambridge Street",
+      "hail_address": "790-890 Cambridge Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "cambridge-st_799r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -4244,6 +4582,36 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "cambridge-st_849-851",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cambridge Street",
+      "hail_address": "849-851 Cambridge Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:44:22.358Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "cambridge-st_855-857",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cambridge Street",
+      "hail_address": "855-857 Cambridge Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:45:49.406Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "cambridge-st_903_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -4272,6 +4640,27 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "cameron-ave_36-42",
+      "decision": "matched",
+      "bldgid": "25-1",
+      "bldgids": [
+        "25-1",
+        "25-19"
+      ],
+      "street_name": "Cameron Avenue",
+      "hail_address": "36-42 Cameron Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:44:40.557Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "25-1",
+        "25-19"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "cameron-ave_36r",
@@ -4317,6 +4706,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "cedar-st_43",
+      "decision": "matched",
+      "bldgid": "47-13",
+      "bldgids": [
+        "47-13"
+      ],
+      "street_name": "Cedar Street",
+      "hail_address": "43 Cedar Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T02:02:51.392Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "cedar-st_61",
@@ -4409,6 +4815,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "centre-st_1-3",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Centre Street",
+      "hail_address": "1-3 Centre Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -4564,6 +4985,29 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "charles-st_111-119",
+      "decision": "matched",
+      "bldgid": "533-3",
+      "bldgids": [
+        "533-3",
+        "533-16",
+        "533-18"
+      ],
+      "street_name": "Charles Street",
+      "hail_address": "111-119 Charles Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:55:47.636Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "533-16",
+        "533-18",
+        "533-3"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "charles-st_121",
       "decision": "matched",
       "bldgid": "533-1",
@@ -4674,6 +5118,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "charles-st_71_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Charles Street",
+      "hail_address": "71 Charles Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -4954,6 +5413,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "clarendon-ave_15",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Clarendon Avenue",
+      "hail_address": "15 Clarendon Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "clifton-st_17-19",
       "decision": "matched",
       "bldgid": "52-42",
@@ -5114,6 +5588,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "columbus-ave_35",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Columbus Avenue",
+      "hail_address": "35+ Columbus Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "concord-ave_146",
       "decision": "matched",
       "bldgid": "219-5",
@@ -5161,6 +5650,52 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "concord-ave_21-23",
+      "decision": "matched",
+      "bldgid": "233-29",
+      "bldgids": [
+        "233-29",
+        "233-34"
+      ],
+      "street_name": "Concord Avenue",
+      "hail_address": "21-23 Concord Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:44:28.816Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "233-29",
+        "233-34"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "concord-ave_243-245",
+      "decision": "matched",
+      "bldgid": "189-7",
+      "bldgids": [
+        "189-7",
+        "189-9",
+        "189-5",
+        "189-8"
+      ],
+      "street_name": "Concord Avenue",
+      "hail_address": "243-245 Concord Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:43:58.201Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "189-5",
+        "189-7",
+        "189-8",
+        "189-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "concord-ave_298",
       "decision": "no_map_match",
       "bldgid": null,
@@ -5186,6 +5721,21 @@
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "concord-ave_430",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Concord Avenue",
+      "hail_address": "430 Concord Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -5266,6 +5816,27 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "concord-ln_42-46",
+      "decision": "matched",
+      "bldgid": "81-10",
+      "bldgids": [
+        "81-10",
+        "81-4"
+      ],
+      "street_name": "Concord Lane",
+      "hail_address": "42-46 Concord Lane",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:53:32.188Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "81-10",
+        "81-4"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "coolidge-ave_10",
       "decision": "no_map_match",
       "bldgid": null,
@@ -5294,6 +5865,25 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "coolidge-ave_30",
+      "decision": "matched",
+      "bldgid": "386-6",
+      "bldgids": [
+        "386-6"
+      ],
+      "street_name": "Coolidge Avenue",
+      "hail_address": "30 Coolidge Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:49:37.106Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "386-6"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "coolidge-ave_32-34",
@@ -5336,6 +5926,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "coolidge-ave_76",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Coolidge Avenue",
+      "hail_address": "76 Coolidge Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -5632,6 +6237,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "dickinson-st_36",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Dickinson Street",
+      "hail_address": "36 Dickinson Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:48:59.148Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "576-1"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "dodge-st_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -5645,6 +6267,27 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "donnell-st_10-14",
+      "decision": "matched",
+      "bldgid": "165-14",
+      "bldgids": [
+        "165-14",
+        "165-16"
+      ],
+      "street_name": "Donnell Street",
+      "hail_address": "10-14 Donnell Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:44:08.350Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "165-14",
+        "165-16"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "dover-st_7",
@@ -5672,6 +6315,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "dudley-st_36_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Dudley Street",
+      "hail_address": "36 Dudley Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -6008,21 +6666,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "elm-street-n_164",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Elm Street N",
-      "hail_address": "164 Elm Street N",
-      "note": "",
-      "reviewed_at": "2026-08-28T01:11:43.526Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "elm-st_115-117",
       "decision": "no_map_match",
       "bldgid": null,
@@ -6071,6 +6714,23 @@
         "456-5"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "elm-st_187",
+      "decision": "matched",
+      "bldgid": "385-54",
+      "bldgids": [
+        "385-54"
+      ],
+      "street_name": "Elm Street",
+      "hail_address": "187 Elm Street",
+      "note": "Historic address r185 resolves to an addressed footprint with no other accepted Hail association.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "elm-st_209_2",
@@ -6145,6 +6805,53 @@
       "original_match_reason": "Classification is Cross reference to another address",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "elm-street-n_164",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Elm Street N",
+      "hail_address": "164 Elm Street N",
+      "note": "",
+      "reviewed_at": "2026-08-28T01:11:43.526Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "elmer-st_29",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Elmer Street",
+      "hail_address": "29+ Elmer Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "elmwood-st_87",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Elmwood Street",
+      "hail_address": "87 Elmwood Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:41:45.771Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "25-1"
+      ],
       "selected_was_proposed": null
     },
     {
@@ -6240,21 +6947,21 @@
     {
       "building_id": "essex-st_52",
       "decision": "matched",
-      "bldgid": "551-3",
+      "bldgid": "551-2",
       "bldgids": [
-        "551-3"
+        "551-2"
       ],
       "street_name": "Essex Street",
       "hail_address": "52 Essex Street",
-      "note": "",
-      "reviewed_at": "2026-08-28T13:19:28.004Z",
+      "note": "Reviewer reassigned the Hail school record to footprint 551-2.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
       "original_match_stage": "5",
       "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
       "review_reason_category": "historical_address_or_alias",
       "original_candidate_bldgids": [
         "551-3"
       ],
-      "selected_was_proposed": true
+      "selected_was_proposed": false
     },
     {
       "building_id": "eustis-st_31",
@@ -6417,6 +7124,30 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "fawcett-st_170-180",
+      "decision": "matched",
+      "bldgid": "48-21",
+      "bldgids": [
+        "48-21",
+        "48-20",
+        "999-3774",
+        "48-17"
+      ],
+      "street_name": "Fawcett Street",
+      "hail_address": "170-180 Fawcett Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:55:32.986Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "48-16",
+        "48-20",
+        "48-21"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "fawcett-st_170r-180r",
@@ -6668,6 +7399,26 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "first-st_111-117",
+      "decision": "matched",
+      "bldgid": "566-1",
+      "bldgids": [
+        "566-1"
+      ],
+      "street_name": "First Street",
+      "hail_address": "111-117 First Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:51:08.275Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "547-6",
+        "566-1"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "first-st_136",
       "decision": "no_map_match",
       "bldgid": null,
@@ -6713,6 +7464,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "first-st_275",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "First Street",
+      "hail_address": "275+ First Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "first-st_52-120",
       "decision": "no_map_match",
       "bldgid": null,
@@ -6743,21 +7509,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "flagg-street-ct_4",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Flagg Street Court",
-      "hail_address": "4 Flagg Street Court",
-      "note": "Hail detail states that the building moved to another location.",
-      "reviewed_at": "2026-08-17T19:54:22.705Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "flagg-st_36",
       "decision": "no_map_match",
       "bldgid": null,
@@ -6779,6 +7530,21 @@
       "bldgids": [],
       "street_name": "Flagg Street",
       "hail_address": "44-46 Flagg Street",
+      "note": "Hail detail states that the building moved to another location.",
+      "reviewed_at": "2026-08-17T19:54:22.705Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "flagg-street-ct_4",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Flagg Street Court",
+      "hail_address": "4 Flagg Street Court",
       "note": "Hail detail states that the building moved to another location.",
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
@@ -7063,6 +7829,21 @@
       "reviewed_at": "2026-08-17T19:18:30.903Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "franklin-st_1853",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Franklin Street",
+      "hail_address": "1853 Franklin Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -7515,12 +8296,42 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "garden-st_175-225",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Garden Street",
+      "hail_address": "175-225 Garden Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "garden-st_25",
       "decision": "no_map_match",
       "bldgid": null,
       "bldgids": [],
       "street_name": "Garden Street",
       "hail_address": "25 Garden Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "garden-st_42_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Garden Street",
+      "hail_address": "42 Garden Street",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -7547,21 +8358,6 @@
         "181-4"
       ],
       "selected_was_proposed": true
-    },
-    {
-      "building_id": "garden-st_42_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Garden Street",
-      "hail_address": "42 Garden Street",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
     },
     {
       "building_id": "garden-st_58_2",
@@ -7610,6 +8406,51 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "gerry-s-landing-rd_10",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Gerry'S Landing Road",
+      "hail_address": "10 Gerry'S Landing Road",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "gerry-s-landing-rd_79_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Gerry'S Landing Road",
+      "hail_address": "79+ Gerry'S Landing Road",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "gerry-s-landing-rd_82",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Gerry'S Landing Road",
+      "hail_address": "82+ Gerry'S Landing Road",
+      "note": "Hail detail states that the building moved to another location.",
+      "reviewed_at": "2026-08-17T19:54:22.705Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -7679,36 +8520,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "gerry-s-landing-rd_10",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Gerry'S Landing Road",
-      "hail_address": "10 Gerry'S Landing Road",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "gerry-s-landing-rd_82",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Gerry'S Landing Road",
-      "hail_address": "82+ Gerry'S Landing Road",
-      "note": "Hail detail states that the building moved to another location.",
-      "reviewed_at": "2026-08-17T19:54:22.705Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "gibson-st_1",
       "decision": "no_map_match",
       "bldgid": null,
@@ -7767,6 +8578,76 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "gore-st_121-137",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Gore Street",
+      "hail_address": "121-137 Gore Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "gore-st_132r",
+      "decision": "matched",
+      "bldgid": "410-8",
+      "bldgids": [
+        "410-8"
+      ],
+      "street_name": "Gore Street",
+      "hail_address": "132r Gore Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:30:17.122Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "gore-st_134",
+      "decision": "matched",
+      "bldgid": "410-7",
+      "bldgids": [
+        "410-7"
+      ],
+      "street_name": "Gore Street",
+      "hail_address": "134 Gore Street",
+      "note": "Current address matches 134 Gore Street.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "410-7"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "gore-st_134r",
+      "decision": "matched",
+      "bldgid": "410-4",
+      "bldgids": [
+        "410-4"
+      ],
+      "street_name": "Gore Street",
+      "hail_address": "134r Gore Street",
+      "note": "Historic address Gore Street Place 1-3 resolves to 3 Gore Street Pl.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "410-7"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "gore-st_168",
@@ -8417,6 +9298,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "green-st_587-605",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Green Street",
+      "hail_address": "587-605 Green Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "green-st_75",
       "decision": "no_map_match",
       "bldgid": null,
@@ -8738,6 +9634,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "hampshire-st_223",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Hampshire Street",
+      "hail_address": "223 Hampshire Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:33:16.460Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "hampshire-st_232-238",
       "decision": "no_map_match",
       "bldgid": null,
@@ -8778,6 +9689,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "hampshire-st_36",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Hampshire Street",
+      "hail_address": "36 Hampshire Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:41:14.126Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -9113,6 +10039,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "harvard-st_163",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Harvard Street",
+      "hail_address": "163 Harvard Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:46:31.642Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "harvard-st_168r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -9439,6 +10380,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "haskell-st_64-82",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Haskell Street",
+      "hail_address": "64-82 Haskell Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "hastings-sq_1",
       "decision": "no_map_match",
       "bldgid": null,
@@ -9564,6 +10520,25 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "hayward-st_18",
+      "decision": "matched",
+      "bldgid": "677-1",
+      "bldgids": [
+        "677-1"
+      ],
+      "street_name": "Hayward Street",
+      "hail_address": "18 Hayward Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:44:07.549Z",
+      "original_match_stage": "6",
+      "original_match_reason": "Street-name pair is explicitly reserved for manual review",
+      "review_reason_category": "street_spelling_difference",
+      "original_candidate_bldgids": [
+        "629-16"
+      ],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "hayward-st_57",
       "decision": "no_map_match",
       "bldgid": null,
@@ -9657,6 +10632,27 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "holden-st_10-32",
+      "decision": "matched",
+      "bldgid": "272-3",
+      "bldgids": [
+        "272-3",
+        "251-13"
+      ],
+      "street_name": "Holden Street",
+      "hail_address": "10-32 Holden Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:49:19.025Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "251-13",
+        "272-3"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "holden-st_51",
@@ -10085,6 +11081,40 @@
       "selected_was_proposed": false
     },
     {
+      "building_id": "hudson-st_50",
+      "decision": "matched",
+      "bldgid": "212-4",
+      "bldgids": [
+        "212-4"
+      ],
+      "street_name": "Hudson Street",
+      "hail_address": "50 Hudson Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:58:52.980Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "hudson-st_54",
+      "decision": "matched",
+      "bldgid": "212-20",
+      "bldgids": [
+        "212-20"
+      ],
+      "street_name": "Hudson Street",
+      "hail_address": "54 Hudson Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:53:17.415Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "humboldt-st_14",
       "decision": "no_map_match",
       "bldgid": null,
@@ -10211,6 +11241,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "hurley-st_258-272",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Hurley Street",
+      "hail_address": "258-272 Hurley Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "hurley-st_274-278",
       "decision": "matched",
       "bldgid": "530-4",
@@ -10231,6 +11276,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "hurley-st_347",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Hurley Street",
+      "hail_address": "347 Hurley Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "hurley-st_353",
       "decision": "no_map_match",
       "bldgid": null,
@@ -10241,6 +11301,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "hurley-st_360",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Hurley Street",
+      "hail_address": "360 Hurley Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -10274,6 +11349,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "huron-ave_124-126",
+      "decision": "matched",
+      "bldgid": "186-5",
+      "bldgids": [
+        "186-5"
+      ],
+      "street_name": "Huron Avenue",
+      "hail_address": "124-126 Huron Avenue",
+      "note": "Historic address 120-122 resolves to an addressed footprint with no other accepted Hail association.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "huron-ave_161-171",
@@ -10443,6 +11535,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "huron-ave_575",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Huron Avenue",
+      "hail_address": "575+ Huron Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "huron-ave_60",
       "decision": "no_map_match",
       "bldgid": null,
@@ -10468,6 +11575,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "huron-ave_641_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Huron Avenue",
+      "hail_address": "641 Huron Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -10543,6 +11665,21 @@
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "huron-ave_780",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Huron Avenue",
+      "hail_address": "780+ Huron Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -11016,6 +12153,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "jefferson-st_32_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Jefferson Street",
+      "hail_address": "32 Jefferson Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "jefferson-st_34_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -11046,6 +12198,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "kelley-st_12-14",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Kelley Street",
+      "hail_address": "12-14 Kelley Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "kelley-st_1_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -11061,16 +12228,16 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "kelley-st_12-14",
+      "building_id": "kelley-st_51",
       "decision": "no_map_match",
       "bldgid": null,
       "bldgids": [],
       "street_name": "Kelley Street",
-      "hail_address": "12-14 Kelley Street",
+      "hail_address": "51 Kelley Street",
       "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "reviewed_at": "2026-08-29T01:54:58.709Z",
       "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
+      "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -11136,6 +12303,21 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
+    },
+    {
+      "building_id": "kennedy-st_150_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Kennedy Street",
+      "hail_address": "150 Kennedy Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "kennedy-st_2-8",
@@ -11477,6 +12659,53 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "land-blvd_12",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Land Boulevard",
+      "hail_address": "12+ Land Boulevard",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "land-blvd_2",
+      "decision": "matched",
+      "bldgid": "512-1",
+      "bldgids": [
+        "512-1"
+      ],
+      "street_name": "Land Boulevard",
+      "hail_address": "2 Land Boulevard",
+      "note": "Historic address 6-8 resolves to an addressed footprint with no other accepted Hail association.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "land-blvd_55_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Land Boulevard",
+      "hail_address": "55 Land Boulevard",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "land-blvd_85",
       "decision": "no_map_match",
       "bldgid": null,
@@ -11547,6 +12776,36 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "larch-rd_115_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Larch Road",
+      "hail_address": "115 Larch Road",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "larch-rd_185-205",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Larch Road",
+      "hail_address": "185-205 Larch Road",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -11691,6 +12950,21 @@
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "lee-st_46_3",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Lee Street",
+      "hail_address": "46 Lee Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -11987,6 +13261,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "lopez-st_32",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Lopez Street",
+      "hail_address": "32+ Lopez Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "lowell-st_10",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12082,6 +13371,23 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "magazine-st_123",
+      "decision": "matched",
+      "bldgid": "706-8",
+      "bldgids": [
+        "706-8"
+      ],
+      "street_name": "Magazine Street",
+      "hail_address": "123 Magazine Street",
+      "note": "Historic address r125 resolves to an addressed footprint with no other accepted Hail association.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "magazine-st_26",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12127,6 +13433,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "magazine-st_70",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Magazine Street",
+      "hail_address": "70+ Magazine Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "magazine-st_94-98",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12167,6 +13488,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "main-st_0_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Main Street",
+      "hail_address": "0 Main Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -12252,6 +13588,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "main-st_495",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Main Street",
+      "hail_address": "495+ Main Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "main-st_538",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12280,6 +13631,26 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "main-st_600-620",
+      "decision": "matched",
+      "bldgid": "658-3",
+      "bldgids": [
+        "658-3"
+      ],
+      "street_name": "Main Street",
+      "hail_address": "600-620 Main Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:45:22.560Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "658-3",
+        "661-3"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "main-st_740-748",
@@ -12360,6 +13731,21 @@
         "365-37"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "maple-ave_35-43",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Maple Avenue",
+      "hail_address": "35-43 Maple Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "marcella-st_16-22",
@@ -12575,6 +13961,25 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "mason-st_3_3",
+      "decision": "matched",
+      "bldgid": "288-14",
+      "bldgids": [
+        "288-14"
+      ],
+      "street_name": "Mason Street",
+      "hail_address": "3 Mason Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T20:12:57.562Z",
+      "original_match_stage": "6",
+      "original_match_reason": "Street-name pair is explicitly reserved for manual review",
+      "review_reason_category": "street_spelling_difference",
+      "original_candidate_bldgids": [
+        "205-9"
+      ],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "massachusetts-ave_1052",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12622,6 +14027,41 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "massachusetts-ave_1251-1339",
+      "decision": "matched",
+      "bldgid": "318-32",
+      "bldgids": [
+        "318-32",
+        "318-36"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1251-1339 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Wigglesworth Hall complex, 6 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1285",
+      "decision": "matched",
+      "bldgid": "318-24",
+      "bldgids": [
+        "318-24"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1285 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Widener Library, 31 Harvard Yard in the Cambridge Address Points.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "massachusetts-ave_1301",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12635,6 +14075,40 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1321",
+      "decision": "matched",
+      "bldgid": "318-29",
+      "bldgids": [
+        "318-29"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1321 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:37:38.991Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1335",
+      "decision": "matched",
+      "bldgid": "318-26",
+      "bldgids": [
+        "318-26"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1335 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:45:23.507Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "massachusetts-ave_134-142",
@@ -12682,6 +14156,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "massachusetts-ave_1405_4",
+      "decision": "matched",
+      "bldgid": "318-25",
+      "bldgids": [
+        "318-25"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1405 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Lehman Hall, 8 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "massachusetts-ave_1424r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12697,20 +14188,73 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "massachusetts-ave_1445_2",
+      "building_id": "massachusetts-ave_1425r",
+      "decision": "matched",
+      "bldgid": "318-22",
+      "bldgids": [
+        "318-22"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1425r Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Weld Hall, 3 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1435_2",
       "decision": "matched",
       "bldgid": "318-20",
       "bldgids": [
         "318-20"
       ],
       "street_name": "Massachusetts Avenue",
-      "hail_address": "1445 Massachusetts Avenue",
-      "note": "",
-      "reviewed_at": "2026-08-15T18:51:35.058Z",
+      "hail_address": "1435 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Straus Hall, 10 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1435r",
+      "decision": "matched",
+      "bldgid": "318-21",
+      "bldgids": [
+        "318-21"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1435r Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Matthews Hall, 9 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1445_2",
+      "decision": "matched",
+      "bldgid": "318-18",
+      "bldgids": [
+        "318-18"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1445 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Massachusetts Hall, 11 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "8",
+      "original_match_reason": "Reviewer selected these footprints",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "318-20"
+      ],
       "selected_was_proposed": false
     },
     {
@@ -12727,6 +14271,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1451r",
+      "decision": "matched",
+      "bldgid": "318-16",
+      "bldgids": [
+        "318-16"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1451r Massachusetts Avenue",
+      "note": "Corrected scraper razed flag; Harvard Yard name crosswalk: University Hall, 1 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "massachusetts-ave_1455_2",
@@ -12759,6 +14320,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1465",
+      "decision": "matched",
+      "bldgid": "318-11",
+      "bldgids": [
+        "318-11"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1465 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Lionel Hall, 14 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "massachusetts-ave_1465r",
@@ -12795,6 +14373,23 @@
       "selected_was_proposed": false
     },
     {
+      "building_id": "massachusetts-ave_1485",
+      "decision": "matched",
+      "bldgid": "318-5",
+      "bldgids": [
+        "318-5"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1485 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Mower Hall, 16 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "massachusetts-ave_1485r",
       "decision": "matched",
       "bldgid": "318-7",
@@ -12805,6 +14400,23 @@
       "hail_address": "1485r Massachusetts Avenue",
       "note": "",
       "reviewed_at": "2026-08-17T19:18:12.486Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1495_2",
+      "decision": "matched",
+      "bldgid": "318-4",
+      "bldgids": [
+        "318-4"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1495 Massachusetts Avenue",
+      "note": "Harvard Yard name crosswalk: Phillips Brooks House, 18 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
@@ -12854,6 +14466,29 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1560-1570",
+      "decision": "matched",
+      "bldgid": "252-12",
+      "bldgids": [
+        "252-12",
+        "252-35",
+        "252-33"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1560-1570 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:43:31.751Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "252-12",
+        "252-33",
+        "252-35"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "massachusetts-ave_1569",
@@ -12914,6 +14549,35 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1676-1688_2",
+      "decision": "matched",
+      "bldgid": "196-12",
+      "bldgids": [
+        "196-12",
+        "196-1",
+        "196-6",
+        "196-17",
+        "196-18",
+        "196-19"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1676-1688 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:57:24.337Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "196-1",
+        "196-12",
+        "196-17",
+        "196-18",
+        "196-19",
+        "196-6"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "massachusetts-ave_1725-1735",
@@ -13622,6 +15286,23 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "massachusetts-ave_836",
+      "decision": "matched",
+      "bldgid": "539-20",
+      "bldgids": [
+        "539-20"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "836 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:52:56.917Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "may-st_23",
       "decision": "no_map_match",
       "bldgid": null,
@@ -13665,6 +15346,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "meacham-rd_30",
+      "decision": "matched",
+      "bldgid": "999-4659",
+      "bldgids": [
+        "999-4659"
+      ],
+      "street_name": "Meacham Road",
+      "hail_address": "30 Meacham Road",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:40:32.989Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "meadow-way_4",
@@ -13847,21 +15545,6 @@
       "selected_was_proposed": true
     },
     {
-      "building_id": "memorial-dr_1_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Memorial Drive",
-      "hail_address": "1 Memorial Drive",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "memorial-dr_104",
       "decision": "no_map_match",
       "bldgid": null,
@@ -13890,6 +15573,42 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "memorial-dr_1_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Memorial Drive",
+      "hail_address": "1 Memorial Drive",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "memorial-dr_405-407",
+      "decision": "matched",
+      "bldgid": "742-2",
+      "bldgids": [
+        "742-2",
+        "742-7"
+      ],
+      "street_name": "Memorial Drive",
+      "hail_address": "405-407 Memorial Drive",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:42:01.751Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "742-2",
+        "742-7"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "memorial-dr_540r",
@@ -13982,6 +15701,29 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "memorial-dr_808-812",
+      "decision": "matched",
+      "bldgid": "681-6",
+      "bldgids": [
+        "681-6",
+        "681-3",
+        "681-2"
+      ],
+      "street_name": "Memorial Drive",
+      "hail_address": "808-812 Memorial Drive",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:42:27.602Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "681-2",
+        "681-3",
+        "681-6"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "memorial-dr_850",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14027,6 +15769,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "memorial-dr_949",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Memorial Drive",
+      "hail_address": "949 Memorial Drive",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "memorial-dr_955",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14059,6 +15816,40 @@
         "437-10"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "memorial-dr_972-990",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Memorial Drive",
+      "hail_address": "972-990 Memorial Drive",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:47:51.622Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "356-22",
+        "356-33",
+        "356-38"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "memorial-dr_972_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Memorial Drive",
+      "hail_address": "972 Memorial Drive",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "memorial-dr_973",
@@ -14106,6 +15897,44 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "merriam-st_14",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Merriam Street",
+      "hail_address": "14 Merriam Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:46:03.757Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "720-4"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "michael-way_1-3",
+      "decision": "matched",
+      "bldgid": "500-10",
+      "bldgids": [
+        "500-10",
+        "500-12"
+      ],
+      "street_name": "Michael Way",
+      "hail_address": "1-3 Michael Way",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:43:16.886Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "500-10",
+        "500-12"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "mill-st_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14151,6 +15980,27 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "montgomery-st_57-59",
+      "decision": "matched",
+      "bldgid": "49-19",
+      "bldgids": [
+        "49-19",
+        "49-17"
+      ],
+      "street_name": "Montgomery Street",
+      "hail_address": "57-59 Montgomery Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:44:53.190Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "49-17",
+        "49-19"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "montgomery-st_85",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14193,6 +16043,23 @@
       "original_match_reason": "Classification is Cross reference to another address",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "moulton-st_18",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Moulton Street",
+      "hail_address": "18 Moulton Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:56:42.120Z",
+      "original_match_stage": "6",
+      "original_match_reason": "Street-name pair is explicitly reserved for manual review",
+      "review_reason_category": "street_spelling_difference",
+      "original_candidate_bldgids": [
+        "72-1"
+      ],
       "selected_was_proposed": null
     },
     {
@@ -14241,6 +16108,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "mount-auburn-st_117",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Mount Auburn Street",
+      "hail_address": "117 Mount Auburn Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "mount-auburn-st_11_2",
       "decision": "matched",
       "bldgid": "439-15",
@@ -14259,21 +16141,6 @@
         "439-15"
       ],
       "selected_was_proposed": true
-    },
-    {
-      "building_id": "mount-auburn-st_117",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Mount Auburn Street",
-      "hail_address": "117 Mount Auburn Street",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
     },
     {
       "building_id": "mount-auburn-st_122",
@@ -14453,6 +16320,26 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "mount-auburn-st_30r",
+      "decision": "matched",
+      "bldgid": "457-6",
+      "bldgids": [
+        "457-6"
+      ],
+      "street_name": "Mount Auburn Street",
+      "hail_address": "30r Mount Auburn Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:44:18.016Z",
+      "original_match_stage": "6",
+      "original_match_reason": "Explicit confirmed street-name alias has multiple or complex footprint candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "457-1",
+        "457-6"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "mount-auburn-st_36",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14596,6 +16483,40 @@
       "hail_address": "580 Mount Auburn Street",
       "note": "",
       "reviewed_at": "2026-08-17T20:03:46.845Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "mount-auburn-st_65r_2",
+      "decision": "matched",
+      "bldgid": "389-2",
+      "bldgids": [
+        "389-2"
+      ],
+      "street_name": "Mount Auburn Street",
+      "hail_address": "65r Mount Auburn Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:57:48.302Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "389-13"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "mount-auburn-st_711",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Mount Auburn Street",
+      "hail_address": "711+ Mount Auburn Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
@@ -14847,6 +16768,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "norfolk-st_125_2",
+      "decision": "matched",
+      "bldgid": "551-3",
+      "bldgids": [
+        "551-3"
+      ],
+      "street_name": "Norfolk Street",
+      "hail_address": "125 Norfolk Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:58:34.808Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "norfolk-st_135r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14922,6 +16860,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "o-brien-hwy_0_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "O'Brien Highway",
+      "hail_address": "0 O'Brien Highway",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -15391,6 +17344,26 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "oxford-st_9-15",
+      "decision": "matched",
+      "bldgid": "266-16",
+      "bldgids": [
+        "266-16"
+      ],
+      "street_name": "Oxford Street",
+      "hail_address": "9-15 Oxford Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:54:24.406Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "266-12",
+        "266-16"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "oxford-st_90-92",
       "decision": "no_map_match",
       "bldgid": null,
@@ -15404,6 +17377,27 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "pacific-st_115-117",
+      "decision": "matched",
+      "bldgid": "665-15",
+      "bldgids": [
+        "665-15",
+        "665-16"
+      ],
+      "street_name": "Pacific Street",
+      "hail_address": "115-117 Pacific Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:44:39.197Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "665-15",
+        "665-16"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "palmer-st_8-10",
@@ -15722,6 +17716,23 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "pemberton-st_191",
+      "decision": "matched",
+      "bldgid": "999-2590",
+      "bldgids": [
+        "999-2590"
+      ],
+      "street_name": "Pemberton Street",
+      "hail_address": "191 Pemberton Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:48:53.554Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "pemberton-st_203",
       "decision": "matched",
       "bldgid": "90-12",
@@ -15866,6 +17877,36 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "pine-st_24",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Pine Street",
+      "hail_address": "24 Pine Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "pine-st_35",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Pine Street",
+      "hail_address": "35 Pine Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -16847,6 +18888,57 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "quincy-st_13",
+      "decision": "matched",
+      "bldgid": "318-30",
+      "bldgids": [
+        "318-30"
+      ],
+      "street_name": "Quincy Street",
+      "hail_address": "13 Quincy Street",
+      "note": "Harvard Yard name crosswalk: Houghton Library, 29 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "quincy-st_15",
+      "decision": "matched",
+      "bldgid": "318-8",
+      "bldgids": [
+        "318-8"
+      ],
+      "street_name": "Quincy Street",
+      "hail_address": "15 Quincy Street",
+      "note": "Harvard Yard name crosswalk: 318-8 is the mapped footprint at Pusey Library's location.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "quincy-st_25_2",
+      "decision": "matched",
+      "bldgid": "318-23",
+      "bldgids": [
+        "318-23"
+      ],
+      "street_name": "Quincy Street",
+      "hail_address": "25 Quincy Street",
+      "note": "Harvard Yard name crosswalk: Emerson Hall, 19 Quincy Street.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "quincy-st_26r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -16860,6 +18952,40 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "quincy-st_31_2",
+      "decision": "matched",
+      "bldgid": "318-17",
+      "bldgids": [
+        "318-17"
+      ],
+      "street_name": "Quincy Street",
+      "hail_address": "31 Quincy Street",
+      "note": "Harvard Yard name crosswalk: Sever Hall, 25 Harvard Yard.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "quincy-st_37_2",
+      "decision": "matched",
+      "bldgid": "318-15",
+      "bldgids": [
+        "318-15"
+      ],
+      "street_name": "Quincy Street",
+      "hail_address": "37 Quincy Street",
+      "note": "Harvard Yard name crosswalk: Robinson Hall, 35 Quincy Street.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "quincy-st_39_2",
@@ -16887,6 +19013,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "raymond-st_120-140",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Raymond Street",
+      "hail_address": "120-140 Raymond Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -17227,6 +19368,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "rindge-ave_121",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Rindge Avenue",
+      "hail_address": "121 Rindge Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:31:53.581Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "rindge-ave_170",
       "decision": "no_map_match",
       "bldgid": null,
@@ -17240,6 +19396,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "rindge-ave_207",
+      "decision": "matched",
+      "bldgid": "49-57",
+      "bldgids": [
+        "49-57"
+      ],
+      "street_name": "Rindge Avenue",
+      "hail_address": "207 Rindge Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:38:58.666Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "rindge-ave_246",
@@ -17282,6 +19455,21 @@
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "rindge-ave_347",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Rindge Avenue",
+      "hail_address": "347 Rindge Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -17493,6 +19681,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "river-st_345",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "River Street",
+      "hail_address": "345 River Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "river-st_351",
       "decision": "no_map_match",
       "bldgid": null,
@@ -17551,6 +19754,25 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "riverside-rd_0",
+      "decision": "matched",
+      "bldgid": "999-5341",
+      "bldgids": [
+        "999-5341"
+      ],
+      "street_name": "Riverside Road",
+      "hail_address": "0 Riverside Road",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:43:07.293Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "718-6"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "riverview-ave_3",
@@ -17711,6 +19933,26 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "russell-st_48r",
+      "decision": "matched",
+      "bldgid": "61-7",
+      "bldgids": [
+        "61-7"
+      ],
+      "street_name": "Russell Street",
+      "hail_address": "48r Russell Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:44:59.602Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "61-4",
+        "61-7"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "russell-st_5r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -17781,6 +20023,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "sacramento-st_21_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Sacramento Street",
+      "hail_address": "21 Sacramento Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "sacramento-st_32_3",
       "decision": "no_map_match",
       "bldgid": null,
@@ -17791,6 +20048,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "sacramento-st_33_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Sacramento Street",
+      "hail_address": "33 Sacramento Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -17870,6 +20142,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "saint-mary-rd_18",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Saint Mary Road",
+      "hail_address": "18+ Saint Mary Road",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -18196,6 +20483,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "sciarappa-st_58",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Sciarappa Street",
+      "hail_address": "58 Sciarappa Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "sciarappa-st_76",
       "decision": "no_map_match",
       "bldgid": null,
@@ -18340,6 +20642,25 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "second-st_79",
+      "decision": "matched",
+      "bldgid": "525-3",
+      "bldgids": [
+        "525-3"
+      ],
+      "street_name": "Second Street",
+      "hail_address": "79 Second Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:52:54.589Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "525-3"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "second-st_96",
       "decision": "no_map_match",
       "bldgid": null,
@@ -18353,6 +20674,26 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "sellers-st_15-17",
+      "decision": "matched",
+      "bldgid": "539-21",
+      "bldgids": [
+        "539-21"
+      ],
+      "street_name": "Sellers Street",
+      "hail_address": "15-17 Sellers Street",
+      "note": "The Hail record applies only to the 17 Sellers Street footprint.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "539-20",
+        "539-21"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "seventh-st_27",
@@ -18402,6 +20743,21 @@
         "425-13"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "seventh-st_60",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Seventh Street",
+      "hail_address": "60 Seventh Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:35:46.734Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "seventh-st_86",
@@ -18528,6 +20884,25 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "shepard-st_55r",
+      "decision": "matched",
+      "bldgid": "206-14",
+      "bldgids": [
+        "206-14"
+      ],
+      "street_name": "Shepard Street",
+      "hail_address": "55r Shepard Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:38:59.896Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "206-8"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "shepard-st_59",
@@ -18676,6 +21051,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "sidney-st_225",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Sidney Street",
+      "hail_address": "225+ Sidney Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "sidney-st_295",
       "decision": "no_map_match",
       "bldgid": null,
@@ -18686,6 +21076,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "sidney-st_35-85",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Sidney Street",
+      "hail_address": "35-85 Sidney Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -18858,6 +21263,26 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "smith-pl_142",
+      "decision": "matched",
+      "bldgid": "48-21",
+      "bldgids": [
+        "48-21"
+      ],
+      "street_name": "Smith Place",
+      "hail_address": "142 Smith Place",
+      "note": "",
+      "reviewed_at": "2026-08-28T18:49:52.239Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "48-16",
+        "48-21"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "smith-pl_36r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -18873,6 +21298,27 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "smith-pl_53-57",
+      "decision": "matched",
+      "bldgid": "46-27",
+      "bldgids": [
+        "46-27",
+        "46-30"
+      ],
+      "street_name": "Smith Place",
+      "hail_address": "53-57 Smith Place",
+      "note": "",
+      "reviewed_at": "2026-08-28T18:50:13.457Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "46-27",
+        "46-30"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "south-normandy-ave_55",
       "decision": "no_map_match",
       "bldgid": null,
@@ -18886,6 +21332,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "sparks-st_13-15",
+      "decision": "matched",
+      "bldgid": "313-25",
+      "bldgids": [
+        "313-25"
+      ],
+      "street_name": "Sparks Street",
+      "hail_address": "13-15 Sparks Street",
+      "note": "",
+      "reviewed_at": "2026-08-29T01:59:23.395Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "sparks-st_27",
@@ -19208,6 +21671,25 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "spring-st_171",
+      "decision": "matched",
+      "bldgid": "474-6",
+      "bldgids": [
+        "474-6"
+      ],
+      "street_name": "Spring Street",
+      "hail_address": "171 Spring Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:46:20.603Z",
+      "original_match_stage": "5",
+      "original_match_reason": "Historical address or street alias produces current-address candidate(s)",
+      "review_reason_category": "historical_address_or_alias",
+      "original_candidate_bldgids": [
+        "474-6"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "spring-st_28-32",
       "decision": "no_map_match",
       "bldgid": null,
@@ -19491,6 +21973,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "sumner-rd_18_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Sumner Road",
+      "hail_address": "18 Sumner Road",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -19963,6 +22460,27 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "tremont-st_25-27",
+      "decision": "matched",
+      "bldgid": "462-18",
+      "bldgids": [
+        "462-18",
+        "462-17"
+      ],
+      "street_name": "Tremont Street",
+      "hail_address": "25-27 Tremont Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:46:33.004Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "462-17",
+        "462-18"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "tremont-st_29",
       "decision": "matched",
       "bldgid": "462-13",
@@ -20324,6 +22842,27 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "vassal-ln_30-32",
+      "decision": "matched",
+      "bldgid": "215-4",
+      "bldgids": [
+        "215-4",
+        "215-3"
+      ],
+      "street_name": "Vassal Lane",
+      "hail_address": "30-32 Vassal Lane",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:43:40.954Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "215-3",
+        "215-4"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "vassal-ln_69_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -20337,6 +22876,65 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "vassar-st_250",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Vassar Street",
+      "hail_address": "250+ Vassar Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "vassar-st_278-290",
+      "decision": "matched",
+      "bldgid": "747-3",
+      "bldgids": [
+        "747-3",
+        "747-2",
+        "747-4"
+      ],
+      "street_name": "Vassar Street",
+      "hail_address": "278-290 Vassar Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:58:04.281Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "747-2",
+        "747-3",
+        "747-4"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "vassar-st_317-345",
+      "decision": "matched",
+      "bldgid": "746-4",
+      "bldgids": [
+        "746-4",
+        "746-2"
+      ],
+      "street_name": "Vassar Street",
+      "hail_address": "317-345 Vassar Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:54:08.955Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "746-2",
+        "746-4"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "vassar-st_88",
@@ -20509,6 +23107,24 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "walden-st_361-365",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Walden Street",
+      "hail_address": "361-365 Walden Street",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:45:53.440Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "163-12",
+        "163-29"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "walden-st_373",
       "decision": "no_map_match",
       "bldgid": null,
@@ -20519,6 +23135,21 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "walden-st_55",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Walden Street",
+      "hail_address": "55+ Walden Street",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -20870,6 +23501,44 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "webster-ave_310-330",
+      "decision": "matched",
+      "bldgid": "352-2",
+      "bldgids": [
+        "352-2",
+        "352-1"
+      ],
+      "street_name": "Webster Avenue",
+      "hail_address": "310-330 Webster Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T17:53:15.710Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "352-1",
+        "352-2"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "webster-ave_333_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Webster Avenue",
+      "hail_address": "333 Webster Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-28T21:42:13.651Z",
+      "original_match_stage": "6",
+      "original_match_reason": "Street-name pair is explicitly reserved for manual review",
+      "review_reason_category": "street_spelling_difference",
+      "original_candidate_bldgids": [
+        "609-13"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "webster-ave_67-73",
       "decision": "no_map_match",
       "bldgid": null,
@@ -20966,6 +23635,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "western-ave_29_3",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Western Avenue",
+      "hail_address": "29 Western Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "western-ave_316r-318r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -21056,19 +23740,25 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "white-street-pl_6",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "White Street Place",
-      "hail_address": "6 White Street Place",
+      "building_id": "white-st_1-55",
+      "decision": "matched",
+      "bldgid": "99-1",
+      "bldgids": [
+        "99-1",
+        "99-4"
+      ],
+      "street_name": "White Street",
+      "hail_address": "1-55 White Street",
       "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
+      "reviewed_at": "2026-08-28T17:57:38.687Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "99-1",
+        "99-4"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "white-st_32",
@@ -21088,6 +23778,21 @@
       "selected_was_proposed": false
     },
     {
+      "building_id": "white-street-pl_6",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "White Street Place",
+      "hail_address": "6 White Street Place",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "whittemore-ave_146-148",
       "decision": "no_map_match",
       "bldgid": null,
@@ -21098,6 +23803,21 @@
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "whittemore-ave_15",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Whittemore Avenue",
+      "hail_address": "15+ Whittemore Avenue",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -21133,21 +23853,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "willard-street-ct_4",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Willard Street Court",
-      "hail_address": "4 Willard Street Court",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "willard-st_19",
       "decision": "matched",
       "bldgid": "298-19",
@@ -21173,6 +23878,21 @@
       "bldgids": [],
       "street_name": "Willard Street",
       "hail_address": "3 Willard Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "willard-street-ct_4",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Willard Street Court",
+      "hail_address": "4 Willard Street Court",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -21704,6 +24424,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "york-st_52-54",
+      "decision": "matched",
+      "bldgid": "499-4",
+      "bldgids": [
+        "499-4"
+      ],
+      "street_name": "York Street",
+      "hail_address": "52-54 York Street",
+      "note": "Historic address 28-30 resolves to an addressed footprint with no other accepted Hail association.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     }
   ]
 }
