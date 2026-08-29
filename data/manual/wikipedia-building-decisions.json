@@ -4595,16 +4595,16 @@
     {
       "wikipedia_page_id": 21333050,
       "decision": "approved",
-      "bldgid": "438-8",
+      "bldgid": "438-1",
       "wikipedia_title": "Quincy House (Harvard College)",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Quincy_House_(Harvard_College)",
       "latitude": 42.3705,
       "longitude": -71.1171,
-      "selected_latitude": 42.3705,
-      "selected_longitude": -71.1171,
-      "selection_method": "generated_candidate",
-      "review_note": "",
-      "reviewed_at": "2026-08-15T14:36:45.113Z"
+      "selected_latitude": 42.370706393811936,
+      "selected_longitude": -71.11671989012436,
+      "selection_method": "manual_marker",
+      "review_note": "Moved from the separate Qube/library footprint to the principal New Quincy residence hall footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 21396514,

@@ -2,6 +2,149 @@
   "version": 2,
   "overrides": [
     {
+      "building_id": "plympton-st_58",
+      "decision": "matched",
+      "bldgid": "438-1",
+      "bldgids": ["438-1"],
+      "street_name": "Plympton Street",
+      "hail_address": "58 Plympton Street",
+      "note": "New Quincy residence hall. Restrict the seven-story dormitory record to the main New Quincy footprint rather than the separate Qube/library footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": ["438-1", "438-8"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "plympton-st_70",
+      "decision": "matched",
+      "bldgid": "438-6",
+      "bldgids": ["438-6"],
+      "street_name": "Plympton Street",
+      "hail_address": "70 Plympton Street",
+      "note": "Mather Hall, now Stone Hall in Quincy House. Harvard dates Stone Hall to 1930 and the current Cambridge address point is 60 Plympton Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "de-wolfe-st_36",
+      "decision": "matched",
+      "bldgid": "498-2",
+      "bldgids": [
+        "498-2",
+        "498-3"
+      ],
+      "street_name": "De Wolfe Street",
+      "hail_address": "36 De Wolfe Street",
+      "note": "Hail describes the two Leverett towers. Harvard currently identifies Towers F and G at 40 DeWolfe Street; the two high-rise footprints are 498-2 and 498-3.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "memorial-dr_967",
+      "decision": "matched",
+      "bldgid": "437-2",
+      "bldgids": [
+        "437-2",
+        "437-13"
+      ],
+      "street_name": "Memorial Drive",
+      "hail_address": "967 Memorial Drive",
+      "note": "Eliot House spans the 967 Memorial Drive wing and the principal 101 Dunster Street footprint; Harvard treats them as one residential complex constructed in 1931.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "437-2"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "plympton-st_28_2",
+      "decision": "matched",
+      "bldgid": "401-11",
+      "bldgids": [
+        "401-11"
+      ],
+      "street_name": "Plympton Street",
+      "hail_address": "28 Plympton Street",
+      "note": "New Russell Hall in Adams House. Harvard's current property record identifies Russell at 26 Plympton Street and constructed in 1931.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "linnaean-st_52",
+      "decision": "matched",
+      "bldgid": "206-2",
+      "bldgids": [
+        "206-2"
+      ],
+      "street_name": "Linnaean Street",
+      "hail_address": "52 Linnaean Street",
+      "note": "Ada Louise Comstock Hall. Hail supplies the alternate 130 Walker Street address, which Harvard identifies as Comstock's current address.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "206-1"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "linnaean-st_60",
+      "decision": "matched",
+      "bldgid": "206-4",
+      "bldgids": [
+        "206-4"
+      ],
+      "street_name": "Linnaean Street",
+      "hail_address": "60 Linnaean Street",
+      "note": "Daniel Henry Holmes Hall. Harvard's current property record places Holmes at 58 Linnaean Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "206-8"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "walker-st_91_2",
+      "decision": "matched",
+      "bldgid": "195-9",
+      "bldgids": [
+        "195-9",
+        "195-17"
+      ],
+      "street_name": "Walker Street",
+      "hail_address": "91 Walker Street",
+      "note": "Hail explicitly describes 91 and 95 Walker Street as the two Jordan House dormitories; these are today's Jordan South and Jordan North.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "195-9"
+      ],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "agassiz-st_32",
       "decision": "matched",
       "bldgid": "152-2",

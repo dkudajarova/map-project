@@ -926,6 +926,26 @@ def hail_year_overrides_assessor_placeholder(
         ("206-11", 1910),  # Currier House: Tuchman Hall, 1968
         ("206-13", 1910),  # Currier House common/core footprint, 1966-1970
         ("206-15", 1910),  # Currier House: Daniels Hall, 1965
+        ("206-2", 1910),   # Pforzheimer House: Comstock Hall, 1957-1958
+        ("206-4", 1910),   # Pforzheimer House: Holmes Hall, 1951-1952
+        ("395-5", 1903),   # Adams House: Apthorp House, constructed 1760
+        ("401-11", 1920),  # Adams House: Russell Hall, constructed 1931
+        ("513-1", 1915),   # Dunster House, constructed 1929-1930
+        ("513-2", 1915),   # Dunster House connected footprint
+        ("437-2", 1920),   # Eliot House Memorial Drive wing, constructed 1930-1931
+        ("437-13", 1920),  # Eliot House principal Dunster Street footprint
+        ("437-1", 1920),   # Kirkland House: Smith Hall, constructed 1913-1914
+        ("437-3", 1920),   # Kirkland House: Bryan Hall, constructed 1930-1933
+        ("437-9", 1920),   # Kirkland House: Hicks House, constructed 1760-1762
+        ("498-2", 1965),   # Leverett House: Tower F/G, completed 1958-1960
+        ("498-3", 1965),   # Leverett House: Tower F/G, completed 1958-1960
+        ("424-3", 1900),   # Lowell House, constructed 1929-1930
+        ("438-1", 1950),   # Quincy House: New Quincy, constructed 1958-1959
+        ("438-6", 1950),   # Quincy House: Stone Hall, constructed 1930
+        ("438-8", 1950),   # Quincy House: Qube/library, constructed 1958
+        ("437-5", 1920),   # Winthrop House: Standish Hall, constructed 1913-1916
+        ("437-10", 1920),  # Winthrop House: Gore Hall, constructed 1913-1916
+        ("437-7", 1920),   # Winthrop House: Blyth House, constructed 1899
     }
     if (bldgid, assessor_year) in residential_complex_placeholders:
         return True

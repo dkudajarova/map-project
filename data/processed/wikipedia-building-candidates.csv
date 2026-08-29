@@ -367,7 +367,7 @@ wikipedia_page_id,wikipedia_title,wikipedia_url,latitude,longitude,match_method,
 19837711,River Street Bridge (Charles River),https://en.wikipedia.org/wiki/River_Street_Bridge_(Charles_River),42.36123,-71.1167,none,,0,,,unmatched,rejected,Preserved human rejected decision.,,42.36123,-71.1167
 19837806,Western Avenue Bridge,https://en.wikipedia.org/wiki/Western_Avenue_Bridge,42.36422,-71.1169,none,,0,,,unmatched,rejected,Preserved human rejected decision.,,42.36422,-71.1169
 19841643,John W. Weeks Bridge,https://en.wikipedia.org/wiki/John_W._Weeks_Bridge,42.36853,-71.11807,none,,0,,,unmatched,rejected,Preserved human rejected decision.,,42.36853,-71.11807
-21333050,Quincy House (Harvard College),https://en.wikipedia.org/wiki/Quincy_House_(Harvard_College),42.3705,-71.1171,nearest,8.29,1,438-8,438-8,ambiguous,approved,Preserved human approved decision.,,42.3705,-71.1171
+21333050,Quincy House (Harvard College),https://en.wikipedia.org/wiki/Quincy_House_(Harvard_College),42.3705,-71.1171,nearest,8.29,1,438-8,438-1,ambiguous,approved,Preserved human approved decision.,,42.3705,-71.1171
 21396514,Ragon Institute,https://en.wikipedia.org/wiki/Ragon_Institute,42.364,-71.092,contained,0.00,1,610-5,610-5,strong,approved,Preserved human approved decision.,,42.364,-71.092
 21427054,"MIT Campus (Area 2), Cambridge, Massachusetts","https://en.wikipedia.org/wiki/MIT_Campus_(Area_2),_Cambridge,_Massachusetts",42.35975,-71.09205555555555,contained,0.00,1,668-10,668-10,strong,rejected,Preserved human rejected decision.,,42.35975,-71.09205555555555
 21427114,Wellington-Harrington,https://en.wikipedia.org/wiki/Wellington-Harrington,42.3725,-71.09194444444444,nearest,2.66,1,397-14,397-14,ambiguous,rejected,Preserved human rejected decision.,,42.3725,-71.09194444444444
