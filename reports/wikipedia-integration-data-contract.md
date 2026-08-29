@@ -14,6 +14,7 @@ than silently coercing them.
 | Path | Owner | Versioned | Purpose |
 |---|---|---:|---|
 | `data/processed/wikipedia-articles.json` | retrieval script | yes | Latest successful API snapshot |
+| `data/manual/wikipedia-article-additions.json` | human reviewer | yes | Verified non-geotagged articles with manual map coordinates |
 | `data/manual/wikipedia-building-decisions.json` | human reviewer | yes | Persistent approvals and rejections |
 | `data/processed/wikipedia-building-candidates.csv` | matching script | yes | Complete match audit |
 | `data/processed/wikipedia-matches-to-review.csv` | matching script | yes | Current unresolved review queue |
@@ -62,6 +63,13 @@ Each article contains:
 
 The snapshot represents the latest *successful* complete retrieval. A failed or
 partial retrieval must not replace it.
+
+Articles without Wikipedia coordinates may be supplied through
+`wikipedia-article-additions.json`. It uses `version: 1` and the same article
+fields as the snapshot, plus an optional review `note`. Page IDs must remain
+unique across the generated snapshot and manual additions. These additions are
+merged only by the matching step, so a future geotagged snapshot entry produces
+a duplicate-ID validation error and prompts removal of the manual copy.
 
 ## Manual decisions
 

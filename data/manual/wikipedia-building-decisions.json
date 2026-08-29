@@ -251,17 +251,17 @@
     },
     {
       "wikipedia_page_id": 414193,
-      "decision": "rejected",
-      "bldgid": null,
+      "decision": "approved",
+      "bldgid": "307-2",
       "wikipedia_title": "Harvard Radcliffe Institute",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Harvard_Radcliffe_Institute",
       "latitude": 42.37581,
       "longitude": -71.12233,
-      "selected_latitude": null,
-      "selected_longitude": null,
-      "selection_method": null,
-      "review_note": "",
-      "reviewed_at": "2026-08-14T16:00:47.056Z"
+      "selected_latitude": 42.376217181166275,
+      "selected_longitude": -71.12235710892028,
+      "selection_method": "manual_marker",
+      "review_note": "Fay House at 10 Garden Street is the Institute's administrative headquarters and general contact address.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 417027,
@@ -864,16 +864,16 @@
     {
       "wikipedia_page_id": 1907859,
       "decision": "approved",
-      "bldgid": "206-8",
+      "bldgid": "206-12",
       "wikipedia_title": "Cabot House",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Cabot_House",
       "latitude": 42.3814,
       "longitude": -71.1242,
-      "selected_latitude": 42.38125454508037,
-      "selected_longitude": -71.12469388913415,
+      "selected_latitude": 42.381825146066134,
+      "selected_longitude": -71.12393114861625,
       "selection_method": "manual_marker",
-      "review_note": "",
-      "reviewed_at": "2026-08-15T15:07:07.453Z"
+      "review_note": "Moved from Holmes Hall, which is part of Pforzheimer House, to Cabot Hall within the six-building Cabot House complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 1947549,
@@ -1555,17 +1555,17 @@
     },
     {
       "wikipedia_page_id": 6029406,
-      "decision": "rejected",
-      "bldgid": null,
+      "decision": "approved",
+      "bldgid": "398-1",
       "wikipedia_title": "Institute of Politics at Harvard Kennedy School",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Institute_of_Politics_at_Harvard_Kennedy_School",
       "latitude": 42.37145,
       "longitude": -71.1221,
-      "selected_latitude": null,
-      "selected_longitude": null,
-      "selection_method": null,
-      "review_note": "",
-      "reviewed_at": "2026-08-14T16:01:31.317Z"
+      "selected_latitude": 42.37108901206739,
+      "selected_longitude": -71.1217876001319,
+      "selection_method": "manual_marker",
+      "review_note": "Harvard Kennedy School's campus map places the Institute of Politics on levels 1 and 2 of Littauer Center.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 6046830,
@@ -1803,17 +1803,17 @@
     },
     {
       "wikipedia_page_id": 8370551,
-      "decision": "rejected",
-      "bldgid": null,
+      "decision": "approved",
+      "bldgid": "241-59",
       "wikipedia_title": "Harvard University Herbaria",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Harvard_University_Herbaria",
       "latitude": 42.378819444444446,
       "longitude": -71.11458888888889,
-      "selected_latitude": null,
-      "selected_longitude": null,
-      "selection_method": null,
-      "review_note": "",
-      "reviewed_at": "2026-08-15T18:09:08.771Z"
+      "selected_latitude": 42.37907518604964,
+      "selected_longitude": -71.11458874366936,
+      "selection_method": "manual_marker",
+      "review_note": "Harvard's campus map and Hail both identify the distinct University Herbaria building at 22 Divinity Avenue.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 8370901,
@@ -2136,6 +2136,20 @@
       "longitude": -71.1161574,
       "review_note": "",
       "reviewed_at": "2026-08-13T16:19:27.518Z"
+    },
+    {
+      "wikipedia_page_id": 11093723,
+      "decision": "approved",
+      "bldgid": "266-11",
+      "wikipedia_title": "Harvard-Epworth United Methodist Church",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Harvard-Epworth_United_Methodist_Church",
+      "latitude": 42.37793931764014,
+      "longitude": -71.11970779453276,
+      "selected_latitude": 42.37793931764014,
+      "selected_longitude": -71.11970779453276,
+      "selection_method": "manual_marker",
+      "review_note": "Wikipedia page 11093723 has no article coordinates; the marker is the verified 1555 Massachusetts Avenue church footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 11212102,
@@ -4838,16 +4852,16 @@
     {
       "wikipedia_page_id": 22856069,
       "decision": "approved",
-      "bldgid": "241-48",
+      "bldgid": "241-49",
       "wikipedia_title": "Harvard–Yenching Library",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Harvard%E2%80%93Yenching_Library",
       "latitude": 42.37745833333334,
       "longitude": -71.11425555555554,
-      "selected_latitude": 42.37745833333334,
-      "selected_longitude": -71.11425555555554,
-      "selection_method": "generated_candidate",
-      "review_note": "",
-      "reviewed_at": "2026-08-14T16:01:01.434Z"
+      "selected_latitude": 42.377663896272715,
+      "selected_longitude": -71.1137253366797,
+      "selection_method": "manual_marker",
+      "review_note": "Harvard Library places the library at 2 Divinity Avenue in the former Institute of Geographical Exploration building; 241-48 is Fairchild Laboratory.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 23784296,
@@ -5617,17 +5631,17 @@
     },
     {
       "wikipedia_page_id": 48547751,
-      "decision": "rejected",
-      "bldgid": null,
+      "decision": "approved",
+      "bldgid": "266-18",
       "wikipedia_title": "Harvard Collection of Historical Scientific Instruments",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Harvard_Collection_of_Historical_Scientific_Instruments",
       "latitude": 42.3765,
       "longitude": -71.1161,
-      "selected_latitude": null,
-      "selected_longitude": null,
-      "selection_method": null,
-      "review_note": "",
-      "reviewed_at": "2026-08-15T17:55:56.789Z"
+      "selected_latitude": 42.37638711776337,
+      "selected_longitude": -71.11671426336392,
+      "selection_method": "manual_marker",
+      "review_note": "The Collection's galleries are in the Science Center at 1 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z"
     },
     {
       "wikipedia_page_id": 49943856,

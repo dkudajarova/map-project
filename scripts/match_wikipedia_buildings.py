@@ -18,6 +18,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTICLES_PATH = ROOT / "data/processed/wikipedia-articles.json"
+ARTICLE_ADDITIONS_PATH = ROOT / "data/manual/wikipedia-article-additions.json"
 BUILDINGS_PATH = ROOT / "cambridgegis_data/Basemap/Buildings/BASEMAP_Buildings.geojson"
 CANDIDATES_PATH = ROOT / "data/processed/wikipedia-building-candidates.csv"
 REVIEW_PATH = ROOT / "data/processed/wikipedia-matches-to-review.csv"
@@ -34,12 +35,21 @@ COLUMNS = [
 ]
 
 
-def load_articles(path: Path) -> gpd.GeoDataFrame:
+def load_articles(
+    path: Path, additions_path: Path | None = None
+) -> gpd.GeoDataFrame:
     with path.open(encoding="utf-8-sig") as handle:
         snapshot = json.load(handle)
     articles = snapshot.get("articles")
     if snapshot.get("schema_version") != 1 or not isinstance(articles, list):
         raise ValueError(f"Unsupported Wikipedia article snapshot: {path}")
+    if additions_path is not None:
+        with additions_path.open(encoding="utf-8-sig") as handle:
+            additions = json.load(handle)
+        added_articles = additions.get("articles")
+        if additions.get("version") != 1 or not isinstance(added_articles, list):
+            raise ValueError(f"Unsupported manual Wikipedia additions: {additions_path}")
+        articles = [*articles, *added_articles]
     frame = pd.DataFrame(articles)
     required = {"page_id", "title", "url", "latitude", "longitude"}
     if not required.issubset(frame.columns):
@@ -255,6 +265,9 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--articles", type=Path, default=ARTICLES_PATH)
+    parser.add_argument(
+        "--article-additions", type=Path, default=ARTICLE_ADDITIONS_PATH
+    )
     parser.add_argument("--buildings", type=Path, default=BUILDINGS_PATH)
     parser.add_argument("--candidates-output", type=Path, default=CANDIDATES_PATH)
     parser.add_argument("--review-output", type=Path, default=REVIEW_PATH)
@@ -264,7 +277,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    articles = load_articles(args.articles)
+    articles = load_articles(args.articles, args.article_additions)
     decisions = load_decisions(args.decisions)
     rows = match_articles(articles, load_buildings(args.buildings), decisions)
     rows.extend(missing_decision_rows(decisions, set(articles["page_id"].astype(int))))

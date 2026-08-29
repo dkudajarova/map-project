@@ -6027,6 +6027,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "cowperthwaite-st_10_2",
+      "decision": "matched",
+      "bldgid": "513-3",
+      "bldgids": [
+        "513-3"
+      ],
+      "street_name": "Cowperthwaite Street",
+      "hail_address": "10 Cowperthwaite Street",
+      "note": "Mather House tower and low-rise complex. Harvard identifies the current site as 45 Flagg Street with 10 Cowperthwaite Street used in historical and House sources.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "creighton-st_10",
       "decision": "no_map_match",
       "bldgid": null,
@@ -6250,6 +6267,23 @@
       "review_reason_category": "historical_address_or_alias",
       "original_candidate_bldgids": [
         "576-1"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "divinity-ave_11",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Divinity Avenue",
+      "hail_address": "11+ Divinity Avenue",
+      "note": "This is a moved-school cross-reference ending at 11 Jarvis Street, not the surviving University Museum footprint at 11 Divinity Avenue.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "241-17"
       ],
       "selected_was_proposed": null
     },
@@ -7067,18 +7101,20 @@
     },
     {
       "building_id": "farwell-pl_15_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
+      "decision": "matched",
+      "bldgid": "319-12",
+      "bldgids": [
+        "319-12"
+      ],
       "street_name": "Farwell Place",
       "hail_address": "15 Farwell Place",
-      "note": "",
-      "reviewed_at": "2026-08-17T17:28:41.477Z",
+      "note": "Read House; Hail states that it moved from 5 Farwell Place in 1969, and HGSE currently lists it at 8 Appian Way.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
-      "selected_was_proposed": null
+      "selected_was_proposed": false
     },
     {
       "building_id": "farwell-pl_21-25",
@@ -7804,6 +7840,43 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "francis-ave_43",
+      "decision": "matched",
+      "bldgid": "241-2",
+      "bldgids": [
+        "241-2"
+      ],
+      "street_name": "Francis Avenue",
+      "hail_address": "43 Francis Avenue",
+      "note": "The 1960 Andover-Harvard library record is the HDS Library wing attached to Swartz Hall at the current shared address 45 Francis Avenue.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "francis-ave_45",
+      "decision": "matched",
+      "bldgid": "241-5",
+      "bldgids": [
+        "241-5"
+      ],
+      "street_name": "Francis Avenue",
+      "hail_address": "45 Francis Avenue",
+      "note": "The 1910 Andover Hall record belongs to the main Swartz Hall footprint; the other footprint at 45 Francis is the later library wing.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "241-2",
+        "241-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "franklin-st_150r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -8281,6 +8354,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "garden-st_6",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Garden Street",
+      "hail_address": "6 Garden Street",
+      "note": "The 1769 Latin grammar school moved to 35 Church Street in 1832 and is not the surviving Byerly Hall footprint at 6-8 Garden Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "307-6"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "garden-st_15",
       "decision": "no_map_match",
       "bldgid": null,
@@ -8379,6 +8469,74 @@
         "233-7"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "garden-st_57_2",
+      "decision": "matched",
+      "bldgid": "206-15",
+      "bldgids": [
+        "206-15"
+      ],
+      "street_name": "Garden Street",
+      "hail_address": "57 Garden Street",
+      "note": "Daniels Hall in the Currier House complex; identified from Harvard's campus map and the Hail building name.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "garden-st_59",
+      "decision": "matched",
+      "bldgid": "206-7",
+      "bldgids": [
+        "206-7"
+      ],
+      "street_name": "Garden Street",
+      "hail_address": "59 Garden Street",
+      "note": "Gilbert Hall in the Currier House complex; identified from Harvard's campus map and the Hail building name.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "garden-st_61_2",
+      "decision": "matched",
+      "bldgid": "206-3",
+      "bldgids": [
+        "206-3"
+      ],
+      "street_name": "Garden Street",
+      "hail_address": "61 Garden Street",
+      "note": "Bingham Hall in the Currier House complex; identified from Harvard's campus map and the Hail building name.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "garden-st_63_2",
+      "decision": "matched",
+      "bldgid": "206-11",
+      "bldgids": [
+        "206-11"
+      ],
+      "street_name": "Garden Street",
+      "hail_address": "63 Garden Street",
+      "note": "Tuchman Hall in the Currier House complex; identified from Harvard's campus map and the Hail building name.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "garden-st_78",
@@ -12369,6 +12527,27 @@
       "selected_was_proposed": false
     },
     {
+      "building_id": "kennedy-st_79_2",
+      "decision": "matched",
+      "bldgid": "398-1",
+      "bldgids": [
+        "398-1"
+      ],
+      "street_name": "Kennedy Street",
+      "hail_address": "79 Kennedy Street",
+      "note": "The 1978 Hail classroom-building record is Littauer Center. Restrict it to the Littauer footprint so the shared 79 JFK Street address does not also assign it to Belfer Center and Rubenstein Building.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "398-1",
+        "398-5",
+        "398-9"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "kenway-st_10",
       "decision": "no_map_match",
       "bldgid": null,
@@ -13961,6 +14140,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "mason-st_14",
+      "decision": "matched",
+      "bldgid": "307-5",
+      "bldgids": [
+        "307-5"
+      ],
+      "street_name": "Mason Street",
+      "hail_address": "14 Mason Street",
+      "note": "Agassiz House; Harvard lists 14 Mason Street as its alternate address and 5 James Street as its current address.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "mason-st_3_3",
       "decision": "matched",
       "bldgid": "288-14",
@@ -14451,6 +14647,151 @@
       "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1535",
+      "decision": "matched",
+      "bldgid": "266-6",
+      "bldgids": [
+        "266-6"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1535 Massachusetts Avenue",
+      "note": "Harvard Law School name crosswalk: Langdell Hall Library. Hail records the historic rear address 1535(r); Harvard and Cambridge currently address Langdell Hall as 1545 Massachusetts Avenue.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1561r",
+      "decision": "matched",
+      "bldgid": "266-4",
+      "bldgids": [
+        "266-4"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1561r Massachusetts Avenue",
+      "note": "Harvard Law School name crosswalk: Hauser Hall. Hail uses 1561(r); Harvard's current directory and Cambridge Address Points identify the footprint at 1575 Massachusetts Avenue.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "everett-st_10",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Everett Street",
+      "hail_address": "10 Everett Street",
+      "note": "Harvard Law School crosswalk: the 1968 above-ground Everett Street parking garage was demolished in 2007 for Wasserstein Hall; the current underground garage is not a separate mapped footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "253-6"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "everett-st_12r",
+      "decision": "matched",
+      "bldgid": "253-6",
+      "bldgids": [
+        "253-6"
+      ],
+      "street_name": "Everett Street",
+      "hail_address": "12r Everett Street",
+      "note": "Harvard Law School name crosswalk: Harkness Commons, now integrated with the Wasserstein/Caspersen/Clinical complex; Harvard Planning lists 14 Everett Street and inactive standalone status.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": [
+        "253-9"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "everett-st_14",
+      "decision": "matched",
+      "bldgid": "253-9",
+      "bldgids": [
+        "253-9"
+      ],
+      "street_name": "Everett Street",
+      "hail_address": "14 Everett Street",
+      "note": "Harvard Law School name crosswalk: Story Hall; Harvard Planning lists its current address as 12 Everett Street. The Hail address is displaced within the Graduate Commons complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": [
+        "253-6"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "everett-st_20r",
+      "decision": "matched",
+      "bldgid": "253-13",
+      "bldgids": [
+        "253-13"
+      ],
+      "street_name": "Everett Street",
+      "hail_address": "20r Everett Street",
+      "note": "Harvard Law School name crosswalk: Child Hall; Harvard Planning lists its current address as 26 Everett Street. The Hail address is displaced within the Graduate Commons complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": [
+        "253-5"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "massachusetts-ave_1515",
+      "decision": "matched",
+      "bldgid": "266-14",
+      "bldgids": [
+        "266-14"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1515 Massachusetts Avenue",
+      "note": "Harvard Law School name crosswalk: Austin Hall. The second same-address footprint is not part of Austin Hall.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Hail record describes multiple compatible footprints; accepted all footprints not already matched by another Hail rule",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "266-14",
+        "266-15"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_1595",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1595 Massachusetts Avenue",
+      "note": "Harvard Law School crosswalk: Wyeth Hall was demolished in 2007 for the Wasserstein/Caspersen/Clinical complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "253-6"
+      ],
       "selected_was_proposed": null
     },
     {
@@ -17260,6 +17601,141 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "oxford-st_7r",
+      "decision": "matched",
+      "bldgid": "266-13",
+      "bldgids": ["266-13"],
+      "street_name": "Oxford Street",
+      "hail_address": "7r Oxford Street",
+      "note": "Oxford Street name crosswalk: John Knowles Paine Hall is part of the Fanny Peabody Mason Music Building at 3 Oxford Street, not the Science Center footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": ["266-18"],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_10_2",
+      "decision": "matched",
+      "bldgid": "241-8",
+      "bldgids": ["241-8"],
+      "street_name": "Oxford Street",
+      "hail_address": "10 Oxford Street",
+      "note": "Oxford Street chemistry-complex crosswalk: Conant Chemistry Laboratory, currently addressed as 12 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_11",
+      "decision": "matched",
+      "bldgid": "266-21",
+      "bldgids": ["266-21"],
+      "street_name": "Oxford Street",
+      "hail_address": "11 Oxford Street",
+      "note": "Oxford Street physics-complex crosswalk: Jefferson Physical Laboratory. Harvard currently lists 17 Oxford Street; the 11 Oxford footprint is LISE.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": ["266-12"],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_12_2",
+      "decision": "matched",
+      "bldgid": "241-45",
+      "bldgids": ["241-45"],
+      "street_name": "Oxford Street",
+      "hail_address": "12 Oxford Street",
+      "note": "Oxford Street chemistry-complex crosswalk: Mallinckrodt Chemistry Laboratory; do not copy this named record to every 12 Oxford footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Hail record describes multiple compatible footprints; accepted all footprints not already matched by another Hail rule",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": ["241-10", "241-4", "241-45", "241-8"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "oxford-st_12r",
+      "decision": "matched",
+      "bldgid": "241-4",
+      "bldgids": ["241-4"],
+      "street_name": "Oxford Street",
+      "hail_address": "12r Oxford Street",
+      "note": "Oxford Street chemistry-complex crosswalk: Converse Memorial Laboratory; do not copy this named record to every 12 Oxford footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Hail record describes multiple compatible footprints; accepted all footprints not already matched by another Hail rule",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": ["241-10", "241-4", "241-45", "241-8"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "oxford-st_14r",
+      "decision": "matched",
+      "bldgid": "241-10",
+      "bldgids": ["241-10"],
+      "street_name": "Oxford Street",
+      "hail_address": "14r Oxford Street",
+      "note": "Oxford Street chemistry-complex crosswalk: Naito Laboratory, currently part of the 12 Oxford Street complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_15r",
+      "decision": "matched",
+      "bldgid": "266-9",
+      "bldgids": ["266-9"],
+      "street_name": "Oxford Street",
+      "hail_address": "15r Oxford Street",
+      "note": "Oxford Street physics-complex crosswalk: Lyman Laboratory, currently addressed as 17 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_16_2",
+      "decision": "matched",
+      "bldgid": "241-41",
+      "bldgids": ["241-41"],
+      "street_name": "Oxford Street",
+      "hail_address": "16 Oxford Street",
+      "note": "Oxford Street name crosswalk: the unnamed 1993 Payette laboratory is the Mallinckrodt-Hoffman Link, currently addressed as 18 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_29",
+      "decision": "matched",
+      "bldgid": "266-7",
+      "bldgids": ["266-7"],
+      "street_name": "Oxford Street",
+      "hail_address": "29 Oxford Street",
+      "note": "Oxford Street engineering crosswalk: Pierce Hall. Harvard Planning lists 25 Oxford Street and Harvard operational directions also use 29 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "oxford-st_132",

@@ -15,6 +15,7 @@ type BuildingProperties = {
   age_band?: string
   year_built?: number | string | null
   Condition_YearBuilt?: number | string
+  assessor_year_placeholder?: boolean
   wikipedia_article_count?: number
   wikipedia_articles_json?: string | null
   fun_fact?: string | null
@@ -100,9 +101,9 @@ function getPopupYearBuilt(properties: BuildingProperties): number | "Unknown" {
   if (canonicalYear !== null) return canonicalYear
 
   const hailYear = validYear(properties.hail_year_built)
-  const assessorYear = validYear(
-    properties.assessor_year_built ?? properties.Condition_YearBuilt,
-  )
+  const assessorYear = properties.assessor_year_placeholder
+    ? null
+    : validYear(properties.assessor_year_built ?? properties.Condition_YearBuilt)
 
   if (
     hailYear !== null &&

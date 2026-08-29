@@ -897,8 +897,59 @@ def assessor_year_takes_precedence(assessor_year: int | None) -> bool:
 def hail_year_overrides_assessor_placeholder(
     bldgid: str, assessor_year: int | None
 ) -> bool:
-    """Recognize Harvard Yard's parcel-level 1850 assessor placeholder."""
-    return bldgid.startswith("318-") and assessor_year == 1850
+    """Recognize verified Harvard parcel-level assessor placeholders."""
+    if bldgid.startswith("318-") and assessor_year == 1850:
+        return True
+    if bldgid.startswith(("253-", "266-")) and assessor_year == 1840:
+        return True
+    if bldgid == "266-11" and assessor_year == 1700:
+        return True
+    if bldgid == "237-4" and assessor_year == 1860:
+        return True
+    radcliffe_yard_placeholders = {
+        ("307-2", 1890),   # Fay House, constructed 1806-1807
+        ("307-15", 1890),  # Wallach House, constructed 1822
+    }
+    if (bldgid, assessor_year) in radcliffe_yard_placeholders:
+        return True
+    appian_way_placeholders = {
+        ("319-2", 1930),   # Westengard House, constructed 1851
+        ("319-12", 1860),  # Read House, constructed 1773 and moved in 1969
+        ("319-13", 1860),  # Gutman Library, constructed 1970
+    }
+    if (bldgid, assessor_year) in appian_way_placeholders:
+        return True
+    residential_complex_placeholders = {
+        ("513-3", 1910),  # Mather House, constructed/opened in 1970
+        ("206-3", 1910),   # Currier House: Bingham Hall, 1968
+        ("206-7", 1910),   # Currier House: Gilbert Hall, 1968
+        ("206-11", 1910),  # Currier House: Tuchman Hall, 1968
+        ("206-13", 1910),  # Currier House common/core footprint, 1966-1970
+        ("206-15", 1910),  # Currier House: Daniels Hall, 1965
+    }
+    if (bldgid, assessor_year) in residential_complex_placeholders:
+        return True
+    harvard_2007_placeholder_footprints = {
+        # Oxford Street chemistry complex.
+        "241-4",   # Converse
+        "241-8",   # Conant
+        "241-10",  # Naito
+        "241-41",  # Mallinckrodt-Hoffman Link
+        "241-45",  # Mallinckrodt
+        "241-47",  # Hoffman
+        # Harvard Divinity School campus.
+        "241-1",   # Rockefeller Hall
+        "241-2",   # Andover-Harvard / HDS Library wing
+        "241-5",   # Andover / Swartz Hall
+        "241-28",  # Divinity Hall
+        # Harvard museums and neighboring collection buildings.
+        "241-17",  # Peabody / University Museum complex
+        "241-43",  # Harvard Museum of the Ancient Near East
+        "241-49",  # Harvard-Yenching Library
+        "241-59",  # University Herbaria
+        "241-48",  # Fairchild Biochemistry Laboratory
+    }
+    return bldgid in harvard_2007_placeholder_footprints and assessor_year == 2007
 
 
 def apply_manual_overrides(
@@ -1079,7 +1130,9 @@ def main() -> None:
         assessor_year = complete_year(selected_assessor.get("condition_yearbuilt")) if selected_assessor else None
 
         accepted_hail = accepted_hail_by_bldgid.get(bldgid, [])
-        if assessor_year_takes_precedence(assessor_year):
+        if assessor_year_takes_precedence(
+            assessor_year
+        ) and not hail_year_overrides_assessor_placeholder(bldgid, assessor_year):
             accepted_hail = []
         wikipedia_articles = approved_wikipedia_by_bldgid.get(bldgid, [])
         fun_fact = fun_facts_by_bldgid.get(bldgid)
@@ -1094,20 +1147,38 @@ def main() -> None:
             }
         )
         unambiguous_hail_year = hail_years[0] if len(hail_years) == 1 else None
+        primary_hail_year = (
+            complete_year(primary_hail.get("construction_year")) if primary_hail else None
+        )
+        assessor_year_is_placeholder = hail_year_overrides_assessor_placeholder(
+            bldgid, assessor_year
+        )
+        selected_hail_year = unambiguous_hail_year
+        if (
+            selected_hail_year is None
+            and assessor_year_is_placeholder
+            and primary_hail
+            and primary_hail.get("classification") == "Current building"
+        ):
+            selected_hail_year = primary_hail_year
         year_difference = (
-            abs(unambiguous_hail_year - assessor_year)
-            if unambiguous_hail_year is not None and assessor_year is not None
+            abs(selected_hail_year - assessor_year)
+            if selected_hail_year is not None and assessor_year is not None
             else None
         )
-        year_needs_review = len(hail_years) > 1 or (year_difference is not None and year_difference > 50)
-        if unambiguous_hail_year is not None and (
+        year_needs_review = len(hail_years) > 1 or (
+            year_difference is not None
+            and year_difference > 50
+            and not assessor_year_is_placeholder
+        )
+        if selected_hail_year is not None and (
             assessor_year is None
             or (year_difference is not None and year_difference <= 50)
-            or hail_year_overrides_assessor_placeholder(bldgid, assessor_year)
+            or assessor_year_is_placeholder
         ):
-            year_built = unambiguous_hail_year
+            year_built = selected_hail_year
             year_source = "Hail"
-        elif assessor_year is not None:
+        elif assessor_year is not None and not assessor_year_is_placeholder:
             year_built = assessor_year
             year_source = "Assessor"
         else:
@@ -1130,13 +1201,14 @@ def main() -> None:
             "assessor_pid": text(selected_assessor.get("pid")) if selected_assessor else None,
             "assessor_address": text(selected_assessor.get("address")) if selected_assessor else None,
             "assessor_year_built": assessor_year,
+            "assessor_year_placeholder": assessor_year_is_placeholder,
             "Condition_YearBuilt": assessor_year,
             "PropertyClass": text(selected_assessor.get("propertyclass")) if selected_assessor else None,
             "Zoning": text(selected_assessor.get("zoning")) if selected_assessor else None,
             "hail_match_count": len(accepted_hail),
             "hail_building_ids": "|".join(hail["building_id"] for hail, _match in accepted_hail) or None,
             "hail_years": "|".join(str(year) for year in hail_years) or None,
-            "hail_year_built": unambiguous_hail_year,
+            "hail_year_built": selected_hail_year,
             "hail_year_conflict": len(hail_years) > 1,
             "hail_primary_building_id": primary_hail.get("building_id") if primary_hail else None,
             "hail_match_stage": int(primary_hail_match["match_stage"]) if primary_hail_match else None,
