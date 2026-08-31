@@ -2,149 +2,6 @@
   "version": 2,
   "overrides": [
     {
-      "building_id": "plympton-st_58",
-      "decision": "matched",
-      "bldgid": "438-1",
-      "bldgids": ["438-1"],
-      "street_name": "Plympton Street",
-      "hail_address": "58 Plympton Street",
-      "note": "New Quincy residence hall. Restrict the seven-story dormitory record to the main New Quincy footprint rather than the separate Qube/library footprint.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "4",
-      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
-      "review_reason_category": "multiple_footprint_candidates",
-      "original_candidate_bldgids": ["438-1", "438-8"],
-      "selected_was_proposed": true
-    },
-    {
-      "building_id": "plympton-st_70",
-      "decision": "matched",
-      "bldgid": "438-6",
-      "bldgids": ["438-6"],
-      "street_name": "Plympton Street",
-      "hail_address": "70 Plympton Street",
-      "note": "Mather Hall, now Stone Hall in Quincy House. Harvard dates Stone Hall to 1930 and the current Cambridge address point is 60 Plympton Street.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "de-wolfe-st_36",
-      "decision": "matched",
-      "bldgid": "498-2",
-      "bldgids": [
-        "498-2",
-        "498-3"
-      ],
-      "street_name": "De Wolfe Street",
-      "hail_address": "36 De Wolfe Street",
-      "note": "Hail describes the two Leverett towers. Harvard currently identifies Towers F and G at 40 DeWolfe Street; the two high-rise footprints are 498-2 and 498-3.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "memorial-dr_967",
-      "decision": "matched",
-      "bldgid": "437-2",
-      "bldgids": [
-        "437-2",
-        "437-13"
-      ],
-      "street_name": "Memorial Drive",
-      "hail_address": "967 Memorial Drive",
-      "note": "Eliot House spans the 967 Memorial Drive wing and the principal 101 Dunster Street footprint; Harvard treats them as one residential complex constructed in 1931.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [
-        "437-2"
-      ],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "plympton-st_28_2",
-      "decision": "matched",
-      "bldgid": "401-11",
-      "bldgids": [
-        "401-11"
-      ],
-      "street_name": "Plympton Street",
-      "hail_address": "28 Plympton Street",
-      "note": "New Russell Hall in Adams House. Harvard's current property record identifies Russell at 26 Plympton Street and constructed in 1931.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "linnaean-st_52",
-      "decision": "matched",
-      "bldgid": "206-2",
-      "bldgids": [
-        "206-2"
-      ],
-      "street_name": "Linnaean Street",
-      "hail_address": "52 Linnaean Street",
-      "note": "Ada Louise Comstock Hall. Hail supplies the alternate 130 Walker Street address, which Harvard identifies as Comstock's current address.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [
-        "206-1"
-      ],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "linnaean-st_60",
-      "decision": "matched",
-      "bldgid": "206-4",
-      "bldgids": [
-        "206-4"
-      ],
-      "street_name": "Linnaean Street",
-      "hail_address": "60 Linnaean Street",
-      "note": "Daniel Henry Holmes Hall. Harvard's current property record places Holmes at 58 Linnaean Street.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [
-        "206-8"
-      ],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "walker-st_91_2",
-      "decision": "matched",
-      "bldgid": "195-9",
-      "bldgids": [
-        "195-9",
-        "195-17"
-      ],
-      "street_name": "Walker Street",
-      "hail_address": "91 Walker Street",
-      "note": "Hail explicitly describes 91 and 95 Walker Street as the two Jordan House dormitories; these are today's Jordan South and Jordan North.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [
-        "195-9"
-      ],
-      "selected_was_proposed": false
-    },
-    {
       "building_id": "agassiz-st_32",
       "decision": "matched",
       "bldgid": "152-2",
@@ -223,6 +80,27 @@
         "702-9"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "albany-st_288",
+      "decision": "matched",
+      "bldgid": "999-3317",
+      "bldgids": [
+        "999-3317",
+        "999-3316",
+        "999-3318"
+      ],
+      "street_name": "Albany Street",
+      "hail_address": "288 Albany Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:02:13.967Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (999-3316: 0.3 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-3316"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "albany-st_60",
@@ -884,6 +762,25 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "amory-st_101",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Amory Street",
+      "hail_address": "101 Amory Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:26:36.029Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (394-2: Δ1 house numbers, 0.0 m, 999-718: Δ4 house numbers, 19.2 m, 999-749: Δ6 house numbers, 6.2 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "394-2",
+        "999-718",
+        "999-749"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "amory-st_103-105",
       "decision": "matched",
       "bldgid": "374-51",
@@ -1194,6 +1091,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "ash-street-pl_9",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Ash Street Place",
+      "hail_address": "9+ Ash Street Place",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "ash-st_22-24",
       "decision": "no_map_match",
       "bldgid": null,
@@ -1234,21 +1146,6 @@
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
       "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "ash-street-pl_9",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Ash Street Place",
-      "hail_address": "9+ Ash Street Place",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -1658,6 +1555,42 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "bay-state-rd_67",
+      "decision": "matched",
+      "bldgid": "89-11",
+      "bldgids": [
+        "89-11",
+        "89-5"
+      ],
+      "street_name": "Bay State Road",
+      "hail_address": "67 Bay State Road",
+      "note": "",
+      "reviewed_at": "2026-08-12T19:19:40.794Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "89-11",
+        "89-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "bay-state-rd_74",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Bay State Road",
+      "hail_address": "74 Bay State Road",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "bay-st_12-18",
       "decision": "matched",
       "bldgid": "545-2",
@@ -1700,42 +1633,6 @@
       "bldgids": [],
       "street_name": "Bay Street",
       "hail_address": "4-8r Bay Street",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "bay-state-rd_67",
-      "decision": "matched",
-      "bldgid": "89-11",
-      "bldgids": [
-        "89-11",
-        "89-5"
-      ],
-      "street_name": "Bay State Road",
-      "hail_address": "67 Bay State Road",
-      "note": "",
-      "reviewed_at": "2026-08-12T19:19:40.794Z",
-      "original_match_stage": "4",
-      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
-      "review_reason_category": "multiple_footprint_candidates",
-      "original_candidate_bldgids": [
-        "89-11",
-        "89-5"
-      ],
-      "selected_was_proposed": true
-    },
-    {
-      "building_id": "bay-state-rd_74",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Bay State Road",
-      "hail_address": "74 Bay State Road",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -2397,6 +2294,25 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "blackstone-st_21r",
+      "decision": "matched",
+      "bldgid": "636-5",
+      "bldgids": [
+        "636-5"
+      ],
+      "street_name": "Blackstone Street",
+      "hail_address": "21r Blackstone Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:42:08.040Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (636-5: Δ2 house numbers, 17.1 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "636-5"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "blackstone-st_45",
@@ -3190,6 +3106,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "bristol-st_85",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Bristol Street",
+      "hail_address": "85 Bristol Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T17:58:15.762Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (999-3970: 12.6 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-3970"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "bristol-st_90_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -3612,6 +3545,28 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "brookline-st_179",
+      "decision": "matched",
+      "bldgid": "700-48",
+      "bldgids": [
+        "700-48"
+      ],
+      "street_name": "Brookline Street",
+      "hail_address": "179 Brookline Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:27:39.690Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (700-45: Δ7 house numbers, 0.0 m, 700-48: Δ4 house numbers, 0.0 m, 707-18: Δ3 house numbers, 11.5 m, 707-2: Δ5 house numbers, 13.4 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "700-45",
+        "700-48",
+        "707-18",
+        "707-2"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "brookline-st_2-18",
       "decision": "no_map_match",
       "bldgid": null,
@@ -3969,6 +3924,27 @@
       "original_candidate_bldgids": [
         "385-13",
         "385-15"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "cambridge-st_1114-1122",
+      "decision": "matched",
+      "bldgid": "385-12",
+      "bldgids": [
+        "385-12"
+      ],
+      "street_name": "Cambridge Street",
+      "hail_address": "1114-1122 Cambridge Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:24:05.296Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (347-12: Δ9 house numbers, 17.3 m, 385-12: Δ2 house numbers, 0.0 m, 999-876: Δ5 house numbers, 19.3 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "347-12",
+        "385-12",
+        "999-876"
       ],
       "selected_was_proposed": true
     },
@@ -6155,21 +6131,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "cowperthwaite-st_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Cowperthwaite Street",
-      "hail_address": "2 Cowperthwaite Street",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "cowperthwaite-st_10_2",
       "decision": "matched",
       "bldgid": "513-3",
@@ -6185,6 +6146,21 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
+    },
+    {
+      "building_id": "cowperthwaite-st_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Cowperthwaite Street",
+      "hail_address": "2 Cowperthwaite Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "creighton-st_10",
@@ -6305,6 +6281,24 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "de-wolfe-st_36",
+      "decision": "matched",
+      "bldgid": "498-2",
+      "bldgids": [
+        "498-2",
+        "498-3"
+      ],
+      "street_name": "De Wolfe Street",
+      "hail_address": "36 De Wolfe Street",
+      "note": "Hail describes the two Leverett towers. Harvard currently identifies Towers F and G at 40 DeWolfe Street; the two high-rise footprints are 498-2 and 498-3.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "de-wolfe-st_4",
@@ -6843,6 +6837,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "elm-street-n_164",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Elm Street N",
+      "hail_address": "164 Elm Street N",
+      "note": "",
+      "reviewed_at": "2026-08-28T01:11:43.526Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "elm-st_115-117",
       "decision": "no_map_match",
       "bldgid": null,
@@ -6970,6 +6979,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "elm-st_333_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Elm Street",
+      "hail_address": "333 Elm Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:03:59.382Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (999-5277: 1.9 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-5277"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "elm-st_55",
       "decision": "no_map_match",
       "bldgid": null,
@@ -6980,21 +7006,6 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "elm-street-n_164",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Elm Street N",
-      "hail_address": "164 Elm Street N",
-      "note": "",
-      "reviewed_at": "2026-08-28T01:11:43.526Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -7154,6 +7165,80 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "everett-st_10",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Everett Street",
+      "hail_address": "10 Everett Street",
+      "note": "Harvard Law School crosswalk: the 1968 above-ground Everett Street parking garage was demolished in 2007 for Wasserstein Hall; the current underground garage is not a separate mapped footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "253-6"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "everett-st_12r",
+      "decision": "matched",
+      "bldgid": "253-6",
+      "bldgids": [
+        "253-6"
+      ],
+      "street_name": "Everett Street",
+      "hail_address": "12r Everett Street",
+      "note": "Harvard Law School name crosswalk: Harkness Commons, now integrated with the Wasserstein/Caspersen/Clinical complex; Harvard Planning lists 14 Everett Street and inactive standalone status.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": [
+        "253-9"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "everett-st_14",
+      "decision": "matched",
+      "bldgid": "253-9",
+      "bldgids": [
+        "253-9"
+      ],
+      "street_name": "Everett Street",
+      "hail_address": "14 Everett Street",
+      "note": "Harvard Law School name crosswalk: Story Hall; Harvard Planning lists its current address as 12 Everett Street. The Hail address is displaced within the Graduate Commons complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": [
+        "253-6"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "everett-st_20r",
+      "decision": "matched",
+      "bldgid": "253-13",
+      "bldgids": [
+        "253-13"
+      ],
+      "street_name": "Everett Street",
+      "hail_address": "20r Everett Street",
+      "note": "Harvard Law School name crosswalk: Child Hall; Harvard Planning lists its current address as 26 Everett Street. The Hail address is displaced within the Graduate Commons complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": [
+        "253-5"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "fairmont-st_19a",
@@ -7342,6 +7427,25 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "fawcett-st_85-87",
+      "decision": "matched",
+      "bldgid": "78-1",
+      "bldgids": [
+        "78-1"
+      ],
+      "street_name": "Fawcett Street",
+      "hail_address": "85-87 Fawcett Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:03:42.465Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (78-1: 2.8 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "78-1"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "fayerweather-st_116",
@@ -7658,6 +7762,24 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "first-st_35r",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "First Street",
+      "hail_address": "35r First Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:45:06.441Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (468-3: Δ10 house numbers, 19.9 m, 468-4: Δ3 house numbers, 2.1 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "468-3",
+        "468-4"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "first-st_52-120",
       "decision": "no_map_match",
       "bldgid": null,
@@ -7688,6 +7810,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "flagg-street-ct_4",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Flagg Street Court",
+      "hail_address": "4 Flagg Street Court",
+      "note": "Hail detail states that the building moved to another location.",
+      "reviewed_at": "2026-08-17T19:54:22.705Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "flagg-st_36",
       "decision": "no_map_match",
       "bldgid": null,
@@ -7709,21 +7846,6 @@
       "bldgids": [],
       "street_name": "Flagg Street",
       "hail_address": "44-46 Flagg Street",
-      "note": "Hail detail states that the building moved to another location.",
-      "reviewed_at": "2026-08-17T19:54:22.705Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "flagg-street-ct_4",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Flagg Street Court",
-      "hail_address": "4 Flagg Street Court",
       "note": "Hail detail states that the building moved to another location.",
       "reviewed_at": "2026-08-17T19:54:22.705Z",
       "original_match_stage": "7",
@@ -8131,6 +8253,25 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "franklin-st_432",
+      "decision": "matched",
+      "bldgid": "572-13",
+      "bldgids": [
+        "572-13"
+      ],
+      "street_name": "Franklin Street",
+      "hail_address": "432 Franklin Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:26:56.253Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (572-13: Δ2 house numbers, 0.0 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "572-13"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "franklin-st_461",
       "decision": "no_map_match",
       "bldgid": null,
@@ -8497,23 +8638,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "garden-st_6",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Garden Street",
-      "hail_address": "6 Garden Street",
-      "note": "The 1769 Latin grammar school moved to 35 Church Street in 1832 and is not the surviving Byerly Hall footprint at 6-8 Garden Street.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [
-        "307-6"
-      ],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "garden-st_15",
       "decision": "no_map_match",
       "bldgid": null,
@@ -8559,21 +8683,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "garden-st_42_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Garden Street",
-      "hail_address": "42 Garden Street",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "garden-st_4_2",
       "decision": "matched",
       "bldgid": "181-4",
@@ -8591,6 +8700,38 @@
         "181-4"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "garden-st_42_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Garden Street",
+      "hail_address": "42 Garden Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "garden-st_57_2",
+      "decision": "matched",
+      "bldgid": "206-15",
+      "bldgids": [
+        "206-15"
+      ],
+      "street_name": "Garden Street",
+      "hail_address": "57 Garden Street",
+      "note": "Daniels Hall in the Currier House complex; identified from Harvard's campus map and the Hail building name.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "garden-st_58_2",
@@ -8614,23 +8755,6 @@
       "selected_was_proposed": true
     },
     {
-      "building_id": "garden-st_57_2",
-      "decision": "matched",
-      "bldgid": "206-15",
-      "bldgids": [
-        "206-15"
-      ],
-      "street_name": "Garden Street",
-      "hail_address": "57 Garden Street",
-      "note": "Daniels Hall in the Currier House complex; identified from Harvard's campus map and the Hail building name.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
       "building_id": "garden-st_59",
       "decision": "matched",
       "bldgid": "206-7",
@@ -8646,6 +8770,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
+    },
+    {
+      "building_id": "garden-st_6",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Garden Street",
+      "hail_address": "6 Garden Street",
+      "note": "The 1769 Latin grammar school moved to 35 Church Street in 1832 and is not the surviving Byerly Hall footprint at 6-8 Garden Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "307-6"
+      ],
+      "selected_was_proposed": null
     },
     {
       "building_id": "garden-st_61_2",
@@ -8712,51 +8853,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "gerry-s-landing-rd_10",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Gerry'S Landing Road",
-      "hail_address": "10 Gerry'S Landing Road",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "gerry-s-landing-rd_79_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Gerry'S Landing Road",
-      "hail_address": "79+ Gerry'S Landing Road",
-      "note": "Non-building Hail entry; no building footprint expected.",
-      "reviewed_at": "2026-08-28T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Unclear",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "gerry-s-landing-rd_82",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Gerry'S Landing Road",
-      "hail_address": "82+ Gerry'S Landing Road",
-      "note": "Hail detail states that the building moved to another location.",
-      "reviewed_at": "2026-08-17T19:54:22.705Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "gerry-st_11",
       "decision": "no_map_match",
       "bldgid": null,
@@ -8816,6 +8912,51 @@
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
       "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "gerry-s-landing-rd_10",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Gerry'S Landing Road",
+      "hail_address": "10 Gerry'S Landing Road",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "gerry-s-landing-rd_79_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Gerry'S Landing Road",
+      "hail_address": "79+ Gerry'S Landing Road",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "gerry-s-landing-rd_82",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Gerry'S Landing Road",
+      "hail_address": "82+ Gerry'S Landing Road",
+      "note": "Hail detail states that the building moved to another location.",
+      "reviewed_at": "2026-08-17T19:54:22.705Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
@@ -8894,6 +9035,26 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "gore-st_132",
+      "decision": "matched",
+      "bldgid": "410-9",
+      "bldgids": [
+        "410-9"
+      ],
+      "street_name": "Gore Street",
+      "hail_address": "132 Gore Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:29:24.554Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (410-9: Δ2 house numbers, 0.0 m, 999-743: Δ10 house numbers, 16.8 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "410-9",
+        "999-743"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "gore-st_132r",
@@ -9291,6 +9452,25 @@
         "416-6"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "gore-st_97r",
+      "decision": "matched",
+      "bldgid": "393-23",
+      "bldgids": [
+        "393-23"
+      ],
+      "street_name": "Gore Street",
+      "hail_address": "97r Gore Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:01:05.378Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (999-775: 6.8 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-775"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "gorham-st_42-46",
@@ -10920,6 +11100,48 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "hillside-ave_17-19",
+      "decision": "matched",
+      "bldgid": "129-7",
+      "bldgids": [
+        "129-7"
+      ],
+      "street_name": "Hillside Avenue",
+      "hail_address": "17-19 Hillside Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:01:37.119Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (129-7: 0.0 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "129-7"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "hingham-st_24",
+      "decision": "matched",
+      "bldgid": "619-8",
+      "bldgids": [
+        "619-8"
+      ],
+      "street_name": "Hingham Street",
+      "hail_address": "24 Hingham Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:29:34.037Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (619-1: Δ2 house numbers, 0.0 m, 619-27: Δ4 house numbers, 0.0 m, 619-28: Δ6 house numbers, 0.0 m, 619-8: Δ2 house numbers, 0.0 m, 999-3442: Δ5 house numbers, 10.1 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "619-1",
+        "619-27",
+        "619-28",
+        "619-8",
+        "999-3442"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "hingham-st_34",
       "decision": "no_map_match",
       "bldgid": null,
@@ -11160,6 +11382,27 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "holyoke-st_4_2",
+      "decision": "matched",
+      "bldgid": "389-18",
+      "bldgids": [
+        "389-18"
+      ],
+      "street_name": "Holyoke Street",
+      "hail_address": "4 Holyoke Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:29:48.216Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (357-3: Δ7 house numbers, 0.0 m, 357-6: Δ2 house numbers, 12.0 m, 389-18: Δ4 house numbers, 0.0 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "357-3",
+        "357-6",
+        "389-18"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "holyoke-st_50_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -11173,6 +11416,26 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "houghton-st_10-12",
+      "decision": "matched",
+      "bldgid": "999-3523",
+      "bldgids": [
+        "999-3523"
+      ],
+      "street_name": "Houghton Street",
+      "hail_address": "10-12 Houghton Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:24:21.164Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (999-3521: Δ2 house numbers, 5.5 m, 999-955: Δ6 house numbers, 16.7 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-3521",
+        "999-955"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "hovey-ave_57",
@@ -11482,6 +11745,27 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "hunting-st_6",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Hunting Street",
+      "hail_address": "6 Hunting Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:42:16.851Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (999-808: Δ0 house numbers, 18.0 m, 999-819: Δ1 house numbers, 11.3 m, 999-842: Δ3 house numbers, 12.2 m, 999-851: Δ7 house numbers, 16.9 m, 999-853: Δ4 house numbers, 10.1 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-808",
+        "999-819",
+        "999-842",
+        "999-851",
+        "999-853"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "hurley-st_11",
       "decision": "no_map_match",
       "bldgid": null,
@@ -11540,6 +11824,27 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "hurley-st_257",
+      "decision": "matched",
+      "bldgid": "507-27",
+      "bldgids": [
+        "507-27"
+      ],
+      "street_name": "Hurley Street",
+      "hail_address": "257 Hurley Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:45:44.167Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (507-27: Δ2 house numbers, 0.0 m, 530-10: Δ3 house numbers, 13.3 m, 999-4003: Δ1 house numbers, 7.1 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "507-27",
+        "530-10",
+        "999-4003"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "hurley-st_258-272",
@@ -12110,6 +12415,29 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "inman-st_57",
+      "decision": "matched",
+      "bldgid": "481-1",
+      "bldgids": [
+        "481-1"
+      ],
+      "street_name": "Inman Street",
+      "hail_address": "57 Inman Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:45:27.888Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (368-65: Δ10 house numbers, 4.4 m, 488-25: Δ6 house numbers, 6.4 m, 999-4255: Δ9 house numbers, 14.6 m, 999-453: Δ7 house numbers, 13.4 m, 999-561: Δ7 house numbers, 16.7 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "368-65",
+        "488-25",
+        "999-4255",
+        "999-453",
+        "999-561"
+      ],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "inman-st_63",
       "decision": "no_map_match",
       "bldgid": null,
@@ -12499,12 +12827,12 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "kelley-st_12-14",
+      "building_id": "kelley-st_1_2",
       "decision": "no_map_match",
       "bldgid": null,
       "bldgids": [],
       "street_name": "Kelley Street",
-      "hail_address": "12-14 Kelley Street",
+      "hail_address": "1 Kelley Street",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -12514,12 +12842,12 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "kelley-st_1_2",
+      "building_id": "kelley-st_12-14",
       "decision": "no_map_match",
       "bldgid": null,
       "bldgids": [],
       "street_name": "Kelley Street",
-      "hail_address": "1 Kelley Street",
+      "hail_address": "12-14 Kelley Street",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -13418,6 +13746,44 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "linnaean-st_52",
+      "decision": "matched",
+      "bldgid": "206-2",
+      "bldgids": [
+        "206-2"
+      ],
+      "street_name": "Linnaean Street",
+      "hail_address": "52 Linnaean Street",
+      "note": "Ada Louise Comstock Hall. Hail supplies the alternate 130 Walker Street address, which Harvard identifies as Comstock's current address.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "206-1"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "linnaean-st_60",
+      "decision": "matched",
+      "bldgid": "206-4",
+      "bldgids": [
+        "206-4"
+      ],
+      "street_name": "Linnaean Street",
+      "hail_address": "60 Linnaean Street",
+      "note": "Daniel Henry Holmes Hall. Harvard's current property record places Holmes at 58 Linnaean Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "206-8"
+      ],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "linnaean-st_60r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14223,6 +14589,26 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "martin-st_10",
+      "decision": "matched",
+      "bldgid": "196-2",
+      "bldgids": [
+        "196-2"
+      ],
+      "street_name": "Martin Street",
+      "hail_address": "10 Martin Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:30:13.867Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (196-2: Δ2 house numbers, 0.0 m, 999-1979: Δ10 house numbers, 18.6 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "196-2",
+        "999-1979"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "martin-st_31",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14778,6 +15164,26 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "massachusetts-ave_1515",
+      "decision": "matched",
+      "bldgid": "266-14",
+      "bldgids": [
+        "266-14"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1515 Massachusetts Avenue",
+      "note": "Harvard Law School name crosswalk: Austin Hall. The second same-address footprint is not part of Austin Hall.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Hail record describes multiple compatible footprints; accepted all footprints not already matched by another Hail rule",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "266-14",
+        "266-15"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "massachusetts-ave_1531",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14808,134 +15214,6 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
-    },
-    {
-      "building_id": "massachusetts-ave_1561r",
-      "decision": "matched",
-      "bldgid": "266-4",
-      "bldgids": [
-        "266-4"
-      ],
-      "street_name": "Massachusetts Avenue",
-      "hail_address": "1561r Massachusetts Avenue",
-      "note": "Harvard Law School name crosswalk: Hauser Hall. Hail uses 1561(r); Harvard's current directory and Cambridge Address Points identify the footprint at 1575 Massachusetts Avenue.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "everett-st_10",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Everett Street",
-      "hail_address": "10 Everett Street",
-      "note": "Harvard Law School crosswalk: the 1968 above-ground Everett Street parking garage was demolished in 2007 for Wasserstein Hall; the current underground garage is not a separate mapped footprint.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [
-        "253-6"
-      ],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "everett-st_12r",
-      "decision": "matched",
-      "bldgid": "253-6",
-      "bldgids": [
-        "253-6"
-      ],
-      "street_name": "Everett Street",
-      "hail_address": "12r Everett Street",
-      "note": "Harvard Law School name crosswalk: Harkness Commons, now integrated with the Wasserstein/Caspersen/Clinical complex; Harvard Planning lists 14 Everett Street and inactive standalone status.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "4",
-      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
-      "review_reason_category": "building_complex_ambiguity",
-      "original_candidate_bldgids": [
-        "253-9"
-      ],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "everett-st_14",
-      "decision": "matched",
-      "bldgid": "253-9",
-      "bldgids": [
-        "253-9"
-      ],
-      "street_name": "Everett Street",
-      "hail_address": "14 Everett Street",
-      "note": "Harvard Law School name crosswalk: Story Hall; Harvard Planning lists its current address as 12 Everett Street. The Hail address is displaced within the Graduate Commons complex.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "building_complex_ambiguity",
-      "original_candidate_bldgids": [
-        "253-6"
-      ],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "everett-st_20r",
-      "decision": "matched",
-      "bldgid": "253-13",
-      "bldgids": [
-        "253-13"
-      ],
-      "street_name": "Everett Street",
-      "hail_address": "20r Everett Street",
-      "note": "Harvard Law School name crosswalk: Child Hall; Harvard Planning lists its current address as 26 Everett Street. The Hail address is displaced within the Graduate Commons complex.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "4",
-      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
-      "review_reason_category": "building_complex_ambiguity",
-      "original_candidate_bldgids": [
-        "253-5"
-      ],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "massachusetts-ave_1515",
-      "decision": "matched",
-      "bldgid": "266-14",
-      "bldgids": [
-        "266-14"
-      ],
-      "street_name": "Massachusetts Avenue",
-      "hail_address": "1515 Massachusetts Avenue",
-      "note": "Harvard Law School name crosswalk: Austin Hall. The second same-address footprint is not part of Austin Hall.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "4",
-      "original_match_reason": "Hail record describes multiple compatible footprints; accepted all footprints not already matched by another Hail rule",
-      "review_reason_category": "multiple_footprint_candidates",
-      "original_candidate_bldgids": [
-        "266-14",
-        "266-15"
-      ],
-      "selected_was_proposed": true
-    },
-    {
-      "building_id": "massachusetts-ave_1595",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Massachusetts Avenue",
-      "hail_address": "1595 Massachusetts Avenue",
-      "note": "Harvard Law School crosswalk: Wyeth Hall was demolished in 2007 for the Wasserstein/Caspersen/Clinical complex.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "1",
-      "original_match_reason": "Exact standardized address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [
-        "253-6"
-      ],
-      "selected_was_proposed": null
     },
     {
       "building_id": "massachusetts-ave_1553_3",
@@ -14975,6 +15253,23 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "massachusetts-ave_1561r",
+      "decision": "matched",
+      "bldgid": "266-4",
+      "bldgids": [
+        "266-4"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1561r Massachusetts Avenue",
+      "note": "Harvard Law School name crosswalk: Hauser Hall. Hail uses 1561(r); Harvard's current directory and Cambridge Address Points identify the footprint at 1575 Massachusetts Avenue.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "massachusetts-ave_1569",
       "decision": "no_map_match",
       "bldgid": null,
@@ -14987,6 +15282,58 @@
       "original_match_reason": "No credible address candidate",
       "review_reason_category": "",
       "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1581-1583",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1581-1583 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:26:46.220Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (999-4222: Δ9 house numbers, 18.3 m, 999-5000: Δ2 house numbers, 14.1 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-4222",
+        "999-5000"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1587",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1587 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:26:10.314Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (999-5000: Δ2 house numbers, 14.1 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-5000"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "massachusetts-ave_1595",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "1595 Massachusetts Avenue",
+      "note": "Harvard Law School crosswalk: Wyeth Hall was demolished in 2007 for the Wasserstein/Caspersen/Clinical complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "253-6"
+      ],
       "selected_was_proposed": null
     },
     {
@@ -15653,6 +16000,25 @@
       "selected_was_proposed": false
     },
     {
+      "building_id": "massachusetts-ave_600-685",
+      "decision": "matched",
+      "bldgid": "608-5",
+      "bldgids": [
+        "608-5"
+      ],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "600-685 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:01:17.397Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (608-5: 11.5 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "608-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "massachusetts-ave_615-629",
       "decision": "matched",
       "bldgid": "596-2",
@@ -15668,6 +16034,21 @@
         "596-3"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "massachusetts-ave_618_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "618 Massachusetts Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T17:32:57.818Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "massachusetts-ave_711",
@@ -15720,10 +16101,14 @@
       "building_id": "massachusetts-ave_77r",
       "decision": "matched",
       "bldgid": "668-11",
+      "bldgids": [
+        "668-11",
+        "999-5043"
+      ],
       "street_name": "Massachusetts Avenue",
       "hail_address": "77r Massachusetts Avenue",
-      "note": "",
-      "reviewed_at": "2026-08-11T17:22:39.493Z",
+      "note": "Hail names the Rotch architecture library and dates it to 1989. MIT Libraries dates the Rotch remodeling/expansion to 1988-1991; retain the Building 7 match and expand it to the Rotch Library Extension footprint 999-5043.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
       "original_match_stage": "4",
       "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
       "review_reason_category": "multiple_footprint_candidates",
@@ -16029,6 +16414,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "memorial-dr_1_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Memorial Drive",
+      "hail_address": "1 Memorial Drive",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "memorial-dr_104",
       "decision": "no_map_match",
       "bldgid": null,
@@ -16050,21 +16450,6 @@
       "bldgids": [],
       "street_name": "Memorial Drive",
       "hail_address": "170r Memorial Drive",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "memorial-dr_1_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Memorial Drive",
-      "hail_address": "1 Memorial Drive",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -16302,6 +16687,41 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "memorial-dr_967",
+      "decision": "matched",
+      "bldgid": "437-2",
+      "bldgids": [
+        "437-2",
+        "437-13"
+      ],
+      "street_name": "Memorial Drive",
+      "hail_address": "967 Memorial Drive",
+      "note": "Eliot House spans the 967 Memorial Drive wing and the principal 101 Dunster Street footprint; Harvard treats them as one residential complex constructed in 1931.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "437-2"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "memorial-dr_972_2",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Memorial Drive",
+      "hail_address": "972 Memorial Drive",
+      "note": "Non-building Hail entry; no building footprint expected.",
+      "reviewed_at": "2026-08-28T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Unclear",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "memorial-dr_972-990",
       "decision": "no_map_match",
       "bldgid": null,
@@ -16318,21 +16738,6 @@
         "356-33",
         "356-38"
       ],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "memorial-dr_972_2",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Memorial Drive",
-      "hail_address": "972 Memorial Drive",
-      "note": "Non-building Hail entry; no building footprint expected.",
-      "reviewed_at": "2026-08-28T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Unclear",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
       "selected_was_proposed": null
     },
     {
@@ -16592,21 +16997,6 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "mount-auburn-st_117",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Mount Auburn Street",
-      "hail_address": "117 Mount Auburn Street",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "mount-auburn-st_11_2",
       "decision": "matched",
       "bldgid": "439-15",
@@ -16625,6 +17015,21 @@
         "439-15"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "mount-auburn-st_117",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Mount Auburn Street",
+      "hail_address": "117 Mount Auburn Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
     },
     {
       "building_id": "mount-auburn-st_122",
@@ -17222,6 +17627,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "newell-st_24",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Newell Street",
+      "hail_address": "24 Newell Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:03:11.816Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (999-2331: 12.6 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-2331"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "norfolk-st_12",
       "decision": "no_map_match",
       "bldgid": null,
@@ -17661,6 +18083,42 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "otis-st_23-27",
+      "decision": "matched",
+      "bldgid": "461-10",
+      "bldgids": [
+        "461-10"
+      ],
+      "street_name": "Otis Street",
+      "hail_address": "23-27 Otis Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:40:00.602Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (461-1: Δ4 house numbers, 0.0 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "461-1"
+      ],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "otis-st_28",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Otis Street",
+      "hail_address": "28 Otis Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:43:37.064Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (461-1: Δ3 house numbers, 0.0 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "461-1"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "otis-st_29_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -17746,25 +18204,12 @@
       "selected_was_proposed": null
     },
     {
-      "building_id": "oxford-st_7r",
-      "decision": "matched",
-      "bldgid": "266-13",
-      "bldgids": ["266-13"],
-      "street_name": "Oxford Street",
-      "hail_address": "7r Oxford Street",
-      "note": "Oxford Street name crosswalk: John Knowles Paine Hall is part of the Fanny Peabody Mason Music Building at 3 Oxford Street, not the Science Center footprint.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "4",
-      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
-      "review_reason_category": "building_complex_ambiguity",
-      "original_candidate_bldgids": ["266-18"],
-      "selected_was_proposed": false
-    },
-    {
       "building_id": "oxford-st_10_2",
       "decision": "matched",
       "bldgid": "241-8",
-      "bldgids": ["241-8"],
+      "bldgids": [
+        "241-8"
+      ],
       "street_name": "Oxford Street",
       "hail_address": "10 Oxford Street",
       "note": "Oxford Street chemistry-complex crosswalk: Conant Chemistry Laboratory, currently addressed as 12 Oxford Street.",
@@ -17779,7 +18224,9 @@
       "building_id": "oxford-st_11",
       "decision": "matched",
       "bldgid": "266-21",
-      "bldgids": ["266-21"],
+      "bldgids": [
+        "266-21"
+      ],
       "street_name": "Oxford Street",
       "hail_address": "11 Oxford Street",
       "note": "Oxford Street physics-complex crosswalk: Jefferson Physical Laboratory. Harvard currently lists 17 Oxford Street; the 11 Oxford footprint is LISE.",
@@ -17787,14 +18234,18 @@
       "original_match_stage": "1",
       "original_match_reason": "Exact standardized address",
       "review_reason_category": "building_complex_ambiguity",
-      "original_candidate_bldgids": ["266-12"],
+      "original_candidate_bldgids": [
+        "266-12"
+      ],
       "selected_was_proposed": false
     },
     {
       "building_id": "oxford-st_12_2",
       "decision": "matched",
       "bldgid": "241-45",
-      "bldgids": ["241-45"],
+      "bldgids": [
+        "241-45"
+      ],
       "street_name": "Oxford Street",
       "hail_address": "12 Oxford Street",
       "note": "Oxford Street chemistry-complex crosswalk: Mallinckrodt Chemistry Laboratory; do not copy this named record to every 12 Oxford footprint.",
@@ -17802,14 +18253,21 @@
       "original_match_stage": "4",
       "original_match_reason": "Hail record describes multiple compatible footprints; accepted all footprints not already matched by another Hail rule",
       "review_reason_category": "multiple_footprint_candidates",
-      "original_candidate_bldgids": ["241-10", "241-4", "241-45", "241-8"],
+      "original_candidate_bldgids": [
+        "241-10",
+        "241-4",
+        "241-45",
+        "241-8"
+      ],
       "selected_was_proposed": true
     },
     {
       "building_id": "oxford-st_12r",
       "decision": "matched",
       "bldgid": "241-4",
-      "bldgids": ["241-4"],
+      "bldgids": [
+        "241-4"
+      ],
       "street_name": "Oxford Street",
       "hail_address": "12r Oxford Street",
       "note": "Oxford Street chemistry-complex crosswalk: Converse Memorial Laboratory; do not copy this named record to every 12 Oxford footprint.",
@@ -17817,68 +18275,13 @@
       "original_match_stage": "4",
       "original_match_reason": "Hail record describes multiple compatible footprints; accepted all footprints not already matched by another Hail rule",
       "review_reason_category": "multiple_footprint_candidates",
-      "original_candidate_bldgids": ["241-10", "241-4", "241-45", "241-8"],
+      "original_candidate_bldgids": [
+        "241-10",
+        "241-4",
+        "241-45",
+        "241-8"
+      ],
       "selected_was_proposed": true
-    },
-    {
-      "building_id": "oxford-st_14r",
-      "decision": "matched",
-      "bldgid": "241-10",
-      "bldgids": ["241-10"],
-      "street_name": "Oxford Street",
-      "hail_address": "14r Oxford Street",
-      "note": "Oxford Street chemistry-complex crosswalk: Naito Laboratory, currently part of the 12 Oxford Street complex.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "oxford-st_15r",
-      "decision": "matched",
-      "bldgid": "266-9",
-      "bldgids": ["266-9"],
-      "street_name": "Oxford Street",
-      "hail_address": "15r Oxford Street",
-      "note": "Oxford Street physics-complex crosswalk: Lyman Laboratory, currently addressed as 17 Oxford Street.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "oxford-st_16_2",
-      "decision": "matched",
-      "bldgid": "241-41",
-      "bldgids": ["241-41"],
-      "street_name": "Oxford Street",
-      "hail_address": "16 Oxford Street",
-      "note": "Oxford Street name crosswalk: the unnamed 1993 Payette laboratory is the Mallinckrodt-Hoffman Link, currently addressed as 18 Oxford Street.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
-    },
-    {
-      "building_id": "oxford-st_29",
-      "decision": "matched",
-      "bldgid": "266-7",
-      "bldgids": ["266-7"],
-      "street_name": "Oxford Street",
-      "hail_address": "29 Oxford Street",
-      "note": "Oxford Street engineering crosswalk: Pierce Hall. Harvard Planning lists 25 Oxford Street and Harvard operational directions also use 29 Oxford Street.",
-      "reviewed_at": "2026-08-29T00:00:00Z",
-      "original_match_stage": "7",
-      "original_match_reason": "No credible address candidate",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": false
     },
     {
       "building_id": "oxford-st_132",
@@ -17894,6 +18297,57 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "oxford-st_14r",
+      "decision": "matched",
+      "bldgid": "241-10",
+      "bldgids": [
+        "241-10"
+      ],
+      "street_name": "Oxford Street",
+      "hail_address": "14r Oxford Street",
+      "note": "Oxford Street chemistry-complex crosswalk: Naito Laboratory, currently part of the 12 Oxford Street complex.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_15r",
+      "decision": "matched",
+      "bldgid": "266-9",
+      "bldgids": [
+        "266-9"
+      ],
+      "street_name": "Oxford Street",
+      "hail_address": "15r Oxford Street",
+      "note": "Oxford Street physics-complex crosswalk: Lyman Laboratory, currently addressed as 17 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "oxford-st_16_2",
+      "decision": "matched",
+      "bldgid": "241-41",
+      "bldgids": [
+        "241-41"
+      ],
+      "street_name": "Oxford Street",
+      "hail_address": "16 Oxford Street",
+      "note": "Oxford Street name crosswalk: the unnamed 1993 Payette laboratory is the Mallinckrodt-Hoffman Link, currently addressed as 18 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "oxford-st_2",
@@ -17924,6 +18378,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "oxford-st_29",
+      "decision": "matched",
+      "bldgid": "266-7",
+      "bldgids": [
+        "266-7"
+      ],
+      "street_name": "Oxford Street",
+      "hail_address": "29 Oxford Street",
+      "note": "Oxford Street engineering crosswalk: Pierce Hall. Harvard Planning lists 25 Oxford Street and Harvard operational directions also use 29 Oxford Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "oxford-st_46r",
@@ -17961,6 +18432,25 @@
         "211-6"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "oxford-st_7r",
+      "decision": "matched",
+      "bldgid": "266-13",
+      "bldgids": [
+        "266-13"
+      ],
+      "street_name": "Oxford Street",
+      "hail_address": "7r Oxford Street",
+      "note": "Oxford Street name crosswalk: John Knowles Paine Hall is part of the Fanny Peabody Mason Music Building at 3 Oxford Street, not the Science Center footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree; suffix/rear/range differs but only one footprint is plausible",
+      "review_reason_category": "building_complex_ambiguity",
+      "original_candidate_bldgids": [
+        "266-18"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "oxford-st_9-15",
@@ -18831,6 +19321,43 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "plympton-st_28_2",
+      "decision": "matched",
+      "bldgid": "401-11",
+      "bldgids": [
+        "401-11"
+      ],
+      "street_name": "Plympton Street",
+      "hail_address": "28 Plympton Street",
+      "note": "New Russell Hall in Adams House. Harvard's current property record identifies Russell at 26 Plympton Street and constructed in 1931.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "plympton-st_58",
+      "decision": "matched",
+      "bldgid": "438-1",
+      "bldgids": [
+        "438-1"
+      ],
+      "street_name": "Plympton Street",
+      "hail_address": "58 Plympton Street",
+      "note": "New Quincy residence hall. Restrict the seven-story dormitory record to the main New Quincy footprint rather than the separate Qube/library footprint.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
+      "review_reason_category": "multiple_footprint_candidates",
+      "original_candidate_bldgids": [
+        "438-1",
+        "438-8"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "plympton-st_59_2",
       "decision": "no_map_match",
       "bldgid": null,
@@ -18844,6 +19371,23 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "plympton-st_70",
+      "decision": "matched",
+      "bldgid": "438-6",
+      "bldgids": [
+        "438-6"
+      ],
+      "street_name": "Plympton Street",
+      "hail_address": "70 Plympton Street",
+      "note": "Mather Hall, now Stone Hall in Quincy House. Harvard dates Stone Hall to 1930 and the current Cambridge address point is 60 Plympton Street.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
     },
     {
       "building_id": "plympton-st_8",
@@ -18897,6 +19441,65 @@
         "110-5"
       ],
       "selected_was_proposed": true
+    },
+    {
+      "building_id": "porter-st_16",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Porter Street",
+      "hail_address": "16 Porter Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:00:25.982Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (367-28: 14.9 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "367-28"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "porter-st_22",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Porter Street",
+      "hail_address": "22 Porter Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T17:58:26.862Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (367-35: 10.6 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "367-35"
+      ],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "porter-st_24-28",
+      "decision": "matched",
+      "bldgid": "367-9",
+      "bldgids": [
+        "367-9"
+      ],
+      "street_name": "Porter Street",
+      "hail_address": "24-28 Porter Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:30:06.326Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (363-14: Δ7 house numbers, 0.0 m, 367-28: Δ8 house numbers, 14.9 m, 367-35: Δ2 house numbers, 10.6 m, 999-4327: Δ7 house numbers, 8.5 m, 999-4958: Δ5 house numbers, 12.9 m, 999-866: Δ6 house numbers, 11.0 m, 999-869: Δ0 house numbers, 19.9 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "363-14",
+        "367-28",
+        "367-35",
+        "999-4327",
+        "999-4958",
+        "999-866",
+        "999-869"
+      ],
+      "selected_was_proposed": false
     },
     {
       "building_id": "porter-st_31",
@@ -19757,6 +20360,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "reservoir-st_18",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Reservoir Street",
+      "hail_address": "18 Reservoir Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:03:51.512Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (999-1435: 7.9 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-1435"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "reservoir-st_25r",
       "decision": "no_map_match",
       "bldgid": null,
@@ -20032,6 +20652,26 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
+    },
+    {
+      "building_id": "rindge-ave_227_2",
+      "decision": "matched",
+      "bldgid": "50-58",
+      "bldgids": [
+        "50-58"
+      ],
+      "street_name": "Rindge Avenue",
+      "hail_address": "227 Rindge Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:24:31.586Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (50-58: Δ2 house numbers, 0.0 m, 999-2854: Δ10 house numbers, 19.4 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "50-58",
+        "999-2854"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "rindge-ave_246",
@@ -20505,6 +21145,28 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "roseland-st_61",
+      "decision": "matched",
+      "bldgid": "999-4158",
+      "bldgids": [
+        "999-4158"
+      ],
+      "street_name": "Roseland Street",
+      "hail_address": "61 Roseland Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:42:27.555Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (999-2349: Δ3 house numbers, 4.7 m, 999-2353: Δ1 house numbers, 11.7 m, 999-4157: Δ3 house numbers, 6.8 m, 999-4158: Δ4 house numbers, 13.6 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-2349",
+        "999-2353",
+        "999-4157",
+        "999-4158"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "royal-ave_8",
@@ -21816,6 +22478,26 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "sixth-st_39",
+      "decision": "matched",
+      "bldgid": "452-2",
+      "bldgids": [
+        "452-2"
+      ],
+      "street_name": "Sixth Street",
+      "hail_address": "39 Sixth Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:25:33.516Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (452-2: Δ8 house numbers, 0.0 m, 458-20: Δ1 house numbers, 0.0 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "452-2",
+        "458-20"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "sixth-st_60-62",
       "decision": "matched",
       "bldgid": "480-30",
@@ -21865,6 +22547,25 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "smith-pl_11",
+      "decision": "matched",
+      "bldgid": "999-4171",
+      "bldgids": [
+        "999-4171"
+      ],
+      "street_name": "Smith Place",
+      "hail_address": "11 Smith Place",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:29:13.792Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (999-4171: Δ6 house numbers, 10.5 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "999-4171"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "smith-pl_130",
@@ -22633,6 +23334,25 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "thingvalla-ave_18",
+      "decision": "matched",
+      "bldgid": "311-5",
+      "bldgids": [
+        "311-5"
+      ],
+      "street_name": "Thingvalla Avenue",
+      "hail_address": "18 Thingvalla Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:00:01.844Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (311-5: 6.3 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "311-5"
+      ],
+      "selected_was_proposed": true
+    },
+    {
       "building_id": "thingvalla-ave_41",
       "decision": "no_map_match",
       "bldgid": null,
@@ -23018,6 +23738,26 @@
       "original_candidate_bldgids": [
         "465-15",
         "465-28"
+      ],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "thorndike-st_98",
+      "decision": "matched",
+      "bldgid": "486-17",
+      "bldgids": [
+        "486-17"
+      ],
+      "street_name": "Thorndike Street",
+      "hail_address": "98 Thorndike Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T19:24:42.196Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (465-7: Δ1 house numbers, 12.8 m, 486-17: Δ2 house numbers, 0.0 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "465-7",
+        "486-17"
       ],
       "selected_was_proposed": true
     },
@@ -23518,12 +24258,14 @@
       "bldgids": [
         "747-3",
         "747-2",
-        "747-4"
+        "747-4",
+        "747-5",
+        "747-6"
       ],
       "street_name": "Vassar Street",
       "hail_address": "278-290 Vassar Street",
-      "note": "",
-      "reviewed_at": "2026-08-28T17:58:04.281Z",
+      "note": "Hail describes five Westgate student-housing buildings from 1962. MIT identifies the current Westgate high-rise and low-rise complex as W85/W85ABC at 540 Memorial Drive; expand the complex record to all five footprints.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
       "original_match_stage": "4",
       "original_match_reason": "Street and number agree but suffix/rear/range yields multiple or complex candidates",
       "review_reason_category": "multiple_footprint_candidates",
@@ -23845,6 +24587,26 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "walker-st_91_2",
+      "decision": "matched",
+      "bldgid": "195-9",
+      "bldgids": [
+        "195-9",
+        "195-17"
+      ],
+      "street_name": "Walker Street",
+      "hail_address": "91 Walker Street",
+      "note": "Hail explicitly describes 91 and 95 Walker Street as the two Jordan House dormitories; these are today's Jordan South and Jordan North.",
+      "reviewed_at": "2026-08-29T00:00:00Z",
+      "original_match_stage": "1",
+      "original_match_reason": "Exact standardized address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [
+        "195-9"
+      ],
+      "selected_was_proposed": false
+    },
+    {
       "building_id": "ware-st_2-4",
       "decision": "no_map_match",
       "bldgid": null,
@@ -23873,6 +24635,26 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "warren-st_17",
+      "decision": "matched",
+      "bldgid": "390-14",
+      "bldgids": [
+        "390-14"
+      ],
+      "street_name": "Warren Street",
+      "hail_address": "17 Warren Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:44:01.046Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Same-street Address Point is within 10 house numbers; nearby unclaimed footprint may use this or a cross-street canonical address (390-14: Δ2 house numbers, 0.0 m, 390-3: Δ4 house numbers, 14.5 m)",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "390-14",
+        "390-3"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "washington-ave_33r",
@@ -24359,6 +25141,21 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "white-street-pl_6",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "White Street Place",
+      "hail_address": "6 White Street Place",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "white-st_1-55",
       "decision": "matched",
       "bldgid": "99-1",
@@ -24397,21 +25194,6 @@
       "selected_was_proposed": false
     },
     {
-      "building_id": "white-street-pl_6",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "White Street Place",
-      "hail_address": "6 White Street Place",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
       "building_id": "whittemore-ave_146-148",
       "decision": "no_map_match",
       "bldgid": null,
@@ -24442,6 +25224,23 @@
       "selected_was_proposed": null
     },
     {
+      "building_id": "whittemore-ave_150-152",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Whittemore Avenue",
+      "hail_address": "150-152 Whittemore Avenue",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:03:00.606Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (24-3: 13.8 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "24-3"
+      ],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "whittier-st_25",
       "decision": "no_map_match",
       "bldgid": null,
@@ -24463,6 +25262,21 @@
       "bldgids": [],
       "street_name": "Whittier Street",
       "hail_address": "3 Whittier Street",
+      "note": "",
+      "reviewed_at": "2026-08-17T19:21:28.857Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Classification is Cross reference to another address",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
+      "building_id": "willard-street-ct_4",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Willard Street Court",
+      "hail_address": "4 Willard Street Court",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -24497,21 +25311,6 @@
       "bldgids": [],
       "street_name": "Willard Street",
       "hail_address": "3 Willard Street",
-      "note": "",
-      "reviewed_at": "2026-08-17T19:21:28.857Z",
-      "original_match_stage": "7",
-      "original_match_reason": "Classification is Cross reference to another address",
-      "review_reason_category": "",
-      "original_candidate_bldgids": [],
-      "selected_was_proposed": null
-    },
-    {
-      "building_id": "willard-street-ct_4",
-      "decision": "no_map_match",
-      "bldgid": null,
-      "bldgids": [],
-      "street_name": "Willard Street Court",
-      "hail_address": "4 Willard Street Court",
       "note": "",
       "reviewed_at": "2026-08-17T19:21:28.857Z",
       "original_match_stage": "7",
@@ -24823,6 +25622,21 @@
       "selected_was_proposed": true
     },
     {
+      "building_id": "winter-st_92a",
+      "decision": "no_map_match",
+      "bldgid": null,
+      "bldgids": [],
+      "street_name": "Winter Street",
+      "hail_address": "92A Winter Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:05:01.036Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": null
+    },
+    {
       "building_id": "winthrop-st_80-84",
       "decision": "no_map_match",
       "bldgid": null,
@@ -24838,6 +25652,25 @@
         "396-10"
       ],
       "selected_was_proposed": null
+    },
+    {
+      "building_id": "woodbridge-st_19-21",
+      "decision": "matched",
+      "bldgid": "39-312",
+      "bldgids": [
+        "39-312"
+      ],
+      "street_name": "Woodbridge Street",
+      "hail_address": "19-21 Woodbridge Street",
+      "note": "",
+      "reviewed_at": "2026-08-31T18:00:39.297Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Exact-address point has a stale or missing footprint link; nearest unclaimed current footprint is within 15 m (39-312: 0.0 m)",
+      "review_reason_category": "stale_address_point_near_unclaimed_footprint",
+      "original_candidate_bldgids": [
+        "39-312"
+      ],
+      "selected_was_proposed": true
     },
     {
       "building_id": "woodlawn-st_18",
@@ -25060,6 +25893,291 @@
       "review_reason_category": "",
       "original_candidate_bldgids": [],
       "selected_was_proposed": false
+    },
+    {
+      "building_id": "ames-st_27",
+      "decision": "matched",
+      "bldgid": "668-56",
+      "bldgids": ["668-56"],
+      "street_name": "Ames Street",
+      "hail_address": "27 Ames Street",
+      "note": "Hail explicitly identifies MIT Building 56 (Whitaker); MIT's public building GIS polygon resolves Building 56 to footprint 668-56.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Loose same-street address candidates",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": ["668-15", "668-16", "668-54", "668-56", "668-8", "999-3430"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "ames-st_27r",
+      "decision": "matched",
+      "bldgid": "668-16",
+      "bldgids": ["668-16"],
+      "street_name": "Ames Street",
+      "hail_address": "27r Ames Street",
+      "note": "Hail explicitly identifies MIT Building 16 (Dorrance); MIT's public building GIS polygon resolves Building 16 to footprint 668-16.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Loose same-street address candidates",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": ["668-15", "668-16", "668-54", "668-56", "668-8", "999-3430"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "memorial-dr_150r",
+      "decision": "matched",
+      "bldgid": "668-54",
+      "bldgids": ["668-54"],
+      "street_name": "Memorial Drive",
+      "hail_address": "150r Memorial Drive",
+      "note": "Hail explicitly identifies MIT Building 54, the Green Building; MIT's public building GIS polygon resolves it to footprint 668-54.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "memorial-dr_182-222",
+      "decision": "matched",
+      "bldgid": "668-1",
+      "bldgids": ["668-1", "668-2", "668-3", "668-4", "668-10"],
+      "street_name": "Memorial Drive",
+      "hail_address": "182-222 Memorial Drive",
+      "note": "Hail explicitly describes MIT Buildings 1, 2, 3, 4, and 10; MIT's public GIS resolves the five connected classroom-building footprints individually.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Previously retained only the unclaimed Building 10 footprint",
+      "review_reason_category": "",
+      "original_candidate_bldgids": ["668-10"],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "vassar-st_37",
+      "decision": "matched",
+      "bldgid": "667-3",
+      "bldgids": ["667-3"],
+      "street_name": "Vassar Street",
+      "hail_address": "37 Vassar Street",
+      "note": "Hail explicitly identifies MIT Building 45; MIT's public building GIS polygon resolves Building 45 to footprint 667-3.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Loose same-street address candidates",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": ["667-2", "668-32"],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "vassar-st_50_2",
+      "decision": "matched",
+      "bldgid": "668-36",
+      "bldgids": ["668-36", "668-38"],
+      "street_name": "Vassar Street",
+      "hail_address": "50 Vassar Street",
+      "note": "Hail explicitly identifies MIT Buildings 36 and 38 as the Fairchild Research Center; the MIT GIS resolves them to footprints 668-36 and 668-38.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Shared-address fallback also included Building 34",
+      "review_reason_category": "",
+      "original_candidate_bldgids": ["668-34", "668-36", "668-38"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "vassar-st_50r",
+      "decision": "matched",
+      "bldgid": "668-26",
+      "bldgids": ["668-26"],
+      "street_name": "Vassar Street",
+      "hail_address": "50r Vassar Street",
+      "note": "Hail explicitly identifies MIT Building 26, the Compton Laboratories; MIT's public GIS resolves it to footprint 668-26.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Shared-address fallback selected unrelated Buildings 34, 36, and 38",
+      "review_reason_category": "",
+      "original_candidate_bldgids": ["668-34", "668-36", "668-38"],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "vassar-st_52",
+      "decision": "matched",
+      "bldgid": "668-34",
+      "bldgids": ["668-34"],
+      "street_name": "Vassar Street",
+      "hail_address": "52 Vassar Street",
+      "note": "Hail explicitly identifies MIT Building 34; MIT's public building GIS polygon resolves Building 34 to footprint 668-34.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Loose same-street address candidates",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": ["666-4", "667-2", "668-12", "668-24", "668-26", "668-34", "668-36", "668-38", "668-39"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "vassar-st_54r",
+      "decision": "matched",
+      "bldgid": "668-24",
+      "bldgids": ["668-24"],
+      "street_name": "Vassar Street",
+      "hail_address": "54r Vassar Street",
+      "note": "Hail explicitly identifies MIT Building 24; MIT's public building GIS polygon resolves Building 24 to footprint 668-24.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Loose same-street address candidates",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": ["666-4", "668-12", "668-24", "668-26", "668-34", "668-36", "668-38", "668-39"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "vassar-st_60",
+      "decision": "matched",
+      "bldgid": "668-39",
+      "bldgids": ["668-39"],
+      "street_name": "Vassar Street",
+      "hail_address": "60 Vassar Street",
+      "note": "Hail explicitly identifies MIT Building 39, the Microsystems Technology Laboratories; MIT's public GIS resolves it to footprint 668-39.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Shared-address fallback selected Buildings 12, 24, 26, and 39",
+      "review_reason_category": "",
+      "original_candidate_bldgids": ["668-12", "668-24", "668-26", "668-39"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "vassar-st_60r_2",
+      "decision": "matched",
+      "bldgid": "668-12",
+      "bldgids": ["668-12"],
+      "street_name": "Vassar Street",
+      "hail_address": "60r Vassar Street",
+      "note": "Hail explicitly identifies MIT Building 12, the Chemical Engineering Laboratory; MIT's public GIS resolves it to footprint 668-12.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "4",
+      "original_match_reason": "Shared-address fallback selected Buildings 12, 24, 26, and 39",
+      "review_reason_category": "",
+      "original_candidate_bldgids": ["668-12", "668-24", "668-26", "668-39"],
+      "selected_was_proposed": true
+    },
+    {
+      "building_id": "vassar-st_73",
+      "decision": "matched",
+      "bldgid": "667-7",
+      "bldgids": ["667-7"],
+      "street_name": "Vassar Street",
+      "hail_address": "73 Vassar Street",
+      "note": "Hail explicitly identifies MIT Building 41, the Metals Processing Laboratory; MIT's public GIS resolves it to footprint 667-7.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "Loose same-street address candidates",
+      "review_reason_category": "loose_address_near_unclaimed_footprint",
+      "original_candidate_bldgids": ["668-39", "999-3424"],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "hampshire-st_15",
+      "decision": "matched",
+      "bldgid": "557-6",
+      "bldgids": ["557-6", "557-18", "557-8", "557-19", "557-1", "557-17", "557-16"],
+      "street_name": "Hampshire Street",
+      "hail_address": "15 Hampshire Street",
+      "note": "Hail is the 1983-1990 umbrella record for the One Kendall Square office park. Contemporary campus listings identify Buildings 100, 200, 300, 400, 500, 600/700, and 1400; MIT's public GIS independently locates leased Building 300 (NE83) on footprint 557-8.",
+      "reviewed_at": "2026-08-31T00:00:00Z",
+      "original_match_stage": "7",
+      "original_match_reason": "No credible address candidate",
+      "review_reason_category": "",
+      "original_candidate_bldgids": [],
+      "selected_was_proposed": false
+    },
+    {
+      "building_id": "memorial-dr_182",
+      "decision": "matched",
+      "bldgid": "668-6",
+      "bldgids": ["668-6"],
+      "street_name": "Memorial Drive",
+      "hail_address": "182 Memorial Drive",
+      "note": "Hail explicitly identifies MIT Building 6 (Eastman Laboratories); MIT's public GIS resolves Building 6 to footprint 668-6.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "memorial-dr_182_3",
+      "decision": "matched",
+      "bldgid": "668-8",
+      "bldgids": ["668-8"],
+      "street_name": "Memorial Drive",
+      "hail_address": "182 Memorial Drive",
+      "note": "Hail explicitly identifies MIT Building 8; MIT's public GIS resolves Building 8 to footprint 668-8.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "broadway_101",
+      "decision": "matched",
+      "bldgid": "591-19",
+      "bldgids": ["591-19"],
+      "street_name": "Broadway",
+      "hail_address": "101 Broadway",
+      "note": "Hail identifies 10 Cambridge Center, the official MIT address and location for facility NE36 on footprint 591-19.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "albany-st_126",
+      "decision": "matched",
+      "bldgid": "699-25",
+      "bldgids": ["699-25"],
+      "street_name": "Albany Street",
+      "hail_address": "126 Albany Street",
+      "note": "Hail explicitly describes the MIT Nuclear Reactor; MIT's public GIS locates the Nuclear Reactor Laboratory (NW12) at the current 138 Albany Street footprint 699-25.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "massachusetts-ave_50r",
+      "decision": "matched",
+      "bldgid": "708-13",
+      "bldgids": ["708-13"],
+      "street_name": "Massachusetts Avenue",
+      "hail_address": "50r Massachusetts Avenue",
+      "note": "Hail names Kresge Auditorium and gives its 1953 construction date; MIT's public GIS locates Kresge (W16) on footprint 708-13.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "main-st_400",
+      "decision": "matched",
+      "bldgid": "672-7",
+      "bldgids": ["672-7", "672-4"],
+      "street_name": "Main Street",
+      "hail_address": "400 Main Street",
+      "note": "Hail's record is 400 Main Street with historic alternate 50 Ames Street. Official MIT sources identify the Ford Building as E19 (400 Main, footprint 672-7) and E18 (50 Ames, footprint 672-4).",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "memorial-dr_311-318",
+      "decision": "matched",
+      "bldgid": "728-2",
+      "bldgids": ["728-2"],
+      "street_name": "Memorial Drive",
+      "hail_address": "311-318 Memorial Drive",
+      "note": "Exact current W2 address. Hail dates the 311-312 row houses to 1901 and says only part was razed in 1966; MIT dates W2 to 1900 and continues to identify it at 311 Memorial Drive.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "memorial-dr_182_4",
+      "decision": "matched",
+      "bldgid": "668-6",
+      "bldgids": ["668-6"],
+      "street_name": "Memorial Drive",
+      "hail_address": "182 Memorial Drive",
+      "note": "Hail explicitly identifies MIT Building 6A, the 1931 Spectroscopy Laboratory. The razed flag is unsupported by the Hail detail, and current MIT campus material retains the 6A designation within the Building 6 complex.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
+    },
+    {
+      "building_id": "memorial-dr_182_5",
+      "decision": "matched",
+      "bldgid": "668-6",
+      "bldgids": ["668-6"],
+      "street_name": "Memorial Drive",
+      "hail_address": "182 Memorial Drive",
+      "note": "Hail explicitly identifies MIT Building 6B, a 1920 storage building. The razed flag is unsupported by the Hail detail, and current MIT campus material retains the 6B designation within the Building 6 complex; retain this as secondary historical metadata.",
+      "reviewed_at": "2026-08-31T00:00:00Z"
     }
   ]
 }

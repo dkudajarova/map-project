@@ -10,6 +10,7 @@
     "test:wikipedia-popup": "node --test tests/frontend/wikipediaArticles.test.mjs",
     "qa:wikipedia-popup": "node scripts/visual_qa_wikipedia_popups.mjs",
     "data:build": "python3 scripts/build_building_database.py",
+    "mit:update": "python3 scripts/update_mit_buildings.py",
     "wikipedia:update": "python3 scripts/update_wikipedia_articles.py",
     "wikipedia:match": "python3 scripts/match_wikipedia_buildings.py",
     "wikipedia:enrich": "python3 scripts/enrich_wikipedia_buildings.py",

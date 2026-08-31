@@ -18,6 +18,11 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
 
+from pyproj import Transformer
+from shapely.geometry import shape
+from shapely.ops import transform
+from shapely.strtree import STRtree
+
 
 ROOT = Path(__file__).resolve().parents[1]
 HAIL_PATH = ROOT / "data/raw/Hail_buildings_dataset.csv"
@@ -27,6 +32,7 @@ FOOTPRINTS_PATH = ROOT / "cambridgegis_data/Basemap/Buildings/BASEMAP_Buildings.
 AGE_BANDS_PATH = ROOT / "src/data/Age_bands.json"
 STREET_ALIASES_PATH = ROOT / "data/config/hail-street-aliases.json"
 MANUAL_OVERRIDES_PATH = ROOT / "data/manual/hail-building-overrides.json"
+MIT_BUILDINGS_PATH = ROOT / "data/processed/mit-buildings.geojson"
 FUN_FACTS_PATH = ROOT / "data/manual/building-fun-facts.json"
 PROCESSED_OUT = ROOT / "data/processed/cambridge-buildings-enriched.geojson"
 PUBLIC_OUT = ROOT / "public/data/cambridge-buildings.geojson"
@@ -95,6 +101,46 @@ def load_geojson(path: Path) -> dict[str, Any]:
     if data.get("type") != "FeatureCollection" or not isinstance(data.get("features"), list):
         raise ValueError(f"Expected a GeoJSON FeatureCollection: {path}")
     return data
+
+
+def map_mit_facilities_to_footprints(
+    footprints: dict[str, Any], mit_buildings: dict[str, Any]
+) -> dict[str, list[dict[str, Any]]]:
+    """Map each MIT facility polygon to its dominant Cambridge footprint."""
+    transformer = Transformer.from_crs("EPSG:4326", "EPSG:26986", always_xy=True)
+    projected_footprints: list[Any] = []
+    footprint_bldgids: list[str] = []
+    for feature in footprints.get("features", []):
+        bldgid = normalize_id((feature.get("properties") or {}).get("BldgID"))
+        if bldgid and feature.get("geometry"):
+            projected_footprints.append(transform(transformer.transform, shape(feature["geometry"])))
+            footprint_bldgids.append(bldgid)
+    footprint_tree = STRtree(projected_footprints)
+
+    matches: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for feature in mit_buildings.get("features", []):
+        if not feature.get("geometry"):
+            continue
+        mit_geometry = transform(transformer.transform, shape(feature["geometry"]))
+        if mit_geometry.is_empty or mit_geometry.area <= 0:
+            continue
+        candidates: list[tuple[float, str]] = []
+        for footprint_index in footprint_tree.query(mit_geometry):
+            footprint_index = int(footprint_index)
+            footprint_geometry = projected_footprints[footprint_index]
+            bldgid = footprint_bldgids[footprint_index]
+            overlap = mit_geometry.intersection(footprint_geometry).area / mit_geometry.area
+            if overlap > 0:
+                candidates.append((overlap, bldgid))
+        if not candidates:
+            continue
+        overlap, bldgid = max(candidates)
+        if overlap < 0.50:
+            continue
+        metadata = dict(feature.get("properties") or {})
+        metadata["overlap_ratio"] = round(overlap, 4)
+        matches[bldgid].append(metadata)
+    return matches
 
 
 def load_approved_wikipedia_matches(
@@ -356,6 +402,8 @@ def assign_age_band(bands: list[dict[str, Any]], year: int | None) -> str:
 
 def point_record(feature: dict[str, Any], feature_index: int) -> dict[str, Any]:
     props = feature.get("properties") or {}
+    geometry = feature.get("geometry") or {}
+    coordinates = geometry.get("coordinates") if geometry.get("type") == "Point" else None
     street = normalize_street(props.get("StName"))
     house = normalize_house(props.get("StNm"))
     return {
@@ -369,6 +417,7 @@ def point_record(feature: dict[str, Any], feature_index: int) -> dict[str, Any]:
         "bldgid": normalize_id(props.get("BldgID")),
         "gisid": normalize_id(props.get("ml")),
         "entry": text(props.get("Entry")),
+        "coordinates": coordinates,
     }
 
 
@@ -861,6 +910,119 @@ def accept_unclaimed_multi_footprint_records(
         )
 
 
+def house_number_distance(left: HouseParts, right: HouseParts) -> int | None:
+    """Return the smallest distance between explicitly represented house numbers."""
+    left_numbers = address_numbers(left)
+    right_numbers = address_numbers(right)
+    if not left_numbers or not right_numbers:
+        return None
+    return min(abs(left_number - right_number) for left_number in left_numbers for right_number in right_numbers)
+
+
+def propose_unclaimed_loose_address_candidates(
+    match_rows: list[dict[str, Any]],
+    footprints: dict[str, Any],
+    points_by_street: dict[str, list[dict[str, Any]]],
+    hail_by_id: dict[str, dict[str, str]],
+    maximum_house_number_distance: int = 10,
+    maximum_footprint_distance_meters: float = 20.0,
+) -> None:
+    """Route loose same-street address evidence to nearby unclaimed footprints.
+
+    Some Address Points retain a deleted or blank BldgID even though the point
+    still locates a current footprint. Other footprints use a canonical address
+    on a cross street. This review-only fallback uses Address Points on the Hail
+    street within the requested house-number window, then proposes the nearest
+    unclaimed footprint. It never changes an accepted match.
+    """
+    occupied_bldgids = {
+        bldgid
+        for row in match_rows
+        if row["match_status"] == "accepted"
+        for bldgid in text(row.get("matched_bldgids") or row.get("matched_bldgid")).split("|")
+        if bldgid
+    }
+    transformer = Transformer.from_crs("EPSG:4326", "EPSG:26986", always_xy=True)
+    projected_geometries = []
+    projected_bldgids = []
+    for feature in footprints.get("features", []):
+        bldgid = normalize_id((feature.get("properties") or {}).get("BldgID"))
+        geometry = feature.get("geometry")
+        if not bldgid or bldgid in occupied_bldgids or not geometry:
+            continue
+        projected_geometries.append(transform(transformer.transform, shape(geometry)))
+        projected_bldgids.append(bldgid)
+    if not projected_geometries:
+        return
+    footprint_tree = STRtree(projected_geometries)
+
+    for row in match_rows:
+        hail = hail_by_id.get(row["building_id"], {})
+        if (
+            row["match_status"] != "unmatched"
+            or row.get("override_decision")
+            or row.get("classification") == "Cross reference to another address"
+            or references_move_to_another_location(hail.get("summary_raw"))
+        ):
+            continue
+        hail_parts = parse_house(hail.get("address_raw"))
+        street = normalize_street(hail.get("street_name"))
+        nearby_points: list[tuple[dict[str, Any], int]] = []
+        for point in points_by_street.get(street, []):
+            number_distance = house_number_distance(hail_parts, point["house_parts"])
+            if (
+                number_distance is not None
+                and number_distance <= maximum_house_number_distance
+                and isinstance(point.get("coordinates"), list)
+                and len(point["coordinates"]) >= 2
+            ):
+                nearby_points.append((point, number_distance))
+        candidate_distances: dict[str, float] = {}
+        candidate_number_distances: dict[str, int] = {}
+        selected_points: list[dict[str, Any]] = []
+        for point, number_distance in nearby_points:
+            longitude, latitude = point["coordinates"][:2]
+            projected_point = transform(
+                transformer.transform,
+                shape({"type": "Point", "coordinates": [longitude, latitude]}),
+            )
+            nearest_index = int(footprint_tree.nearest(projected_point))
+            distance = projected_point.distance(projected_geometries[nearest_index])
+            if distance > maximum_footprint_distance_meters:
+                continue
+            bldgid = projected_bldgids[nearest_index]
+            candidate_distances[bldgid] = min(candidate_distances.get(bldgid, distance), distance)
+            candidate_number_distances[bldgid] = min(
+                candidate_number_distances.get(bldgid, number_distance), number_distance
+            )
+            selected_points.append(point)
+        if not candidate_distances:
+            continue
+        bldgids = sorted(candidate_distances)
+        distances = ", ".join(
+            f"{bldgid}: Δ{candidate_number_distances[bldgid]} house numbers, "
+            f"{candidate_distances[bldgid]:.1f} m"
+            for bldgid in bldgids
+        )
+        proposed = build_match_result(
+            hail,
+            7,
+            "review",
+            "manual_review_loose_address_proximity",
+            selected_points,
+            bldgids,
+            f"Same-street Address Point is within {maximum_house_number_distance} house "
+            "numbers; nearby unclaimed footprint may use this or a cross-street canonical "
+            f"address ({distances})",
+        )
+        proposed["review_reason_category"] = "loose_address_near_unclaimed_footprint"
+        proposed["review_reason_summary"] = (
+            "A same-street Address Point is within 10 house numbers, and a nearby footprint "
+            "with no accepted Hail match is proposed; its canonical address may be on a cross street."
+        )
+        row.update(proposed)
+
+
 def select_assessor(records: list[dict[str, Any]], primary_address: str | None) -> dict[str, Any] | None:
     if not records:
         return None
@@ -1060,6 +1222,8 @@ def main() -> None:
             raise FileNotFoundError(source)
 
     footprints = load_geojson(FOOTPRINTS_PATH)
+    mit_buildings = load_geojson(MIT_BUILDINGS_PATH)
+    mit_by_bldgid = map_mit_facilities_to_footprints(footprints, mit_buildings)
     address_points = load_geojson(ADDRESS_POINTS_PATH)
     assessor = load_geojson(ASSESSOR_PATH)
     with HAIL_PATH.open(newline="", encoding="utf-8-sig") as handle:
@@ -1119,6 +1283,12 @@ def main() -> None:
         points_by_bldgid,
         valid_bldgids,
     )
+    propose_unclaimed_loose_address_candidates(
+        match_rows,
+        footprints,
+        points_by_street,
+        hail_by_id,
+    )
     accept_unclaimed_multi_footprint_records(match_rows, points_by_bldgid, hail_by_id)
     accepted_hail_by_bldgid: dict[str, list[tuple[dict[str, str], dict[str, Any]]]] = defaultdict(list)
     for match in match_rows:
@@ -1149,10 +1319,25 @@ def main() -> None:
         selected_assessor = select_assessor(assessor_records, primary_address)
         assessor_year = complete_year(selected_assessor.get("condition_yearbuilt")) if selected_assessor else None
 
+        mit_records = sorted(
+            mit_by_bldgid.get(bldgid, []),
+            key=lambda item: (-float(item.get("overlap_ratio") or 0), text(item.get("FACILITY"))),
+        )
+        primary_mit = mit_records[0] if mit_records else None
+        mit_year = complete_year(primary_mit.get("DATE_BUILT_YEAR")) if primary_mit else None
+        mit_is_primary = mit_year is not None and mit_year >= 2000
+
         accepted_hail = accepted_hail_by_bldgid.get(bldgid, [])
+        mit_corroborates_accepted_hail = mit_year is not None and any(
+            (hail_year := complete_year(hail.get("construction_year"))) is not None
+            and abs(hail_year - mit_year) <= 10
+            for hail, _match in accepted_hail
+        )
         if assessor_year_takes_precedence(
             assessor_year
-        ) and not hail_year_overrides_assessor_placeholder(bldgid, assessor_year):
+        ) and not hail_year_overrides_assessor_placeholder(
+            bldgid, assessor_year
+        ) and not mit_corroborates_accepted_hail:
             accepted_hail = []
         wikipedia_articles = approved_wikipedia_by_bldgid.get(bldgid, [])
         fun_fact = fun_facts_by_bldgid.get(bldgid)
@@ -1174,6 +1359,12 @@ def main() -> None:
             bldgid, assessor_year
         )
         selected_hail_year = unambiguous_hail_year
+        if selected_hail_year is None and mit_year is not None and hail_years:
+            distances = sorted((abs(year - mit_year), year) for year in hail_years)
+            if distances[0][0] <= 10 and (
+                len(distances) == 1 or distances[0][0] < distances[1][0]
+            ):
+                selected_hail_year = distances[0][1]
         if (
             selected_hail_year is None
             and assessor_year_is_placeholder
@@ -1190,11 +1381,20 @@ def main() -> None:
             year_difference is not None
             and year_difference > 50
             and not assessor_year_is_placeholder
+            and not (
+                mit_year is not None
+                and selected_hail_year is not None
+                and abs(selected_hail_year - mit_year) <= 10
+            )
         )
         if selected_hail_year is not None and (
             assessor_year is None
             or (year_difference is not None and year_difference <= 50)
             or assessor_year_is_placeholder
+            or (
+                mit_year is not None
+                and abs(selected_hail_year - mit_year) <= 10
+            )
         ):
             year_built = selected_hail_year
             year_source = "Hail"
@@ -1204,6 +1404,10 @@ def main() -> None:
         else:
             year_built = None
             year_source = "Unknown"
+        if mit_is_primary:
+            year_built = mit_year
+            year_source = "MIT"
+            year_needs_review = False
         year_source_counts[year_source] += 1
         year_review_count += int(year_needs_review)
 
@@ -1239,6 +1443,31 @@ def main() -> None:
             "hail_builder": primary_hail.get("builder") if primary_hail else None,
             "hail_owner_at_construction": primary_hail.get("owner_at_construction") if primary_hail else None,
             "hail_summary": primary_hail.get("summary_raw") if primary_hail else None,
+            "building_name": text(primary_mit.get("BLDG_NAME")) if primary_mit else (
+                primary_hail.get("building_type") if primary_hail else None
+            ),
+            "mit_facility": text(primary_mit.get("FACILITY")) if primary_mit else None,
+            "mit_facilities": "|".join(text(item.get("FACILITY")) for item in mit_records) or None,
+            "mit_building_name": text(primary_mit.get("BLDG_NAME")) if primary_mit else None,
+            "mit_building_names": " | ".join(
+                dict.fromkeys(text(item.get("BLDG_NAME")) for item in mit_records if text(item.get("BLDG_NAME")))
+            ) or None,
+            "mit_address": text(primary_mit.get("Address")) if primary_mit else None,
+            "mit_addresses": " | ".join(
+                dict.fromkeys(text(item.get("Address")) for item in mit_records if text(item.get("Address")))
+            ) or None,
+            "mit_date_built": mit_year,
+            "mit_ownership": text(primary_mit.get("Ownership")) if primary_mit else None,
+            "mit_building_type": text(primary_mit.get("Type")) if primary_mit else None,
+            "mit_floor_count": primary_mit.get("Floor_Count") if primary_mit else None,
+            "mit_overlap_ratio": primary_mit.get("overlap_ratio") if primary_mit else None,
+            "mit_metadata_primary": mit_is_primary,
+            "mit_metadata_source": (
+                "MIT Department of Facilities public GIS" if primary_mit else None
+            ),
+            "mit_metadata_source_url": (
+                "https://maps.mit.edu/pub/rest/services/demos/Map/MapServer/24" if primary_mit else None
+            ),
             "year_built": year_built,
             "year_built_source": year_source,
             "year_difference_hail_assessor": year_difference,
@@ -1346,6 +1575,7 @@ def main() -> None:
         "building_complex_geometry_uncertain": "Building complex may span footprints",
         "historical_address_or_alias": "Unproven historical address or alias",
         "street_spelling_difference": "Small street-name spelling difference",
+        "loose_address_near_unclaimed_footprint": "Loose address near unclaimed footprint",
         "other_manual_review": "Other manual review",
     }
     summary_lines = [

@@ -128,7 +128,10 @@ function safeHttpUrl(value: unknown): string | null {
 function getBuildingPopupContent(properties: BuildingProperties): HTMLElement {
   const address = properties.address ?? properties.Address ?? "Unknown"
   const buildingName =
-    properties.hail_building_name ?? properties.hail_building_type
+    properties.building_name ??
+    properties.mit_building_name ??
+    properties.hail_building_name ??
+    properties.hail_building_type
 
   const rows: Array<[string, unknown]> = [
     ["Address", address],
