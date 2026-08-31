@@ -66,6 +66,30 @@ copy, complete Hail match audit, and manual-review queue are written under
 [`reports/building-database-methodology.md`](reports/building-database-methodology.md)
 for matching stages, year-selection rules, output fields, and current counts.
 
+### Cambridge Development Log
+
+Source snapshots belong in `data/raw/development-logs/`. The build reads the
+newest filename for each supported table, admits only projects whose status is
+exactly `Complete` and whose `Year Complete` is filled and valid (1997 through
+the current year), and matches them to footprints by map-lot, exact address, or
+a conservative coordinate join. A matched completion year is the primary
+source for `year_built`, ahead of the Assessor, Hail, and MIT fields, so it
+controls both polygon color and popup content.
+
+Refresh the two quarterly Open Data tables and rebuild with:
+
+```bash
+npm run development-logs:update
+npm run data:build
+```
+
+The refresh command writes date-stamped, immutable CSV snapshots using the
+official Cambridge Socrata datasets (`wjwg-93qh` for the current edition and
+`a5ud-8kjv` for historical projects). The map-lot-enhanced export supplied for
+this project remains the preferred duplicate when present. Review the build's
+match summary before publishing; unmatched records remain inert instead of
+being assigned to a questionable footprint.
+
 ## Admin-managed building fun facts
 
 Published fun facts live in `data/manual/building-fun-facts.json`, separately
