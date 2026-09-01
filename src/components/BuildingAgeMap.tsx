@@ -14,7 +14,6 @@ type BuildingProperties = {
   address_count?: number | string | null
   age_band?: string
   year_built?: number | string | null
-  year_built_source?: string | null
   Condition_YearBuilt?: number | string
   assessor_year_placeholder?: boolean
   wikipedia_article_count?: number
@@ -138,7 +137,6 @@ function getBuildingPopupContent(properties: BuildingProperties): HTMLElement {
     ["Address", address],
     ["Building name", buildingName],
     ["Year built", getPopupYearBuilt(properties)],
-    ["Year source", properties.year_built_source],
     ["Architect", properties.hail_architect],
     ["Builder", properties.hail_builder],
   ]

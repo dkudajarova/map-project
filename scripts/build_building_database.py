@@ -23,24 +23,10 @@ from shapely.geometry import shape
 from shapely.ops import transform
 from shapely.strtree import STRtree
 
-if __package__:
-    from .development_logs import (
-        choose_project,
-        load_completed_projects,
-        match_projects_to_footprints,
-    )
-else:
-    from development_logs import (
-        choose_project,
-        load_completed_projects,
-        match_projects_to_footprints,
-    )
-
 
 ROOT = Path(__file__).resolve().parents[1]
 HAIL_PATH = ROOT / "data/raw/Hail_buildings_dataset.csv"
 ASSESSOR_PATH = ROOT / "data/processed/Cambridge_Property_Database_FY2016-FY2026_20260805_deduped.geojson"
-DEVELOPMENT_LOG_DIR = ROOT / "data/raw/development-logs"
 ADDRESS_POINTS_PATH = ROOT / "cambridgegis_data/Address/Address_Points/ADDRESS_AddressPoints.geojson"
 FOOTPRINTS_PATH = ROOT / "cambridgegis_data/Basemap/Buildings/BASEMAP_Buildings.geojson"
 AGE_BANDS_PATH = ROOT / "src/data/Age_bands.json"
@@ -1066,14 +1052,14 @@ def choose_hail_record(records: list[tuple[dict[str, str], dict[str, Any]]]) -> 
     return min(records, key=key)
 
 
+def assessor_year_takes_precedence(assessor_year: int | None) -> bool:
+    return assessor_year is not None and assessor_year >= 2003
+
+
 def hail_year_overrides_assessor_placeholder(
     bldgid: str, assessor_year: int | None
 ) -> bool:
-    """Recognize verified parcel or redevelopment-era assessor placeholders."""
-    if bldgid == "468-8" and assessor_year == 2021:
-        # CambridgeSide Galleria: Hail documents original construction in
-        # 1987-1990; the assessor year reflects the recent redevelopment.
-        return True
+    """Recognize verified Harvard parcel-level assessor placeholders."""
     if bldgid.startswith("318-") and assessor_year == 1850:
         return True
     if bldgid.startswith(("253-", "266-")) and assessor_year == 1840:
@@ -1224,7 +1210,6 @@ def main() -> None:
     for source in (
         HAIL_PATH,
         ASSESSOR_PATH,
-        DEVELOPMENT_LOG_DIR,
         ADDRESS_POINTS_PATH,
         FOOTPRINTS_PATH,
         AGE_BANDS_PATH,
@@ -1278,15 +1263,6 @@ def main() -> None:
             points_by_number[point["house_parts"].minimum].append(point)
         if point["bldgid"]:
             points_by_bldgid[point["bldgid"]].append(point)
-
-    development_projects = load_completed_projects(DEVELOPMENT_LOG_DIR)
-    development_by_bldgid, development_match_counts = match_projects_to_footprints(
-        development_projects,
-        footprints,
-        points,
-        normalize_street,
-        normalize_house,
-    )
 
     match_rows = [
         match_hail_record(
@@ -1342,9 +1318,6 @@ def main() -> None:
         assessor_records = [assessor_by_gisid[gisid] for gisid in gisids if gisid in assessor_by_gisid]
         selected_assessor = select_assessor(assessor_records, primary_address)
         assessor_year = complete_year(selected_assessor.get("condition_yearbuilt")) if selected_assessor else None
-        development_records = development_by_bldgid.get(bldgid, [])
-        primary_development = choose_project(development_records)
-        development_year = primary_development.year_complete if primary_development else None
 
         mit_records = sorted(
             mit_by_bldgid.get(bldgid, []),
@@ -1355,6 +1328,17 @@ def main() -> None:
         mit_is_primary = mit_year is not None and mit_year >= 2000
 
         accepted_hail = accepted_hail_by_bldgid.get(bldgid, [])
+        mit_corroborates_accepted_hail = mit_year is not None and any(
+            (hail_year := complete_year(hail.get("construction_year"))) is not None
+            and abs(hail_year - mit_year) <= 10
+            for hail, _match in accepted_hail
+        )
+        if assessor_year_takes_precedence(
+            assessor_year
+        ) and not hail_year_overrides_assessor_placeholder(
+            bldgid, assessor_year
+        ) and not mit_corroborates_accepted_hail:
+            accepted_hail = []
         wikipedia_articles = approved_wikipedia_by_bldgid.get(bldgid, [])
         fun_fact = fun_facts_by_bldgid.get(bldgid)
         primary_hail_pair = choose_hail_record(accepted_hail)
@@ -1424,10 +1408,6 @@ def main() -> None:
             year_built = mit_year
             year_source = "MIT"
             year_needs_review = False
-        if development_year is not None:
-            year_built = development_year
-            year_source = "Cambridge Development Log"
-            year_needs_review = False
         year_source_counts[year_source] += 1
         year_review_count += int(year_needs_review)
 
@@ -1449,16 +1429,6 @@ def main() -> None:
             "Condition_YearBuilt": assessor_year,
             "PropertyClass": text(selected_assessor.get("propertyclass")) if selected_assessor else None,
             "Zoning": text(selected_assessor.get("zoning")) if selected_assessor else None,
-            "development_log_match_count": len(development_records),
-            "development_log_project_ids": "|".join(
-                dict.fromkeys(project.project_id for project in development_records if project.project_id)
-            ) or None,
-            "development_log_project_id": primary_development.project_id if primary_development else None,
-            "development_log_project_name": primary_development.project_name if primary_development else None,
-            "development_log_address": primary_development.address if primary_development else None,
-            "development_log_map_lot": primary_development.map_lot if primary_development else None,
-            "development_log_year_complete": development_year,
-            "development_log_dataset": primary_development.dataset if primary_development else None,
             "hail_match_count": len(accepted_hail),
             "hail_building_ids": "|".join(hail["building_id"] for hail, _match in accepted_hail) or None,
             "hail_years": "|".join(str(year) for year in hail_years) or None,
@@ -1682,8 +1652,6 @@ def main() -> None:
     for source, count in year_source_counts.items():
         print(f"  {source}: {count:,}")
     print(f"Year-review flags: {year_review_count:,}")
-    print(f"Eligible Development Log projects: {len(development_projects):,}")
-    print(f"Development Log matches: {development_match_counts}")
     print(f"Approved Wikipedia articles: {sum(len(items) for items in approved_wikipedia_by_bldgid.values()):,}")
     print(f"Buildings with Wikipedia articles: {len(approved_wikipedia_by_bldgid):,}")
     print(f"Wrote {PROCESSED_OUT}")

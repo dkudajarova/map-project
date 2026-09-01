@@ -40,10 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Raw GIS data stays local; compact Development Log source snapshots are versioned.
-/data/raw/*
-!/data/raw/development-logs/
-!/data/raw/development-logs/*.csv
+# Raw GIS data stays local
+/data/raw/
 
 # Cambridge gis data stays local
 /cambridge-gis-data/
