@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "retrieved_at": "2026-08-13T15:20:00Z",
+  "retrieved_at": "2026-09-01T13:33:51Z",
   "source": {
     "api": "https://en.wikipedia.org/w/api.php",
     "language": "en",
@@ -12,8 +12,8 @@
     "search_radius_meters": 4463,
     "search_tile_size_meters": 1000,
     "search_tile_count": 48,
-    "retrieved_count": 829,
-    "cambridge_count": 511
+    "retrieved_count": 827,
+    "cambridge_count": 509
   },
   "articles": [
     {
@@ -155,13 +155,6 @@
       "url": "https://en.wikipedia.org/wiki/Harvard_Radcliffe_Institute",
       "latitude": 42.37581,
       "longitude": -71.12233
-    },
-    {
-      "page_id": 417027,
-      "title": "American Repertory Theater",
-      "url": "https://en.wikipedia.org/wiki/American_Repertory_Theater",
-      "latitude": 42.37495555555556,
-      "longitude": -71.12265
     },
     {
       "page_id": 593247,
@@ -2974,13 +2967,6 @@
       "page_id": 38776131,
       "title": "Untitled (Richard Fleischner artwork at Alewife station)",
       "url": "https://en.wikipedia.org/wiki/Untitled_(Richard_Fleischner_artwork_at_Alewife_station)",
-      "latitude": 42.39564,
-      "longitude": -71.14092
-    },
-    {
-      "page_id": 38808105,
-      "title": "The End of the Red Line",
-      "url": "https://en.wikipedia.org/wiki/The_End_of_the_Red_Line",
       "latitude": 42.39564,
       "longitude": -71.14092
     },
