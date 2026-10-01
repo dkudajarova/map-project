@@ -1,1 +1,3 @@
 wikipedia_page_id,wikipedia_title,wikipedia_url,latitude,longitude,match_method,match_distance_meters,candidate_count,candidate_bldgids,matched_bldgid,confidence_status,decision_status,review_reason,previous_title,previous_latitude,previous_longitude
+417027,American Repertory Theater,https://en.wikipedia.org/wiki/American_Repertory_Theater,,,none,,0,,321-3,unmatched,stale_decision,Previously reviewed article is missing from the latest Cambridge snapshot.,American Repertory Theater,42.37495555555556,-71.12265
+38808105,The End of the Red Line,https://en.wikipedia.org/wiki/The_End_of_the_Red_Line,,,none,,0,,,unmatched,stale_decision,Previously reviewed article is missing from the latest Cambridge snapshot.,The End of the Red Line,42.39564,-71.14092
